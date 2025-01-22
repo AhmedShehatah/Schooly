@@ -1,0 +1,9 @@
+icons_launcher:
+  platforms:
+    android:
+      enable: true
+      image_path: "assets/images/logo.jpg"
+
+    ios:
+      enable: true
+      image_path: "assets/images/logo.jpg"

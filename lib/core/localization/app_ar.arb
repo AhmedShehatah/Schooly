@@ -1,0 +1,12 @@
+{
+    "@@locale": "ar",
+    "requestCancelled": "تم إلغاء الطلب إلى الخادم",
+    "connectionTimeout": "انتهت مهلة الاتصال بالخادم",
+    "receiveTimeout": "انتهت مهلة استلام الاتصال بالخادم",
+    "sendTimeout": "انتهت مهلة إرسال الاتصال للخادم",
+    "connectionError": "لا يوجد اتصال بالانترنت",
+    "unknownError": "حدث خطأ غير متوقع",
+    "serverError": "حدث خطأ في الخادم",
+    "badCertificate": "خطأ في الشهادة الأمنية",
+    "sessionExpired": "لقد انتهت الجلسة"
+}

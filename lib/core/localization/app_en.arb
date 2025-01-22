@@ -1,0 +1,12 @@
+{
+    "@@locale": "en",
+    "requestCancelled": "The request to the server has been cancelled",
+    "connectionTimeout": "The connection to the server timed out",
+    "receiveTimeout": "The connection to the server has timed out",
+    "sendTimeout": "The connection to the server has timed out",
+    "connectionError": "No internet connection",
+    "unknownError": "An unexpected error occurred",
+    "serverError": "A server error has occurred",
+    "badCertificate": "Error in security certificate",
+    "sessionExpired": "Session has expired"
+}

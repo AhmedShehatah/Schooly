@@ -1,0 +1,7 @@
+arb-dir: lib/core/localization
+template-arb-file: app_ar.arb
+output-localization-file: app_localizations.dart
+preferred-supported-locales: ["ar", "en"]
+output-dir: lib/core/localization
+synthetic-package: false
+untranslated-messages-file: "lib/core/localization/app_untranslated_messages.yaml"
