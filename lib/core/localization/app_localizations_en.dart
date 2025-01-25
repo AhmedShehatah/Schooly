@@ -32,4 +32,42 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sessionExpired => 'Session has expired';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get identityNumberValidation => 'Identity number must be at least 7 digits';
+
+  @override
+  String mustEnter(Object value) {
+    return 'Must enter $value';
+  }
+
+  @override
+  String get mustLogin => 'You must login first';
+
+  @override
+  String get invalidPhoneNumber => 'Invalid phone number';
+
+  @override
+  String get nationalId => 'National ID';
+
+  @override
+  String get country => 'Country';
+
+  @override
+  String get chooseCountry => 'Choose Country';
+
+  @override
+  String get phoneNumber => 'Phone Number';
+
+  @override
+  String get invalidEmail => 'Email is incorrect';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get otpValidation => 'The verification code must be 4 digits long';
 }

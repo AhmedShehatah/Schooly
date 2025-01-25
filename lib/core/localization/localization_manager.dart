@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,6 +21,11 @@ class LocaleCubit extends Cubit<Locale> {
   void initLocale() {
     final String? languageCode =
         _sharedPrefs.getString(key: PrefsKeys.languageCode);
+
+    if (kDebugMode) {
+      toArabic();
+      return;
+    }
 
     if (languageCode != null) {
       emit(Locale(languageCode));

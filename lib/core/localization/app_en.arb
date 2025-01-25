@@ -8,5 +8,18 @@
     "unknownError": "An unexpected error occurred",
     "serverError": "A server error has occurred",
     "badCertificate": "Error in security certificate",
-    "sessionExpired": "Session has expired"
+    "sessionExpired": "Session has expired",
+    "password": "Password",
+    "@validators": {},
+    "mustLogin": "You must login first",
+    "invalidPhoneNumber": "Invalid phone number",
+    "identityNumberValidation": "Identity number must be at least 7 digits",
+    "mustEnter": "Must enter {value}",
+    "nationalId": "National ID",
+    "country": "Country",
+    "chooseCountry": "Choose Country",
+    "phoneNumber": "Phone Number",
+    "email": "Email",
+    "invalidEmail": "Email is incorrect",
+    "otpValidation": "The verification code must be 4 digits long"
 }

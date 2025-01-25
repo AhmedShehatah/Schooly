@@ -1,4 +1,4 @@
-package com.alshayaa.app.alshayaa_app
+package com.schooly.app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -8,5 +8,18 @@
     "unknownError": "حدث خطأ غير متوقع",
     "serverError": "حدث خطأ في الخادم",
     "badCertificate": "خطأ في الشهادة الأمنية",
-    "sessionExpired": "لقد انتهت الجلسة"
+    "sessionExpired": "لقد انتهت الجلسة",
+    "password": "كلمة المرور",
+    "@validators": {},
+    "identityNumberValidation": "رقم الهوية يجب أن لا يقل عن ٧ أرقام",
+    "mustEnter": "يجب ادخال {value}",
+    "mustLogin": "يجب عليك تسجيل الدخول",
+    "invalidPhoneNumber": "رقم الجوال غير صحيح",
+    "nationalId": "رقم الهوية",
+    "country": "الدولة",
+    "chooseCountry": "اختر الدولة",
+    "phoneNumber": "رقم الجوال",
+    "invalidEmail": "البريد الالكتروني غير صحيح",
+    "email": "البريد الإلكتروني",
+    "otpValidation": "يجب ان يكون رقم التحقق المكون من ٤ ارقام"
 }

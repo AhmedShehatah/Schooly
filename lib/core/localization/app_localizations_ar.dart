@@ -32,4 +32,42 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sessionExpired => 'لقد انتهت الجلسة';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get identityNumberValidation => 'رقم الهوية يجب أن لا يقل عن ٧ أرقام';
+
+  @override
+  String mustEnter(Object value) {
+    return 'يجب ادخال $value';
+  }
+
+  @override
+  String get mustLogin => 'يجب عليك تسجيل الدخول';
+
+  @override
+  String get invalidPhoneNumber => 'رقم الجوال غير صحيح';
+
+  @override
+  String get nationalId => 'رقم الهوية';
+
+  @override
+  String get country => 'الدولة';
+
+  @override
+  String get chooseCountry => 'اختر الدولة';
+
+  @override
+  String get phoneNumber => 'رقم الجوال';
+
+  @override
+  String get invalidEmail => 'البريد الالكتروني غير صحيح';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get otpValidation => 'يجب ان يكون رقم التحقق المكون من ٤ ارقام';
 }

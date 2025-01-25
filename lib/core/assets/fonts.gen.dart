@@ -7,11 +7,9 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
-class Assets {
-  Assets._();
+class FontFamily {
+  FontFamily._();
 
-  static const String aEnv = '.env';
-
-  /// List of all assets
-  static List<String> get values => [aEnv];
+  /// Font family: Alexandria
+  static const String alexandria = 'Alexandria';
 }

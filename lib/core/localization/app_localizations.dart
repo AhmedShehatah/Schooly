@@ -148,6 +148,78 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'لقد انتهت الجلسة'**
   String get sessionExpired;
+
+  /// No description provided for @password.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة المرور'**
+  String get password;
+
+  /// No description provided for @identityNumberValidation.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الهوية يجب أن لا يقل عن ٧ أرقام'**
+  String get identityNumberValidation;
+
+  /// No description provided for @mustEnter.
+  ///
+  /// In ar, this message translates to:
+  /// **'يجب ادخال {value}'**
+  String mustEnter(Object value);
+
+  /// No description provided for @mustLogin.
+  ///
+  /// In ar, this message translates to:
+  /// **'يجب عليك تسجيل الدخول'**
+  String get mustLogin;
+
+  /// No description provided for @invalidPhoneNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الجوال غير صحيح'**
+  String get invalidPhoneNumber;
+
+  /// No description provided for @nationalId.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الهوية'**
+  String get nationalId;
+
+  /// No description provided for @country.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدولة'**
+  String get country;
+
+  /// No description provided for @chooseCountry.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر الدولة'**
+  String get chooseCountry;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الجوال'**
+  String get phoneNumber;
+
+  /// No description provided for @invalidEmail.
+  ///
+  /// In ar, this message translates to:
+  /// **'البريد الالكتروني غير صحيح'**
+  String get invalidEmail;
+
+  /// No description provided for @email.
+  ///
+  /// In ar, this message translates to:
+  /// **'البريد الإلكتروني'**
+  String get email;
+
+  /// No description provided for @otpValidation.
+  ///
+  /// In ar, this message translates to:
+  /// **'يجب ان يكون رقم التحقق المكون من ٤ ارقام'**
+  String get otpValidation;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
