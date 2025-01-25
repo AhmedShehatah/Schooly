@@ -1,4 +1,4 @@
-# alshayaa_app
+# Schooly
 
 A new Flutter project.
 
