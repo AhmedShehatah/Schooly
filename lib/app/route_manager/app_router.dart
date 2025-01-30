@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../presentation/learn/pages/learn_screen.dart';
 import '../../presentation/test.dart';
 
 class AppRouter {
@@ -9,16 +10,16 @@ class AppRouter {
 
   late final router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: TestScreen.routeName,
+    initialLocation: LearnScreen.routeName,
     routes: [
       GoRoute(
-        name: TestScreen.routeName,
-        path: TestScreen.routeName,
-        pageBuilder: (_, state) => _buildPageWithTransition(
-          const TestScreen(),
+        path: LearnScreen.routeName,
+        name: LearnScreen.routeName,
+        pageBuilder: (context, state) => _buildPageWithTransition(
+          const LearnScreen(),
           state,
         ),
-      ),
+      )
     ],
   );
 

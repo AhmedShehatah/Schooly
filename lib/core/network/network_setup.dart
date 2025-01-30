@@ -110,7 +110,6 @@ class _CustomInterceptor extends Interceptor {
     };
     await failure.whenOrNull<Future<void>>(unauthorized: (_) async {
       // TODO route to login screen
-      // sl<AppNavigator>().offAll(LoginScreen.routeName);
       await _storage.deleteSecuredValue(key: PrefsKeys.token);
     });
     return handler.next(DioException(
