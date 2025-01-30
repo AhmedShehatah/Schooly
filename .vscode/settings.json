@@ -1,9 +1,10 @@
 {
-    "cSpell.words": [
-        "alshayaa",
-        "fayrouz",
-        "Prefs",
-        "schooly",
-        "sider"
-    ]
+  "cSpell.words": [
+    "alshayaa",
+    "fayrouz",
+    "Prefs",
+    "schooly",
+    "sider"
+  ],
+  "dart.flutterSdkPath": ".fvm/versions/3.24.0"
 }
