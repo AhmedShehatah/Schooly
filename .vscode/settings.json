@@ -1,9 +1,11 @@
 {
-    "cSpell.words": [
-        "alshayaa",
-        "fayrouz",
-        "Prefs",
-        "schooly",
-        "sider"
-    ]
+  "cSpell.words": [
+    "alshayaa",
+    "fayrouz",
+    "Prefs",
+    "schooly",
+    "sider"
+  ],
+  "cmake.sourceDirectory": "E:/flutter/FlutterProjects/Schooly/windows/runner",
+  "dart.flutterSdkPath": ".fvm/versions/3.24.0"
 }

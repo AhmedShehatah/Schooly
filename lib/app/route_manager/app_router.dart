@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../presentation/upcoming_classes/widgets/class_card_widget.dart';
+import '../../presentation/upcoming_classes/widgets/upcoming_classes_widget.dart';
 import '../../presentation/test.dart';
 
 class AppRouter {
@@ -9,13 +11,13 @@ class AppRouter {
 
   late final router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: TestScreen.routeName,
+    initialLocation: UpcomingClassesWidget.routeName,
     routes: [
       GoRoute(
-        name: TestScreen.routeName,
-        path: TestScreen.routeName,
+        name: UpcomingClassesWidget.routeName,
+        path: UpcomingClassesWidget.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
-          const TestScreen(),
+          const UpcomingClassesWidget(),
           state,
         ),
       ),
