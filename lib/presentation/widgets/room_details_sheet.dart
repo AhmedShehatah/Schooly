@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/assets/assets.gen.dart';
 import '../../core/theme/palette.dart';
 import '../../core/utils/extensions.dart';
+import '../../core/widgets/bottom_sheets/custom_bottom_sheet.dart';
 import '../../core/widgets/buttons/custom_button.dart';
 import '../../core/widgets/text/custom_text.dart';
 
@@ -96,10 +97,15 @@ class RoomDetailsSheet extends StatelessWidget {
             textColor: Palette.character.disabledPlaceholder25,
           ),
           15.verticalSpace,
-          CustomText.s16(
-            "فعل الاشعارات",
-            color: Palette.primary.color6,
-          )
+          CustomButton.text(
+            isExpanded: false,
+            onPressed: () {
+              CustomBottomSheet.showBottomSheet(context, RoomDetailsSheet());
+            },
+            text: "فعل الاشعارات",
+            textColor: Palette.primary.color6,
+          ),
+          36.verticalSpace,
         ],
       ),
     );
