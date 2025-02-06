@@ -26,11 +26,11 @@ class ClassCardWidget extends StatelessWidget {
               height: 52.sp,
             ),
             title: CustomText.s11(
-              item.subject,
+              '${item.subject} / ${item.grade}',
               color: Palette.character.secondary45,
             ),
             subtitle: CustomText.s12(
-              item.title,
+              '${item.lessonType} : ${item.title}',
               color: Palette.character.primary85,
             ),
             trailing: Column(
@@ -47,7 +47,8 @@ class ClassCardWidget extends StatelessWidget {
                     border: Border.all(color: Palette.sunsetOrange.color3),
                   ),
                   child: CustomText.s11(
-                    '43 دقيقة',
+                    // TODO: change to time
+                    '${DateTime.parse(item.date).day - DateTime.now().day} دقيقة',
                     color: Palette.sunsetOrange.color6,
                   ),
                 ),
