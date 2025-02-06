@@ -7,6 +7,7 @@ class CallScreen extends StatefulWidget {
   const CallScreen({super.key, required this.channelName, required this.token});
   final String channelName;
   final String token;
+  static const String routeName = '/call-screen';
 
   @override
   State<CallScreen> createState() => _CallScreenState();
