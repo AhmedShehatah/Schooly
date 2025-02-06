@@ -1,14 +1,12 @@
 name: schooly
 description: "A new Flutter project."
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
   sdk: ^3.5.0
-
 
 dependencies:
   flutter:
@@ -54,13 +52,11 @@ flutter:
   generate: true
   uses-material-design: true
 
-
   assets:
     - assets/images/
-    - assets/icons/
-  #   - assets/lottie/
+    #   - assets/icons/
+    #   - assets/lottie/
     - .env
-
 
   fonts:
     - family: Alexandria
