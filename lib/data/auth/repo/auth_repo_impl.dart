@@ -2,7 +2,7 @@ import 'package:fpdart/fpdart.dart';
 import '../../../core/network/failure/failure.dart';
 import '../../../core/result/result.dart';
 import '../../../domain/auth/repo/auth_repo.dart';
-import '../../../domain/auth/usecases/login_use_case/login_use_case.dart';
+import '../../../domain/auth/use_cases/login_use_case/login_use_case.dart';
 import '../remote/auth_remote_data_source.dart';
 
 class AuthRepoImpl implements AuthRepo {

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import '../../../core/network/failure/failure.dart';
-import '../../../domain/auth/usecases/login_use_case/login_use_case.dart';
+import '../../../domain/auth/use_cases/login_use_case/login_use_case.dart';
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final Dio _dio;
