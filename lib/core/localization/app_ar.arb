@@ -14,8 +14,8 @@
     "identityNumberValidation": "رقم الهوية يجب أن لا يقل عن ٧ أرقام",
     "mustEnter": "يجب ادخال {value}",
     "mustLogin": "يجب عليك تسجيل الدخول",
-    "login":"تسجيل الدخول",
-    "forgotPassword":"هل نسيت كلمة السر؟",
+    "login": "تسجيل الدخول",
+    "forgotPassword": "هل نسيت كلمة السر؟",
     "invalidPhoneNumber": "رقم الجوال غير صحيح",
     "nationalId": "رقم الهوية",
     "country": "الدولة",
@@ -23,5 +23,60 @@
     "phoneNumber": "رقم الجوال",
     "invalidEmail": "البريد الالكتروني غير صحيح",
     "email": "البريد الإلكتروني",
-    "otpValidation": "يجب ان يكون رقم التحقق المكون من ٤ ارقام"
+    "otpValidation": "يجب ان يكون رقم التحقق المكون من ٤ ارقام",
+    "yourUpcomingClasses": "حصصك القادمة",
+    "all": "الكل",
+    "nSeconds": "{second, plural, =0{٠ ثوانٍ} =1{ثانية} =2{ثانيتين} few{{second} ثوانٍ} many{{second} ثانية} other{{second} ثانية}}",
+    "@nSeconds": {
+        "placeholders": {
+            "second": {
+                "type": "int"
+            }
+        }
+    },
+    "nMinutes": "{minute, plural, =0{٠ دقائق} =1{دقيقة} =2{دقيقتين} few{{minute} دقائق} many{{minute} دقيقة} other{{minute} دقيقة}}",
+    "@nMinutes": {
+        "placeholders": {
+            "minute": {
+                "type": "int"
+            }
+        }
+    },
+    "nHours": "{hour, plural, =0{٠ ساعات} =1{ساعة} =2{ساعتين} few{{hour} ساعات} many{{hour} ساعة} other{{hour} ساعة}}",
+    "@nHours": {
+        "placeholders": {
+            "hour": {
+                "type": "int"
+            }
+        }
+    },
+    "nDays": "{day, plural, =0{٠ أيام} =1{يوم} =2{يومين} few{{day} أيام} many{{day} يوم} other{{day} يوم}}",
+    "@nDays": {
+        "placeholders": {
+            "day": {
+                "type": "int"
+            }
+        }
+    },
+    "nMonths": "{month, plural, =0{٠ أشهر} =1{شهر} =2{شهرين} few{{month} أشهر} many{{month} شهر} other{{month} شهر}}",
+    "@nMonths": {
+        "placeholders": {
+            "month": {
+                "type": "int"
+            }
+        }
+    },
+    "nYears": "{year, plural, =0{٠ سنوات} =1{سنة} =2{سنتين} few{{year} سنوات} many{{year} سنة} other{{year} سنة}}",
+    "@nYears": {
+        "placeholders": {
+            "year": {
+                "type": "int"
+            }
+        }
+    },
+    "teacher": "المعلم",
+    "lessonType": "نوع الجلسة",
+    "date": "التاريخ",
+    "from": "من",
+    "to": "الى"
 }

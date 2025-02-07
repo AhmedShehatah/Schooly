@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/theme/palette.dart';
+import '../../../core/utils/date_utils.dart';
 import '../../../core/widgets/bottom_sheets/custom_bottom_sheet.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/widgets/text/custom_text.dart';
-import '../../../domain/upcoming_classes/entities/upcoming_classes.dart';
+import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
 import 'room_details_sheet.dart';
 
 class ClassCardWidget extends StatelessWidget {
   final UpcomingClasses item;
-
+  final bool isLast;
   const ClassCardWidget({
     super.key,
     required this.item,
+    required this.isLast,
   });
 
   @override
@@ -48,8 +50,8 @@ class ClassCardWidget extends StatelessWidget {
                     border: Border.all(color: Palette.sunsetOrange.color3),
                   ),
                   child: CustomText.s11(
-                    // TODO: change to time
-                    '${DateTime.parse(item.date).difference(DateTime.now()).inMinutes} دقيقة',
+                    DateUtility.dateToSinceFormat(DateTime.parse(item.date)
+                        .copyWith(hour: int.parse(item.from.substring(0, 2)))),
                     color: Palette.sunsetOrange.color6,
                   ),
                 ),
@@ -61,12 +63,13 @@ class ClassCardWidget extends StatelessWidget {
             },
           ),
         ),
-        Divider(
-          thickness: 1,
-          color: Palette.character.secondary45,
-          indent: 16,
-          endIndent: 16,
-        ),
+        if (!isLast)
+          Divider(
+            thickness: 1,
+            color: Palette.character.secondary45,
+            indent: 16,
+            endIndent: 16,
+          ),
       ],
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/utils/pagination.dart';
-import '../../../domain/upcoming_classes/entities/upcoming_classes.dart';
-import '../../../domain/upcoming_classes/usecases/upcoming_classes_use_case.dart';
+import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
+import '../../../domain/upcoming_classes/use_cases/upcoming_classes/upcoming_classes_use_case.dart';
 
 class UpcomingClassesCubit extends Cubit<void>
     with Pagination<UpcomingClasses> {
@@ -22,10 +22,6 @@ class UpcomingClassesCubit extends Cubit<void>
     result.fold(
       (failure) => controller.error = failure.message,
       (data) {
-        // if (data.isEmpty) {
-        //   controller.appendLastPage([]);
-        //   return;
-        // }
         if (data.length < _params.pageSize) {
           controller.appendLastPage(data);
           return;
@@ -37,5 +33,5 @@ class UpcomingClassesCubit extends Cubit<void>
     );
   }
 
-  void reset() => controller.refresh();
+  void reset() => _params = const UpcomingClassesParams();
 }

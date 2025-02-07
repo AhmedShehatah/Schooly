@@ -12,8 +12,8 @@
     "password": "Password",
     "@validators": {},
     "mustLogin": "You must login first",
-    "login":"Login",
-     "forgotPassword":"Forgot Password?",
+    "login": "Login",
+    "forgotPassword": "Forgot Password?",
     "invalidPhoneNumber": "Invalid phone number",
     "identityNumberValidation": "Identity number must be at least 7 digits",
     "mustEnter": "Must enter {value}",
@@ -23,5 +23,60 @@
     "phoneNumber": "Phone Number",
     "email": "Email",
     "invalidEmail": "Email is incorrect",
-    "otpValidation": "The verification code must be 4 digits long"
+    "otpValidation": "The verification code must be 4 digits long",
+    "yourUpcomingClasses": "Your Upcoming Classes",
+    "all": "All",
+    "nSeconds": "{second, plural, =1{1 Second} other{{second} Seconds}}",
+    "@nSeconds": {
+        "placeholders": {
+            "second": {
+                "type": "int"
+            }
+        }
+    },
+    "nMinutes": "{minute, plural, =1{1 Minute} other{{minute} Minutes}}",
+    "@nMinutes": {
+        "placeholders": {
+            "minute": {
+                "type": "int"
+            }
+        }
+    },
+    "nHours": "{hour, plural, =1{1 Hour} other{{hour} Hours}}",
+    "@nHours": {
+        "placeholders": {
+            "hour": {
+                "type": "int"
+            }
+        }
+    },
+    "nDays": "{day, plural, =1{1 Day} other{{day} Days}}",
+    "@nDays": {
+        "placeholders": {
+            "day": {
+                "type": "int"
+            }
+        }
+    },
+    "nMonths": "{month, plural, =1{1 Month} other{{month} Months}}",
+    "@nMonths": {
+        "placeholders": {
+            "month": {
+                "type": "int"
+            }
+        }
+    },
+    "nYears": "{year, plural, =1{1 Year} other{{year} Years}}",
+    "@nYears": {
+        "placeholders": {
+            "year": {
+                "type": "int"
+            }
+        }
+    },
+    "teacher": "Teacher",
+    "lessonType": "Lesson Type",
+    "date": "Date",
+    "from": "From",
+    "to": "To"
 }

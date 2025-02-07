@@ -232,6 +232,84 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'يجب ان يكون رقم التحقق المكون من ٤ ارقام'**
   String get otpValidation;
+
+  /// No description provided for @yourUpcomingClasses.
+  ///
+  /// In ar, this message translates to:
+  /// **'حصصك القادمة'**
+  String get yourUpcomingClasses;
+
+  /// No description provided for @all.
+  ///
+  /// In ar, this message translates to:
+  /// **'الكل'**
+  String get all;
+
+  /// No description provided for @nSeconds.
+  ///
+  /// In ar, this message translates to:
+  /// **'{second, plural, =0{٠ ثوانٍ} =1{ثانية} =2{ثانيتين} few{{second} ثوانٍ} many{{second} ثانية} other{{second} ثانية}}'**
+  String nSeconds(int second);
+
+  /// No description provided for @nMinutes.
+  ///
+  /// In ar, this message translates to:
+  /// **'{minute, plural, =0{٠ دقائق} =1{دقيقة} =2{دقيقتين} few{{minute} دقائق} many{{minute} دقيقة} other{{minute} دقيقة}}'**
+  String nMinutes(int minute);
+
+  /// No description provided for @nHours.
+  ///
+  /// In ar, this message translates to:
+  /// **'{hour, plural, =0{٠ ساعات} =1{ساعة} =2{ساعتين} few{{hour} ساعات} many{{hour} ساعة} other{{hour} ساعة}}'**
+  String nHours(int hour);
+
+  /// No description provided for @nDays.
+  ///
+  /// In ar, this message translates to:
+  /// **'{day, plural, =0{٠ أيام} =1{يوم} =2{يومين} few{{day} أيام} many{{day} يوم} other{{day} يوم}}'**
+  String nDays(int day);
+
+  /// No description provided for @nMonths.
+  ///
+  /// In ar, this message translates to:
+  /// **'{month, plural, =0{٠ أشهر} =1{شهر} =2{شهرين} few{{month} أشهر} many{{month} شهر} other{{month} شهر}}'**
+  String nMonths(int month);
+
+  /// No description provided for @nYears.
+  ///
+  /// In ar, this message translates to:
+  /// **'{year, plural, =0{٠ سنوات} =1{سنة} =2{سنتين} few{{year} سنوات} many{{year} سنة} other{{year} سنة}}'**
+  String nYears(int year);
+
+  /// No description provided for @teacher.
+  ///
+  /// In ar, this message translates to:
+  /// **'المعلم'**
+  String get teacher;
+
+  /// No description provided for @lessonType.
+  ///
+  /// In ar, this message translates to:
+  /// **'نوع الجلسة'**
+  String get lessonType;
+
+  /// No description provided for @date.
+  ///
+  /// In ar, this message translates to:
+  /// **'التاريخ'**
+  String get date;
+
+  /// No description provided for @from.
+  ///
+  /// In ar, this message translates to:
+  /// **'من'**
+  String get from;
+
+  /// No description provided for @to.
+  ///
+  /// In ar, this message translates to:
+  /// **'الى'**
+  String get to;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

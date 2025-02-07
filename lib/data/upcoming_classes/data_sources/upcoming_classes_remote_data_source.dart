@@ -3,8 +3,9 @@ import 'dart:isolate';
 import 'package:dio/dio.dart';
 
 import '../../../core/network/failure/failure.dart';
-import '../../../domain/upcoming_classes/usecases/upcoming_classes_use_case.dart';
-import '../models/upcoming_classes_model.dart';
+import '../../../domain/upcoming_classes/use_cases/upcoming_classes/upcoming_classes_use_case.dart';
+import '../models/session_model/session_model.dart';
+import '../models/upcoming_class/upcoming_classes_model.dart';
 
 class UpcomingClassesRemoteDataSourceImpl
     implements UpcomingClassesRemoteDataSource {
@@ -25,10 +26,22 @@ class UpcomingClassesRemoteDataSourceImpl
       throw e.error as Failure;
     }
   }
+
+  @override
+  Future<SessionModel> joinSession({required String id}) async {
+    try {
+      final response = await _dio.post('/lesson/join/$id');
+      return SessionModel.fromJson(response.data);
+    } on DioException catch (e) {
+      throw e.error as Failure;
+    }
+  }
 }
 
 abstract class UpcomingClassesRemoteDataSource {
   Future<List<UpcomingClassesModel>> getUpcomingClasses({
     required UpcomingClassesParams params,
   });
+
+  Future<SessionModel> joinSession({required String id});
 }

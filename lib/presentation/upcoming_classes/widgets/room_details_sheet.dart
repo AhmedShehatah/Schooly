@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:toastification/toastification.dart';
+import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/localization/localization_manager.dart';
+import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
+import '../../../core/utils/extensions.dart';
 import '../../../core/widgets/buttons/custom_button.dart';
 import '../../../core/widgets/text/custom_text.dart';
-import '../../../domain/upcoming_classes/entities/upcoming_classes.dart';
+import '../../../domain/upcoming_classes/entities/sessions/session.dart';
+import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
+import '../../lesson_meeting/cubits/join_meeting_cubit.dart';
+import '../../lesson_meeting/pages/lesson_meeting_screen.dart';
 import 'class_card_widget.dart';
 
 class RoomDetailsSheet extends StatelessWidget {
   final UpcomingClasses item;
-  const RoomDetailsSheet({super.key, required this.item});
 
+  RoomDetailsSheet({super.key, required this.item});
+  final _localizations = sl<LocaleCubit>().appLocalizations;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,17 +31,20 @@ class RoomDetailsSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           8.verticalSpace,
-          ClassCardWidget(item: item),
+          ClassCardWidget(
+            item: item,
+            isLast: false,
+          ),
           26.verticalSpace,
           Row(
             children: [
               _buildTextIcon(
-                  title: 'المعلم',
+                  title: _localizations.teacher,
                   icon: Assets.images.science.image(width: 25, height: 25),
                   content: item.teacherId),
               50.horizontalSpace,
               _buildTextIcon(
-                  title: 'نوع الجلسة',
+                  title: _localizations.lessonType,
                   icon: Assets.images.science.image(width: 25, height: 25),
                   content: '${item.lessonType}')
             ],
@@ -40,28 +54,48 @@ class RoomDetailsSheet extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _buildTextIcon(
-                  title: 'التاريخ',
+                  title: _localizations.date,
                   icon: Assets.images.science.image(width: 25, height: 25),
                   content: item.date),
               _buildTextIcon(
-                  title: 'من',
+                  title: _localizations.from,
                   icon: Assets.images.science.image(width: 25, height: 25),
                   content: item.from),
               _buildTextIcon(
-                  title: 'إلى',
+                  title: _localizations.to,
                   icon: Assets.images.science.image(width: 25, height: 25),
                   content: item.to),
             ],
           ),
           15.verticalSpace,
-          CustomButton(
-            isTextBold: true,
-            text:
-                // TODO: change to time
-                'غير متاحة الآن: متبقي ${DateTime.parse(item.date).difference(DateTime.now()).inMinutes} دقيقة',
-            onPressed: () {},
-            backgroundColor: Palette.neutral.color3,
-            textColor: Palette.character.disabledPlaceholder25,
+          BlocConsumer<JoinMeetingCubit, BaseState<Session>>(
+            bloc: sl<JoinMeetingCubit>(),
+            listener: (context, state) {
+              state.mapOrNull(
+                success: (data) {
+                  context.pushNamed(CallScreen.routeName, extra: {
+                    'channel': item.title,
+                    'token': data.data.token,
+                  });
+                },
+                failure: (failure) {
+                  failure.failure.message
+                      .showToast(type: ToastificationType.error);
+                },
+              );
+            },
+            builder: (context, state) {
+              return CustomButton(
+                isLoading: state.isLoading,
+                isTextBold: true,
+                text: 'انضم الان',
+                onPressed: () {
+                  sl<JoinMeetingCubit>().joinSession(item.id);
+                },
+                backgroundColor: Palette.neutral.color3,
+                textColor: Palette.character.disabledPlaceholder25,
+              );
+            },
           ),
           15.verticalSpace,
           CustomButton.text(

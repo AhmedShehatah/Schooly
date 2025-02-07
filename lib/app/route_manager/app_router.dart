@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
-import '../../presentation/upcoming_classes/widgets/upcoming_classes_widget.dart';
+import '../../presentation/upcoming_classes/pages/upcoming_classes_screen.dart';
 import '../../presentation/auth/login/pages/login_screen.dart';
 
 class AppRouter {
@@ -14,10 +14,10 @@ class AppRouter {
     initialLocation: LoginScreen.routeName,
     routes: [
       GoRoute(
-        name: UpcomingClassesWidget.routeName,
-        path: UpcomingClassesWidget.routeName,
+        name: UpcomingClassesScreen.routeName,
+        path: UpcomingClassesScreen.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
-          const UpcomingClassesWidget(),
+          const UpcomingClassesScreen(),
           state,
         ),
       ),
@@ -25,10 +25,9 @@ class AppRouter {
         name: CallScreen.routeName,
         path: CallScreen.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
-          const CallScreen(
-            channelName: 'channel',
-            token:
-                '007eJxTYHiZ4vJj3qUf++5t89+4lyvhoMbiG/1u2vy/JstxR2678ydNgcHUMsUiLdXYIsUkxdjEyNQsKcXSzDApLdUyNTnJ1DjF4Ajb0vSGQEYGD+bfDIxQCOKzMyRnJOblpeYwMAAAjj4i9w==',
+          CallScreen(
+            channelName: (state.extra as Map<String, dynamic>)['channel'],
+            token: (state.extra as Map<String, dynamic>)['token'],
           ),
           state,
         ),

@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../core/domain/use_cases/base_use_case.dart';
-import '../../../core/result/result.dart';
-import '../entities/upcoming_classes.dart';
-import '../repos/upcoming_classes_repo.dart';
+import '../../../../core/domain/use_cases/base_use_case.dart';
+import '../../../../core/result/result.dart';
+import '../../entities/upcoming_classes/upcoming_classes.dart';
+import '../../repos/upcoming_classes_repo.dart';
 part 'upcoming_classes_use_case.freezed.dart';
 part 'upcoming_classes_use_case.g.dart';
 
