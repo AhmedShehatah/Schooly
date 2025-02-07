@@ -2,10 +2,17 @@
   "cSpell.words": [
     "alshayaa",
     "fayrouz",
+<<<<<<< HEAD
+=======
+    "loginimage",
+>>>>>>> main
     "Prefs",
     "schooly",
     "sider"
   ],
+<<<<<<< HEAD
   "cmake.sourceDirectory": "E:/flutter/FlutterProjects/Schooly/windows/runner",
+=======
+>>>>>>> main
   "dart.flutterSdkPath": ".fvm/versions/3.24.0"
 }

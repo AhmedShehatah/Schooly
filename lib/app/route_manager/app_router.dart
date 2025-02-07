@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../domain/upcoming_classes/entities/upcoming_classes.dart';
-import '../../presentation/lesson_meeting/lesson_meeting_screen.dart';
-import '../../presentation/upcoming_classes/widgets/class_card_widget.dart';
+import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
 import '../../presentation/upcoming_classes/widgets/upcoming_classes_widget.dart';
-import '../../presentation/test.dart';
+import '../../presentation/auth/login/pages/login_screen.dart';
 
 class AppRouter {
   final _rootNavigatorKey = GlobalKey<NavigatorState>();
+  // ignore: unused_field
   final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
   late final router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: UpcomingClassesWidget.routeName,
+    initialLocation: LoginScreen.routeName,
     routes: [
       GoRoute(
         name: UpcomingClassesWidget.routeName,
@@ -31,6 +30,14 @@ class AppRouter {
             token:
                 '007eJxTYHiZ4vJj3qUf++5t89+4lyvhoMbiG/1u2vy/JstxR2678ydNgcHUMsUiLdXYIsUkxdjEyNQsKcXSzDApLdUyNTnJ1DjF4Ajb0vSGQEYGD+bfDIxQCOKzMyRnJOblpeYwMAAAjj4i9w==',
           ),
+          state,
+        ),
+      ),
+      GoRoute(
+        name: LoginScreen.routeName,
+        path: LoginScreen.routeName,
+        pageBuilder: (_, state) => _buildPageWithTransition(
+          const LoginScreen(),
           state,
         ),
       ),

@@ -24,6 +24,7 @@ class ShimmerItem extends StatelessWidget {
   final BorderRadius borderRadius;
 
   // dependencies
+  // ignore: unused_field
   final _palette = sl<Palette>();
 
   final bool _shimmer;
