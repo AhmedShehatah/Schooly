@@ -1,18 +1,20 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../app/di/injection_container.dart';
-import '../../../../app/route_manager/app_router.dart';
 import '../../../../core/assets/assets.gen.dart';
 import '../../../../core/localization/localization_manager.dart';
+import '../../../../core/shared_preferences/prefs_keys.dart';
+import '../../../../core/shared_preferences/shared_prefs.dart';
 import '../../../../core/states/base_state.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../core/widgets/fields/custom_input.dart';
 import '../../../../core/widgets/text/custom_text.dart';
 import '../../../../domain/auth/use_cases/login_use_case/login_use_case.dart';
+import '../../../upcoming_classes/pages/upcoming_classes_screen.dart';
 import '../cubit/login_cubit.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -32,6 +34,9 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
+    if (sl<SharedPrefs>().getBool(key: PrefsKeys.isLogged) == true) {
+      context.goNamed(UpcomingClassesScreen.routeName);
+    }
     if (kDebugMode) {
       _emailController.text = 'test@test.com';
       _passwordController.text = 'testtest';
@@ -63,7 +68,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   listenWhen: (o, n) => o != n,
                   listener: (context, state) {
                     state.whenOrNull(
-                      success: (data) => sl<AppRouter>(),
+                      success: (data) =>
+                          context.goNamed(UpcomingClassesScreen.routeName),
                     );
                   },
                   builder: (context, state) {

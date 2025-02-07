@@ -6,6 +6,15 @@ import '../../core/network/network_setup.dart';
 import '../../core/shared_preferences/shared_prefs.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/validators.dart';
+
+import '../../data/upcoming_classes/data_sources/upcoming_classes_remote_data_source.dart';
+import '../../data/upcoming_classes/repos/upcoming_classes_repo_impl.dart';
+import '../../domain/upcoming_classes/repos/upcoming_classes_repo.dart';
+import '../../domain/upcoming_classes/use_cases/join_session_use_case/join_session_use_case.dart';
+import '../../domain/upcoming_classes/use_cases/upcoming_classes/upcoming_classes_use_case.dart';
+import '../../presentation/lesson_meeting/cubits/join_meeting_cubit.dart';
+import '../../presentation/upcoming_classes/cubit/upcoming_classes_cubit.dart';
+
 import '../../data/auth/remote/auth_remote_data_source.dart';
 import '../../data/auth/repo/auth_repo_impl.dart';
 import '../../domain/auth/repo/auth_repo.dart';
@@ -18,17 +27,26 @@ final sl = GetIt.instance;
 Future<void> init() async {
 // cubits
   sl.registerLazySingleton(() => LoginCubit(sl()));
+  sl.registerLazySingleton(() => UpcomingClassesCubit(sl()));
+  sl.registerLazySingleton(() => JoinMeetingCubit(sl()));
 
   //! useCases
 
   sl.registerLazySingleton(() => LoginUseCase(sl()));
+  sl.registerLazySingleton(() => UpcomingClassesUseCase(sl()));
+  sl.registerLazySingleton(() => JoinSessionUseCase(sl()));
 
   //! repos
   sl.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(sl()));
-
+  sl.registerLazySingleton<UpcomingClassesRepo>(
+      () => UpcomingClassesRepoImpl(sl()));
   //! data sources
   sl.registerLazySingleton<AuthRemoteDataSource>(
       () => AuthRemoteDataSourceImpl(sl()));
+  sl.registerLazySingleton<UpcomingClassesRemoteDataSource>(
+      () => UpcomingClassesRemoteDataSourceImpl(sl()));
+
+  // core
 
   sl.registerSingleton(const FlutterSecureStorage());
   sl.registerSingleton(await SharedPreferences.getInstance());
