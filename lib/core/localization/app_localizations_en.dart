@@ -48,6 +48,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mustLogin => 'You must login first';
 
   @override
+  String get login => 'Login';
+
+  @override
+  String get forgotPassword => 'Forgot Password?';
+
+  @override
   String get invalidPhoneNumber => 'Invalid phone number';
 
   @override

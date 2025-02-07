@@ -48,6 +48,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get mustLogin => 'يجب عليك تسجيل الدخول';
 
   @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get forgotPassword => 'هل نسيت كلمة السر؟';
+
+  @override
   String get invalidPhoneNumber => 'رقم الجوال غير صحيح';
 
   @override

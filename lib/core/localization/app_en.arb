@@ -12,6 +12,8 @@
     "password": "Password",
     "@validators": {},
     "mustLogin": "You must login first",
+    "login":"Login",
+     "forgotPassword":"Forgot Password?",
     "invalidPhoneNumber": "Invalid phone number",
     "identityNumberValidation": "Identity number must be at least 7 digits",
     "mustEnter": "Must enter {value}",

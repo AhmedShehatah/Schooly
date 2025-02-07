@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../presentation/test.dart';
+import '../../presentation/auth/login/pages/login_screen.dart';
 
 class AppRouter {
   final _rootNavigatorKey = GlobalKey<NavigatorState>();
+  // ignore: unused_field
   final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
   late final router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: TestScreen.routeName,
+    initialLocation: LoginScreen.routeName,
     routes: [
       GoRoute(
-        name: TestScreen.routeName,
-        path: TestScreen.routeName,
+        name: LoginScreen.routeName,
+        path: LoginScreen.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
-          const TestScreen(),
+          const LoginScreen(),
           state,
         ),
       ),
