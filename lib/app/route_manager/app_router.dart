@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
+import '../../domain/upcoming_classes/entities/upcoming_classes.dart';
+import '../../presentation/lesson_meeting/lesson_meeting_screen.dart';
+import '../../presentation/upcoming_classes/widgets/class_card_widget.dart';
+import '../../presentation/upcoming_classes/widgets/upcoming_classes_widget.dart';
 import '../../presentation/test.dart';
 
 class AppRouter {
@@ -9,13 +12,25 @@ class AppRouter {
 
   late final router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: TestScreen.routeName,
+    initialLocation: UpcomingClassesWidget.routeName,
     routes: [
       GoRoute(
-        name: TestScreen.routeName,
-        path: TestScreen.routeName,
+        name: UpcomingClassesWidget.routeName,
+        path: UpcomingClassesWidget.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
-          const TestScreen(),
+          const UpcomingClassesWidget(),
+          state,
+        ),
+      ),
+      GoRoute(
+        name: CallScreen.routeName,
+        path: CallScreen.routeName,
+        pageBuilder: (_, state) => _buildPageWithTransition(
+          const CallScreen(
+            channelName: 'channel',
+            token:
+                '007eJxTYHiZ4vJj3qUf++5t89+4lyvhoMbiG/1u2vy/JstxR2678ydNgcHUMsUiLdXYIsUkxdjEyNQsKcXSzDApLdUyNTnJ1DjF4Ajb0vSGQEYGD+bfDIxQCOKzMyRnJOblpeYwMAAAjj4i9w==',
+          ),
           state,
         ),
       ),

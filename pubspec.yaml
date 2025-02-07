@@ -40,6 +40,8 @@ dependencies:
   go_router: ^14.6.3
   jwt_decoder: ^2.0.1
   upgrader: ^11.3.1
+  json_annotation: ^4.9.0
+  json_serializable: ^6.9.0
 
 dev_dependencies:
   flutter_test:
@@ -54,8 +56,6 @@ flutter:
 
   assets:
     - assets/images/
-    #   - assets/icons/
-    #   - assets/lottie/
     - .env
 
   fonts:
