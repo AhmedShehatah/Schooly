@@ -14,6 +14,8 @@
     "identityNumberValidation": "رقم الهوية يجب أن لا يقل عن ٧ أرقام",
     "mustEnter": "يجب ادخال {value}",
     "mustLogin": "يجب عليك تسجيل الدخول",
+    "login":"تسجيل الدخول",
+    "forgotPassword":"هل نسيت كلمة السر؟",
     "invalidPhoneNumber": "رقم الجوال غير صحيح",
     "nationalId": "رقم الهوية",
     "country": "الدولة",

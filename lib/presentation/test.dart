@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../core/widgets/buttons/custom_button.dart';
-import '../core/widgets/fields/custom_input.dart';
 
 class TestScreen extends StatelessWidget {
   const TestScreen({super.key});
@@ -18,15 +14,7 @@ class TestScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             1.sw.horizontalSpace,
-            CustomInput(
-              title: 'Email',
-              hint: 'Enter your email',
-              required: false,
-            ),
-            CustomButton(
-              text: 'heelo world',
-              onPressed: () {},
-            ),
+            Text('Totaaaaaaaaaa'),
           ],
         ),
       ),

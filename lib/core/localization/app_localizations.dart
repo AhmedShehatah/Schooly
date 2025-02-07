@@ -173,6 +173,18 @@ abstract class AppLocalizations {
   /// **'يجب عليك تسجيل الدخول'**
   String get mustLogin;
 
+  /// No description provided for @login.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل الدخول'**
+  String get login;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'هل نسيت كلمة السر؟'**
+  String get forgotPassword;
+
   /// No description provided for @invalidPhoneNumber.
   ///
   /// In ar, this message translates to:

@@ -54,11 +54,10 @@ flutter:
 
 
   assets:
+    - .env
     - assets/images/
     - assets/icons/
     - assets/lottie/
-    - .env
-
 
   fonts:
     - family: Alexandria
