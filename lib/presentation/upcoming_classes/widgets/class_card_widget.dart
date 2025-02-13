@@ -24,7 +24,7 @@ class ClassCardWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: 8.sp),
           child: ListTile(
-            leading: Assets.images.science.image(
+            leading: Assets.images.atom.image(
               width: 52.sp,
               height: 52.sp,
             ),

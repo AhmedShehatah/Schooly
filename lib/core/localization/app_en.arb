@@ -80,6 +80,11 @@
     "from": "From",
     "to": "To",
     "yourClasses": "Your Classes",
-    "hello": "Hello 👋"
-
+    "hello": "Hello 👋",
+    "yourSchool": "Your School",
+    "schooly": "Schooly",
+    "inYourBucket": "In your bucket",
+    "digitalTeachingIsFuture": "Digital teaching is the future",
+    "schoolyIsLinkWithAi": "is linking between you and your school with modern AI technologies.",
+    "startNow": "Start Now!"
 }

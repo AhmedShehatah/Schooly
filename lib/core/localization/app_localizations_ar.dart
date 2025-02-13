@@ -195,4 +195,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get hello => 'مرحبًا 👋';
+
+  @override
+  String get yourSchool => 'مَدرستك';
+
+  @override
+  String get schooly => 'سكولي';
+
+  @override
+  String get inYourBucket => 'في جيبك';
+
+  @override
+  String get digitalTeachingIsFuture => 'التعليم الرقمي هو الطريق للمستقبل.';
+
+  @override
+  String get schoolyIsLinkWithAi => 'بتوصل بينك وبين مدرستك بأحدث تقنيات الذكاء الاصطناعي.';
+
+  @override
+  String get startNow => 'ابدا دلوقتي!';
 }

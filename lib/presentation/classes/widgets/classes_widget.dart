@@ -36,6 +36,12 @@ class ClassesWidget extends StatelessWidget {
                   bottomLeft: Radius.circular(24.r),
                   bottomRight: Radius.circular(24.r),
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Palette.neutral.color5,
+                    blurRadius: 1,
+                  )
+                ],
               ),
               child: Padding(
                 padding:

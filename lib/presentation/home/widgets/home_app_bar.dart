@@ -26,12 +26,18 @@ class _HomeAppBarState extends State<HomeAppBar> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.bottomCenter,
-      padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 20.h),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: ListTile(
         contentPadding: EdgeInsets.zero,
-        leading: Assets.images.science.image(
-          width: 48.sp,
-          height: 48.sp,
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(999.r),
+          child: Container(
+            color: Palette.green.shade400,
+            child: Assets.images.profile.image(
+              width: 48.sp,
+              height: 48.sp,
+            ),
+          ),
         ),
         title: CustomText.s11(
           _localizations.hello,

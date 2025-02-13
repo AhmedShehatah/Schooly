@@ -171,4 +171,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hello => 'Hello 👋';
+
+  @override
+  String get yourSchool => 'Your School';
+
+  @override
+  String get schooly => 'Schooly';
+
+  @override
+  String get inYourBucket => 'In your bucket';
+
+  @override
+  String get digitalTeachingIsFuture => 'Digital teaching is the future';
+
+  @override
+  String get schoolyIsLinkWithAi => 'is linking between you and your school with modern AI technologies.';
+
+  @override
+  String get startNow => 'Start Now!';
 }

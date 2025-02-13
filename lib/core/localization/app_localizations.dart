@@ -322,6 +322,42 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'مرحبًا 👋'**
   String get hello;
+
+  /// No description provided for @yourSchool.
+  ///
+  /// In ar, this message translates to:
+  /// **'مَدرستك'**
+  String get yourSchool;
+
+  /// No description provided for @schooly.
+  ///
+  /// In ar, this message translates to:
+  /// **'سكولي'**
+  String get schooly;
+
+  /// No description provided for @inYourBucket.
+  ///
+  /// In ar, this message translates to:
+  /// **'في جيبك'**
+  String get inYourBucket;
+
+  /// No description provided for @digitalTeachingIsFuture.
+  ///
+  /// In ar, this message translates to:
+  /// **'التعليم الرقمي هو الطريق للمستقبل.'**
+  String get digitalTeachingIsFuture;
+
+  /// No description provided for @schoolyIsLinkWithAi.
+  ///
+  /// In ar, this message translates to:
+  /// **'بتوصل بينك وبين مدرستك بأحدث تقنيات الذكاء الاصطناعي.'**
+  String get schoolyIsLinkWithAi;
+
+  /// No description provided for @startNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدا دلوقتي!'**
+  String get startNow;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

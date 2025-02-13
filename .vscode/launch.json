@@ -9,7 +9,7 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "debug",
-            "program": "lib/main.dart",
+            "program": "lib/app/main.dart",
             "args": [
                 "--target",
                 "lib/app/main.dart"
@@ -19,7 +19,7 @@
             "name": "Production",
             "request": "launch",
             "type": "dart",
-            "program": "lib/main.dart",
+            "program": "lib/app/main.dart",
             "args": [
                 "--target",
                 "lib/app/main.dart"
