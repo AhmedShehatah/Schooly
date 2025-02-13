@@ -346,6 +346,36 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'ابدا دلوقتي!'**
   String get startNow;
+
+  /// No description provided for @home.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرئيسية'**
+  String get home;
+
+  /// No description provided for @notifications.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإشعارات'**
+  String get notifications;
+
+  /// No description provided for @schedule.
+  ///
+  /// In ar, this message translates to:
+  /// **'الجدول'**
+  String get schedule;
+
+  /// No description provided for @classes.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفصول'**
+  String get classes;
+
+  /// No description provided for @settings.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإعدادات'**
+  String get settings;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

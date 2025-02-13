@@ -84,5 +84,10 @@
     "inYourBucket": "في جيبك",
     "digitalTeachingIsFuture": "التعليم الرقمي هو الطريق للمستقبل.",
     "schoolyIsLinkWithAi": "بتوصل بينك وبين مدرستك بأحدث تقنيات الذكاء الاصطناعي.",
-    "startNow": "ابدا دلوقتي!"
+    "startNow": "ابدا دلوقتي!",
+    "home": "الرئيسية",
+    "notifications": "الإشعارات",
+    "schedule": "الجدول",
+    "classes": "الفصول",
+    "settings": "الإعدادات"
 }
