@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../presentation/classes/pages/classes_screen.dart';
+import '../../presentation/home/pages/home_screen.dart';
 import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
 import '../../presentation/upcoming_classes/pages/upcoming_classes_screen.dart';
 import '../../presentation/auth/login/pages/login_screen.dart';
@@ -11,13 +13,29 @@ class AppRouter {
 
   late final router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: LoginScreen.routeName,
+    initialLocation: HomeScreen.routeName,
     routes: [
       GoRoute(
         name: UpcomingClassesScreen.routeName,
         path: UpcomingClassesScreen.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
           const UpcomingClassesScreen(),
+          state,
+        ),
+      ),
+      GoRoute(
+        name: ClassesScreen.routeName,
+        path: ClassesScreen.routeName,
+        pageBuilder: (_, state) => _buildPageWithTransition(
+          const ClassesScreen(),
+          state,
+        ),
+      ),
+      GoRoute(
+        name: HomeScreen.routeName,
+        path: HomeScreen.routeName,
+        pageBuilder: (_, state) => _buildPageWithTransition(
+          const HomeScreen(),
           state,
         ),
       ),

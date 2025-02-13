@@ -8,6 +8,7 @@ import '../../../core/theme/palette.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
+import '../../home/widgets/home_app_bar.dart';
 import '../cubit/upcoming_classes_cubit.dart';
 import '../widgets/class_card_widget.dart';
 
@@ -33,9 +34,6 @@ class UpcomingClassesScreenState extends State<UpcomingClassesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'Schooly',
-      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
