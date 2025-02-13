@@ -13,6 +13,7 @@ import '../../domain/upcoming_classes/repos/upcoming_classes_repo.dart';
 import '../../domain/upcoming_classes/use_cases/join_session_use_case/join_session_use_case.dart';
 import '../../domain/upcoming_classes/use_cases/upcoming_classes/upcoming_classes_use_case.dart';
 import '../../presentation/lesson_meeting/cubits/join_meeting_cubit.dart';
+import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/upcoming_classes/cubit/upcoming_classes_cubit.dart';
 
 import '../../data/auth/remote/auth_remote_data_source.dart';
@@ -47,7 +48,7 @@ Future<void> init() async {
       () => UpcomingClassesRemoteDataSourceImpl(sl()));
 
   // core
-
+  sl.registerSingleton(BottomNavigationCubit());
   sl.registerSingleton(const FlutterSecureStorage());
   sl.registerSingleton(await SharedPreferences.getInstance());
   sl.registerSingleton(SharedPrefs(sl(), sl()));

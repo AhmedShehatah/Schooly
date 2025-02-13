@@ -84,5 +84,10 @@
     "inYourBucket": "In your bucket",
     "digitalTeachingIsFuture": "Digital teaching is the future",
     "schoolyIsLinkWithAi": "is linking between you and your school with modern AI technologies.",
-    "startNow": "Start Now!"
+    "startNow": "Start Now!",
+    "home": "Home",
+    "notifications": "Notifications",
+    "schedule": "Schedule",
+    "classes": "Classes",
+    "settings": "Settings"
 }
