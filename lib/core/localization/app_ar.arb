@@ -78,5 +78,11 @@
     "lessonType": "نوع الجلسة",
     "date": "التاريخ",
     "from": "من",
-    "to": "الى"
+    "to": "الى",
+    "yourSchool": "مَدرستك",
+    "schooly": "سكولي",
+    "inYourBucket": "في جيبك",
+    "digitalTeachingIsFuture": "التعليم الرقمي هو الطريق للمستقبل.",
+    "schoolyIsLinkWithAi": "بتوصل بينك وبين مدرستك بأحدث تقنيات الذكاء الاصطناعي.",
+    "startNow": "ابدا دلوقتي!"
 }

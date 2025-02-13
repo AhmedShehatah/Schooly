@@ -15,6 +15,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/atom.png
   AssetGenImage get atom => const AssetGenImage('assets/images/atom.png');
 
+  /// File path: assets/images/login.png
+  AssetGenImage get login => const AssetGenImage('assets/images/login.png');
+
   /// File path: assets/images/loginimage.png
   AssetGenImage get loginimage =>
       const AssetGenImage('assets/images/loginimage.png');
@@ -22,8 +25,11 @@ class $AssetsImagesGen {
   /// File path: assets/images/science.png
   AssetGenImage get science => const AssetGenImage('assets/images/science.png');
 
+  /// File path: assets/images/splash.png
+  AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [atom, loginimage, science];
+  List<AssetGenImage> get values => [atom, login, loginimage, science, splash];
 }
 
 class Assets {

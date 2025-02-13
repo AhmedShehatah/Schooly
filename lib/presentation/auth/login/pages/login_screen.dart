@@ -6,8 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../app/di/injection_container.dart';
 import '../../../../core/assets/assets.gen.dart';
 import '../../../../core/localization/localization_manager.dart';
-import '../../../../core/shared_preferences/prefs_keys.dart';
-import '../../../../core/shared_preferences/shared_prefs.dart';
+
 import '../../../../core/states/base_state.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../core/widgets/buttons/custom_button.dart';
@@ -34,9 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    if (sl<SharedPrefs>().getBool(key: PrefsKeys.isLogged) == true) {
-      context.goNamed(UpcomingClassesScreen.routeName);
-    }
+
     if (kDebugMode) {
       _emailController.text = 'test@test.com';
       _passwordController.text = 'testtest';
@@ -47,52 +44,54 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Assets.images.loginimage.image(height: 382.h),
-                CustomInput(
-                  title: _localization.email,
-                  controller: _emailController,
-                ),
-                10.verticalSpace,
-                CustomInput.obscure(controller: _passwordController),
-                20.verticalSpace,
-                BlocConsumer<LoginCubit, BaseState>(
-                  bloc: sl<LoginCubit>(),
-                  listenWhen: (o, n) => o != n,
-                  listener: (context, state) {
-                    state.whenOrNull(
-                      success: (data) =>
-                          context.goNamed(UpcomingClassesScreen.routeName),
-                    );
-                  },
-                  builder: (context, state) {
-                    return CustomButton(
-                      isLoading: state.isLoading,
-                      isExpanded: true,
-                      text: _localization.login,
-                      onPressed: () {
-                        if (!_formKey.currentState!.validate()) return;
-                        sl<LoginCubit>().login(
-                          params: LoginParams(
-                            email: _emailController.text,
-                            password: _passwordController.text,
-                          ),
-                        );
-                      },
-                    );
-                  },
-                ),
-                20.verticalSpace,
-                CustomText.s11(
-                    sl<LocaleCubit>().appLocalizations.forgotPassword),
-              ],
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+          child: SingleChildScrollView(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Assets.images.login.image(height: 382.h),
+                  CustomInput(
+                    title: _localization.email,
+                    controller: _emailController,
+                  ),
+                  10.verticalSpace,
+                  CustomInput.obscure(controller: _passwordController),
+                  20.verticalSpace,
+                  BlocConsumer<LoginCubit, BaseState>(
+                    bloc: sl<LoginCubit>(),
+                    listenWhen: (o, n) => o != n,
+                    listener: (context, state) {
+                      state.whenOrNull(
+                        success: (data) =>
+                            context.goNamed(UpcomingClassesScreen.routeName),
+                      );
+                    },
+                    builder: (context, state) {
+                      return CustomButton(
+                        isLoading: state.isLoading,
+                        isExpanded: true,
+                        text: _localization.login,
+                        onPressed: () {
+                          if (!_formKey.currentState!.validate()) return;
+                          sl<LoginCubit>().login(
+                            params: LoginParams(
+                              email: _emailController.text,
+                              password: _passwordController.text,
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  ),
+                  20.verticalSpace,
+                  CustomText.s11(
+                      sl<LocaleCubit>().appLocalizations.forgotPassword),
+                ],
+              ),
             ),
           ),
         ),
