@@ -78,5 +78,7 @@
     "lessonType": "Lesson Type",
     "date": "Date",
     "from": "From",
-    "to": "To"
+    "to": "To",
+    "yourClasses": "Your Classes",
+    "hello": "Hello 👋"
 }

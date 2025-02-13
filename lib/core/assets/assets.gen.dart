@@ -19,11 +19,17 @@ class $AssetsImagesGen {
   AssetGenImage get loginimage =>
       const AssetGenImage('assets/images/loginimage.png');
 
+  /// File path: assets/images/math.png
+  AssetGenImage get math => const AssetGenImage('assets/images/math.png');
+
   /// File path: assets/images/science.png
   AssetGenImage get science => const AssetGenImage('assets/images/science.png');
 
+  /// File path: assets/images/woman.png
+  AssetGenImage get woman => const AssetGenImage('assets/images/woman.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [atom, loginimage, science];
+  List<AssetGenImage> get values => [atom, loginimage, math, science, woman];
 }
 
 class Assets {
