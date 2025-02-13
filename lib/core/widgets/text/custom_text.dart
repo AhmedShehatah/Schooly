@@ -2,6 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomText extends StatelessWidget {
+  CustomText.s46(
+    this.text, {
+    super.key,
+    this.bold = false,
+    this.center = false,
+    this.overflow = false,
+    this.underline = false,
+    this.maxLines,
+    this.color,
+  }) : _fontSize = 46.sp;
+  CustomText.s48(
+    this.text, {
+    super.key,
+    this.bold = false,
+    this.center = false,
+    this.overflow = false,
+    this.underline = false,
+    this.maxLines,
+    this.color,
+  }) : _fontSize = 48.sp;
   CustomText.s33(
     this.text, {
     super.key,
