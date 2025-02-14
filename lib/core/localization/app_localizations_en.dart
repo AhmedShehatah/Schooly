@@ -189,4 +189,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get startNow => 'Start Now!';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get schedule => 'Schedule';
+
+  @override
+  String get classes => 'Classes';
+
+  @override
+  String get settings => 'Settings';
 }

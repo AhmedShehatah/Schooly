@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import '../../core/shared_preferences/prefs_keys.dart';
 import '../../core/shared_preferences/shared_prefs.dart';
 import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
+import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
+import '../../presentation/main/pages/main_screen.dart';
 import '../../presentation/splash/pages/splash_screen.dart';
 import '../../presentation/upcoming_classes/pages/upcoming_classes_screen.dart';
 import '../../presentation/auth/login/pages/login_screen.dart';
@@ -33,13 +35,62 @@ class AppRouter {
           state,
         ),
       ),
-      GoRoute(
-        name: UpcomingClassesScreen.routeName,
-        path: UpcomingClassesScreen.routeName,
-        pageBuilder: (_, state) => _buildPageWithTransition(
-          const UpcomingClassesScreen(),
-          state,
-        ),
+      ShellRoute(
+        navigatorKey: _shellNavigatorKey,
+        builder: (_, __, child) => MainScreen(child: child),
+        routes: [
+          GoRoute(
+              name: UpcomingClassesScreen.routeName,
+              path: UpcomingClassesScreen.routeName,
+              pageBuilder: (_, state) {
+                // sl<BottomNavigationCubit>().changePage(0);
+
+                return _buildPageWithTransition(
+                  const UpcomingClassesScreen(),
+                  state,
+                );
+              }),
+          GoRoute(
+            name: '/notifications',
+            path: '/notifications',
+            pageBuilder: (context, state) {
+              // sl<BottomNavigationCubit>().changePage(1);
+
+              return _buildPageWithTransition(
+                  const Center(child: Text('Notifications Screen')), state);
+            },
+          ),
+          GoRoute(
+            name: '/schedule',
+            path: '/schedule',
+            pageBuilder: (context, state) {
+              // sl<BottomNavigationCubit>().changePage(2);
+
+              return _buildPageWithTransition(
+                  const Center(child: Text('Schedule Screen')), state);
+            },
+          ),
+          GoRoute(
+            name: '/classes',
+            path: '/classes',
+            pageBuilder: (context, state) {
+              // sl<BottomNavigationCubit>().changePage(3);
+
+              return _buildPageWithTransition(
+                  const Center(child: Text('Classes Screen')), state);
+            },
+          ),
+          GoRoute(
+            name: '/settings',
+            path: '/settings',
+            pageBuilder: (context, state) {
+              // sl<BottomNavigationCubit>().changePage(4);
+
+              return _buildPageWithTransition(
+                  const Center(child: Text('Settings Screen')), state);
+            },
+          ),
+        ],
       ),
       GoRoute(
         name: CallScreen.routeName,

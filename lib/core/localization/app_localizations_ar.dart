@@ -213,4 +213,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get startNow => 'ابدا دلوقتي!';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get notifications => 'الإشعارات';
+
+  @override
+  String get schedule => 'الجدول';
+
+  @override
+  String get classes => 'الفصول';
+
+  @override
+  String get settings => 'الإعدادات';
 }
