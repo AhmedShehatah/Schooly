@@ -62,10 +62,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                 )
               ],
             ),
-            child: Icon(
-              Icons.notifications_none_outlined,
-              size: 22.sp,
-            ),
+            child: Assets.icons.bell.svg(),
           ),
         ),
       ),
