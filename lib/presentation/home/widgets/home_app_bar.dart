@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../app/di/injection_container.dart';
@@ -26,18 +25,13 @@ class _HomeAppBarState extends State<HomeAppBar> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.bottomCenter,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: ListTile(
         contentPadding: EdgeInsets.zero,
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(999.r),
-          child: Container(
-            color: Palette.green.shade400,
-            child: Assets.images.profile.image(
-              width: 48.sp,
-              height: 48.sp,
-            ),
-          ),
+        leading: CircleAvatar(
+          radius: 24.r,
+          backgroundColor: Palette.green.shade400,
+          backgroundImage: AssetImage(Assets.images.profile.path),
         ),
         title: CustomText.s11(
           _localizations.hello,
@@ -58,7 +52,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
               boxShadow: [
                 BoxShadow(
                   color: Palette.neutral.color5,
-                  blurRadius: 2,
+                  blurRadius: 2.r,
                 )
               ],
             ),

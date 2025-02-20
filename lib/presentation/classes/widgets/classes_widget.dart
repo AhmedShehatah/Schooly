@@ -39,13 +39,12 @@ class ClassesWidget extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: Palette.neutral.color5,
-                    blurRadius: 1,
+                    blurRadius: 1.r,
                   )
                 ],
               ),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 14.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

@@ -22,11 +22,11 @@ class ClassCardWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.sp),
+          padding: EdgeInsets.symmetric(vertical: 8.h),
           child: ListTile(
             leading: Assets.images.atom.image(
-              width: 52.sp,
-              height: 52.sp,
+              width: 52.w,
+              height: 52.h,
             ),
             title: CustomText.s11(
               '${item.subject} / ${item.grade}',
@@ -40,10 +40,9 @@ class ClassCardWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 6.sp),
+                SizedBox(height: 6.h),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.r),
                     color: Palette.sunsetOrange.color1,

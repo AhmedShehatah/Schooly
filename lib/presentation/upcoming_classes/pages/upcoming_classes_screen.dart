@@ -36,7 +36,7 @@ class UpcomingClassesScreenState extends State<UpcomingClassesScreen> {
     return Scaffold(
       appBar: const HomeAppBar(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
