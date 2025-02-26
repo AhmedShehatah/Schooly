@@ -167,6 +167,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get to => 'To';
 
   @override
+  String get yourClasses => 'Your Classes';
+
+  @override
+  String get hello => 'Hello 👋';
+
+  @override
   String get yourSchool => 'Your School';
 
   @override

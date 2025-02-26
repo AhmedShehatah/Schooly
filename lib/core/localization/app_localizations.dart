@@ -311,6 +311,18 @@ abstract class AppLocalizations {
   /// **'الى'**
   String get to;
 
+  /// No description provided for @yourClasses.
+  ///
+  /// In ar, this message translates to:
+  /// **'فصولك الدراسية'**
+  String get yourClasses;
+
+  /// No description provided for @hello.
+  ///
+  /// In ar, this message translates to:
+  /// **'مرحبًا 👋'**
+  String get hello;
+
   /// No description provided for @yourSchool.
   ///
   /// In ar, this message translates to:

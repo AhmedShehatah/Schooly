@@ -191,6 +191,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get to => 'الى';
 
   @override
+  String get yourClasses => 'فصولك الدراسية';
+
+  @override
+  String get hello => 'مرحبًا 👋';
+
+  @override
   String get yourSchool => 'مَدرستك';
 
   @override
