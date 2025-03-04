@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,36 +10,22 @@ import '../../../../core/utils/extensions.dart';
 import '../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../core/widgets/fields/custom_input.dart';
 import '../../../../core/widgets/text/custom_text.dart';
-import '../../../../domain/auth/use_cases/login_use_case/login_use_case.dart';
-import '../../../upcoming_classes/pages/upcoming_classes_screen.dart';
-import '../../forget_password/pages/forget_password_screen.dart';
-import '../cubit/login_cubit.dart';
+import '../../../../domain/auth/use_cases/forget_password_use_case/forget_password_use_case.dart';
+import '../../login/pages/login_screen.dart';
+import '../../reset_password/pages/reset_password_screen.dart';
+import '../cubit/forget_password_cubit.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
-  static const String routeName = '/login-screen';
-
+class ForgetPasswordScreen extends StatefulWidget {
+  const ForgetPasswordScreen({Key? key}) : super(key: key);
+  static const String routeName = '/change-password-screen';
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   final _localization = sl<LocaleCubit>().appLocalizations;
   final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-
-  @override
-  void initState() {
-    super.initState();
-
-    if (kDebugMode) {
-      _emailController.text = 'test@test.com';
-      _passwordController.text = 'testtest';
-      setState(() {});
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,52 +36,60 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Form(
               key: _formKey,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Assets.images.login.image(height: 382.h),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Assets.images.back.image(
+                      alignment: Alignment.topRight,
+                      width: 24.w,
+                      height: 24.h,
+                    ),
+                  ),
+                  10.verticalSpace,
+                  CustomText.s24(_localization.changePassword, bold: true),
+                  10.verticalSpace,
                   CustomInput(
                     title: _localization.email,
                     controller: _emailController,
                   ),
-                  10.verticalSpace,
-                  CustomInput.obscure(
-                      title: _localization.password,
-                      controller: _passwordController),
-                  20.verticalSpace,
-                  BlocConsumer<LoginCubit, BaseState>(
-                    bloc: sl<LoginCubit>(),
+                  24.verticalSpace,
+                  BlocConsumer<ForgetPasswordCubit, BaseState>(
+                    bloc: sl<ForgetPasswordCubit>(),
                     listenWhen: (o, n) => o != n,
                     listener: (context, state) {
                       state.whenOrNull(
                         success: (data) =>
-                            context.goNamed(UpcomingClassesScreen.routeName),
+                            context.goNamed(ResetPasswordScreen.routeName),
                       );
                     },
                     builder: (context, state) {
                       return CustomButton(
                         isLoading: state.isLoading,
                         isExpanded: true,
-                        text: _localization.login,
+                        text: _localization.sendChangeLink,
                         onPressed: () {
                           if (!_formKey.currentState!.validate()) return;
-                          sl<LoginCubit>().login(
-                            params: LoginParams(
+                          sl<ForgetPasswordCubit>().forgetPassword(
+                            params: ForgetPasswordParams(
                               email: _emailController.text,
-                              password: _passwordController.text,
                             ),
                           );
                         },
                       );
                     },
                   ),
-                  20.verticalSpace,
-                  TextButton(
+                  24.verticalSpace,
+                  Center(
+                    child: TextButton(
                       onPressed: () {
-                        context.goNamed(ForgetPasswordScreen.routeName);
+                        context.goNamed(LoginScreen.routeName);
                       },
                       child: CustomText.s17(
-                        _localization.forgotPassword,
-                      ))
+                        _localization.doYouWantToLogIn,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

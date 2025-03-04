@@ -152,7 +152,7 @@ abstract class AppLocalizations {
   /// No description provided for @password.
   ///
   /// In ar, this message translates to:
-  /// **'كلمة المرور'**
+  /// **'كلمة السر'**
   String get password;
 
   /// No description provided for @identityNumberValidation.
@@ -388,6 +388,48 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'الإعدادات'**
   String get settings;
+
+  /// No description provided for @sendChangeLink.
+  ///
+  /// In ar, this message translates to:
+  /// **'ارسل رابط التغيير'**
+  String get sendChangeLink;
+
+  /// No description provided for @changePassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'تغيير كلمة السر'**
+  String get changePassword;
+
+  /// No description provided for @doYouWantToLogIn.
+  ///
+  /// In ar, this message translates to:
+  /// **'هل تريد تسجيل الدخول؟'**
+  String get doYouWantToLogIn;
+
+  /// No description provided for @resetPasswordTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة تعيين كلمة السر'**
+  String get resetPasswordTitle;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'أعد كتابة كلمة السر الجديدة'**
+  String get confirmPassword;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة السر الجديدة'**
+  String get newPassword;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'أعد تعيين كلمة السر '**
+  String get resetPassword;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

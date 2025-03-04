@@ -9,7 +9,7 @@
     "serverError": "حدث خطأ في الخادم",
     "badCertificate": "خطأ في الشهادة الأمنية",
     "sessionExpired": "لقد انتهت الجلسة",
-    "password": "كلمة المرور",
+    "password": "كلمة السر",
     "@validators": {},
     "identityNumberValidation": "رقم الهوية يجب أن لا يقل عن ٧ أرقام",
     "mustEnter": "يجب ادخال {value}",
@@ -91,5 +91,12 @@
     "notifications": "الإشعارات",
     "schedule": "الجدول",
     "classes": "الفصول",
-    "settings": "الإعدادات"
+    "settings": "الإعدادات",
+    "sendChangeLink":"ارسل رابط التغيير",
+    "changePassword":"تغيير كلمة السر",
+    "doYouWantToLogIn":"هل تريد تسجيل الدخول؟",
+    "resetPasswordTitle":"إعادة تعيين كلمة السر",
+    "confirmPassword":"أعد كتابة كلمة السر الجديدة",
+    "newPassword": "كلمة السر الجديدة",
+    "resetPassword":"أعد تعيين كلمة السر "
 }

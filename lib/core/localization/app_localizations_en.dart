@@ -204,4 +204,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settings => 'Settings';
+
+  @override
+  String get sendChangeLink => 'Send change link';
+
+  @override
+  String get changePassword => 'Change Password';
+
+  @override
+  String get doYouWantToLogIn => 'هل تريد تسجيل الدخول؟';
+
+  @override
+  String get resetPasswordTitle => 'Reset Password';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get resetPassword => 'Reset password';
 }

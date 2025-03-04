@@ -91,5 +91,12 @@
     "notifications": "Notifications",
     "schedule": "Schedule",
     "classes": "Classes",
-    "settings": "Settings"
+    "settings": "Settings",
+    "sendChangeLink":"Send change link",
+    "changePassword":"Change Password",
+    "doYouWantToLogIn?":"Do you want to log in?",
+    "resetPasswordTitle":"Reset Password",
+    "confirmPassword":"Confirm Password",
+    "newPassword":"New Password",
+    "resetPassword":"Reset password"
 }
