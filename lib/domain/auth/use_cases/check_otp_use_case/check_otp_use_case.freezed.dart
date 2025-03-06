@@ -16,10 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CheckOtpParams {
-  @JsonKey(name: 'email')
   String get email => throw _privateConstructorUsedError;
-  @JsonKey(name: 'password_code')
-  String get passwordCode => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
 
   /// Serializes this CheckOtpParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,9 +35,7 @@ abstract class $CheckOtpParamsCopyWith<$Res> {
           CheckOtpParams value, $Res Function(CheckOtpParams) then) =
       _$CheckOtpParamsCopyWithImpl<$Res, CheckOtpParams>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'email') String email,
-      @JsonKey(name: 'password_code') String passwordCode});
+  $Res call({String email, String code});
 }
 
 /// @nodoc
@@ -58,16 +54,16 @@ class _$CheckOtpParamsCopyWithImpl<$Res, $Val extends CheckOtpParams>
   @override
   $Res call({
     Object? email = null,
-    Object? passwordCode = null,
+    Object? code = null,
   }) {
     return _then(_value.copyWith(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordCode: null == passwordCode
-          ? _value.passwordCode
-          : passwordCode // ignore: cast_nullable_to_non_nullable
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -81,9 +77,7 @@ abstract class _$$CheckOtpParamsImplCopyWith<$Res>
       __$$CheckOtpParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'email') String email,
-      @JsonKey(name: 'password_code') String passwordCode});
+  $Res call({String email, String code});
 }
 
 /// @nodoc
@@ -100,16 +94,16 @@ class __$$CheckOtpParamsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? email = null,
-    Object? passwordCode = null,
+    Object? code = null,
   }) {
     return _then(_$CheckOtpParamsImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordCode: null == passwordCode
-          ? _value.passwordCode
-          : passwordCode // ignore: cast_nullable_to_non_nullable
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -118,21 +112,17 @@ class __$$CheckOtpParamsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable(createFactory: false)
 class _$CheckOtpParamsImpl extends _CheckOtpParams {
-  const _$CheckOtpParamsImpl(
-      {@JsonKey(name: 'email') required this.email,
-      @JsonKey(name: 'password_code') required this.passwordCode})
+  const _$CheckOtpParamsImpl({required this.email, required this.code})
       : super._();
 
   @override
-  @JsonKey(name: 'email')
   final String email;
   @override
-  @JsonKey(name: 'password_code')
-  final String passwordCode;
+  final String code;
 
   @override
   String toString() {
-    return 'CheckOtpParams(email: $email, passwordCode: $passwordCode)';
+    return 'CheckOtpParams(email: $email, code: $code)';
   }
 
   @override
@@ -141,13 +131,12 @@ class _$CheckOtpParamsImpl extends _CheckOtpParams {
         (other.runtimeType == runtimeType &&
             other is _$CheckOtpParamsImpl &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.passwordCode, passwordCode) ||
-                other.passwordCode == passwordCode));
+            (identical(other.code, code) || other.code == code));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, email, passwordCode);
+  int get hashCode => Object.hash(runtimeType, email, code);
 
   /// Create a copy of CheckOtpParams
   /// with the given fields replaced by the non-null parameter values.
@@ -168,17 +157,14 @@ class _$CheckOtpParamsImpl extends _CheckOtpParams {
 
 abstract class _CheckOtpParams extends CheckOtpParams {
   const factory _CheckOtpParams(
-          {@JsonKey(name: 'email') required final String email,
-          @JsonKey(name: 'password_code') required final String passwordCode}) =
-      _$CheckOtpParamsImpl;
+      {required final String email,
+      required final String code}) = _$CheckOtpParamsImpl;
   const _CheckOtpParams._() : super._();
 
   @override
-  @JsonKey(name: 'email')
   String get email;
   @override
-  @JsonKey(name: 'password_code')
-  String get passwordCode;
+  String get code;
 
   /// Create a copy of CheckOtpParams
   /// with the given fields replaced by the non-null parameter values.

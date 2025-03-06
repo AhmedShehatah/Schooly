@@ -61,7 +61,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     listenWhen: (o, n) => o != n,
                     listener: (context, state) {
                       state.whenOrNull(
-                        success: (data) => context.goNamed(OtpScreen.routeName),
+                        success: (data) => context.goNamed(OtpScreen.routeName,
+                            extra: _emailController.text),
                       );
                     },
                     builder: (context, state) {
@@ -70,8 +71,11 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                         isExpanded: true,
                         text: _localization.sendChangeLink,
                         onPressed: () {
-                          context.goNamed(OtpScreen.routeName,
-                              extra: "test.test@gmail.com");
+                          if (!_formKey.currentState!.validate()) return;
+                          sl<ForgetPasswordCubit>().forgetPassword(
+                            params: ForgetPasswordParams(
+                                email: _emailController.text),
+                          );
                         },
                       );
                     },

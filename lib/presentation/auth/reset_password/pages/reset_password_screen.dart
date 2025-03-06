@@ -11,13 +11,14 @@ import '../../../../../core/widgets/text/custom_text.dart';
 import '../../../../core/states/base_state.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../domain/auth/use_cases/reset_password_use_case/reset_password_use_case.dart';
-import '../../../upcoming_classes/pages/upcoming_classes_screen.dart';
+import '../../login/pages/login_screen.dart';
 import '../../varify_code/pages/otp_screen.dart';
 import '../cubit/reset_password_cubit.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
-  const ResetPasswordScreen({Key? key}) : super(key: key);
+  const ResetPasswordScreen({Key? key, required this.email}) : super(key: key);
   static const String routeName = '/reset-password-screen';
+  final String email;
   @override
   State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
 }
@@ -25,7 +26,6 @@ class ResetPasswordScreen extends StatefulWidget {
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   final _localization = sl<LocaleCubit>().appLocalizations;
   final _newPasswordController = TextEditingController();
-  final _emailController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
@@ -69,7 +69,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                     listener: (context, state) {
                       state.whenOrNull(
                         success: (data) =>
-                            context.goNamed(UpcomingClassesScreen.routeName),
+                            context.goNamed(LoginScreen.routeName),
                       );
                     },
                     builder: (context, state) {
@@ -81,7 +81,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                           if (!_formKey.currentState!.validate()) return;
                           sl<ResetPasswordCubit>().resetPassword(
                             params: ResetPasswordParams(
-                              email: _emailController.text,
+                              email: widget.email,
                               newPassword: _newPasswordController.text,
                             ),
                           );

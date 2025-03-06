@@ -18,9 +18,9 @@ class AppRouter {
   final _shellNavigatorKey = GlobalKey<NavigatorState>();
   String get _initialLocation {
     if (sl<SharedPrefs>().getBool(key: PrefsKeys.isLogged) ?? false) {
-      return OtpScreen.routeName;
+      return UpcomingClassesScreen.routeName;
     } else {
-      return ForgetPasswordScreen.routeName;
+      return SplashScreen.routeName;
     }
   }
 
@@ -116,7 +116,7 @@ class AppRouter {
         name: OtpScreen.routeName,
         path: OtpScreen.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
-          OtpScreen(email: state.extra as String), // something wrong
+          OtpScreen(email: state.extra as String),
           state,
         ),
       ),
@@ -124,7 +124,7 @@ class AppRouter {
         name: ResetPasswordScreen.routeName,
         path: ResetPasswordScreen.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
-          const ResetPasswordScreen(),
+          ResetPasswordScreen(email: state.extra as String),
           state,
         ),
       ),

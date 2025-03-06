@@ -32,7 +32,7 @@ class OtpScreen extends StatefulWidget {
 class _OtpScreenState extends State<OtpScreen> {
   final _localization = sl<LocaleCubit>().appLocalizations;
   final _otpController = TextEditingController();
-  final ValueNotifier<int> _remainingTime = ValueNotifier(80);
+  final ValueNotifier<int> _remainingTime = ValueNotifier(600);
   final ValueNotifier<bool> _isTimerRunning = ValueNotifier(true);
   Timer? _timer;
   final _formKey = GlobalKey<FormState>();
@@ -88,6 +88,7 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
             18.verticalSpace,
             OTPTextField(
+              maxLength: 6,
               controller: _otpController,
             ),
             15.verticalSpace,
@@ -96,8 +97,9 @@ class _OtpScreenState extends State<OtpScreen> {
               listenWhen: (o, n) => o != n,
               listener: (context, state) {
                 state.whenOrNull(
-                  success: (data) =>
-                      context.goNamed(ResetPasswordScreen.routeName),
+                  success: (data) => context.goNamed(
+                      ResetPasswordScreen.routeName,
+                      extra: widget.email),
                 );
               },
               builder: (context, state) {
@@ -111,8 +113,8 @@ class _OtpScreenState extends State<OtpScreen> {
                     if (!_formKey.currentState!.validate()) return;
                     sl<CheckOtpCubit>().verifyCode(
                       params: CheckOtpParams(
-                        passwordCode: _otpController.text,
-                        email: "test@test.com",
+                        code: _otpController.text,
+                        email: widget.email,
                       ),
                     );
                   },
@@ -151,7 +153,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         : () {
                             sl<ForgetPasswordCubit>().forgetPassword(
                               params: ForgetPasswordParams(
-                                email: "test@test.com",
+                                email: widget.email,
                               ),
                             );
                           },
@@ -177,7 +179,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   void _startTimer() {
     _isTimerRunning.value = true;
-    _remainingTime.value = 80;
+    _remainingTime.value = 600;
     _timer?.cancel();
     _timer = Timer.periodic(
       const Duration(seconds: 1),

@@ -18,7 +18,7 @@ class CheckOtpUseCase implements BaseUseCase<void, CheckOtpParams> {
 class CheckOtpParams with _$CheckOtpParams {
   const CheckOtpParams._();
   const factory CheckOtpParams({
-    @JsonKey(name: 'email') required String email,
-    @JsonKey(name: 'password_code') required String passwordCode,
+    required String email,
+    required String code,
   }) = _CheckOtpParams;
 }

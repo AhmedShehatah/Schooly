@@ -10,5 +10,5 @@ Map<String, dynamic> _$$CheckOtpParamsImplToJson(
         _$CheckOtpParamsImpl instance) =>
     <String, dynamic>{
       'email': instance.email,
-      'password_code': instance.passwordCode,
+      'code': instance.code,
     };
