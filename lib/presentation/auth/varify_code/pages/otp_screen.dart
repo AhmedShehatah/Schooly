@@ -84,7 +84,7 @@ class _OtpScreenState extends State<OtpScreen> {
             49.verticalSpace,
             CustomText.s16(
               _localization.checkPhoneContent,
-              color: Palette.neutral.color6,
+              color: Palette.neutral.color7,
             ),
             18.verticalSpace,
             OTPTextField(
