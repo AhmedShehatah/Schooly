@@ -98,5 +98,16 @@
     "resetPasswordTitle":"إعادة تعيين كلمة السر",
     "confirmPassword":"أعد كتابة كلمة السر الجديدة",
     "newPassword": "كلمة السر الجديدة",
-    "resetPassword":"أعد تعيين كلمة السر "
+    "resetPassword":"أعد تعيين كلمة السر ",
+    "resendCodeNow": "أعد إرسال الرمز الآن",
+    "checkCode": "تحقق من الرمز",
+    "checkPhoneContent": "تحقق من رسائل الموبايل وأدخل الرمز المرسل عبر الخانات التالية:",
+    "resendCode": "أعد إرسال الرمز مرة أخرى بعد {seconds}",
+    "@resendCode": {
+        "placeholders": {
+            "seconds": {
+                "type": "String"
+            }
+        }
+    }
 }

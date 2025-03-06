@@ -430,6 +430,30 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'أعد تعيين كلمة السر '**
   String get resetPassword;
+
+  /// No description provided for @resendCodeNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'أعد إرسال الرمز الآن'**
+  String get resendCodeNow;
+
+  /// No description provided for @checkCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحقق من الرمز'**
+  String get checkCode;
+
+  /// No description provided for @checkPhoneContent.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحقق من رسائل الموبايل وأدخل الرمز المرسل عبر الخانات التالية:'**
+  String get checkPhoneContent;
+
+  /// No description provided for @resendCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'أعد إرسال الرمز مرة أخرى بعد {seconds}'**
+  String resendCode(String seconds);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

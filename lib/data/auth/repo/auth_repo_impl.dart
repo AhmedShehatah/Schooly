@@ -5,6 +5,7 @@ import '../../../core/result/result.dart';
 import '../../../core/shared_preferences/prefs_keys.dart';
 import '../../../core/shared_preferences/shared_prefs.dart';
 import '../../../domain/auth/repo/auth_repo.dart';
+import '../../../domain/auth/use_cases/check_otp_use_case/check_otp_use_case.dart';
 import '../../../domain/auth/use_cases/forget_password_use_case/forget_password_use_case.dart';
 import '../../../domain/auth/use_cases/login_use_case/login_use_case.dart';
 import '../../../domain/auth/use_cases/reset_password_use_case/reset_password_use_case.dart';
@@ -40,6 +41,16 @@ class AuthRepoImpl implements AuthRepo {
       {required ResetPasswordParams params}) async {
     try {
       await _authRemoteDataSource.resetPassword(params: params);
+      return const Right(null);
+    } on Failure catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Result<void>> verifyCode({required CheckOtpParams params}) async {
+    try {
+      await _authRemoteDataSource.verifyCode(params: params);
       return const Right(null);
     } on Failure catch (e) {
       return Left(e);

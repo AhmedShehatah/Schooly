@@ -12,7 +12,7 @@ import '../../../../core/widgets/fields/custom_input.dart';
 import '../../../../core/widgets/text/custom_text.dart';
 import '../../../../domain/auth/use_cases/forget_password_use_case/forget_password_use_case.dart';
 import '../../login/pages/login_screen.dart';
-import '../../reset_password/pages/reset_password_screen.dart';
+import '../../varify_code/pages/otp_screen.dart';
 import '../cubit/forget_password_cubit.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
@@ -39,7 +39,9 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.goNamed(LoginScreen.routeName);
+                    },
                     icon: Assets.images.back.image(
                       alignment: Alignment.topRight,
                       width: 24.w,
@@ -59,8 +61,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     listenWhen: (o, n) => o != n,
                     listener: (context, state) {
                       state.whenOrNull(
-                        success: (data) =>
-                            context.goNamed(ResetPasswordScreen.routeName),
+                        success: (data) => context.goNamed(OtpScreen.routeName),
                       );
                     },
                     builder: (context, state) {
@@ -69,12 +70,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                         isExpanded: true,
                         text: _localization.sendChangeLink,
                         onPressed: () {
-                          if (!_formKey.currentState!.validate()) return;
-                          sl<ForgetPasswordCubit>().forgetPassword(
-                            params: ForgetPasswordParams(
-                              email: _emailController.text,
-                            ),
-                          );
+                          context.goNamed(OtpScreen.routeName,
+                              extra: "test.test@gmail.com");
                         },
                       );
                     },

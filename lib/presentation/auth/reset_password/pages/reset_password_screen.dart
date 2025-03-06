@@ -12,6 +12,7 @@ import '../../../../core/states/base_state.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../domain/auth/use_cases/reset_password_use_case/reset_password_use_case.dart';
 import '../../../upcoming_classes/pages/upcoming_classes_screen.dart';
+import '../../varify_code/pages/otp_screen.dart';
 import '../cubit/reset_password_cubit.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
@@ -40,7 +41,9 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.goNamed(OtpScreen.routeName);
+                    },
                     icon: Assets.images.back.image(
                       alignment: Alignment.topRight,
                       width: 24.w,

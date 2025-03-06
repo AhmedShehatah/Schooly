@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../core/shared_preferences/prefs_keys.dart';
 import '../../core/shared_preferences/shared_prefs.dart';
 import '../../presentation/auth/forget_password/pages/forget_password_screen.dart';
 import '../../presentation/auth/reset_password/pages/reset_password_screen.dart';
+import '../../presentation/auth/varify_code/pages/otp_screen.dart';
 import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
 import '../../presentation/main/pages/main_screen.dart';
 import '../../presentation/splash/pages/splash_screen.dart';
@@ -18,9 +18,9 @@ class AppRouter {
   final _shellNavigatorKey = GlobalKey<NavigatorState>();
   String get _initialLocation {
     if (sl<SharedPrefs>().getBool(key: PrefsKeys.isLogged) ?? false) {
-      return ForgetPasswordScreen.routeName;
+      return OtpScreen.routeName;
     } else {
-      return SplashScreen.routeName;
+      return ForgetPasswordScreen.routeName;
     }
   }
 
@@ -109,6 +109,14 @@ class AppRouter {
         path: ForgetPasswordScreen.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
           const ForgetPasswordScreen(),
+          state,
+        ),
+      ),
+      GoRoute(
+        name: OtpScreen.routeName,
+        path: OtpScreen.routeName,
+        pageBuilder: (_, state) => _buildPageWithTransition(
+          OtpScreen(email: state.extra as String), // something wrong
           state,
         ),
       ),

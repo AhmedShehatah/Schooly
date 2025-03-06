@@ -249,4 +249,18 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get resetPassword => 'أعد تعيين كلمة السر ';
+
+  @override
+  String get resendCodeNow => 'أعد إرسال الرمز الآن';
+
+  @override
+  String get checkCode => 'تحقق من الرمز';
+
+  @override
+  String get checkPhoneContent => 'تحقق من رسائل الموبايل وأدخل الرمز المرسل عبر الخانات التالية:';
+
+  @override
+  String resendCode(String seconds) {
+    return 'أعد إرسال الرمز مرة أخرى بعد $seconds';
+  }
 }

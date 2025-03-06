@@ -225,4 +225,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resetPassword => 'Reset password';
+
+  @override
+  String get resendCodeNow => 'Resend Code Now';
+
+  @override
+  String get checkCode => 'Check the code';
+
+  @override
+  String get checkPhoneContent => 'Check your mobile messages and enter the code sent through the following boxes:';
+
+  @override
+  String resendCode(String seconds) {
+    return 'Send the code again after $seconds';
+  }
 }
