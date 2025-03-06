@@ -40,12 +40,12 @@ class RoomDetailsSheet extends StatelessWidget {
             children: [
               _buildTextIcon(
                   title: _localizations.teacher,
-                  icon: Assets.images.science.image(width: 25, height: 25),
+                  icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: item.teacherId),
               50.horizontalSpace,
               _buildTextIcon(
                   title: _localizations.lessonType,
-                  icon: Assets.images.science.image(width: 25, height: 25),
+                  icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: '${item.lessonType}')
             ],
           ),
@@ -55,15 +55,15 @@ class RoomDetailsSheet extends StatelessWidget {
             children: [
               _buildTextIcon(
                   title: _localizations.date,
-                  icon: Assets.images.science.image(width: 25, height: 25),
+                  icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: item.date),
               _buildTextIcon(
                   title: _localizations.from,
-                  icon: Assets.images.science.image(width: 25, height: 25),
+                  icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: item.from),
               _buildTextIcon(
                   title: _localizations.to,
-                  icon: Assets.images.science.image(width: 25, height: 25),
+                  icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: item.to),
             ],
           ),

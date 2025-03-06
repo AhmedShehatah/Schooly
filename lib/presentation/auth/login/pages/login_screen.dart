@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import '../../../../app/di/injection_container.dart';
 import '../../../../core/assets/assets.gen.dart';
 import '../../../../core/localization/localization_manager.dart';
-
 import '../../../../core/states/base_state.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../core/widgets/buttons/custom_button.dart';
@@ -14,6 +13,7 @@ import '../../../../core/widgets/fields/custom_input.dart';
 import '../../../../core/widgets/text/custom_text.dart';
 import '../../../../domain/auth/use_cases/login_use_case/login_use_case.dart';
 import '../../../upcoming_classes/pages/upcoming_classes_screen.dart';
+import '../../forget_password/pages/forget_password_screen.dart';
 import '../cubit/login_cubit.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -59,7 +59,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _emailController,
                   ),
                   10.verticalSpace,
-                  CustomInput.obscure(controller: _passwordController),
+                  CustomInput.obscure(
+                      title: _localization.password,
+                      controller: _passwordController),
                   20.verticalSpace,
                   BlocConsumer<LoginCubit, BaseState>(
                     bloc: sl<LoginCubit>(),
@@ -88,8 +90,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                   ),
                   20.verticalSpace,
-                  CustomText.s11(
-                      sl<LocaleCubit>().appLocalizations.forgotPassword),
+                  TextButton(
+                      onPressed: () {
+                        context.goNamed(ForgetPasswordScreen.routeName);
+                      },
+                      child: CustomText.s17(
+                        _localization.forgotPassword,
+                      ))
                 ],
               ),
             ),

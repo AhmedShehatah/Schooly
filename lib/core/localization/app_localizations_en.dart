@@ -167,6 +167,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get to => 'To';
 
   @override
+  String get yourClasses => 'Your Classes';
+
+  @override
+  String get hello => 'Hello 👋';
+
+  @override
   String get yourSchool => 'Your School';
 
   @override
@@ -183,4 +189,54 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get startNow => 'Start Now!';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get schedule => 'Schedule';
+
+  @override
+  String get classes => 'Classes';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get sendChangeLink => 'Send change link';
+
+  @override
+  String get changePassword => 'Change Password';
+
+  @override
+  String get doYouWantToLogIn => 'هل تريد تسجيل الدخول؟';
+
+  @override
+  String get resetPasswordTitle => 'Reset Password';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get resetPassword => 'Reset password';
+
+  @override
+  String get resendCodeNow => 'Resend Code Now';
+
+  @override
+  String get checkCode => 'Check the code';
+
+  @override
+  String get checkPhoneContent => 'Check your mobile messages and enter the code sent through the following boxes:';
+
+  @override
+  String resendCode(String seconds) {
+    return 'Send the code again after $seconds';
+  }
 }

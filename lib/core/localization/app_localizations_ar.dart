@@ -36,7 +36,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sessionExpired => 'لقد انتهت الجلسة';
 
   @override
-  String get password => 'كلمة المرور';
+  String get password => 'كلمة السر';
 
   @override
   String get identityNumberValidation => 'رقم الهوية يجب أن لا يقل عن ٧ أرقام';
@@ -191,6 +191,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get to => 'الى';
 
   @override
+  String get yourClasses => 'فصولك الدراسية';
+
+  @override
+  String get hello => 'مرحبًا 👋';
+
+  @override
   String get yourSchool => 'مَدرستك';
 
   @override
@@ -207,4 +213,54 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get startNow => 'ابدا دلوقتي!';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get notifications => 'الإشعارات';
+
+  @override
+  String get schedule => 'الجدول';
+
+  @override
+  String get classes => 'الفصول';
+
+  @override
+  String get settings => 'الإعدادات';
+
+  @override
+  String get sendChangeLink => 'ارسل رابط التغيير';
+
+  @override
+  String get changePassword => 'تغيير كلمة السر';
+
+  @override
+  String get doYouWantToLogIn => 'هل تريد تسجيل الدخول؟';
+
+  @override
+  String get resetPasswordTitle => 'إعادة تعيين كلمة السر';
+
+  @override
+  String get confirmPassword => 'أعد كتابة كلمة السر الجديدة';
+
+  @override
+  String get newPassword => 'كلمة السر الجديدة';
+
+  @override
+  String get resetPassword => 'أعد تعيين كلمة السر ';
+
+  @override
+  String get resendCodeNow => 'أعد إرسال الرمز الآن';
+
+  @override
+  String get checkCode => 'تحقق من الرمز';
+
+  @override
+  String get checkPhoneContent => 'تحقق من رسائل الموبايل وأدخل الرمز المرسل عبر الخانات التالية:';
+
+  @override
+  String resendCode(String seconds) {
+    return 'أعد إرسال الرمز مرة أخرى بعد $seconds';
+  }
 }
