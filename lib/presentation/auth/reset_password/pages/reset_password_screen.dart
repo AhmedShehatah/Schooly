@@ -12,7 +12,7 @@ import '../../../../core/states/base_state.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../domain/auth/use_cases/reset_password_use_case/reset_password_use_case.dart';
 import '../../login/pages/login_screen.dart';
-import '../../varify_code/pages/otp_screen.dart';
+import '../../verify_code/pages/otp_screen.dart';
 import '../cubit/reset_password_cubit.dart';
 
 class ResetPasswordScreen extends StatefulWidget {

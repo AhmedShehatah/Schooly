@@ -14,25 +14,6 @@ class HomeworkScreen extends StatefulWidget {
 class HomeworkScreenState extends State<HomeworkScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: ListView.separated(
-                itemBuilder: (context, index) {
-                  return const HomeworkCardWidget();
-                },
-                separatorBuilder: (context, index) => 15.horizontalSpace,
-                scrollDirection: Axis.vertical,
-                itemCount: 5,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    return const HomeworkCardWidget();
   }
 }

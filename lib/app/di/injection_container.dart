@@ -17,7 +17,7 @@ import '../../domain/upcoming_classes/use_cases/join_session_use_case/join_sessi
 import '../../domain/upcoming_classes/use_cases/upcoming_classes/upcoming_classes_use_case.dart';
 import '../../presentation/auth/forget_password/cubit/forget_password_cubit.dart';
 import '../../presentation/auth/reset_password/cubit/reset_password_cubit.dart';
-import '../../presentation/auth/varify_code/cubit/check_otp_cubit.dart';
+import '../../presentation/auth/verify_code/cubit/check_otp_cubit.dart';
 import '../../presentation/lesson_meeting/cubits/join_meeting_cubit.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/upcoming_classes/cubit/upcoming_classes_cubit.dart';

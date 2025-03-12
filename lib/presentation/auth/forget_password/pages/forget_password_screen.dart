@@ -12,7 +12,7 @@ import '../../../../core/widgets/fields/custom_input.dart';
 import '../../../../core/widgets/text/custom_text.dart';
 import '../../../../domain/auth/use_cases/forget_password_use_case/forget_password_use_case.dart';
 import '../../login/pages/login_screen.dart';
-import '../../varify_code/pages/otp_screen.dart';
+import '../../verify_code/pages/otp_screen.dart';
 import '../cubit/forget_password_cubit.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {

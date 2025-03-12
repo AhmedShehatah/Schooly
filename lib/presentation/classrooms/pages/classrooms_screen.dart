@@ -6,6 +6,7 @@ import '../../../app/di/injection_container.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../../core/widgets/text/custom_text.dart';
+import '../../homework/pages/homework_screen.dart';
 import '../../upcoming_classes/cubit/upcoming_classes_cubit.dart';
 import '../../upcoming_classes/pages/upcoming_classes_screen.dart';
 import '../widgets/upcoming_classes_widget.dart';
@@ -70,7 +71,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
               _buildTabChip(title: "واجبات", tab: ClassTabs.homeworks),
               _buildTabChip(title: "جلسات", tab: ClassTabs.sessios),
             ],
-          )
+          ),
+          const HomeworkScreen(),
         ],
       ),
     );

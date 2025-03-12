@@ -3,11 +3,11 @@ import 'package:go_router/go_router.dart';
 import '../../core/shared_preferences/prefs_keys.dart';
 import '../../core/shared_preferences/shared_prefs.dart';
 import '../../presentation/classrooms/pages/classrooms_screen.dart';
-import '../../presentation/homework/pages/homework_screen.dart';
 import '../../presentation/auth/forget_password/pages/forget_password_screen.dart';
 import '../../presentation/auth/reset_password/pages/reset_password_screen.dart';
-import '../../presentation/auth/varify_code/pages/otp_screen.dart';
+import '../../presentation/auth/verify_code/pages/otp_screen.dart';
 import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
+import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/main/pages/main_screen.dart';
 import '../../presentation/splash/pages/splash_screen.dart';
 import '../../presentation/upcoming_classes/pages/upcoming_classes_screen.dart';
@@ -46,8 +46,6 @@ class AppRouter {
               name: UpcomingClassesScreen.routeName,
               path: UpcomingClassesScreen.routeName,
               pageBuilder: (_, state) {
-                // sl<BottomNavigationCubit>().changePage(0);
-
                 return _buildPageWithTransition(
                   const UpcomingClassesScreen(),
                   state,
@@ -57,8 +55,6 @@ class AppRouter {
             name: '/notifications',
             path: '/notifications',
             pageBuilder: (context, state) {
-              // sl<BottomNavigationCubit>().changePage(1);
-
               return _buildPageWithTransition(
                   const Center(child: Text('Notifications Screen')), state);
             },
@@ -67,8 +63,6 @@ class AppRouter {
             name: '/schedule',
             path: '/schedule',
             pageBuilder: (context, state) {
-              // sl<BottomNavigationCubit>().changePage(2);
-
               return _buildPageWithTransition(
                   const Center(child: Text('Schedule Screen')), state);
             },
@@ -77,19 +71,16 @@ class AppRouter {
             name: '/classes',
             path: '/classes',
             pageBuilder: (context, state) {
-              // sl<BottomNavigationCubit>().changePage(3);
+              sl<BottomNavigationCubit>().changePage(3);
 
               return _buildPageWithTransition(const ClassesScreen(), state);
-
-              return _buildPageWithTransition(const HomeworkScreen(), state);
-
             },
           ),
           GoRoute(
             name: '/settings',
             path: '/settings',
             pageBuilder: (context, state) {
-              // sl<BottomNavigationCubit>().changePage(4);
+              sl<BottomNavigationCubit>().changePage(4);
 
               return _buildPageWithTransition(
                   const Center(child: Text('Settings Screen')), state);
