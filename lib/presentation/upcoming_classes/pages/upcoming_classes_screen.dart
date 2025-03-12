@@ -8,9 +8,10 @@ import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
-import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
+import '../../classes/widgets/classes_widget.dart';
+import '../../home/widgets/home_app_bar.dart';
 import '../cubit/upcoming_classes_cubit.dart';
 import '../widgets/class_card_widget.dart';
 
@@ -34,14 +35,49 @@ class UpcomingClassesScreenState extends State<UpcomingClassesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'Schooly',
-      ),
+      appBar: const HomeAppBar(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            /// your classes
+            Stack(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(children: [
+                        CustomText.s14(_localizations.yourClasses,
+                            color: Palette.character.title85),
+                        const Spacer(),
+                        InkWell(
+                            onTap: () {},
+                            child: CustomText.s11(_localizations.all,
+                                color: Palette.primary.color6))
+                      ]),
+                    ),
+                    15.verticalSpace,
+                    SizedBox(
+                      height: 215.h,
+                      child: ListView.separated(
+                        itemBuilder: (context, index) {
+                          return const ClassesWidget();
+                        },
+                        separatorBuilder: (context, index) =>
+                            15.horizontalSpace,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 5,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            16.verticalSpace,
+            // upcoming classes
             Row(
               children: [
                 CustomText.s14(

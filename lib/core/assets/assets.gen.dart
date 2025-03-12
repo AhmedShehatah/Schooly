@@ -18,6 +18,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/bell.svg
   SvgGenImage get bell => const SvgGenImage('assets/icons/bell.svg');
 
+  /// File path: assets/icons/download.svg
+  SvgGenImage get download => const SvgGenImage('assets/icons/download.svg');
+
   /// File path: assets/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/home.svg');
 
@@ -31,7 +34,8 @@ class $AssetsIconsGen {
   SvgGenImage get table => const SvgGenImage('assets/icons/table.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [bell, home, notebook, settings, table];
+  List<SvgGenImage> get values =>
+      [bell, download, home, notebook, settings, table];
 }
 
 class $AssetsImagesGen {
@@ -40,21 +44,27 @@ class $AssetsImagesGen {
   /// File path: assets/images/atom.png
   AssetGenImage get atom => const AssetGenImage('assets/images/atom.png');
 
+  /// File path: assets/images/back.png
+  AssetGenImage get back => const AssetGenImage('assets/images/back.png');
+
   /// File path: assets/images/login.png
   AssetGenImage get login => const AssetGenImage('assets/images/login.png');
 
-  /// File path: assets/images/loginimage.png
-  AssetGenImage get loginimage =>
-      const AssetGenImage('assets/images/loginimage.png');
+  /// File path: assets/images/math.png
+  AssetGenImage get math => const AssetGenImage('assets/images/math.png');
 
-  /// File path: assets/images/science.png
-  AssetGenImage get science => const AssetGenImage('assets/images/science.png');
+  /// File path: assets/images/profile.png
+  AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
 
   /// File path: assets/images/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
 
+  /// File path: assets/images/teacher.png
+  AssetGenImage get teacher => const AssetGenImage('assets/images/teacher.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [atom, login, loginimage, science, splash];
+  List<AssetGenImage> get values =>
+      [atom, back, login, math, profile, splash, teacher];
 }
 
 class Assets {
