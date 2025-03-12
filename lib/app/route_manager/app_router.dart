@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/shared_preferences/prefs_keys.dart';
 import '../../core/shared_preferences/shared_prefs.dart';
+import '../../presentation/homework/pages/homework_screen.dart';
 import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/main/pages/main_screen.dart';
@@ -17,7 +18,7 @@ class AppRouter {
   final _shellNavigatorKey = GlobalKey<NavigatorState>();
   String get _initialLocation {
     if (sl<SharedPrefs>().getBool(key: PrefsKeys.isLogged) ?? false) {
-      return UpcomingClassesScreen.routeName;
+      return LoginScreen.routeName;
     } else {
       return SplashScreen.routeName;
     }
@@ -76,8 +77,7 @@ class AppRouter {
             pageBuilder: (context, state) {
               // sl<BottomNavigationCubit>().changePage(3);
 
-              return _buildPageWithTransition(
-                  const Center(child: Text('Classes Screen')), state);
+              return _buildPageWithTransition(const HomeworkScreen(), state);
             },
           ),
           GoRoute(

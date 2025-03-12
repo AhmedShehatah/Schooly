@@ -18,6 +18,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/bell.svg
   SvgGenImage get bell => const SvgGenImage('assets/icons/bell.svg');
 
+  /// File path: assets/icons/download.svg
+  SvgGenImage get download => const SvgGenImage('assets/icons/download.svg');
+
   /// File path: assets/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/home.svg');
 
@@ -31,7 +34,8 @@ class $AssetsIconsGen {
   SvgGenImage get table => const SvgGenImage('assets/icons/table.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [bell, home, notebook, settings, table];
+  List<SvgGenImage> get values =>
+      [bell, download, home, notebook, settings, table];
 }
 
 class $AssetsImagesGen {
