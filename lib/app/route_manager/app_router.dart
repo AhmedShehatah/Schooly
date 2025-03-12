@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../core/shared_preferences/prefs_keys.dart';
 import '../../core/shared_preferences/shared_prefs.dart';
+import '../../presentation/auth/forget_password/pages/forget_password_screen.dart';
+import '../../presentation/auth/reset_password/pages/reset_password_screen.dart';
+import '../../presentation/auth/varify_code/pages/otp_screen.dart';
 import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
-import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/main/pages/main_screen.dart';
 import '../../presentation/splash/pages/splash_screen.dart';
 import '../../presentation/upcoming_classes/pages/upcoming_classes_screen.dart';
@@ -100,6 +101,30 @@ class AppRouter {
             channelName: (state.extra as Map<String, dynamic>)['channel'],
             token: (state.extra as Map<String, dynamic>)['token'],
           ),
+          state,
+        ),
+      ),
+      GoRoute(
+        name: ForgetPasswordScreen.routeName,
+        path: ForgetPasswordScreen.routeName,
+        pageBuilder: (_, state) => _buildPageWithTransition(
+          const ForgetPasswordScreen(),
+          state,
+        ),
+      ),
+      GoRoute(
+        name: OtpScreen.routeName,
+        path: OtpScreen.routeName,
+        pageBuilder: (_, state) => _buildPageWithTransition(
+          OtpScreen(email: state.extra as String),
+          state,
+        ),
+      ),
+      GoRoute(
+        name: ResetPasswordScreen.routeName,
+        path: ResetPasswordScreen.routeName,
+        pageBuilder: (_, state) => _buildPageWithTransition(
+          ResetPasswordScreen(email: state.extra as String),
           state,
         ),
       ),

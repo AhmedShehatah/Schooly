@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../app/di/injection_container.dart';
-import '../../localization/localization_manager.dart';
 import '../../theme/palette.dart';
 import '../../utils/validators.dart';
 import '../text/custom_text.dart';
@@ -30,7 +28,8 @@ class CustomInput extends StatefulWidget {
     this.textInputAction = TextInputAction.next,
     this.required = false,
     this.showAsterisk = true,
-  })  : title = sl<LocaleCubit>().appLocalizations.password,
+    required String title,
+  })  : title = title,
         hint = null,
         prefix = null,
         onChanged = null,
