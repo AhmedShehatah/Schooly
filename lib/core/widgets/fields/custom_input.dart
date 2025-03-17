@@ -13,6 +13,8 @@ class CustomInput extends StatefulWidget {
     this.suffix,
     this.prefix,
     this.onChanged,
+    this.backgroundColor,
+    this.hintColor,
     this.validator,
     this.controller,
     this.keyboardType,
@@ -28,6 +30,8 @@ class CustomInput extends StatefulWidget {
     this.textInputAction = TextInputAction.next,
     this.required = false,
     this.showAsterisk = true,
+    this.backgroundColor,
+    this.hintColor,
     required String title,
   })  : title = title,
         hint = null,
@@ -44,6 +48,8 @@ class CustomInput extends StatefulWidget {
   final String? hint;
   final Widget? suffix;
   final Widget? prefix;
+  final Color? backgroundColor;
+  final Color? hintColor;
   final TextInputType? keyboardType;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
@@ -156,7 +162,14 @@ class _CustomInputState extends State<CustomInput> {
                       return Icon(icon);
                     }),
                   ),
+                  filled: true,
+                  fillColor: widget.backgroundColor,
+                  hintStyle: TextStyle(
+                    color: widget.hintColor,
+                  ),
                 ),
+                maxLines: null,
+                minLines: 1,
               ),
             );
           }
@@ -172,12 +185,19 @@ class _CustomInputState extends State<CustomInput> {
               hintText: widget.hint,
               prefixIcon: widget.prefix,
               suffixIcon: _suffix,
+              filled: true,
+              fillColor: widget.backgroundColor,
+              hintStyle: TextStyle(
+                color: widget.hintColor,
+              ),
             ),
             style: TextStyle(
               fontSize: 14.sp,
               color: Colors.black,
               fontWeight: FontWeight.w400,
             ),
+            maxLines: null,
+            minLines: 1,
           );
         }),
       ],

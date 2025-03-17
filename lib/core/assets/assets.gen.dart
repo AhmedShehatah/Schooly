@@ -24,18 +24,34 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/home.svg');
 
+  /// File path: assets/icons/homework_file.svg
+  SvgGenImage get homeworkFile =>
+      const SvgGenImage('assets/icons/homework_file.svg');
+
   /// File path: assets/icons/notebook.svg
   SvgGenImage get notebook => const SvgGenImage('assets/icons/notebook.svg');
 
   /// File path: assets/icons/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/icons/settings.svg');
 
+  /// File path: assets/icons/slider-3-horizontal.svg
+  SvgGenImage get slider3Horizontal =>
+      const SvgGenImage('assets/icons/slider-3-horizontal.svg');
+
   /// File path: assets/icons/table.svg
   SvgGenImage get table => const SvgGenImage('assets/icons/table.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [bell, download, home, notebook, settings, table];
+  List<SvgGenImage> get values => [
+        bell,
+        download,
+        home,
+        homeworkFile,
+        notebook,
+        settings,
+        slider3Horizontal,
+        table
+      ];
 }
 
 class $AssetsImagesGen {
@@ -53,8 +69,15 @@ class $AssetsImagesGen {
   /// File path: assets/images/math.png
   AssetGenImage get math => const AssetGenImage('assets/images/math.png');
 
+  /// File path: assets/images/post.png
+  AssetGenImage get post => const AssetGenImage('assets/images/post.png');
+
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
+
+  /// File path: assets/images/profile_post.png
+  AssetGenImage get profilePost =>
+      const AssetGenImage('assets/images/profile_post.png');
 
   /// File path: assets/images/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
@@ -62,9 +85,23 @@ class $AssetsImagesGen {
   /// File path: assets/images/teacher.png
   AssetGenImage get teacher => const AssetGenImage('assets/images/teacher.png');
 
+  /// File path: assets/images/three_point.png
+  AssetGenImage get threePoint =>
+      const AssetGenImage('assets/images/three_point.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [atom, back, login, math, profile, splash, teacher];
+  List<AssetGenImage> get values => [
+        atom,
+        back,
+        login,
+        math,
+        post,
+        profile,
+        profilePost,
+        splash,
+        teacher,
+        threePoint
+      ];
 }
 
 class Assets {
