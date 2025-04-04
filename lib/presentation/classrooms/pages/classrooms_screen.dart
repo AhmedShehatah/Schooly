@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../app/di/injection_container.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../../core/widgets/text/custom_text.dart';
-import '../../homework/pages/homework_screen.dart';
-import '../../upcoming_classes/cubit/upcoming_classes_cubit.dart';
-import '../../upcoming_classes/pages/upcoming_classes_screen.dart';
+
+import '../../homework/widgets/homework_card_widget.dart';
+import '../../homework/widgets/homework_widget.dart';
+import '../../post/widgets/post_list_widget.dart';
+
 import '../widgets/upcoming_classes_widget.dart';
 
-enum ClassTabs { posts, homeworks, sessios }
+enum ClassTabs { posts, homeworks, sessions }
 
 class ClassesScreen extends StatefulWidget {
   const ClassesScreen({super.key});
@@ -34,23 +35,36 @@ class _ClassesScreenState extends State<ClassesScreen> {
   ClassTabs _selectedIndex = ClassTabs.posts;
 
 //TODO: implement _onItemTapped
-  _buildTabsScreen() {}
+  _buildTabsScreen() {
+    switch (_selectedIndex) {
+      case ClassTabs.posts:
+        return const PostListWidget();
+      case ClassTabs.homeworks:
+        return const HomeworkWidget();
+
+      ///TODO: implement SessionsWidget
+      case ClassTabs.sessions:
+    }
+  }
+
   _buildTabChip({required String title, required ClassTabs tab}) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: _selectedIndex == tab
-              ? Palette.primary.color6
-              : Palette.neutral.color1,
-        ),
-        color: _selectedIndex == tab
-            ? Palette.primary.color6
-            : Palette.neutral.color1,
-        borderRadius: BorderRadius.circular(100.r),
-      ),
-      child: CustomText.s10(title),
-    );
+    return InkWell(
+        onTap: () => setState(() => _selectedIndex = tab),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: _selectedIndex == tab
+                  ? Palette.primary.color6
+                  : Palette.neutral.color1,
+            ),
+            color: _selectedIndex == tab
+                ? Palette.primary.color6
+                : Palette.neutral.color1,
+            borderRadius: BorderRadius.circular(100.r),
+          ),
+          child: CustomText.s10(title),
+        ));
   }
 
   @override
@@ -62,6 +76,8 @@ class _ClassesScreenState extends State<ClassesScreen> {
       body: Column(
         children: [
           5.verticalSpace,
+
+          ///TODO: implement UpcomingClassesWidget
           SizedBox(height: 105.h, child: const UpcomingClassesWidget()),
           5.verticalSpace,
           Row(
@@ -69,10 +85,10 @@ class _ClassesScreenState extends State<ClassesScreen> {
             children: [
               _buildTabChip(title: "منشورات", tab: ClassTabs.posts),
               _buildTabChip(title: "واجبات", tab: ClassTabs.homeworks),
-              _buildTabChip(title: "جلسات", tab: ClassTabs.sessios),
+              _buildTabChip(title: "جلسات", tab: ClassTabs.sessions),
             ],
           ),
-          const HomeworkScreen(),
+          Expanded(child: _buildTabsScreen()),
         ],
       ),
     );
