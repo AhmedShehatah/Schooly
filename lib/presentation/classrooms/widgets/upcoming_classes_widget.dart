@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:logger/web.dart';
@@ -9,18 +8,15 @@ import '../../../core/assets/assets.gen.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/date_utils.dart';
 import '../../../core/widgets/bottom_sheets/custom_bottom_sheet.dart';
-import '../../../core/widgets/shimmer/shimmer_grid.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
 import '../../upcoming_classes/cubit/upcoming_classes_cubit.dart';
-import '../../upcoming_classes/widgets/class_card_widget.dart';
 import '../../upcoming_classes/widgets/room_details_sheet.dart';
-import '../pages/classrooms_screen.dart';
 
 class UpcomingClassesWidget extends StatelessWidget {
   const UpcomingClassesWidget({super.key});
 
-  Widget _bulidClassCard(UpcomingClasses item, BuildContext context) {
+  Widget _buildClassCard(UpcomingClasses item, BuildContext context) {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 8.w),
       child: Container(
@@ -78,7 +74,7 @@ class UpcomingClassesWidget extends StatelessWidget {
       builderDelegate: PagedChildBuilderDelegate<UpcomingClasses>(
         itemBuilder: (context, item, index) {
           Logger().e(index);
-          return _bulidClassCard(item, context);
+          return _buildClassCard(item, context);
         },
       ),
     );
