@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
@@ -114,7 +113,7 @@ class UpcomingClassesScreenState extends State<UpcomingClassesScreen> {
                                 if (classes.isEmpty) {
                                   return Center(
                                     child: CustomText.s17(
-                                        "There is no Upcoming Classes yet"),
+                                        'There is no Upcoming Classes yet'),
                                   );
                                 }
                                 return ClassCardWidget(

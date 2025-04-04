@@ -22,7 +22,7 @@ class _CallScreenState extends State<CallScreen> {
   bool _isMicOn = true;
   bool _isFrontCamera = true;
   Offset _localVideoPosition =
-      Offset(20, 20); // Initial position for local video
+      const Offset(20, 20); // Initial position for local video
 
   @override
   void initState() {
@@ -159,7 +159,7 @@ class _CallScreenState extends State<CallScreen> {
     }
   }
 
-  void _toggleCamera() async {
+  Future<void> _toggleCamera() async {
     setState(() {
       _isCameraOn = !_isCameraOn;
     });
@@ -170,7 +170,7 @@ class _CallScreenState extends State<CallScreen> {
     }
   }
 
-  void _toggleMic() async {
+  Future<void> _toggleMic() async {
     setState(() {
       _isMicOn = !_isMicOn;
     });
@@ -181,7 +181,7 @@ class _CallScreenState extends State<CallScreen> {
     }
   }
 
-  void _switchCamera() async {
+  Future<void> _switchCamera() async {
     setState(() {
       _isFrontCamera = !_isFrontCamera;
     });

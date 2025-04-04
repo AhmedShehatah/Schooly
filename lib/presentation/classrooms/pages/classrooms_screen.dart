@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../../core/widgets/text/custom_text.dart';
 
-import '../../homework/widgets/homework_card_widget.dart';
 import '../../homework/widgets/homework_widget.dart';
 import '../../post/widgets/post_list_widget.dart';
 
@@ -34,20 +32,19 @@ class _ClassesScreenState extends State<ClassesScreen> {
 
   ClassTabs _selectedIndex = ClassTabs.posts;
 
-//TODO: implement _onItemTapped
-  _buildTabsScreen() {
+  Widget _buildTabsScreen() {
     switch (_selectedIndex) {
       case ClassTabs.posts:
         return const PostListWidget();
       case ClassTabs.homeworks:
         return const HomeworkWidget();
 
-      ///TODO: implement SessionsWidget
       case ClassTabs.sessions:
+        return const Placeholder();
     }
   }
 
-  _buildTabChip({required String title, required ClassTabs tab}) {
+  Widget _buildTabChip({required String title, required ClassTabs tab}) {
     return InkWell(
         onTap: () => setState(() => _selectedIndex = tab),
         child: Container(

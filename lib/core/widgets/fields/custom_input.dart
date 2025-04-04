@@ -168,8 +168,6 @@ class _CustomInputState extends State<CustomInput> {
                     color: widget.hintColor,
                   ),
                 ),
-                maxLines: null,
-                minLines: 1,
               ),
             );
           }
