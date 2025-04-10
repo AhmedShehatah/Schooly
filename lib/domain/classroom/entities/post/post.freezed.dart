@@ -19,7 +19,7 @@ mixin _$Post {
   String get content => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
-  List<dynamic> get comments => throw _privateConstructorUsedError;
+  List<Comment> get comments => throw _privateConstructorUsedError;
 
   /// Create a copy of Post
   /// with the given fields replaced by the non-null parameter values.
@@ -32,7 +32,7 @@ abstract class $PostCopyWith<$Res> {
   factory $PostCopyWith(Post value, $Res Function(Post) then) =
       _$PostCopyWithImpl<$Res, Post>;
   @useResult
-  $Res call({String content, String createdAt, int id, List<dynamic> comments});
+  $Res call({String content, String createdAt, int id, List<Comment> comments});
 }
 
 /// @nodoc
@@ -71,7 +71,7 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
       comments: null == comments
           ? _value.comments
           : comments // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<Comment>,
     ) as $Val);
   }
 }
@@ -83,7 +83,7 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
       __$$PostImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String content, String createdAt, int id, List<dynamic> comments});
+  $Res call({String content, String createdAt, int id, List<Comment> comments});
 }
 
 /// @nodoc
@@ -119,7 +119,7 @@ class __$$PostImplCopyWithImpl<$Res>
       comments: null == comments
           ? _value._comments
           : comments // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<Comment>,
     ));
   }
 }
@@ -131,7 +131,7 @@ class _$PostImpl extends _Post {
       {required this.content,
       required this.createdAt,
       required this.id,
-      required final List<dynamic> comments})
+      required final List<Comment> comments})
       : _comments = comments,
         super._();
 
@@ -141,9 +141,9 @@ class _$PostImpl extends _Post {
   final String createdAt;
   @override
   final int id;
-  final List<dynamic> _comments;
+  final List<Comment> _comments;
   @override
-  List<dynamic> get comments {
+  List<Comment> get comments {
     if (_comments is EqualUnmodifiableListView) return _comments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_comments);
@@ -184,7 +184,7 @@ abstract class _Post extends Post {
       {required final String content,
       required final String createdAt,
       required final int id,
-      required final List<dynamic> comments}) = _$PostImpl;
+      required final List<Comment> comments}) = _$PostImpl;
   const _Post._() : super._();
 
   @override
@@ -194,7 +194,7 @@ abstract class _Post extends Post {
   @override
   int get id;
   @override
-  List<dynamic> get comments;
+  List<Comment> get comments;
 
   /// Create a copy of Post
   /// with the given fields replaced by the non-null parameter values.

@@ -23,7 +23,7 @@ mixin _$PostModel {
   String get content => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
-  List<dynamic> get comments => throw _privateConstructorUsedError;
+  List<CommentModel> get comments => throw _privateConstructorUsedError;
 
   /// Serializes this PostModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +40,8 @@ abstract class $PostModelCopyWith<$Res> {
   factory $PostModelCopyWith(PostModel value, $Res Function(PostModel) then) =
       _$PostModelCopyWithImpl<$Res, PostModel>;
   @useResult
-  $Res call({String content, String createdAt, int id, List<dynamic> comments});
+  $Res call(
+      {String content, String createdAt, int id, List<CommentModel> comments});
 }
 
 /// @nodoc
@@ -79,7 +80,7 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
       comments: null == comments
           ? _value.comments
           : comments // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<CommentModel>,
     ) as $Val);
   }
 }
@@ -92,7 +93,8 @@ abstract class _$$PostModelImplCopyWith<$Res>
       __$$PostModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String content, String createdAt, int id, List<dynamic> comments});
+  $Res call(
+      {String content, String createdAt, int id, List<CommentModel> comments});
 }
 
 /// @nodoc
@@ -129,7 +131,7 @@ class __$$PostModelImplCopyWithImpl<$Res>
       comments: null == comments
           ? _value._comments
           : comments // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<CommentModel>,
     ));
   }
 }
@@ -141,7 +143,7 @@ class _$PostModelImpl extends _PostModel {
       {required this.content,
       required this.createdAt,
       required this.id,
-      required final List<dynamic> comments})
+      required final List<CommentModel> comments})
       : _comments = comments,
         super._();
 
@@ -154,9 +156,9 @@ class _$PostModelImpl extends _PostModel {
   final String createdAt;
   @override
   final int id;
-  final List<dynamic> _comments;
+  final List<CommentModel> _comments;
   @override
-  List<dynamic> get comments {
+  List<CommentModel> get comments {
     if (_comments is EqualUnmodifiableListView) return _comments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_comments);
@@ -205,7 +207,7 @@ abstract class _PostModel extends PostModel {
       {required final String content,
       required final String createdAt,
       required final int id,
-      required final List<dynamic> comments}) = _$PostModelImpl;
+      required final List<CommentModel> comments}) = _$PostModelImpl;
   const _PostModel._() : super._();
 
   factory _PostModel.fromJson(Map<String, dynamic> json) =
@@ -218,7 +220,7 @@ abstract class _PostModel extends PostModel {
   @override
   int get id;
   @override
-  List<dynamic> get comments;
+  List<CommentModel> get comments;
 
   /// Create a copy of PostModel
   /// with the given fields replaced by the non-null parameter values.
