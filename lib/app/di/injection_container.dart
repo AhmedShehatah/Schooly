@@ -7,11 +7,21 @@ import '../../core/shared_preferences/shared_prefs.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/validators.dart';
 
+import '../../data/classroom/data_sources/classroom_remote_data_source.dart';
+import '../../data/classroom/repos/classroom_repo_impl.dart';
 import '../../data/upcoming_classes/data_sources/upcoming_classes_remote_data_source.dart';
 import '../../data/upcoming_classes/repos/upcoming_classes_repo_impl.dart';
 import '../../domain/auth/use_cases/check_otp_use_case/check_otp_use_case.dart';
 import '../../domain/auth/use_cases/forget_password_use_case/forget_password_use_case.dart';
 import '../../domain/auth/use_cases/reset_password_use_case/reset_password_use_case.dart';
+import '../../domain/classroom/repo/classroom_repo.dart';
+import '../../domain/classroom/use_case/add_comment_use_case/add_comment_use_case.dart';
+import '../../domain/classroom/use_case/add_post_use_case/add_post_use_case.dart';
+import '../../domain/classroom/use_case/delete_comment_use_case/delete_comment_use_case.dart';
+import '../../domain/classroom/use_case/delete_post_use_case/delete_post_use_case.dart';
+import '../../domain/classroom/use_case/get_classrooms_use_case/get_classrooms_use_case.dart';
+import '../../domain/classroom/use_case/get_comments_use_case/get_comment_use_case.dart';
+import '../../domain/classroom/use_case/get_posts_use_case/get_posts_use_case.dart';
 import '../../domain/upcoming_classes/repos/upcoming_classes_repo.dart';
 import '../../domain/upcoming_classes/use_cases/join_session_use_case/join_session_use_case.dart';
 import '../../domain/upcoming_classes/use_cases/upcoming_classes/upcoming_classes_use_case.dart';
@@ -48,16 +58,26 @@ Future<void> init() async {
   sl.registerLazySingleton(() => JoinSessionUseCase(sl()));
   sl.registerLazySingleton(() => ForgetPasswordUseCase(sl()));
   sl.registerLazySingleton(() => ResetPasswordUseCase(sl()));
+  sl.registerLazySingleton(() => AddCommentUseCase(sl()));
+  sl.registerLazySingleton(() => AddPostUseCase(sl()));
+  sl.registerLazySingleton(() => DeletePostUseCase(sl()));
+  sl.registerLazySingleton(() => DeleteCommentUseCase(sl()));
+  sl.registerLazySingleton(() => GetClassroomsUseCase(sl()));
+  sl.registerLazySingleton(() => GetPostsUseCase(sl()));
+  sl.registerLazySingleton(() => GetCommentUseCase(sl()));
 
   //! repos
   sl.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(sl()));
   sl.registerLazySingleton<UpcomingClassesRepo>(
       () => UpcomingClassesRepoImpl(sl()));
+  sl.registerLazySingleton<ClassroomRepo>(() => ClassroomRepoImpl(sl()));
   //! data sources
   sl.registerLazySingleton<AuthRemoteDataSource>(
       () => AuthRemoteDataSourceImpl(sl()));
   sl.registerLazySingleton<UpcomingClassesRemoteDataSource>(
       () => UpcomingClassesRemoteDataSourceImpl(sl()));
+  sl.registerLazySingleton<ClassroomRemoteDataSource>(
+      () => ClassroomRemoteDataSource(sl()));
 
   // core
   sl.registerSingleton(BottomNavigationCubit());
