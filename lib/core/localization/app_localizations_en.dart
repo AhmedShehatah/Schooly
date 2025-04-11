@@ -239,4 +239,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String resendCode(String seconds) {
     return 'Send the code again after $seconds';
   }
+
+  @override
+  String get comments => 'Comments';
+
+  @override
+  String get addComment => 'Add comment';
+
+  @override
+  String get noComments => 'No Comments';
 }

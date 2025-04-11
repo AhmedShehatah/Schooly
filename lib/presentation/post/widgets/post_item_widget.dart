@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
+import '../../../core/utils/date_utils.dart';
 import '../../../core/widgets/text/custom_text.dart';
+import '../../../domain/classroom/entities/post/post.dart';
+import 'comments_list_widget.dart';
 
 class PostItemWidget extends StatelessWidget {
-  const PostItemWidget({Key? key}) : super(key: key);
+  const PostItemWidget({Key? key, required this.post}) : super(key: key);
+  final Post post;
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +33,11 @@ class PostItemWidget extends StatelessWidget {
                   backgroundImage: AssetImage(Assets.images.profilePost.path),
                 ),
                 title: CustomText.s12(
-                  'أيمن أحمد',
+                  post.authorName,
                   color: Palette.character.primary85,
                 ),
                 subtitle: CustomText.s11(
-                  '@AymanAhmed',
+                  '@${post.authorName.split(' ').join()}',
                   color: Palette.character.secondary45,
                 ),
                 trailing: InkWell(
@@ -45,19 +50,63 @@ class PostItemWidget extends StatelessWidget {
                 ),
               ),
               CustomText.s13(
-                'يا شباب، خلوا بالكم إن الكويز ده عليه درجات مهمة، فركزوا كويس وحاولوا تجاوبوا كل الأسئلة. الوقت المتبقي للاختبار 10 دقايق، فراجع إجاباتك قبل ما تسلم.',
+                post.content,
               ),
               12.verticalSpace,
-              Image(image: AssetImage(Assets.images.post.path)),
-              12.verticalSpace,
-              Row(children: [
-                CustomText.s11('قبل 5 ساعة',
-                    color: Palette.character.secondary45),
-              ])
+              InkWell(
+                onTap: () => _showCommentsDialog(context),
+                child: Row(
+                  children: [
+                    // Comments button
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.chat_bubble_outline_rounded,
+                          size: 16.sp,
+                          color: Palette.character.secondary45,
+                        ),
+                        4.horizontalSpace,
+                        CustomText.s11(
+                          '${post.comments.length} ${lz.comments}',
+                          color: Palette.character.secondary45,
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    CustomText.s11(
+                      DateUtility.dateToSinceFormat(
+                          DateTime.parse(post.createdAt)),
+                      color: Palette.character.secondary45,
+                    ),
+                  ],
+                ),
+              ),
+              8.verticalSpace,
             ],
           ),
         ),
       ],
+    );
+  }
+
+  // Function to show comments dialog
+
+  void _showCommentsDialog(BuildContext context) {
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+      barrierColor: Colors.black.withOpacity(0.5),
+      pageBuilder: (context, anim1, anim2) {
+        return CommentsListWidget(comments: post.comments);
+      },
+      transitionBuilder: (context, anim1, anim2, child) {
+        return SlideTransition(
+          position: Tween(begin: const Offset(0, 1), end: const Offset(0, 0))
+              .animate(anim1),
+          child: child,
+        );
+      },
     );
   }
 }

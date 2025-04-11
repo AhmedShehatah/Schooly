@@ -9,6 +9,8 @@ import '../shared_preferences/prefs_keys.dart';
 import '../shared_preferences/shared_prefs.dart';
 import 'app_localizations.dart';
 
+AppLocalizations get lz => sl<LocaleCubit>().appLocalizations;
+
 class LocaleCubit extends Cubit<Locale> {
   LocaleCubit() : super(const Locale('ar')) {
     appLocalizations = lookupAppLocalizations(state);

@@ -6,6 +6,7 @@ import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
+import '../../classrooms/pages/classrooms_screen.dart';
 import '../../upcoming_classes/pages/upcoming_classes_screen.dart';
 import '../cubits/bottom_navigation_cubit.dart';
 
@@ -17,8 +18,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final _localizations = sl<LocaleCubit>().appLocalizations;
-
   ColorFilter _activeIconColor() => ColorFilter.mode(
         Palette.primary.color8,
         BlendMode.srcIn,
@@ -27,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
   void _changeTab(int index) {
     switch (index) {
       case 0:
-        context.go(UpcomingClassesScreen.routeName);
+        context.go(HomeScreen.routeName);
         break;
       case 1:
         context.go('/notifications');
@@ -36,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
         context.go('/schedule');
         break;
       case 3:
-        context.go('/classes');
+        context.go(ClassesScreen.routeName);
         break;
       case 4:
         context.go('/settings');
@@ -60,31 +59,31 @@ class _MainScreenState extends State<MainScreen> {
                 icon: Assets.icons.home.svg(),
                 activeIcon:
                     Assets.icons.home.svg(colorFilter: _activeIconColor()),
-                label: _localizations.home,
+                label: lz.home,
               ),
               BottomNavigationBarItem(
                 icon: Assets.icons.bell.svg(),
                 activeIcon:
                     Assets.icons.bell.svg(colorFilter: _activeIconColor()),
-                label: _localizations.notifications,
+                label: lz.notifications,
               ),
               BottomNavigationBarItem(
                 icon: Assets.icons.table.svg(),
                 activeIcon:
                     Assets.icons.table.svg(colorFilter: _activeIconColor()),
-                label: _localizations.schedule,
+                label: lz.schedule,
               ),
               BottomNavigationBarItem(
                 icon: Assets.icons.notebook.svg(),
                 activeIcon:
                     Assets.icons.notebook.svg(colorFilter: _activeIconColor()),
-                label: _localizations.classes,
+                label: lz.classes,
               ),
               BottomNavigationBarItem(
                 icon: Assets.icons.settings.svg(),
                 activeIcon:
                     Assets.icons.settings.svg(colorFilter: _activeIconColor()),
-                label: _localizations.settings,
+                label: lz.settings,
               ),
             ],
           );

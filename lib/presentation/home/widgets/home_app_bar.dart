@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
@@ -19,8 +18,6 @@ class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _HomeAppBarState extends State<HomeAppBar> {
-  final _localizations = sl<LocaleCubit>().appLocalizations;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +31,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
           backgroundImage: AssetImage(Assets.images.profile.path),
         ),
         title: CustomText.s11(
-          _localizations.hello,
+          lz.hello,
           color: Palette.character.secondary45,
         ),
         subtitle: CustomText.s14(

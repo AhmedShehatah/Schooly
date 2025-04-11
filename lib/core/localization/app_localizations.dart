@@ -454,6 +454,24 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'أعد إرسال الرمز مرة أخرى بعد {seconds}'**
   String resendCode(String seconds);
+
+  /// No description provided for @comments.
+  ///
+  /// In ar, this message translates to:
+  /// **'التعليقات'**
+  String get comments;
+
+  /// No description provided for @addComment.
+  ///
+  /// In ar, this message translates to:
+  /// **'اضافة تعليق'**
+  String get addComment;
+
+  /// No description provided for @noComments.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد تعليقات'**
+  String get noComments;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

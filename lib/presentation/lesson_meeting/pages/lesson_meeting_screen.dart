@@ -30,7 +30,7 @@ class _CallScreenState extends State<CallScreen> {
     initAgora();
   }
 
-  void initAgora() async {
+  Future<void> initAgora() async {
     if (!(await Permission.microphone.isGranted)) {
       await [Permission.microphone, Permission.camera].request();
     }

@@ -25,7 +25,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _localization = sl<LocaleCubit>().appLocalizations;
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -35,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
 
     if (kDebugMode) {
-      _emailController.text = 'test@test.com';
+      _emailController.text = 'teacher@gmail.com';
       _passwordController.text = 'testtest';
       setState(() {});
     }
@@ -55,13 +54,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Assets.images.login.image(height: 382.h),
                   CustomInput(
-                    title: _localization.email,
+                    title: lz.email,
                     controller: _emailController,
                   ),
                   10.verticalSpace,
                   CustomInput.obscure(
-                      title: _localization.password,
-                      controller: _passwordController),
+                      title: lz.password, controller: _passwordController),
                   20.verticalSpace,
                   BlocConsumer<LoginCubit, BaseState>(
                     bloc: sl<LoginCubit>(),
@@ -69,14 +67,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     listener: (context, state) {
                       state.whenOrNull(
                         success: (data) =>
-                            context.goNamed(UpcomingClassesScreen.routeName),
+                            context.goNamed(HomeScreen.routeName),
                       );
                     },
                     builder: (context, state) {
                       return CustomButton(
                         isLoading: state.isLoading,
                         isExpanded: true,
-                        text: _localization.login,
+                        text: lz.login,
                         onPressed: () {
                           if (!_formKey.currentState!.validate()) return;
                           sl<LoginCubit>().login(
@@ -95,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         context.goNamed(ForgetPasswordScreen.routeName);
                       },
                       child: CustomText.s17(
-                        _localization.forgotPassword,
+                        lz.forgotPassword,
                       ))
                 ],
               ),

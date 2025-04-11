@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Post {
   String get content => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
+  String get authorName => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   List<Comment> get comments => throw _privateConstructorUsedError;
 
@@ -32,7 +33,12 @@ abstract class $PostCopyWith<$Res> {
   factory $PostCopyWith(Post value, $Res Function(Post) then) =
       _$PostCopyWithImpl<$Res, Post>;
   @useResult
-  $Res call({String content, String createdAt, int id, List<Comment> comments});
+  $Res call(
+      {String content,
+      String createdAt,
+      String authorName,
+      int id,
+      List<Comment> comments});
 }
 
 /// @nodoc
@@ -52,6 +58,7 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
   $Res call({
     Object? content = null,
     Object? createdAt = null,
+    Object? authorName = null,
     Object? id = null,
     Object? comments = null,
   }) {
@@ -63,6 +70,10 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorName: null == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
               as String,
       id: null == id
           ? _value.id
@@ -83,7 +94,12 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
       __$$PostImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String content, String createdAt, int id, List<Comment> comments});
+  $Res call(
+      {String content,
+      String createdAt,
+      String authorName,
+      int id,
+      List<Comment> comments});
 }
 
 /// @nodoc
@@ -100,6 +116,7 @@ class __$$PostImplCopyWithImpl<$Res>
   $Res call({
     Object? content = null,
     Object? createdAt = null,
+    Object? authorName = null,
     Object? id = null,
     Object? comments = null,
   }) {
@@ -111,6 +128,10 @@ class __$$PostImplCopyWithImpl<$Res>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorName: null == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
               as String,
       id: null == id
           ? _value.id
@@ -130,6 +151,7 @@ class _$PostImpl extends _Post {
   const _$PostImpl(
       {required this.content,
       required this.createdAt,
+      required this.authorName,
       required this.id,
       required final List<Comment> comments})
       : _comments = comments,
@@ -139,6 +161,8 @@ class _$PostImpl extends _Post {
   final String content;
   @override
   final String createdAt;
+  @override
+  final String authorName;
   @override
   final int id;
   final List<Comment> _comments;
@@ -151,7 +175,7 @@ class _$PostImpl extends _Post {
 
   @override
   String toString() {
-    return 'Post(content: $content, createdAt: $createdAt, id: $id, comments: $comments)';
+    return 'Post(content: $content, createdAt: $createdAt, authorName: $authorName, id: $id, comments: $comments)';
   }
 
   @override
@@ -162,13 +186,15 @@ class _$PostImpl extends _Post {
             (identical(other.content, content) || other.content == content) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
+            (identical(other.authorName, authorName) ||
+                other.authorName == authorName) &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._comments, _comments));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, content, createdAt, id,
-      const DeepCollectionEquality().hash(_comments));
+  int get hashCode => Object.hash(runtimeType, content, createdAt, authorName,
+      id, const DeepCollectionEquality().hash(_comments));
 
   /// Create a copy of Post
   /// with the given fields replaced by the non-null parameter values.
@@ -183,6 +209,7 @@ abstract class _Post extends Post {
   const factory _Post(
       {required final String content,
       required final String createdAt,
+      required final String authorName,
       required final int id,
       required final List<Comment> comments}) = _$PostImpl;
   const _Post._() : super._();
@@ -191,6 +218,8 @@ abstract class _Post extends Post {
   String get content;
   @override
   String get createdAt;
+  @override
+  String get authorName;
   @override
   int get id;
   @override

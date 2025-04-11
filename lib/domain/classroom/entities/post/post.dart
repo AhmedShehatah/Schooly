@@ -9,6 +9,7 @@ class Post with _$Post {
   const factory Post({
     required String content,
     required String createdAt,
+    required String authorName,
     required int id,
     required List<Comment> comments,
   }) = _Post;

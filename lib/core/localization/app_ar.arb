@@ -109,5 +109,9 @@
                 "type": "String"
             }
         }
-    }
+    },
+    "comments":"التعليقات",
+    "addComment":"اضافة تعليق",
+    "noComments":"لا يوجد تعليقات"
+    
 }

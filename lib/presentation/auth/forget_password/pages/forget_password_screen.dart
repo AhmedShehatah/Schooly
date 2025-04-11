@@ -23,7 +23,6 @@ class ForgetPasswordScreen extends StatefulWidget {
 }
 
 class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
-  final _localization = sl<LocaleCubit>().appLocalizations;
   final _emailController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
@@ -49,10 +48,10 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     ),
                   ),
                   10.verticalSpace,
-                  CustomText.s24(_localization.changePassword, bold: true),
+                  CustomText.s24(lz.changePassword, bold: true),
                   10.verticalSpace,
                   CustomInput(
-                    title: _localization.email,
+                    title: lz.email,
                     controller: _emailController,
                   ),
                   24.verticalSpace,
@@ -69,7 +68,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                       return CustomButton(
                         isLoading: state.isLoading,
                         isExpanded: true,
-                        text: _localization.sendChangeLink,
+                        text: lz.sendChangeLink,
                         onPressed: () {
                           if (!_formKey.currentState!.validate()) return;
                           sl<ForgetPasswordCubit>().forgetPassword(
@@ -87,7 +86,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                         context.goNamed(LoginScreen.routeName);
                       },
                       child: CustomText.s17(
-                        _localization.doYouWantToLogIn,
+                        lz.doYouWantToLogIn,
                       ),
                     ),
                   ),

@@ -11,6 +11,7 @@ class PostModel with _$PostModel {
   const factory PostModel({
     required String content,
     required String createdAt,
+    required String authorName,
     required int id,
     required List<CommentModel> comments,
   }) = _PostModel;
@@ -20,21 +21,7 @@ class PostModel with _$PostModel {
   Post toEntity() => Post(
       content: content,
       createdAt: createdAt,
+      authorName: authorName,
       id: id,
       comments: comments.map((e) => e.toEntity()).toList());
 }
-
-
-
-/**
- * 
- * 
- * 
- *    {
-      "id": 1,
-      "content": "string",
-      "comments": [],
-      "createdAt": "2025-03-08T08:03:53.0999759"
-    
- * }
- */

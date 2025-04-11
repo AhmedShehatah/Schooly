@@ -14,9 +14,8 @@ import '../../../core/widgets/text/custom_text.dart';
 import '../../auth/login/pages/login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
-  SplashScreen({super.key});
+  const SplashScreen({super.key});
 
-  final _localization = sl<LocaleCubit>().appLocalizations;
   static const routeName = '/splash-screen';
   @override
   Widget build(BuildContext context) {
@@ -37,12 +36,12 @@ class SplashScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomText.s46(
-                    _localization.yourSchool,
+                    lz.yourSchool,
                     bold: true,
                     color: Palette.primary.color8,
                   ),
                   CustomText.s48(
-                    _localization.inYourBucket,
+                    lz.inYourBucket,
                     bold: true,
                     color: Palette.character.primary85,
                   ),
@@ -55,20 +54,20 @@ class SplashScreen extends StatelessWidget {
                         color: Palette.character.secondary45,
                       ),
                       children: [
-                        TextSpan(text: _localization.digitalTeachingIsFuture),
+                        TextSpan(text: lz.digitalTeachingIsFuture),
                         TextSpan(
-                          text: ' ${_localization.schooly}',
+                          text: ' ${lz.schooly}',
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const TextSpan(text: '\n'),
-                        TextSpan(text: _localization.schoolyIsLinkWithAi),
+                        TextSpan(text: lz.schoolyIsLinkWithAi),
                       ],
                     ),
                   )
                 ],
               ),
               CustomButton(
-                text: _localization.startNow,
+                text: lz.startNow,
                 onPressed: () {
                   sl<SharedPrefs>()
                       .saveBool(key: PrefsKeys.firstTime, value: false);

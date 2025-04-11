@@ -16,8 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GetPostParams {
+  @JsonKey(name: 'Page')
   int get page => throw _privateConstructorUsedError;
+  @JsonKey(name: 'PageSize')
   int get pageSize => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ClassRoomId')
   String get classRoomId => throw _privateConstructorUsedError;
 
   /// Serializes this GetPostParams to a JSON map.
@@ -36,7 +39,10 @@ abstract class $GetPostParamsCopyWith<$Res> {
           GetPostParams value, $Res Function(GetPostParams) then) =
       _$GetPostParamsCopyWithImpl<$Res, GetPostParams>;
   @useResult
-  $Res call({int page, int pageSize, String classRoomId});
+  $Res call(
+      {@JsonKey(name: 'Page') int page,
+      @JsonKey(name: 'PageSize') int pageSize,
+      @JsonKey(name: 'ClassRoomId') String classRoomId});
 }
 
 /// @nodoc
@@ -83,7 +89,10 @@ abstract class _$$GetPostParamsImplCopyWith<$Res>
       __$$GetPostParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int page, int pageSize, String classRoomId});
+  $Res call(
+      {@JsonKey(name: 'Page') int page,
+      @JsonKey(name: 'PageSize') int pageSize,
+      @JsonKey(name: 'ClassRoomId') String classRoomId});
 }
 
 /// @nodoc
@@ -124,15 +133,18 @@ class __$$GetPostParamsImplCopyWithImpl<$Res>
 @JsonSerializable(createFactory: false)
 class _$GetPostParamsImpl implements _GetPostParams {
   const _$GetPostParamsImpl(
-      {this.page = 1, this.pageSize = 1, required this.classRoomId});
+      {@JsonKey(name: 'Page') this.page = 1,
+      @JsonKey(name: 'PageSize') this.pageSize = 20,
+      @JsonKey(name: 'ClassRoomId') required this.classRoomId});
 
   @override
-  @JsonKey()
+  @JsonKey(name: 'Page')
   final int page;
   @override
-  @JsonKey()
+  @JsonKey(name: 'PageSize')
   final int pageSize;
   @override
+  @JsonKey(name: 'ClassRoomId')
   final String classRoomId;
 
   @override
@@ -174,15 +186,19 @@ class _$GetPostParamsImpl implements _GetPostParams {
 
 abstract class _GetPostParams implements GetPostParams {
   const factory _GetPostParams(
-      {final int page,
-      final int pageSize,
-      required final String classRoomId}) = _$GetPostParamsImpl;
+          {@JsonKey(name: 'Page') final int page,
+          @JsonKey(name: 'PageSize') final int pageSize,
+          @JsonKey(name: 'ClassRoomId') required final String classRoomId}) =
+      _$GetPostParamsImpl;
 
   @override
+  @JsonKey(name: 'Page')
   int get page;
   @override
+  @JsonKey(name: 'PageSize')
   int get pageSize;
   @override
+  @JsonKey(name: 'ClassRoomId')
   String get classRoomId;
 
   /// Create a copy of GetPostParams
