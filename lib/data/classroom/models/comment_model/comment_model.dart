@@ -25,14 +25,3 @@ class CommentModel with _$CommentModel {
       authorName: authorName,
       createdAt: createdAt);
 }
-
-/**
- * 
- * 
- * 
- *  "id": 44,
-          "content": "COMMMMMMMMMMMMENT",
-          "authorId": "640cdc09-f98f-4f01-9060-1f39fcc50ccb",
-          "authorName": "string",
-          "createdAt": "2025-03-26T08:06:51.2970945"
- */

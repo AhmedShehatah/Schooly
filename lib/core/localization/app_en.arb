@@ -109,5 +109,8 @@
                 "type": "String"
             }
         }
-    }
+    },
+    "comments":"Comments",
+    "addComment":"Add comment",
+    "noComments":"No Comments"
 }

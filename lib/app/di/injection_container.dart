@@ -28,8 +28,10 @@ import '../../domain/upcoming_classes/use_cases/upcoming_classes/upcoming_classe
 import '../../presentation/auth/forget_password/cubit/forget_password_cubit.dart';
 import '../../presentation/auth/reset_password/cubit/reset_password_cubit.dart';
 import '../../presentation/auth/verify_code/cubit/check_otp_cubit.dart';
+import '../../presentation/classrooms/cubits/classroom_list_cubit.dart';
 import '../../presentation/lesson_meeting/cubits/join_meeting_cubit.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
+import '../../presentation/post/cubits/posts_list_cubit.dart';
 import '../../presentation/upcoming_classes/cubit/upcoming_classes_cubit.dart';
 
 import '../../data/auth/remote/auth_remote_data_source.dart';
@@ -49,6 +51,8 @@ Future<void> init() async {
   sl.registerLazySingleton(() => ForgetPasswordCubit(sl()));
   sl.registerLazySingleton(() => ResetPasswordCubit(sl()));
   sl.registerLazySingleton(() => CheckOtpCubit(sl()));
+  sl.registerLazySingleton(() => ClassroomListCubit(sl()));
+  sl.registerLazySingleton(() => PostsListCubit(sl()));
 
   //! useCases
 

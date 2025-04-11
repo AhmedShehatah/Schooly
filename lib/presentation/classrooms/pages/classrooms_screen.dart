@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/theme/palette.dart';
+import '../../../app/di/injection_container.dart';
+import '../../../core/localization/localization_manager.dart';
+import '../../../core/states/base_state.dart';
+import '../../../core/utils/dimensions.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
-import '../../../core/widgets/text/custom_text.dart';
-
-import '../../homework/widgets/homework_widget.dart';
-import '../../post/widgets/post_list_widget.dart';
-
-import '../widgets/upcoming_classes_widget.dart';
+import '../../../domain/classroom/entities/classroom/classroom.dart';
+import '../cubits/classroom_list_cubit.dart';
+import '../widgets/classroom_item_widget.dart';
 
 enum ClassTabs { posts, homeworks, sessions }
 
 class ClassesScreen extends StatefulWidget {
   const ClassesScreen({super.key});
-  static const String routeName = '/classrooms';
+  static const String routeName = '/classrooms-screen';
 
   @override
   State<ClassesScreen> createState() => _ClassesScreenState();
@@ -23,70 +24,32 @@ class ClassesScreen extends StatefulWidget {
 class _ClassesScreenState extends State<ClassesScreen> {
   @override
   void initState() {
-    // sl<UpcomingClassesCubit>()
-    //   ..reset()
-    //   ..fetch();
-
     super.initState();
-  }
-
-  ClassTabs _selectedIndex = ClassTabs.posts;
-
-  Widget _buildTabsScreen() {
-    switch (_selectedIndex) {
-      case ClassTabs.posts:
-        return const PostListWidget();
-      case ClassTabs.homeworks:
-        return const HomeworkWidget();
-
-      case ClassTabs.sessions:
-        return const Placeholder();
-    }
-  }
-
-  Widget _buildTabChip({required String title, required ClassTabs tab}) {
-    return InkWell(
-        onTap: () => setState(() => _selectedIndex = tab),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 4.h),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: _selectedIndex == tab
-                  ? Palette.primary.color6
-                  : Palette.neutral.color1,
-            ),
-            color: _selectedIndex == tab
-                ? Palette.primary.color6
-                : Palette.neutral.color1,
-            borderRadius: BorderRadius.circular(100.r),
-          ),
-          child: CustomText.s10(title),
-        ));
+    sl<ClassroomListCubit>().getClassrooms();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'Schooly',
+      appBar: CustomAppBar(
+        title: lz.schooly,
       ),
-      body: Column(
-        children: [
-          5.verticalSpace,
-
-          ///TODO: implement UpcomingClassesWidget
-          SizedBox(height: 105.h, child: const UpcomingClassesWidget()),
-          5.verticalSpace,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildTabChip(title: "منشورات", tab: ClassTabs.posts),
-              _buildTabChip(title: "واجبات", tab: ClassTabs.homeworks),
-              _buildTabChip(title: "جلسات", tab: ClassTabs.sessions),
-            ],
+      body: BlocBuilder<ClassroomListCubit, BaseState<List<Classroom>>>(
+        bloc: sl<ClassroomListCubit>(),
+        builder: (context, state) => state.maybeMap(
+          orElse: () => const SizedBox.shrink(),
+          loading: (_) => const Center(child: CircularProgressIndicator()),
+          success: (data) => Padding(
+            padding: Dimensions.defaultPagePadding,
+            child: ListView.separated(
+              itemCount: data.data.length,
+              separatorBuilder: (_, __) => 16.verticalSpace,
+              itemBuilder: (context, index) => ClassroomItemWidget(
+                classroom: data.data[index],
+              ),
+            ),
           ),
-          Expanded(child: _buildTabsScreen()),
-        ],
+        ),
       ),
     );
   }

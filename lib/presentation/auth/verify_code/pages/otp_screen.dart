@@ -30,7 +30,6 @@ class OtpScreen extends StatefulWidget {
 }
 
 class _OtpScreenState extends State<OtpScreen> {
-  final _localization = sl<LocaleCubit>().appLocalizations;
   final _otpController = TextEditingController();
   final ValueNotifier<int> _remainingTime = ValueNotifier(600);
   final ValueNotifier<bool> _isTimerRunning = ValueNotifier(true);
@@ -64,7 +63,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
               ),
               10.verticalSpace,
-              CustomText.s24(_localization.changePassword, bold: true),
+              CustomText.s24(lz.changePassword, bold: true),
               _buildResetPassword(),
             ],
           ),
@@ -83,7 +82,7 @@ class _OtpScreenState extends State<OtpScreen> {
           children: [
             49.verticalSpace,
             CustomText.s16(
-              _localization.checkPhoneContent,
+              lz.checkPhoneContent,
               color: Palette.neutral.color7,
             ),
             18.verticalSpace,
@@ -108,7 +107,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     orElse: () => false,
                     loading: (_) => true,
                   ),
-                  text: _localization.checkCode,
+                  text: lz.checkCode,
                   onPressed: () {
                     if (!_formKey.currentState!.validate()) return;
                     sl<CheckOtpCubit>().verifyCode(
@@ -160,8 +159,8 @@ class _OtpScreenState extends State<OtpScreen> {
                     child: state.maybeMap(
                       orElse: () => CustomText.s16(
                         !isTimerRunning
-                            ? _localization.resendCodeNow
-                            : _localization.resendCode(
+                            ? lz.resendCodeNow
+                            : lz.resendCode(
                                 DateUtility.formatDuration(remainingTime)),
                         color: !isTimerRunning
                             ? Palette.primary.color6

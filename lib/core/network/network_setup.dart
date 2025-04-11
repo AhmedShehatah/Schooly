@@ -5,6 +5,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../../app/di/injection_container.dart';
+import '../../app/route_manager/app_router.dart';
+import '../../presentation/auth/login/pages/login_screen.dart';
 import '../localization/localization_manager.dart';
 import '../shared_preferences/prefs_keys.dart';
 import '../shared_preferences/shared_prefs.dart';
@@ -30,8 +32,6 @@ Dio createDio() {
 
 class _CustomInterceptor extends Interceptor {
   final _storage = sl<SharedPrefs>();
-
-  final _localizations = sl<LocaleCubit>().appLocalizations;
 
   @override
   Future<void> onRequest(
@@ -71,7 +71,7 @@ class _CustomInterceptor extends Interceptor {
     final isUnauthorized = statusCode == 401;
 
     if (isServerError) {
-      return Failure.server(message: _localizations.serverError);
+      return Failure.server(message: lz.serverError);
     } else if (isUnauthorized) {
       return Failure.unauthorized(message: response.data['message']);
     } else {
@@ -84,33 +84,32 @@ class _CustomInterceptor extends Interceptor {
       DioException err, ErrorInterceptorHandler handler) async {
     final failure = switch (err.type) {
       DioExceptionType.badCertificate => Failure.badCertificate(
-          message: _localizations.badCertificate,
+          message: lz.badCertificate,
         ),
       DioExceptionType.cancel => Failure.requestCancelled(
-          message: _localizations.requestCancelled,
+          message: lz.requestCancelled,
         ),
       DioExceptionType.connectionError => Failure.noInternetConnection(
-          message: _localizations.connectionError,
+          message: lz.connectionError,
         ),
       DioExceptionType.connectionTimeout => Failure.connectionTimeout(
-          message: _localizations.connectionTimeout,
+          message: lz.connectionTimeout,
         ),
       DioExceptionType.receiveTimeout => Failure.receiveTimeout(
-          message: _localizations.receiveTimeout,
+          message: lz.receiveTimeout,
         ),
       DioExceptionType.sendTimeout => Failure.sendTimeout(
-          message: _localizations.sendTimeout,
+          message: lz.sendTimeout,
         ),
       DioExceptionType.unknown => Failure.unknown(
-          message: _localizations.unknownError,
+          message: lz.unknownError,
         ),
       DioExceptionType.badResponse => _handleBadResponse(
           response: err.response!,
         ),
     };
     await failure.whenOrNull<Future<void>>(unauthorized: (_) async {
-      // TODO route to login screen
-      // sl<AppNavigator>().offAll(LoginScreen.routeName);
+      sl<AppRouter>().router.goNamed(LoginScreen.routeName);
       await _storage.deleteSecuredValue(key: PrefsKeys.token);
     });
     return handler.next(DioException(

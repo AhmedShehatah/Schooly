@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../app/di/injection_container.dart';
-import '../../theme/palette.dart';
-
 class ShimmerItem extends StatelessWidget {
-  ShimmerItem({
+  const ShimmerItem({
     super.key,
     required this.width,
     required this.height,
     this.borderRadius = BorderRadius.zero,
   }) : _shimmer = true;
 
-  ShimmerItem.noShimmer({
+  const ShimmerItem.noShimmer({
     super.key,
     required this.width,
     required this.height,
@@ -25,7 +22,6 @@ class ShimmerItem extends StatelessWidget {
 
   // dependencies
   // ignore: unused_field
-  final _palette = sl<Palette>();
 
   final bool _shimmer;
 
@@ -39,8 +35,8 @@ class ShimmerItem extends StatelessWidget {
       );
     }
     return Shimmer.fromColors(
-      baseColor: Colors.greenAccent,
-      highlightColor: Colors.transparent,
+      baseColor: Colors.grey.shade300,
+      highlightColor: Colors.white,
       child: SizedBox(
         width: width,
         height: height,

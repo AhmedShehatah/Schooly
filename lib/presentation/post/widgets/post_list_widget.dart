@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/fields/custom_input.dart';
+import '../../../core/widgets/paged_list/custom_paged_list.dart';
 import '../../../core/widgets/text/custom_text.dart';
+import '../cubits/posts_list_cubit.dart';
 import 'post_item_widget.dart';
 
 class PostListWidget extends StatefulWidget {
-  const PostListWidget({Key? key}) : super(key: key);
+  const PostListWidget({Key? key, required this.classroomId}) : super(key: key);
 
+  final String classroomId;
   @override
   State<PostListWidget> createState() => _PostListWidgetState();
 }
@@ -17,6 +22,11 @@ class _PostListWidgetState extends State<PostListWidget> {
   @override
   void initState() {
     super.initState();
+
+    sl<PostsListCubit>()
+      ..reset()
+      ..setClassroomId(widget.classroomId)
+      ..fetch();
   }
 
   @override
@@ -29,10 +39,8 @@ class _PostListWidgetState extends State<PostListWidget> {
             child: Column(
               children: [
                 CustomInput(
-                  title: '',
                   hint: 'اكتب شيئًا لطلابك هنا...',
                   hintColor: Palette.character.disabledPlaceholder25,
-                  controller: TextEditingController(),
                   prefix: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
@@ -44,7 +52,13 @@ class _PostListWidgetState extends State<PostListWidget> {
                     ),
                   ),
                   backgroundColor: Palette.primary.color1,
-                  showAsterisk: false,
+                  required: false,
+                  editable: false,
+                  onPressed: () {
+                    // TODO open add post here
+                    showAboutDialog(context: context);
+                  },
+                  enabled: true,
                 ),
                 22.verticalSpace,
                 Row(children: [
@@ -61,14 +75,16 @@ class _PostListWidgetState extends State<PostListWidget> {
             ),
           ),
           8.verticalSpace,
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return const PostItemWidget();
-            },
-          ),
+          SizedBox(
+            height: 1.sh * 0.6,
+            child: CustomPagedList(
+              controller: sl<PostsListCubit>().controller,
+              itemBuilder: (item) => PostItemWidget(post: item),
+              shimmerItemHeight: 100.h,
+              emptyText: lz.notifications,
+              shimmerPadding: EdgeInsets.symmetric(horizontal: 24.w),
+            ),
+          )
         ],
       ),
     );

@@ -13,7 +13,7 @@ class CustomPagedList<Entity> extends StatelessWidget {
     super.key,
     required this.controller,
     required this.itemBuilder,
-    required this.shimmerItemWidth,
+    this.shimmerItemWidth = double.infinity,
     required this.shimmerItemHeight,
     required this.emptyText,
     this.physics,

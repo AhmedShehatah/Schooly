@@ -36,7 +36,7 @@ class ClassroomRemoteDataSource {
   Future<List<PostModel>> getPosts(GetPostParams params) async {
     try {
       final result =
-          await _dio.get('/posts/all', queryParameters: params.toJson());
+          await _dio.get('/post/all', queryParameters: params.toJson());
       return Isolate.run<List<PostModel>>(() {
         return (result.data as List).map((e) => PostModel.fromJson(e)).toList();
       });

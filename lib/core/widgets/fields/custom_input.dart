@@ -8,19 +8,22 @@ import '../text/custom_text.dart';
 class CustomInput extends StatefulWidget {
   const CustomInput({
     super.key,
-    required this.title,
+    this.title,
     this.hint,
     this.suffix,
     this.prefix,
     this.onChanged,
     this.backgroundColor,
     this.hintColor,
+    this.enabled = true,
     this.validator,
     this.controller,
+    this.onPressed,
     this.keyboardType,
     this.debounce = false,
     this.textInputAction = TextInputAction.next,
     this.required = true,
+    this.editable = true,
     this.showAsterisk = true,
   }) : _obscureNotifier = null;
 
@@ -32,21 +35,24 @@ class CustomInput extends StatefulWidget {
     this.showAsterisk = true,
     this.backgroundColor,
     this.hintColor,
-    required String title,
-  })  : title = title,
-        hint = null,
+    required this.title,
+  })  : hint = null,
         prefix = null,
+        enabled = true,
         onChanged = null,
+        editable = true,
+        onPressed = null,
         validator = sl<Validators>().password,
         keyboardType = TextInputType.visiblePassword,
         debounce = false,
         suffix = null,
         _obscureNotifier = ValueNotifier(true),
         assert(controller != null);
-
-  final String title;
+  final bool editable;
+  final String? title;
   final String? hint;
   final Widget? suffix;
+  final bool enabled;
   final Widget? prefix;
   final Color? backgroundColor;
   final Color? hintColor;
@@ -54,6 +60,7 @@ class CustomInput extends StatefulWidget {
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final void Function(String value)? onChanged;
+  final void Function()? onPressed;
   final bool debounce;
   final bool required;
   final TextInputAction textInputAction;
@@ -92,7 +99,8 @@ class _CustomInputState extends State<CustomInput> {
   String? Function(String?)? get _validator {
     if (widget.validator != null) return widget.validator;
     if (widget.required) {
-      return (value) => sl<Validators>().required(value, title: widget.title);
+      return (value) =>
+          sl<Validators>().required(value, title: widget.title ?? '');
     }
     return null;
   }
@@ -109,34 +117,35 @@ class _CustomInputState extends State<CustomInput> {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Wrap(
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CustomText.s14(
-                  widget.title,
-                  color: Colors.black,
-                ),
-                if (widget.required && widget.showAsterisk)
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      4.horizontalSpace,
-                      CustomText.s14(
-                        '*',
-                        color: Palette.red.shade800,
-                        bold: true,
-                      ),
-                    ],
+        if (widget.title != null)
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CustomText.s14(
+                    widget.title,
+                    color: Colors.black,
                   ),
-              ],
-            ),
-          ],
-        ),
-        8.verticalSpace,
+                  if (widget.required && widget.showAsterisk)
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        4.horizontalSpace,
+                        CustomText.s14(
+                          '*',
+                          color: Palette.red.shade800,
+                          bold: true,
+                        ),
+                      ],
+                    ),
+                ],
+              ),
+            ],
+          ),
+        if (widget.title != null) 8.verticalSpace,
         Builder(builder: (context) {
           if (widget._obscureNotifier != null) {
             return ValueListenableBuilder(
@@ -175,7 +184,10 @@ class _CustomInputState extends State<CustomInput> {
             validator: _validator,
             onChanged: _onChanged,
             controller: widget.controller,
+            readOnly: !widget.editable,
             keyboardType: widget.keyboardType,
+            onTap: widget.onPressed,
+            enabled: widget.enabled,
             textInputAction: widget.textInputAction,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             onTapOutside: (_) => FocusScope.of(context).unfocus(),

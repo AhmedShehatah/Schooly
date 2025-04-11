@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/shared_preferences/prefs_keys.dart';
 import '../../core/shared_preferences/shared_prefs.dart';
+import '../../presentation/classrooms/pages/class_details_screen.dart';
 import '../../presentation/classrooms/pages/classrooms_screen.dart';
 import '../../presentation/auth/forget_password/pages/forget_password_screen.dart';
 import '../../presentation/auth/reset_password/pages/reset_password_screen.dart';
@@ -20,9 +21,9 @@ class AppRouter {
   final _shellNavigatorKey = GlobalKey<NavigatorState>();
   String get _initialLocation {
     if (sl<SharedPrefs>().getBool(key: PrefsKeys.isLogged) ?? false) {
-      return LoginScreen.routeName;
+      return HomeScreen.routeName;
     } else {
-      return SplashScreen.routeName;
+      return LoginScreen.routeName;
     }
   }
 
@@ -34,7 +35,7 @@ class AppRouter {
         name: SplashScreen.routeName,
         path: SplashScreen.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
-          SplashScreen(),
+          const SplashScreen(),
           state,
         ),
       ),
@@ -43,11 +44,11 @@ class AppRouter {
         builder: (_, __, child) => MainScreen(child: child),
         routes: [
           GoRoute(
-              name: UpcomingClassesScreen.routeName,
-              path: UpcomingClassesScreen.routeName,
+              name: HomeScreen.routeName,
+              path: HomeScreen.routeName,
               pageBuilder: (_, state) {
                 return _buildPageWithTransition(
-                  const UpcomingClassesScreen(),
+                  const HomeScreen(),
                   state,
                 );
               }),
@@ -68,14 +69,26 @@ class AppRouter {
             },
           ),
           GoRoute(
-            name: '/classes',
-            path: '/classes',
-            pageBuilder: (context, state) {
-              sl<BottomNavigationCubit>().changePage(3);
+              name: ClassesScreen.routeName,
+              path: ClassesScreen.routeName,
+              pageBuilder: (context, state) {
+                sl<BottomNavigationCubit>().changePage(3);
 
-              return _buildPageWithTransition(const ClassesScreen(), state);
-            },
-          ),
+                return _buildPageWithTransition(const ClassesScreen(), state);
+              },
+              routes: [
+                GoRoute(
+                  name: ClassDetailsScreen.routeName,
+                  path: ClassDetailsScreen.routeName,
+                  pageBuilder: (context, state) {
+                    return _buildPageWithTransition(
+                        ClassDetailsScreen(
+                          classroomId: state.extra as String,
+                        ),
+                        state);
+                  },
+                ),
+              ]),
           GoRoute(
             name: '/settings',
             path: '/settings',

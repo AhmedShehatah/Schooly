@@ -8,7 +8,7 @@ part of 'get_posts_use_case.dart';
 
 Map<String, dynamic> _$$GetPostParamsImplToJson(_$GetPostParamsImpl instance) =>
     <String, dynamic>{
-      'page': instance.page,
-      'pageSize': instance.pageSize,
-      'classRoomId': instance.classRoomId,
+      'Page': instance.page,
+      'PageSize': instance.pageSize,
+      'ClassRoomId': instance.classRoomId,
     };

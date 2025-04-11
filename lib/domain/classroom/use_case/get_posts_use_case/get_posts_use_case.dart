@@ -9,9 +9,9 @@ part 'get_posts_use_case.g.dart';
 @Freezed(toJson: true, fromJson: false)
 class GetPostParams with _$GetPostParams {
   const factory GetPostParams({
-    @Default(1) int page,
-    @Default(1) int pageSize,
-    required String classRoomId,
+    @Default(1) @JsonKey(name: 'Page') int page,
+    @Default(20) @JsonKey(name: 'PageSize') int pageSize,
+    @JsonKey(name: 'ClassRoomId') required String classRoomId,
   }) = _GetPostParams;
 }
 

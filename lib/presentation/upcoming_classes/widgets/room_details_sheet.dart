@@ -22,7 +22,7 @@ class RoomDetailsSheet extends StatelessWidget {
   final UpcomingClasses item;
 
   RoomDetailsSheet({super.key, required this.item});
-  final _localizations = sl<LocaleCubit>().appLocalizations;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,12 +39,12 @@ class RoomDetailsSheet extends StatelessWidget {
           Row(
             children: [
               _buildTextIcon(
-                  title: _localizations.teacher,
+                  title: lz.teacher,
                   icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: item.teacherId),
               50.horizontalSpace,
               _buildTextIcon(
-                  title: _localizations.lessonType,
+                  title: lz.lessonType,
                   icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: '${item.lessonType}')
             ],
@@ -54,15 +54,15 @@ class RoomDetailsSheet extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _buildTextIcon(
-                  title: _localizations.date,
+                  title: lz.date,
                   icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: item.date),
               _buildTextIcon(
-                  title: _localizations.from,
+                  title: lz.from,
                   icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: item.from),
               _buildTextIcon(
-                  title: _localizations.to,
+                  title: lz.to,
                   icon: Assets.images.atom.image(width: 25.w, height: 25.h),
                   content: item.to),
             ],

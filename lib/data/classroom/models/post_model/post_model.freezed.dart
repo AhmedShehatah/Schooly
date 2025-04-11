@@ -22,6 +22,7 @@ PostModel _$PostModelFromJson(Map<String, dynamic> json) {
 mixin _$PostModel {
   String get content => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
+  String get authorName => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   List<CommentModel> get comments => throw _privateConstructorUsedError;
 
@@ -41,7 +42,11 @@ abstract class $PostModelCopyWith<$Res> {
       _$PostModelCopyWithImpl<$Res, PostModel>;
   @useResult
   $Res call(
-      {String content, String createdAt, int id, List<CommentModel> comments});
+      {String content,
+      String createdAt,
+      String authorName,
+      int id,
+      List<CommentModel> comments});
 }
 
 /// @nodoc
@@ -61,6 +66,7 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
   $Res call({
     Object? content = null,
     Object? createdAt = null,
+    Object? authorName = null,
     Object? id = null,
     Object? comments = null,
   }) {
@@ -72,6 +78,10 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorName: null == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
               as String,
       id: null == id
           ? _value.id
@@ -94,7 +104,11 @@ abstract class _$$PostModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String content, String createdAt, int id, List<CommentModel> comments});
+      {String content,
+      String createdAt,
+      String authorName,
+      int id,
+      List<CommentModel> comments});
 }
 
 /// @nodoc
@@ -112,6 +126,7 @@ class __$$PostModelImplCopyWithImpl<$Res>
   $Res call({
     Object? content = null,
     Object? createdAt = null,
+    Object? authorName = null,
     Object? id = null,
     Object? comments = null,
   }) {
@@ -123,6 +138,10 @@ class __$$PostModelImplCopyWithImpl<$Res>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorName: null == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
               as String,
       id: null == id
           ? _value.id
@@ -142,6 +161,7 @@ class _$PostModelImpl extends _PostModel {
   const _$PostModelImpl(
       {required this.content,
       required this.createdAt,
+      required this.authorName,
       required this.id,
       required final List<CommentModel> comments})
       : _comments = comments,
@@ -155,6 +175,8 @@ class _$PostModelImpl extends _PostModel {
   @override
   final String createdAt;
   @override
+  final String authorName;
+  @override
   final int id;
   final List<CommentModel> _comments;
   @override
@@ -166,7 +188,7 @@ class _$PostModelImpl extends _PostModel {
 
   @override
   String toString() {
-    return 'PostModel(content: $content, createdAt: $createdAt, id: $id, comments: $comments)';
+    return 'PostModel(content: $content, createdAt: $createdAt, authorName: $authorName, id: $id, comments: $comments)';
   }
 
   @override
@@ -177,14 +199,16 @@ class _$PostModelImpl extends _PostModel {
             (identical(other.content, content) || other.content == content) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
+            (identical(other.authorName, authorName) ||
+                other.authorName == authorName) &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._comments, _comments));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, content, createdAt, id,
-      const DeepCollectionEquality().hash(_comments));
+  int get hashCode => Object.hash(runtimeType, content, createdAt, authorName,
+      id, const DeepCollectionEquality().hash(_comments));
 
   /// Create a copy of PostModel
   /// with the given fields replaced by the non-null parameter values.
@@ -206,6 +230,7 @@ abstract class _PostModel extends PostModel {
   const factory _PostModel(
       {required final String content,
       required final String createdAt,
+      required final String authorName,
       required final int id,
       required final List<CommentModel> comments}) = _$PostModelImpl;
   const _PostModel._() : super._();
@@ -217,6 +242,8 @@ abstract class _PostModel extends PostModel {
   String get content;
   @override
   String get createdAt;
+  @override
+  String get authorName;
   @override
   int get id;
   @override

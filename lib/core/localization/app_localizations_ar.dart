@@ -263,4 +263,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String resendCode(String seconds) {
     return 'أعد إرسال الرمز مرة أخرى بعد $seconds';
   }
+
+  @override
+  String get comments => 'التعليقات';
+
+  @override
+  String get addComment => 'اضافة تعليق';
+
+  @override
+  String get noComments => 'لا يوجد تعليقات';
 }

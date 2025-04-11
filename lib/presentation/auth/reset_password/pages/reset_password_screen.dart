@@ -24,7 +24,6 @@ class ResetPasswordScreen extends StatefulWidget {
 }
 
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
-  final _localization = sl<LocaleCubit>().appLocalizations;
   final _newPasswordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -51,15 +50,15 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                     ),
                   ),
                   10.verticalSpace,
-                  CustomText.s24(_localization.resetPasswordTitle, bold: true),
+                  CustomText.s24(lz.resetPasswordTitle, bold: true),
                   10.verticalSpace,
                   CustomInput.obscure(
-                    title: _localization.newPassword,
+                    title: lz.newPassword,
                     controller: _newPasswordController,
                   ),
                   10.verticalSpace,
                   CustomInput.obscure(
-                    title: _localization.confirmPassword,
+                    title: lz.confirmPassword,
                     controller: _confirmPasswordController,
                   ),
                   24.verticalSpace,
@@ -76,7 +75,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                       return CustomButton(
                         isLoading: state.isLoading,
                         isExpanded: true,
-                        text: _localization.resetPassword,
+                        text: lz.resetPassword,
                         onPressed: () {
                           if (!_formKey.currentState!.validate()) return;
                           sl<ResetPasswordCubit>().resetPassword(
