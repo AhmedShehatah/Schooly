@@ -11,7 +11,6 @@ import '../../../core/utils/date_utils.dart';
 import '../../../core/widgets/fields/custom_input.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/classroom/entities/comment/comment.dart';
-import '../../../domain/classroom/entities/post/post.dart';
 import '../../../domain/classroom/use_case/add_comment_use_case/add_comment_use_case.dart';
 import '../cubits/add_comment_cubit.dart';
 import '../cubits/posts_list_cubit.dart';
