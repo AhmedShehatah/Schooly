@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 
 import '../widgets/add_post_widget.dart';
@@ -15,11 +16,7 @@ class AddContentTabsScreen extends StatefulWidget {
 
 class _AddContentTabsScreenState extends State<AddContentTabsScreen> {
   int selectedIndex = 0;
-  final List<String> tabs = [
-    'منشور جديد',
-    'جدول جلسة جديدة',
-    'واجب',
-  ];
+  final List<String> tabs = [lz.newPost, lz.newSession, lz.homework];
 
   @override
   void initState() {

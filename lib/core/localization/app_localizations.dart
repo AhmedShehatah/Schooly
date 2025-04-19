@@ -472,6 +472,54 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'لا يوجد تعليقات'**
   String get noComments;
+
+  /// No description provided for @newPost.
+  ///
+  /// In ar, this message translates to:
+  /// **'منشور جديد'**
+  String get newPost;
+
+  /// No description provided for @newSession.
+  ///
+  /// In ar, this message translates to:
+  /// **'جدول جلسة جديدة'**
+  String get newSession;
+
+  /// No description provided for @homework.
+  ///
+  /// In ar, this message translates to:
+  /// **'واجب'**
+  String get homework;
+
+  /// No description provided for @writeSomething.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب شيئًا...'**
+  String get writeSomething;
+
+  /// No description provided for @post.
+  ///
+  /// In ar, this message translates to:
+  /// **'نشر'**
+  String get post;
+
+  /// No description provided for @writeToStudents.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب شيئًا لطلابك هنا...'**
+  String get writeToStudents;
+
+  /// No description provided for @latestPosts.
+  ///
+  /// In ar, this message translates to:
+  /// **'أخر المنشورات'**
+  String get latestPosts;
+
+  /// No description provided for @noPosts.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد منشورات بعد'**
+  String get noPosts;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

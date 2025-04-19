@@ -14,6 +14,7 @@ import '../../../domain/classroom/entities/comment/comment.dart';
 import '../../../domain/classroom/use_case/add_comment_use_case/add_comment_use_case.dart';
 import '../cubits/add_comment_cubit.dart';
 import '../cubits/posts_list_cubit.dart';
+import '../../../core/utils/extensions.dart';
 
 class CommentsListWidget extends StatefulWidget {
   const CommentsListWidget(
@@ -32,7 +33,7 @@ class CommentsListWidget extends StatefulWidget {
 class _CommentsListWidgetState extends State<CommentsListWidget> {
   final _controller = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-
+  bool isButtonEnabled = false;
   @override
   void initState() {
     super.initState();
@@ -111,22 +112,33 @@ class _CommentsListWidgetState extends State<CommentsListWidget> {
                       },
                       builder: (context, state) {
                         return CustomInput(
+                          onChanged: (value) {
+                            setState(() {
+                              isButtonEnabled = value.trim().isNotEmpty;
+                            });
+                          },
                           controller: _controller,
                           required: false,
                           hint: lz.addComment,
-                          suffix: IconButton(
-                            icon:
-                                Icon(Icons.send, color: Palette.primary.color6),
-                            onPressed: () {
-                              if (!_formKey.currentState!.validate()) return;
-                              sl<AddCommentCubit>().addComment(
-                                params: AddCommentParams(
-                                  postId: widget.postId!,
-                                  content: _controller.text.trim(),
+                          suffix: state.isLoading
+                              ? const CircularProgressIndicator()
+                              : IconButton(
+                                  icon: Icon(Icons.send,
+                                      color: Palette.primary.color6),
+                                  onPressed: isButtonEnabled && !state.isLoading
+                                      ? () {
+                                          if (!_formKey.currentState!
+                                              .validate()) return;
+
+                                          sl<AddCommentCubit>().addComment(
+                                            params: AddCommentParams(
+                                              postId: widget.postId!,
+                                              content: _controller.text.trim(),
+                                            ),
+                                          );
+                                        }
+                                      : null,
                                 ),
-                              );
-                            },
-                          ),
                         );
                       },
                     ),

@@ -1,17 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../core/result/result.dart';
 import '../../../../core/use_cases/base_use_case.dart';
-import '../../entities/auth.dart';
+import '../../entities/user.dart';
 import '../../repo/auth_repo.dart';
 
 part 'login_use_case.freezed.dart';
 part 'login_use_case.g.dart';
 
-class LoginUseCase implements BaseUseCase<Auth, LoginParams> {
+class LoginUseCase implements BaseUseCase<User, LoginParams> {
   final AuthRepo _authRepo;
   LoginUseCase(this._authRepo);
   @override
-  Future<Result<Auth>> call({required LoginParams params}) {
+  Future<Result<User>> call({required LoginParams params}) {
     return _authRepo.login(params: params);
   }
 }

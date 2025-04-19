@@ -1,13 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'auth.freezed.dart';
+part 'user.freezed.dart';
 
 @freezed
-class Auth with _$Auth {
-  const Auth._();
-  const factory Auth({
+class User with _$User {
+  const User._();
+  const factory User({
     required String id,
     required String name,
     required String email,
     required int role,
-  }) = _Auth;
+  }) = _User;
 }

@@ -41,7 +41,7 @@ class _PostListWidgetState extends State<PostListWidget> {
             child: Column(
               children: [
                 CustomInput(
-                  hint: 'اكتب شيئًا لطلابك هنا...',
+                  hint: lz.writeToStudents,
                   hintColor: Palette.character.disabledPlaceholder25,
                   prefix: Padding(
                     padding:
@@ -83,7 +83,7 @@ class _PostListWidgetState extends State<PostListWidget> {
                 ),
                 22.verticalSpace,
                 Row(children: [
-                  CustomText.s14('أخر المنشورات',
+                  CustomText.s14(lz.latestPosts,
                       color: Palette.character.title85),
                   const Spacer(),
                   InkWell(
@@ -103,7 +103,7 @@ class _PostListWidgetState extends State<PostListWidget> {
               itemBuilder: (item) =>
                   PostItemWidget(post: item, classroomId: widget.classroomId),
               shimmerItemHeight: 100.h,
-              emptyText: lz.notifications,
+              emptyText: lz.noPosts,
               shimmerPadding: EdgeInsets.symmetric(horizontal: 24.w),
             ),
           )

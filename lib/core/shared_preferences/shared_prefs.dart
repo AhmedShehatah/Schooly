@@ -41,18 +41,4 @@ class SharedPrefs {
   Future<void> deleteSecuredValue({required PrefsKeys key}) async {
     await _secure.delete(key: key.name);
   }
-
-  Future<void> saveLoggedIn(bool isLoggedIn) async {
-    await saveBool(
-      key: PrefsKeys.isLogged,
-      value: isLoggedIn,
-    );
-  }
-
-  Future<void> saveUserDetails(Map<String, dynamic> userDetails) async {
-    await saveSecuredValue(
-      key: PrefsKeys.userDetails,
-      value: userDetails,
-    );
-  }
 }

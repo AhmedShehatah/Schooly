@@ -1,23 +1,23 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../domain/auth/entities/auth.dart';
-part 'auth_model.freezed.dart';
-part 'auth_model.g.dart';
+import '../../../domain/auth/entities/user.dart';
+part 'user_model.freezed.dart';
+part 'user_model.g.dart';
 
 @freezed
-class AuthModel with _$AuthModel {
-  const AuthModel._();
-  const factory AuthModel({
+class UserModel with _$UserModel {
+  const UserModel._();
+  const factory UserModel({
     required String id,
     required String name,
     required String email,
     required int role,
-  }) = _AuthModel;
+  }) = _UserModel;
 
-  factory AuthModel.fromJson(Map<String, dynamic> json) =>
-      _$AuthModelFromJson(json);
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
 
-  Auth toEntity() => Auth(
+  User toEntity() => User(
         id: id,
         name: name,
         email: email,

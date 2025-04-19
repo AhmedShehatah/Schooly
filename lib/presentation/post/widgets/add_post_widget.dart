@@ -104,7 +104,7 @@ class _AddPostWidgetState extends State<AddPostWidget> {
                     child: CustomInput(
                       ///TODO: Align start
                       controller: _controller,
-                      hint: 'اكتب شيئًا...',
+                      hint: lz.writeSomething,
                       hintColor: Palette.character.disabledPlaceholder25,
                       backgroundColor: Palette.character.primaryInverse,
                       required: false,
@@ -135,8 +135,8 @@ class _AddPostWidgetState extends State<AddPostWidget> {
                   return CustomButton(
                     isLoading: state.isLoading,
                     isExpanded: true,
-                    text: 'نشر',
-                    onPressed: isButtonEnabled
+                    text: lz.post,
+                    onPressed: isButtonEnabled && !state.isLoading
                         ? () {
                             if (!_formKey.currentState!.validate()) return;
                             sl<AddPostCubit>().addPost(

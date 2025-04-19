@@ -112,6 +112,16 @@
     },
     "comments":"التعليقات",
     "addComment":"اضافة تعليق",
-    "noComments":"لا يوجد تعليقات"
+    "noComments":"لا يوجد تعليقات",
+    "newPost": "منشور جديد",
+    "newSession": "جدول جلسة جديدة",
+    "homework": "واجب",
+    "writeSomething": "اكتب شيئًا...",
+    "post": "نشر",
+    "writeToStudents": "اكتب شيئًا لطلابك هنا...",
+    "latestPosts": "أخر المنشورات",
+    "noPosts": "لا توجد منشورات بعد"
+
+
     
 }
