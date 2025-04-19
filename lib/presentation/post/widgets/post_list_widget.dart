@@ -8,10 +8,12 @@ import '../../../core/widgets/fields/custom_input.dart';
 import '../../../core/widgets/paged_list/custom_paged_list.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../cubits/posts_list_cubit.dart';
+import '../pages/add_content_tabs_screen.dart';
 import 'post_item_widget.dart';
 
 class PostListWidget extends StatefulWidget {
   const PostListWidget({Key? key, required this.classroomId}) : super(key: key);
+  static const String routeName = '/post-list-widget';
 
   final String classroomId;
   @override
@@ -55,8 +57,27 @@ class _PostListWidgetState extends State<PostListWidget> {
                   required: false,
                   editable: false,
                   onPressed: () {
-                    // TODO open add post here
-                    showAboutDialog(context: context);
+                    showGeneralDialog(
+                      context: context,
+                      barrierDismissible: true,
+                      barrierLabel: MaterialLocalizations.of(context)
+                          .modalBarrierDismissLabel,
+                      barrierColor: Colors.black.withOpacity(0.5),
+                      pageBuilder: (context, anim1, anim2) {
+                        return AddContentTabsScreen(
+                          classRoomId: widget.classroomId,
+                        );
+                      },
+                      transitionBuilder: (context, anim1, anim2, child) {
+                        return SlideTransition(
+                          position: Tween(
+                                  begin: const Offset(0, 1),
+                                  end: const Offset(0, 0))
+                              .animate(anim1),
+                          child: child,
+                        );
+                      },
+                    );
                   },
                   enabled: true,
                 ),
@@ -79,7 +100,8 @@ class _PostListWidgetState extends State<PostListWidget> {
             height: 1.sh * 0.6,
             child: CustomPagedList(
               controller: sl<PostsListCubit>().controller,
-              itemBuilder: (item) => PostItemWidget(post: item),
+              itemBuilder: (item) =>
+                  PostItemWidget(post: item, classroomId: widget.classroomId),
               shimmerItemHeight: 100.h,
               emptyText: lz.notifications,
               shimmerPadding: EdgeInsets.symmetric(horizontal: 24.w),
