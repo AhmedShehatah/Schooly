@@ -31,6 +31,8 @@ import '../../presentation/auth/verify_code/cubit/check_otp_cubit.dart';
 import '../../presentation/classrooms/cubits/classroom_list_cubit.dart';
 import '../../presentation/lesson_meeting/cubits/join_meeting_cubit.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
+import '../../presentation/post/cubits/add_comment_cubit.dart';
+import '../../presentation/post/cubits/add_post_cubit.dart';
 import '../../presentation/post/cubits/posts_list_cubit.dart';
 import '../../presentation/home/cubit/upcoming_classes_cubit.dart';
 
@@ -53,6 +55,8 @@ Future<void> init() async {
   sl.registerLazySingleton(() => CheckOtpCubit(sl()));
   sl.registerLazySingleton(() => ClassroomListCubit(sl()));
   sl.registerLazySingleton(() => PostsListCubit(sl()));
+  sl.registerLazySingleton(() => AddPostCubit(sl()));
+  sl.registerLazySingleton(() => AddCommentCubit(sl()));
 
   //! useCases
 

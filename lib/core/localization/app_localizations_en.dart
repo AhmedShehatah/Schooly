@@ -248,4 +248,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noComments => 'No Comments';
+
+  @override
+  String get newPost => 'New Post';
+
+  @override
+  String get newSession => 'Schedule New Session';
+
+  @override
+  String get homework => 'Homework';
+
+  @override
+  String get writeSomething => 'Write something...';
+
+  @override
+  String get post => 'Post';
+
+  @override
+  String get writeToStudents => 'Write something to your students here...';
+
+  @override
+  String get latestPosts => 'Latest Posts';
+
+  @override
+  String get noPosts => 'There are no posts yet';
 }

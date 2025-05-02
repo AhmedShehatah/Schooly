@@ -10,8 +10,11 @@ import '../../../domain/classroom/entities/post/post.dart';
 import 'comments_list_widget.dart';
 
 class PostItemWidget extends StatelessWidget {
-  const PostItemWidget({Key? key, required this.post}) : super(key: key);
+  const PostItemWidget(
+      {Key? key, required this.post, required this.classroomId})
+      : super(key: key);
   final Post post;
+  final String classroomId;
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +101,11 @@ class PostItemWidget extends StatelessWidget {
       barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
       barrierColor: Colors.black.withOpacity(0.5),
       pageBuilder: (context, anim1, anim2) {
-        return CommentsListWidget(comments: post.comments);
+        return CommentsListWidget(
+          comments: post.comments,
+          postId: post.id,
+          classroomId: classroomId,
+        );
       },
       transitionBuilder: (context, anim1, anim2, child) {
         return SlideTransition(

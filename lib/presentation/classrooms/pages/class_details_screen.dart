@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/design/tab_bar/custom_tab_bar.dart';
 import '../../../core/localization/localization_manager.dart';
