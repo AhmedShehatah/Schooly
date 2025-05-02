@@ -3,21 +3,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../app/di/injection_container.dart';
-import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
+import '../../../core/widgets/shimmer/shimmer_list.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
 import '../../classes/widgets/classes_widget.dart';
-import '../../home/widgets/home_app_bar.dart';
+import '../widgets/home_app_bar.dart';
 import '../cubit/upcoming_classes_cubit.dart';
 import '../widgets/class_card_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
-  static const String routeName = '/upcoming-classes';
+  static const String routeName = '/home-screen';
 
   @override
   HomeScreenState createState() => HomeScreenState();
@@ -104,8 +104,10 @@ class HomeScreenState extends State<HomeScreen> {
                       builder: (context, state) {
                         return state.maybeWhen(
                             orElse: () => Container(),
-                            loading: () =>
-                                Center(child: Assets.images.atom.image()),
+                            loading: () => ShimmerList(
+                                rowCount: 4,
+                                itemWidth: 1.sw,
+                                itemHeight: 100.h),
                             success: (classes) {
                               return ListView.builder(
                                 itemCount: classes.length,
@@ -138,26 +140,3 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-/**
- * 
- * 
- * 
- * PagedListView<int, UpcomingClasses>(
-                  pagingController: sl<UpcomingClassesCubit>().controller,
-                  builderDelegate: PagedChildBuilderDelegate<UpcomingClasses>(
-                    itemBuilder: (context, item, index) {
-                      return ClassCardWidget(
-                        item: item,
-                        isLast: index ==
-                            sl<UpcomingClassesCubit>()
-                                    .controller
-                                    .itemList!
-                                    .length -
-                                1,
-                      );
-                    },
-                  ),
-                ),
- */

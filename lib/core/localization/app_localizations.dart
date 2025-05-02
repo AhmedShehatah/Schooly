@@ -520,6 +520,48 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'لا توجد منشورات بعد'**
   String get noPosts;
+
+  /// No description provided for @joinNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'الانضمام الان'**
+  String get joinNow;
+
+  /// No description provided for @activateNotification.
+  ///
+  /// In ar, this message translates to:
+  /// **'فعل الاشعارات'**
+  String get activateNotification;
+
+  /// No description provided for @verifyIdentity.
+  ///
+  /// In ar, this message translates to:
+  /// **'التحقق من الهوية'**
+  String get verifyIdentity;
+
+  /// No description provided for @holdPhoneSecurely.
+  ///
+  /// In ar, this message translates to:
+  /// **'ثبت الهاتف جيدا'**
+  String get holdPhoneSecurely;
+
+  /// No description provided for @takePhoto.
+  ///
+  /// In ar, this message translates to:
+  /// **'التقاط صورة'**
+  String get takePhoto;
+
+  /// No description provided for @comparingPhoto.
+  ///
+  /// In ar, this message translates to:
+  /// **'يتم مقارنة الصورة'**
+  String get comparingPhoto;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In ar, this message translates to:
+  /// **'حاول مرة اخرى'**
+  String get tryAgain;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

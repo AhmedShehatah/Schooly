@@ -29,12 +29,13 @@ import '../../presentation/auth/forget_password/cubit/forget_password_cubit.dart
 import '../../presentation/auth/reset_password/cubit/reset_password_cubit.dart';
 import '../../presentation/auth/verify_code/cubit/check_otp_cubit.dart';
 import '../../presentation/classrooms/cubits/classroom_list_cubit.dart';
+import '../../presentation/lesson_meeting/cubits/camera_cubit.dart';
 import '../../presentation/lesson_meeting/cubits/join_meeting_cubit.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/post/cubits/add_comment_cubit.dart';
 import '../../presentation/post/cubits/add_post_cubit.dart';
 import '../../presentation/post/cubits/posts_list_cubit.dart';
-import '../../presentation/upcoming_classes/cubit/upcoming_classes_cubit.dart';
+import '../../presentation/home/cubit/upcoming_classes_cubit.dart';
 
 import '../../data/auth/remote/auth_remote_data_source.dart';
 import '../../data/auth/repo/auth_repo_impl.dart';
@@ -95,6 +96,7 @@ Future<void> init() async {
   sl.registerSingleton(LocaleCubit());
   sl.registerSingleton(createDio());
   sl.registerLazySingleton(() => AppRouter());
+  sl.registerLazySingleton(() => CameraCubit());
   sl.registerSingleton(AppTheme());
   sl.registerLazySingleton(() => Validators());
 }

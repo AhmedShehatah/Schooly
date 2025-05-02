@@ -49,7 +49,7 @@ class ClassCardWidget extends StatelessWidget {
                     border: Border.all(color: Palette.sunsetOrange.color3),
                   ),
                   child: CustomText.s11(
-                    DateUtility.dateToSinceFormat(DateTime.parse(item.date)
+                    DateUtility.dateToSinceFormat(item.date
                         .copyWith(hour: int.parse(item.from.substring(0, 2)))),
                     color: Palette.sunsetOrange.color6,
                   ),

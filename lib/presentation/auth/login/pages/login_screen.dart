@@ -12,7 +12,7 @@ import '../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../core/widgets/fields/custom_input.dart';
 import '../../../../core/widgets/text/custom_text.dart';
 import '../../../../domain/auth/use_cases/login_use_case/login_use_case.dart';
-import '../../../upcoming_classes/pages/upcoming_classes_screen.dart';
+import '../../../home/pages/home_screen.dart';
 import '../../forget_password/pages/forget_password_screen.dart';
 import '../cubit/login_cubit.dart';
 
@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
 
     if (kDebugMode) {
-      _emailController.text = 'teacher@gmail.com';
+      _emailController.text = 'test@test.com';
       _passwordController.text = 'testtest';
       setState(() {});
     }

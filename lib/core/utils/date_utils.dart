@@ -12,6 +12,13 @@ class DateUtility {
     return DateFormat('dd/MM/yyyy hh:mm a').format(date);
   }
 
+  static String formatDateWithoutTime(DateTime? date) {
+    if (date == null) {
+      return '';
+    }
+    return DateFormat('dd/MM/yyyy').format(date);
+  }
+
   static String? formatDateRange(DateTimeRange? range) {
     if (range == null) {
       return null;

@@ -28,6 +28,9 @@ class $AssetsIconsGen {
   SvgGenImage get homeworkFile =>
       const SvgGenImage('assets/icons/homework_file.svg');
 
+  /// File path: assets/icons/left_arrow.svg
+  SvgGenImage get leftArrow => const SvgGenImage('assets/icons/left_arrow.svg');
+
   /// File path: assets/icons/notebook.svg
   SvgGenImage get notebook => const SvgGenImage('assets/icons/notebook.svg');
 
@@ -47,6 +50,7 @@ class $AssetsIconsGen {
         download,
         home,
         homeworkFile,
+        leftArrow,
         notebook,
         settings,
         slider3Horizontal,

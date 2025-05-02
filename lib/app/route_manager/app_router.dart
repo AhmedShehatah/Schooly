@@ -7,12 +7,13 @@ import '../../presentation/classrooms/pages/classrooms_screen.dart';
 import '../../presentation/auth/forget_password/pages/forget_password_screen.dart';
 import '../../presentation/auth/reset_password/pages/reset_password_screen.dart';
 import '../../presentation/auth/verify_code/pages/otp_screen.dart';
+import '../../presentation/lesson_meeting/pages/lesson_attendance_screen.dart';
 import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/main/pages/main_screen.dart';
 
 import '../../presentation/splash/pages/splash_screen.dart';
-import '../../presentation/upcoming_classes/pages/upcoming_classes_screen.dart';
+import '../../presentation/home/pages/home_screen.dart';
 import '../../presentation/auth/login/pages/login_screen.dart';
 import '../di/injection_container.dart';
 
@@ -101,6 +102,16 @@ class AppRouter {
             },
           ),
         ],
+      ),
+      GoRoute(
+        name: LessonAttendanceScreen.routeName,
+        path: LessonAttendanceScreen.routeName,
+        pageBuilder: (_, state) => _buildPageWithTransition(
+          LessonAttendanceScreen(
+            lessonId: state.extra as String,
+          ),
+          state,
+        ),
       ),
       GoRoute(
         name: CallScreen.routeName,

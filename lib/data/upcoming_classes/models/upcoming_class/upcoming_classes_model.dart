@@ -14,7 +14,7 @@ class UpcomingClassesModel with _$UpcomingClassesModel {
     required String grade,
     required String title,
     required int lessonType,
-    required String date,
+    required DateTime date,
     required String from,
     required String to,
   }) = _UpcomingClassesModel;

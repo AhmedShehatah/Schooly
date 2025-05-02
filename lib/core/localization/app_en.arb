@@ -120,6 +120,13 @@
     "post": "Post",
     "writeToStudents": "Write something to your students here...",
     "latestPosts": "Latest Posts",
-    "noPosts": "There are no posts yet"
+    "noPosts": "There are no posts yet",
+    "joinNow": "Join Now",
+    "activateNotification":"Activate Notification",
+    "holdPhoneSecurely":"Hold your phone securely",
+    "verifyIdentity":"Verify Identity",
+    "takePhoto":"Take A Photo",
+    "comparingPhotos":"Comparing Photo",
+    "tryAgain":"Try again"
 
 }
