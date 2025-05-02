@@ -10,8 +10,8 @@ import '../../../core/utils/date_utils.dart';
 import '../../../core/widgets/bottom_sheets/custom_bottom_sheet.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
-import '../../upcoming_classes/cubit/upcoming_classes_cubit.dart';
-import '../../upcoming_classes/widgets/room_details_sheet.dart';
+import '../../home/cubit/upcoming_classes_cubit.dart';
+import '../../home/widgets/room_details_sheet.dart';
 
 class UpcomingClassesWidget extends StatelessWidget {
   const UpcomingClassesWidget({super.key});

@@ -10,14 +10,14 @@ import '../../../core/theme/palette.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
 import '../../classes/widgets/classes_widget.dart';
-import '../../home/widgets/home_app_bar.dart';
+import '../widgets/home_app_bar.dart';
 import '../cubit/upcoming_classes_cubit.dart';
 import '../widgets/class_card_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
-  static const String routeName = '/upcoming-classes';
+  static const String routeName = '/home-screen';
 
   @override
   HomeScreenState createState() => HomeScreenState();

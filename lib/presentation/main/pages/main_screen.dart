@@ -7,7 +7,7 @@ import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../classrooms/pages/classrooms_screen.dart';
-import '../../upcoming_classes/pages/upcoming_classes_screen.dart';
+import '../../home/pages/home_screen.dart';
 import '../cubits/bottom_navigation_cubit.dart';
 
 class MainScreen extends StatefulWidget {
