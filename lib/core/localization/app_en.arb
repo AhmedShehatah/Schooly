@@ -112,5 +112,14 @@
     },
     "comments":"Comments",
     "addComment":"Add comment",
-    "noComments":"No Comments"
+    "noComments":"No Comments",
+    "newPost": "New Post",
+    "newSession": "Schedule New Session",
+    "homework": "Homework",
+    "writeSomething": "Write something...",
+    "post": "Post",
+    "writeToStudents": "Write something to your students here...",
+    "latestPosts": "Latest Posts",
+    "noPosts": "There are no posts yet"
+
 }

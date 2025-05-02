@@ -60,7 +60,7 @@ class CustomButton extends StatelessWidget {
         isText = true;
   final bool isExpanded;
   final bool isLoading;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final String text;
   final IconAlignment iconAlignment;
   final Widget? icon;

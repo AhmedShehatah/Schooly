@@ -272,4 +272,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noComments => 'لا يوجد تعليقات';
+
+  @override
+  String get newPost => 'منشور جديد';
+
+  @override
+  String get newSession => 'جدول جلسة جديدة';
+
+  @override
+  String get homework => 'واجب';
+
+  @override
+  String get writeSomething => 'اكتب شيئًا...';
+
+  @override
+  String get post => 'نشر';
+
+  @override
+  String get writeToStudents => 'اكتب شيئًا لطلابك هنا...';
+
+  @override
+  String get latestPosts => 'أخر المنشورات';
+
+  @override
+  String get noPosts => 'لا توجد منشورات بعد';
 }

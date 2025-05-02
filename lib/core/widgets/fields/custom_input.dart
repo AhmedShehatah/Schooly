@@ -25,6 +25,7 @@ class CustomInput extends StatefulWidget {
     this.required = true,
     this.editable = true,
     this.showAsterisk = true,
+    this.border = false,
   }) : _obscureNotifier = null;
 
   CustomInput.obscure({
@@ -36,6 +37,7 @@ class CustomInput extends StatefulWidget {
     this.backgroundColor,
     this.hintColor,
     required this.title,
+    this.border = false,
   })  : hint = null,
         prefix = null,
         enabled = true,
@@ -66,6 +68,7 @@ class CustomInput extends StatefulWidget {
   final TextInputAction textInputAction;
   final bool showAsterisk;
   final ValueNotifier<bool>? _obscureNotifier;
+  final bool border;
 
   @override
   State<CustomInput> createState() => _CustomInputState();
@@ -192,6 +195,9 @@ class _CustomInputState extends State<CustomInput> {
             autovalidateMode: AutovalidateMode.onUserInteraction,
             onTapOutside: (_) => FocusScope.of(context).unfocus(),
             decoration: InputDecoration(
+              border: widget.border ? InputBorder.none : null,
+              enabledBorder: widget.border ? InputBorder.none : null,
+              focusedBorder: widget.border ? InputBorder.none : null,
               hintText: widget.hint,
               prefixIcon: widget.prefix,
               suffixIcon: _suffix,

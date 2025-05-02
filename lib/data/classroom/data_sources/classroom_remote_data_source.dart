@@ -47,7 +47,7 @@ class ClassroomRemoteDataSource {
 
   Future<void> addPost(AddPostParams params) async {
     try {
-      await _dio.post('/posts', data: params.toJson());
+      await _dio.post('/post', data: params.toJson());
     } on DioException catch (e) {
       throw e.error as Failure;
     }

@@ -3,4 +3,5 @@ enum PrefsKeys {
   languageCode,
   isLogged,
   firstTime,
+  userDetails,
 }
