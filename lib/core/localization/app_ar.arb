@@ -120,7 +120,18 @@
     "post": "نشر",
     "writeToStudents": "اكتب شيئًا لطلابك هنا...",
     "latestPosts": "أخر المنشورات",
-    "noPosts": "لا توجد منشورات بعد"
+    "noPosts": "لا توجد منشورات بعد",
+    "joinNow": "الانضمام الان",
+    "activateNotification": "فعل الاشعارات",
+    "verifyIdentity":"التحقق من الهوية",
+    "holdPhoneSecurely":"ثبت الهاتف جيدا",
+    "takePhoto":"التقاط صورة",
+    "comparingPhoto":"يتم مقارنة الصورة",
+ 
+    "tryAgain":"حاول مرة اخرى"
+
+
+    
 
 
     

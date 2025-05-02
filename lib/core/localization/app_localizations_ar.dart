@@ -296,4 +296,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noPosts => 'لا توجد منشورات بعد';
+
+  @override
+  String get joinNow => 'الانضمام الان';
+
+  @override
+  String get activateNotification => 'فعل الاشعارات';
+
+  @override
+  String get verifyIdentity => 'التحقق من الهوية';
+
+  @override
+  String get holdPhoneSecurely => 'ثبت الهاتف جيدا';
+
+  @override
+  String get takePhoto => 'التقاط صورة';
+
+  @override
+  String get comparingPhoto => 'يتم مقارنة الصورة';
+
+  @override
+  String get tryAgain => 'حاول مرة اخرى';
 }

@@ -272,4 +272,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noPosts => 'There are no posts yet';
+
+  @override
+  String get joinNow => 'Join Now';
+
+  @override
+  String get activateNotification => 'Activate Notification';
+
+  @override
+  String get verifyIdentity => 'Verify Identity';
+
+  @override
+  String get holdPhoneSecurely => 'Hold your phone securely';
+
+  @override
+  String get takePhoto => 'Take A Photo';
+
+  @override
+  String get comparingPhoto => 'يتم مقارنة الصورة';
+
+  @override
+  String get tryAgain => 'Try again';
 }

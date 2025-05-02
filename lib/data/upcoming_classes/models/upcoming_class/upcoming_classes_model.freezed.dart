@@ -26,7 +26,7 @@ mixin _$UpcomingClassesModel {
   String get grade => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   int get lessonType => throw _privateConstructorUsedError;
-  String get date => throw _privateConstructorUsedError;
+  DateTime get date => throw _privateConstructorUsedError;
   String get from => throw _privateConstructorUsedError;
   String get to => throw _privateConstructorUsedError;
 
@@ -53,7 +53,7 @@ abstract class $UpcomingClassesModelCopyWith<$Res> {
       String grade,
       String title,
       int lessonType,
-      String date,
+      DateTime date,
       String from,
       String to});
 }
@@ -112,7 +112,7 @@ class _$UpcomingClassesModelCopyWithImpl<$Res,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       from: null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -140,7 +140,7 @@ abstract class _$$UpcomingClassesModelImplCopyWith<$Res>
       String grade,
       String title,
       int lessonType,
-      String date,
+      DateTime date,
       String from,
       String to});
 }
@@ -196,7 +196,7 @@ class __$$UpcomingClassesModelImplCopyWithImpl<$Res>
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       from: null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -240,7 +240,7 @@ class _$UpcomingClassesModelImpl extends _UpcomingClassesModel {
   @override
   final int lessonType;
   @override
-  final String date;
+  final DateTime date;
   @override
   final String from;
   @override
@@ -300,7 +300,7 @@ abstract class _UpcomingClassesModel extends UpcomingClassesModel {
       required final String grade,
       required final String title,
       required final int lessonType,
-      required final String date,
+      required final DateTime date,
       required final String from,
       required final String to}) = _$UpcomingClassesModelImpl;
   const _UpcomingClassesModel._() : super._();
@@ -321,7 +321,7 @@ abstract class _UpcomingClassesModel extends UpcomingClassesModel {
   @override
   int get lessonType;
   @override
-  String get date;
+  DateTime get date;
   @override
   String get from;
   @override

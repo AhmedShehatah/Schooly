@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
 
     if (kDebugMode) {
-      _emailController.text = 'teacher@gmail.com';
+      _emailController.text = 'test@test.com';
       _passwordController.text = 'testtest';
       setState(() {});
     }
