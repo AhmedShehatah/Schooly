@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../core/enums/enums.dart';
 part 'user.freezed.dart';
 
 @freezed
@@ -8,6 +10,6 @@ class User with _$User {
     required String id,
     required String name,
     required String email,
-    required int role,
+    required UserType role,
   }) = _User;
 }

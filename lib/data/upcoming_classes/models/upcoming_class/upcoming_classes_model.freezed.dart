@@ -25,7 +25,7 @@ mixin _$UpcomingClassesModel {
   String get subject => throw _privateConstructorUsedError;
   String get grade => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  int get lessonType => throw _privateConstructorUsedError;
+  LessonType get lessonType => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
   String get from => throw _privateConstructorUsedError;
   String get to => throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ abstract class $UpcomingClassesModelCopyWith<$Res> {
       String subject,
       String grade,
       String title,
-      int lessonType,
+      LessonType lessonType,
       DateTime date,
       String from,
       String to});
@@ -108,7 +108,7 @@ class _$UpcomingClassesModelCopyWithImpl<$Res,
       lessonType: null == lessonType
           ? _value.lessonType
           : lessonType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as LessonType,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -139,7 +139,7 @@ abstract class _$$UpcomingClassesModelImplCopyWith<$Res>
       String subject,
       String grade,
       String title,
-      int lessonType,
+      LessonType lessonType,
       DateTime date,
       String from,
       String to});
@@ -192,7 +192,7 @@ class __$$UpcomingClassesModelImplCopyWithImpl<$Res>
       lessonType: null == lessonType
           ? _value.lessonType
           : lessonType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as LessonType,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -238,7 +238,7 @@ class _$UpcomingClassesModelImpl extends _UpcomingClassesModel {
   @override
   final String title;
   @override
-  final int lessonType;
+  final LessonType lessonType;
   @override
   final DateTime date;
   @override
@@ -299,7 +299,7 @@ abstract class _UpcomingClassesModel extends UpcomingClassesModel {
       required final String subject,
       required final String grade,
       required final String title,
-      required final int lessonType,
+      required final LessonType lessonType,
       required final DateTime date,
       required final String from,
       required final String to}) = _$UpcomingClassesModelImpl;
@@ -319,7 +319,7 @@ abstract class _UpcomingClassesModel extends UpcomingClassesModel {
   @override
   String get title;
   @override
-  int get lessonType;
+  LessonType get lessonType;
   @override
   DateTime get date;
   @override

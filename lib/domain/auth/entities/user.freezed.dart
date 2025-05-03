@@ -19,7 +19,7 @@ mixin _$User {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  int get role => throw _privateConstructorUsedError;
+  UserType get role => throw _privateConstructorUsedError;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -32,7 +32,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String id, String name, String email, int role});
+  $Res call({String id, String name, String email, UserType role});
 }
 
 /// @nodoc
@@ -71,7 +71,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
-              as int,
+              as UserType,
     ) as $Val);
   }
 }
@@ -83,7 +83,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String email, int role});
+  $Res call({String id, String name, String email, UserType role});
 }
 
 /// @nodoc
@@ -119,7 +119,7 @@ class __$$UserImplCopyWithImpl<$Res>
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
-              as int,
+              as UserType,
     ));
   }
 }
@@ -141,7 +141,7 @@ class _$UserImpl extends _User {
   @override
   final String email;
   @override
-  final int role;
+  final UserType role;
 
   @override
   String toString() {
@@ -176,7 +176,7 @@ abstract class _User extends User {
       {required final String id,
       required final String name,
       required final String email,
-      required final int role}) = _$UserImpl;
+      required final UserType role}) = _$UserImpl;
   const _User._() : super._();
 
   @override
@@ -186,7 +186,7 @@ abstract class _User extends User {
   @override
   String get email;
   @override
-  int get role;
+  UserType get role;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.

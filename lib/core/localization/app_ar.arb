@@ -127,12 +127,18 @@
     "holdPhoneSecurely":"ثبت الهاتف جيدا",
     "takePhoto":"التقاط صورة",
     "comparingPhoto":"يتم مقارنة الصورة",
- 
-    "tryAgain":"حاول مرة اخرى"
-
-
-    
-
-
-    
+    "tryAgain":"حاول مرة اخرى",
+    "within":"خلال",
+    "workingNow":"تعمل الان",
+    "ended":"انتهت",
+    "explanation":"شرح",
+    "homeworkSolution":"حل واجب",
+    "practice":"حل تمارين",
+    "revision":"مراجعة",
+    "other":"اخرى"
 }
+
+    
+
+
+    

@@ -317,4 +317,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get tryAgain => 'حاول مرة اخرى';
+
+  @override
+  String get within => 'خلال';
+
+  @override
+  String get workingNow => 'تعمل الان';
+
+  @override
+  String get ended => 'انتهت';
+
+  @override
+  String get explanation => 'شرح';
+
+  @override
+  String get homeworkSolution => 'حل واجب';
+
+  @override
+  String get practice => 'حل تمارين';
+
+  @override
+  String get revision => 'مراجعة';
+
+  @override
+  String get other => 'اخرى';
 }

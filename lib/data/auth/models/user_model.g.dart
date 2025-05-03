@@ -11,7 +11,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       email: json['email'] as String,
-      role: (json['role'] as num).toInt(),
+      role: $enumDecode(_$UserTypeEnumMap, json['role']),
     );
 
 Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
@@ -19,5 +19,10 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'email': instance.email,
-      'role': instance.role,
+      'role': _$UserTypeEnumMap[instance.role]!,
     };
+
+const _$UserTypeEnumMap = {
+  UserType.student: 1,
+  UserType.teacher: 2,
+};
