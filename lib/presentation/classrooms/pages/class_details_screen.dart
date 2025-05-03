@@ -8,11 +8,15 @@ import '../../homework/widgets/homework_widget.dart';
 import '../../post/widgets/post_list_widget.dart';
 
 class ClassDetailsScreen extends StatefulWidget {
-  const ClassDetailsScreen({super.key, required this.classroomId});
+  const ClassDetailsScreen({
+    super.key,
+    required this.classroomId,
+    //  required this.homeworkClassroomId
+  });
   static const String routeName = '/classroom-details-screen';
 
   final String classroomId;
-
+  // final String homeworkClassroomId;
   @override
   State<ClassDetailsScreen> createState() => _ClassDetailsScreenState();
 }
@@ -48,7 +52,9 @@ class _ClassDetailsScreenState extends State<ClassDetailsScreen> {
                 PostListWidget(
                   classroomId: widget.classroomId,
                 ),
-                const HomeworkWidget(),
+                HomeworkWidget(
+                  classroomId: widget.classroomId,
+                ),
                 const Placeholder()
               ],
             )),

@@ -622,6 +622,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'عنوان الجلسة'**
   String get sessionTitle;
+
+  /// No description provided for @noHomework.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد واجبات حالياً'**
+  String get noHomework;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

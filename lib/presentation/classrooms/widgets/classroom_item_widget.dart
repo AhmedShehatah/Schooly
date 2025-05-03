@@ -19,7 +19,11 @@ class ClassroomItemWidget extends StatelessWidget {
         padding: Dimensions.cardInternalPadding,
         child: ListTile(
           onTap: () {
-            context.goNamed(ClassDetailsScreen.routeName, extra: classroom.id);
+            context.goNamed(
+              ClassDetailsScreen.routeName,
+              extra: classroom.id,
+              //   'homeworkClassroomId': classroom.teacherId,
+            );
           },
           leading: Assets.images.atom.image(width: 50.w, height: 50.h),
           title: CustomText.s14(
