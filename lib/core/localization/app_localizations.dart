@@ -562,6 +562,66 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'حاول مرة اخرى'**
   String get tryAgain;
+
+  /// No description provided for @within.
+  ///
+  /// In ar, this message translates to:
+  /// **'خلال'**
+  String get within;
+
+  /// No description provided for @workingNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعمل الان'**
+  String get workingNow;
+
+  /// No description provided for @ended.
+  ///
+  /// In ar, this message translates to:
+  /// **'انتهت'**
+  String get ended;
+
+  /// No description provided for @explanation.
+  ///
+  /// In ar, this message translates to:
+  /// **'شرح'**
+  String get explanation;
+
+  /// No description provided for @homeworkSolution.
+  ///
+  /// In ar, this message translates to:
+  /// **'حل واجب'**
+  String get homeworkSolution;
+
+  /// No description provided for @practice.
+  ///
+  /// In ar, this message translates to:
+  /// **'حل تمارين'**
+  String get practice;
+
+  /// No description provided for @revision.
+  ///
+  /// In ar, this message translates to:
+  /// **'مراجعة'**
+  String get revision;
+
+  /// No description provided for @other.
+  ///
+  /// In ar, this message translates to:
+  /// **'اخرى'**
+  String get other;
+
+  /// No description provided for @choose.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر {value}'**
+  String choose(Object value);
+
+  /// No description provided for @sessionTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'عنوان الجلسة'**
+  String get sessionTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

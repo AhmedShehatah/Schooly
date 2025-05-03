@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/design/tab_bar/custom_tab_bar.dart';
+import '../../../core/widgets/tab_bar/custom_tab_bar.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 

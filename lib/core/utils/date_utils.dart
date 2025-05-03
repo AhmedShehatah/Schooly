@@ -16,7 +16,7 @@ class DateUtility {
     if (date == null) {
       return '';
     }
-    return DateFormat('dd/MM/yyyy').format(date);
+    return DateFormat('dd-MM-yyyy').format(date);
   }
 
   static String? formatDateRange(DateTimeRange? range) {
@@ -52,5 +52,72 @@ class DateUtility {
       return localizations.nMonths(difference.inDays ~/ 30);
     }
     return localizations.nYears(difference.inDays ~/ 365);
+  }
+
+  static String sessionDate(DateTime day, String from, String to) {
+    TimeOfDay fromTime = parseTimeOfDay(from);
+    TimeOfDay toTime = parseTimeOfDay(to);
+    final now = DateTime.now();
+    // if lesson today
+    if (day.difference(now).inDays.abs() <= 0) {
+      // if didn't start
+      if (now.hour < fromTime.hour ||
+          (now.hour == fromTime.hour && now.minute < fromTime.minute)) {
+        String result = '${lz.within} ';
+
+        if (now.hour < fromTime.hour) {
+          result += lz.nHours(fromTime.hour - now.hour);
+        }
+        if (now.hour == fromTime.hour && now.minute < fromTime.minute) {
+          result += lz.nMinutes(fromTime.minute - now.minute);
+        }
+        return result;
+      }
+
+      // if started and didn't end
+      if (now.hour < toTime.hour ||
+          (now.hour == toTime.hour && now.minute < toTime.minute)) {
+        return lz.workingNow;
+      }
+
+      // if started and ended
+      return lz.ended;
+    }
+
+    // if lesson not today
+    return DateFormat('dd MMM', sl<LocaleCubit>().appLocalizations.localeName)
+        .format(day);
+  }
+
+  static TimeOfDay parseTimeOfDay(String timeString) {
+    final parts = timeString.split(':');
+    final hour = int.parse(parts[0]);
+    final minute = int.parse(parts[1]);
+    return TimeOfDay(hour: hour, minute: minute);
+  }
+
+  static String formateTimeOfDay(String timeString) {
+    final parts = timeString.split(':');
+    final hour = int.parse(parts[0]);
+    final minute = int.parse(parts[1]);
+    return '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}';
+  }
+
+  static bool canJoinSession(DateTime day, String from, String to) {
+    TimeOfDay fromTime = parseTimeOfDay(from);
+    TimeOfDay toTime = parseTimeOfDay(to);
+    final now = DateTime.now();
+    // if lesson today
+    if (day.difference(now).inDays.abs() <= 0) {
+      if (fromTime.hour <= now.hour && toTime.hour >= now.hour) {
+        if (fromTime.minute >= now.minute) return false;
+        return true;
+      }
+      if (fromTime.hour == now.hour && fromTime.minute >= now.minute) {
+        return true;
+      }
+      return false;
+    }
+    return false;
   }
 }

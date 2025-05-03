@@ -293,4 +293,36 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tryAgain => 'Try again';
+
+  @override
+  String get within => 'Within';
+
+  @override
+  String get workingNow => 'Working Now';
+
+  @override
+  String get ended => 'Ended';
+
+  @override
+  String get explanation => 'Explanation';
+
+  @override
+  String get homeworkSolution => 'Homework Solution';
+
+  @override
+  String get practice => 'Practice';
+
+  @override
+  String get revision => 'Revision';
+
+  @override
+  String get other => 'Other';
+
+  @override
+  String choose(Object value) {
+    return 'Choose $value';
+  }
+
+  @override
+  String get sessionTitle => 'Session Title';
 }

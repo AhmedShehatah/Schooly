@@ -27,6 +27,7 @@ class PostItemWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 4.h),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ListTile(
                 contentPadding: EdgeInsets.zero,

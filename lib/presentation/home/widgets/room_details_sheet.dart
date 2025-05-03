@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/date_utils.dart';
+import '../../../core/utils/extensions.dart';
 import '../../../core/widgets/buttons/custom_button.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
@@ -33,45 +35,67 @@ class RoomDetailsSheet extends StatelessWidget {
           ),
           26.verticalSpace,
           Row(
-            children: [
-              _buildTextIcon(
-                  title: lz.teacher,
-                  icon: Assets.images.atom.image(width: 25.w, height: 25.h),
-                  content: item.teacherId.substring(1, 5)),
-              50.horizontalSpace,
-              _buildTextIcon(
-                  title: lz.lessonType,
-                  icon: Assets.images.atom.image(width: 25.w, height: 25.h),
-                  content: '${item.lessonType}')
-            ],
-          ),
-          24.verticalSpace,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Expanded(
-                child: _buildTextIcon(
-                    title: lz.date,
-                    icon: Assets.images.atom.image(width: 25.w, height: 25.h),
-                    content: DateUtility.formatDateWithoutTime(item.date)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildTextIcon(
+                        title: lz.teacher,
+                        icon: Icon(
+                          CupertinoIcons.person,
+                          size: 14.r,
+                        ),
+                        content: item.teacherId.substring(1, 5)),
+                    _buildTextIcon(
+                        title: lz.date,
+                        icon: Icon(
+                          Icons.date_range_outlined,
+                          size: 14.r,
+                        ),
+                        content: DateUtility.formatDateWithoutTime(item.date)),
+                  ],
+                ),
               ),
               Expanded(
-                child: _buildTextIcon(
-                    title: lz.from,
-                    icon: Assets.images.atom.image(width: 25.w, height: 25.h),
-                    content: item.from),
-              ),
-              Expanded(
-                child: _buildTextIcon(
-                    title: lz.to,
-                    icon: Assets.images.atom.image(width: 25.w, height: 25.h),
-                    content: item.to),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildTextIcon(
+                        title: lz.lessonType,
+                        icon: Icon(
+                          Icons.article_outlined,
+                          size: 14.r,
+                        ),
+                        content: item.lessonType.toName),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: _buildTextIcon(
+                              title: lz.from,
+                              icon: Assets.images.atom
+                                  .image(width: 25.w, height: 25.h),
+                              content: DateUtility.formateTimeOfDay(item.from)),
+                        ),
+                        Expanded(
+                          child: _buildTextIcon(
+                              title: lz.to,
+                              icon: Assets.images.atom
+                                  .image(width: 25.w, height: 25.h),
+                              content: DateUtility.formateTimeOfDay(item.to)),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ],
           ),
           15.verticalSpace,
           CustomButton(
-            // enabled: item.date.difference(DateTime.now()).inSeconds > 0,
+            enabled: DateUtility.canJoinSession(item.date, item.from, item.to),
             isTextBold: true,
             text: lz.joinNow,
             onPressed: () {
@@ -79,13 +103,13 @@ class RoomDetailsSheet extends StatelessWidget {
                   extra: item.id);
             },
           ),
-          15.verticalSpace,
-          CustomButton.text(
-            isExpanded: false,
-            onPressed: () {},
-            text: lz.activateNotification,
-            textColor: Palette.primary.color6,
-          ),
+          // 15.verticalSpace,
+          // CustomButton.text(
+          //   isExpanded: false,
+          //   onPressed: () {},
+          //   text: lz.activateNotification,
+          //   textColor: Palette.primary.color6,
+          // ),
           36.verticalSpace,
         ],
       ),

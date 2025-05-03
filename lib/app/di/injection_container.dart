@@ -16,6 +16,7 @@ import '../../domain/auth/use_cases/forget_password_use_case/forget_password_use
 import '../../domain/auth/use_cases/reset_password_use_case/reset_password_use_case.dart';
 import '../../domain/classroom/repo/classroom_repo.dart';
 import '../../domain/classroom/use_case/add_comment_use_case/add_comment_use_case.dart';
+import '../../domain/classroom/use_case/add_new_session_use_case/add_new_session_use_case.dart';
 import '../../domain/classroom/use_case/add_post_use_case/add_post_use_case.dart';
 import '../../domain/classroom/use_case/delete_comment_use_case/delete_comment_use_case.dart';
 import '../../domain/classroom/use_case/delete_post_use_case/delete_post_use_case.dart';
@@ -34,6 +35,7 @@ import '../../presentation/lesson_meeting/cubits/join_meeting_cubit.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/post/cubits/add_comment_cubit.dart';
 import '../../presentation/post/cubits/add_post_cubit.dart';
+import '../../presentation/post/cubits/add_session_cubit.dart';
 import '../../presentation/post/cubits/posts_list_cubit.dart';
 import '../../presentation/home/cubit/upcoming_classes_cubit.dart';
 
@@ -58,6 +60,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => PostsListCubit(sl()));
   sl.registerLazySingleton(() => AddPostCubit(sl()));
   sl.registerLazySingleton(() => AddCommentCubit(sl()));
+  sl.registerLazySingleton(() => AddSessionCubit(sl()));
 
   //! useCases
 
@@ -74,6 +77,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetClassroomsUseCase(sl()));
   sl.registerLazySingleton(() => GetPostsUseCase(sl()));
   sl.registerLazySingleton(() => GetCommentUseCase(sl()));
+  sl.registerLazySingleton(() => AddNewSessionUseCase(sl()));
 
   //! repos
   sl.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(sl()));
@@ -86,7 +90,7 @@ Future<void> init() async {
   sl.registerLazySingleton<UpcomingClassesRemoteDataSource>(
       () => UpcomingClassesRemoteDataSourceImpl(sl()));
   sl.registerLazySingleton<ClassroomRemoteDataSource>(
-      () => ClassroomRemoteDataSource(sl()));
+      () => ClassroomRemoteDataSourceImpl(sl()));
 
   // core
   sl.registerSingleton(BottomNavigationCubit());

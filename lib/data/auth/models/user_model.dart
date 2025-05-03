@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../core/enums/enums.dart';
 import '../../../domain/auth/entities/user.dart';
 part 'user_model.freezed.dart';
 part 'user_model.g.dart';
@@ -11,7 +12,7 @@ class UserModel with _$UserModel {
     required String id,
     required String name,
     required String email,
-    required int role,
+    required UserType role,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
@@ -24,13 +25,3 @@ class UserModel with _$UserModel {
         role: role,
       );
 }
-/**
- * {
-  
-    "id": "02396de6-b49a-4477-b25f-d99a3702a455",
-    "name": "Ahmed Shehatah",
-    "email": "teacher@gmail.com",
-    "role": 2
-  
-}
- */

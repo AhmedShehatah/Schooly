@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../app/di/injection_container.dart';
 import '../../../../core/assets/assets.gen.dart';
-import '../../../../core/design/otp_field/custom_otp_field.dart';
+import '../../../../core/widgets/otp_field/custom_otp_field.dart';
 import '../../../../core/localization/localization_manager.dart';
 import '../../../../core/states/base_state.dart';
 import '../../../../core/theme/palette.dart';

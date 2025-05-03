@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../core/enums/enums.dart';
 import '../../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
 part 'upcoming_classes_model.freezed.dart';
 part 'upcoming_classes_model.g.dart';
@@ -13,7 +14,7 @@ class UpcomingClassesModel with _$UpcomingClassesModel {
     required String subject,
     required String grade,
     required String title,
-    required int lessonType,
+    required LessonType lessonType,
     required DateTime date,
     required String from,
     required String to,

@@ -23,7 +23,7 @@ mixin _$UserModel {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  int get role => throw _privateConstructorUsedError;
+  UserType get role => throw _privateConstructorUsedError;
 
   /// Serializes this UserModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $UserModelCopyWith<$Res> {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
-  $Res call({String id, String name, String email, int role});
+  $Res call({String id, String name, String email, UserType role});
 }
 
 /// @nodoc
@@ -79,7 +79,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
-              as int,
+              as UserType,
     ) as $Val);
   }
 }
@@ -92,7 +92,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
       __$$UserModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String email, int role});
+  $Res call({String id, String name, String email, UserType role});
 }
 
 /// @nodoc
@@ -129,7 +129,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
-              as int,
+              as UserType,
     ));
   }
 }
@@ -154,7 +154,7 @@ class _$UserModelImpl extends _UserModel {
   @override
   final String email;
   @override
-  final int role;
+  final UserType role;
 
   @override
   String toString() {
@@ -197,7 +197,7 @@ abstract class _UserModel extends UserModel {
       {required final String id,
       required final String name,
       required final String email,
-      required final int role}) = _$UserModelImpl;
+      required final UserType role}) = _$UserModelImpl;
   const _UserModel._() : super._();
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
@@ -210,7 +210,7 @@ abstract class _UserModel extends UserModel {
   @override
   String get email;
   @override
-  int get role;
+  UserType get role;
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.

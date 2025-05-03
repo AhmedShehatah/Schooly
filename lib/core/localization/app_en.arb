@@ -127,6 +127,19 @@
     "verifyIdentity":"Verify Identity",
     "takePhoto":"Take A Photo",
     "comparingPhotos":"Comparing Photo",
-    "tryAgain":"Try again"
+    "tryAgain":"Try again",
+    "within":"Within",
+    "workingNow":"Working Now",
+    "ended":"Ended",
+    "homeworkSolution":"Homework Solution",
+    "practice":"Practice",
+    "revision":"Revision",
+    "other":"Other",
+    "explanation":"Explanation",
+      "choose": "Choose {value}"
+
+ ,"sessionTitle":
+ "Session Title"
+
 
 }
