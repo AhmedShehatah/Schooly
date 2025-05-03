@@ -135,7 +135,11 @@
     "practice":"Practice",
     "revision":"Revision",
     "other":"Other",
-    "explanation":"Explanation"
- 
+    "explanation":"Explanation",
+      "choose": "Choose {value}"
+
+ ,"sessionTitle":
+ "Session Title"
+
 
 }

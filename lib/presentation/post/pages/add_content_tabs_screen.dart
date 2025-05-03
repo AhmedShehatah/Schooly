@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 
-import '../widgets/add_post_widget.dart';
+import '../../../core/widgets/app_bars/custom_app_bar.dart';
+import 'tabs/add_post_tab.dart';
+import 'tabs/new_session_tab.dart';
 
 class AddContentTabsScreen extends StatefulWidget {
   const AddContentTabsScreen({super.key, required this.classRoomId});
@@ -29,6 +31,9 @@ class _AddContentTabsScreenState extends State<AddContentTabsScreen> {
     return Scaffold(
       backgroundColor: Palette.character.primaryInverse,
       resizeToAvoidBottomInset: false,
+      appBar: CustomAppBar(
+        title: lz.schooly,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -36,10 +41,10 @@ class _AddContentTabsScreenState extends State<AddContentTabsScreen> {
               child: IndexedStack(
                 index: selectedIndex,
                 children: [
-                  AddPostWidget(
+                  AddPostTab(
                     classRoomId: widget.classRoomId,
                   ),
-                  const Placeholder(),
+                  NewSessionTab(),
                   const Placeholder(),
                 ],
               ),
@@ -61,7 +66,6 @@ class _AddContentTabsScreenState extends State<AddContentTabsScreen> {
                       child: Row(
                         children: [
                           Text(
-                            ///TODO : icons
                             tabs[index],
                             style: TextStyle(
                               color: isSelected
@@ -76,7 +80,6 @@ class _AddContentTabsScreenState extends State<AddContentTabsScreen> {
                 }),
               ),
             ),
-            90.verticalSpace
           ],
         ),
       ),

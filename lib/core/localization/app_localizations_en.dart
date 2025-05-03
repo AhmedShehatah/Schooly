@@ -317,4 +317,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get other => 'Other';
+
+  @override
+  String choose(Object value) {
+    return 'Choose $value';
+  }
+
+  @override
+  String get sessionTitle => 'Session Title';
 }

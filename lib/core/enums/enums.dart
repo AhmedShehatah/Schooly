@@ -17,5 +17,5 @@ enum LessonType {
   @JsonValue(3)
   revision,
   @JsonValue(4)
-  other
+  other;
 }

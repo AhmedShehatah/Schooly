@@ -610,6 +610,18 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'اخرى'**
   String get other;
+
+  /// No description provided for @choose.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر {value}'**
+  String choose(Object value);
+
+  /// No description provided for @sessionTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'عنوان الجلسة'**
+  String get sessionTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

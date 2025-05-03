@@ -135,7 +135,8 @@
     "homeworkSolution":"حل واجب",
     "practice":"حل تمارين",
     "revision":"مراجعة",
-    "other":"اخرى"
+    "other":"اخرى",  "choose": "اختر {value}",
+    "sessionTitle": "عنوان الجلسة"
 }
 
     

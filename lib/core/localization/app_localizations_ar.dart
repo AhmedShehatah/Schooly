@@ -341,4 +341,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get other => 'اخرى';
+
+  @override
+  String choose(Object value) {
+    return 'اختر $value';
+  }
+
+  @override
+  String get sessionTitle => 'عنوان الجلسة';
 }
