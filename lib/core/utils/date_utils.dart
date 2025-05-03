@@ -66,10 +66,10 @@ class DateUtility {
         String result = '${lz.within} ';
 
         if (now.hour < fromTime.hour) {
-          result += lz.nHours(now.hour - fromTime.hour);
+          result += lz.nHours(fromTime.hour - now.hour);
         }
         if (now.hour == fromTime.hour && now.minute < fromTime.minute) {
-          result += lz.nHours(now.minute - fromTime.minute);
+          result += lz.nMinutes(fromTime.minute - now.minute);
         }
         return result;
       }
@@ -110,6 +110,7 @@ class DateUtility {
     // if lesson today
     if (day.difference(now).inDays.abs() <= 0) {
       if (fromTime.hour <= now.hour && toTime.hour >= now.hour) {
+        if (fromTime.minute >= now.minute) return false;
         return true;
       }
       if (fromTime.hour == now.hour && fromTime.minute >= now.minute) {

@@ -44,7 +44,9 @@ class _AddContentTabsScreenState extends State<AddContentTabsScreen> {
                   AddPostTab(
                     classRoomId: widget.classRoomId,
                   ),
-                  NewSessionTab(),
+                  NewSessionTab(
+                    classroomId: widget.classRoomId,
+                  ),
                   const Placeholder(),
                 ],
               ),

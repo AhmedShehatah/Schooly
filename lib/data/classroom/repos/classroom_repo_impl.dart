@@ -7,6 +7,7 @@ import '../../../domain/classroom/entities/comment/comment.dart';
 import '../../../domain/classroom/entities/post/post.dart';
 import '../../../domain/classroom/repo/classroom_repo.dart';
 import '../../../domain/classroom/use_case/add_comment_use_case/add_comment_use_case.dart';
+import '../../../domain/classroom/use_case/add_new_session_use_case/add_new_session_use_case.dart';
 import '../../../domain/classroom/use_case/add_post_use_case/add_post_use_case.dart';
 import '../../../domain/classroom/use_case/get_comments_use_case/get_comment_use_case.dart';
 import '../../../domain/classroom/use_case/get_posts_use_case/get_posts_use_case.dart';
@@ -18,7 +19,7 @@ class ClassroomRepoImpl implements ClassroomRepo {
   @override
   Future<Result<List<Post>>> getPosts({required GetPostParams params}) async {
     try {
-      final result = await _rds.getPosts(params);
+      final result = await _rds.getPosts(params: params);
       return Right(result.map((e) => e.toEntity()).toList());
     } on Failure catch (e) {
       return Left(e);
@@ -28,7 +29,7 @@ class ClassroomRepoImpl implements ClassroomRepo {
   @override
   Future<Result<void>> addPost({required AddPostParams params}) async {
     try {
-      await _rds.addPost(params);
+      await _rds.addPost(params: params);
       return const Right(null);
     } on Failure catch (e) {
       return Left(e);
@@ -81,6 +82,16 @@ class ClassroomRepoImpl implements ClassroomRepo {
     try {
       final result = await _rds.getClassrooms();
       return Right(result.map((e) => e.toEntity()).toList());
+    } on Failure catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Result<void>> addSession({required AddNewSessionParams params}) async {
+    try {
+      await _rds.addSession(params: params);
+      return const Right(null);
     } on Failure catch (e) {
       return Left(e);
     }
