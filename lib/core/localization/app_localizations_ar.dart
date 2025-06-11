@@ -349,4 +349,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sessionTitle => 'عنوان الجلسة';
+
+  @override
+  String get noHomework => 'لا توجد واجبات حالياً';
 }

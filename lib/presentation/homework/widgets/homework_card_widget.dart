@@ -4,10 +4,14 @@ import '../../../core/theme/palette.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/widgets/text/custom_text.dart';
+import '../../../domain/homework/entities/homework.dart';
 
 class HomeworkCardWidget extends StatelessWidget {
+  final Homework item;
+
   const HomeworkCardWidget({
     super.key,
+    required this.item,
   });
 
   @override
@@ -21,11 +25,11 @@ class HomeworkCardWidget extends StatelessWidget {
             onTap: () {},
           ),
           title: CustomText.s12(
-            'واجب 2024-02-24.pdf',
+            item.fileName,
             color: Palette.character.primary85,
           ),
           subtitle: CustomText.s11(
-            'الدرس الخامس: الضرب الإتجاهي والقياسي',
+            item.lessonTitle,
             color: Palette.character.secondary45,
           ),
           trailing: InkWell(

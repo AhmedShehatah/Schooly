@@ -136,10 +136,9 @@
     "revision":"Revision",
     "other":"Other",
     "explanation":"Explanation",
-      "choose": "Choose {value}"
-
- ,"sessionTitle":
- "Session Title"
+    "choose": "Choose {value}",
+    "sessionTitle":"Session Title",
+    "noHomework": "There are no assignments at the moment"
 
 
 }

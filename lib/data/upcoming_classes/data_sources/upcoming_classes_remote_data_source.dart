@@ -18,7 +18,7 @@ class UpcomingClassesRemoteDataSourceImpl
       {required UpcomingClassesParams params}) async {
     try {
       final response =
-          await _dio.get('/lesson/upcoming', queryParameters: params.toJson());
+          await _dio.get('/lesson', queryParameters: params.toJson());
       return Isolate.run<List<UpcomingClassesModel>>(() =>
           (response.data as List)
               .map((e) => UpcomingClassesModel.fromJson(e))

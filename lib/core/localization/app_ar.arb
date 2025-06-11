@@ -136,7 +136,8 @@
     "practice":"حل تمارين",
     "revision":"مراجعة",
     "other":"اخرى",  "choose": "اختر {value}",
-    "sessionTitle": "عنوان الجلسة"
+    "sessionTitle": "عنوان الجلسة",
+    "noHomework": "لا توجد واجبات حالياً"
 }
 
     

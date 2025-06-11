@@ -325,4 +325,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sessionTitle => 'Session Title';
+
+  @override
+  String get noHomework => 'There are no assignments at the moment';
 }
