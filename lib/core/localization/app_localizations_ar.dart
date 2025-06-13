@@ -352,4 +352,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noHomework => 'لا توجد واجبات حالياً';
+
+  @override
+  String get waitingForOthersToJoin => 'بانتظار الاخرين حتى ينضموا';
 }

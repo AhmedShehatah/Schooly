@@ -114,10 +114,10 @@ class AppRouter {
         ),
       ),
       GoRoute(
-        name: CallScreen.routeName,
-        path: CallScreen.routeName,
+        name: LessonMeetingScreen.routeName,
+        path: LessonMeetingScreen.routeName,
         pageBuilder: (_, state) => _buildPageWithTransition(
-          CallScreen(
+          LessonMeetingScreen(
             channelName: (state.extra as Map<String, dynamic>)['channel'],
             token: (state.extra as Map<String, dynamic>)['token'],
           ),

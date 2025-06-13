@@ -328,4 +328,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noHomework => 'There are no assignments at the moment';
+
+  @override
+  String get waitingForOthersToJoin => 'Waiting for others to join';
 }

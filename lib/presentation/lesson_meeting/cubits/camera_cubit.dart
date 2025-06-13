@@ -6,14 +6,12 @@ import '../../../core/network/failure/failure.dart';
 import '../../../core/states/base_state.dart';
 
 class CameraCubit extends Cubit<BaseState<void>> {
-  CameraCubit() : super(const BaseState.initial()) {
-    _initCameras();
-  }
+  CameraCubit() : super(const BaseState.initial());
   late List<CameraDescription> _cameras;
   late CameraController _controller;
   CameraController get controller => _controller;
 
-  Future<void> _initCameras() async {
+  Future<void> initCameras() async {
     emit(const BaseState.loading());
     WidgetsFlutterBinding.ensureInitialized();
     _cameras = await availableCameras();
