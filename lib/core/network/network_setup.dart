@@ -55,6 +55,7 @@ class _CustomInterceptor extends Interceptor {
     if (token != null) {
       await _storage.saveSecuredValue(key: PrefsKeys.token, value: token);
     }
+
     if (response.data['message'] != null) {
       response.data = response.data['message'];
     } else if (response.data['path'] != null) {

@@ -2,10 +2,10 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../../../domain/media/use_cases/download_file_use_case.dart';
 import '../../../core/network/failure/failure.dart';
-import '../../../core/result/result.dart';
 import '../../../domain/media/use_cases/upload_file_use_case.dart';
 import '../models/file_model.dart';
 
@@ -39,8 +39,10 @@ class MediaRemoteDataSourceImpl implements MediaRemoteDataSource {
 
   @override
   Future<Uint8List> downloadFile({required DownloadParams params}) async {
+    final Dio dio = Dio()..options.baseUrl = dotenv.get('BASE_URL');
+
     try {
-      final response = await _dio.get(
+      final response = await dio.get(
         '/upload/${params.url}',
         onReceiveProgress: params.onProgress,
         options: Options(
