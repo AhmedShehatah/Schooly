@@ -137,7 +137,8 @@
     "revision":"مراجعة",
     "other":"اخرى",  "choose": "اختر {value}",
     "sessionTitle": "عنوان الجلسة",
-    "noHomework": "لا توجد واجبات حالياً"
+    "noHomework": "لا توجد واجبات حالياً",
+    "waitingForOthersToJoin":"بانتظار الاخرين حتى ينضموا"
 }
 
     
