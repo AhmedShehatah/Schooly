@@ -16,6 +16,7 @@ import '../../data/upcoming_classes/data_sources/upcoming_classes_remote_data_so
 import '../../data/upcoming_classes/repos/upcoming_classes_repo_impl.dart';
 import '../../domain/auth/use_cases/check_otp_use_case/check_otp_use_case.dart';
 import '../../domain/auth/use_cases/forget_password_use_case/forget_password_use_case.dart';
+import '../../domain/auth/use_cases/login_with_face_id_use_case/login_with_face_id_use_case.dart';
 import '../../domain/auth/use_cases/reset_password_use_case/reset_password_use_case.dart';
 import '../../domain/classroom/repo/classroom_repo.dart';
 import '../../domain/classroom/use_case/add_comment_use_case/add_comment_use_case.dart';
@@ -56,7 +57,7 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
 // cubits
-  sl.registerLazySingleton(() => LoginCubit(sl()));
+  sl.registerLazySingleton(() => LoginCubit(sl(), sl()));
   sl.registerLazySingleton(() => UpcomingClassesCubit(sl()));
   sl.registerLazySingleton(() => JoinMeetingCubit(sl()));
   sl.registerLazySingleton(() => ForgetPasswordCubit(sl()));
@@ -86,6 +87,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetCommentUseCase(sl()));
   sl.registerLazySingleton(() => AddNewSessionUseCase(sl()));
   sl.registerLazySingleton(() => HomeworkUseCase(sl()));
+  sl.registerLazySingleton(() => LoginWithFaceIdUseCase(sl()));
 
   //! repos
   sl.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(sl()));
