@@ -628,6 +628,18 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'لا توجد واجبات حالياً'**
   String get noHomework;
+
+  /// No description provided for @successfullyDownloaded.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التحميل بنجاح'**
+  String get successfullyDownloaded;
+
+  /// No description provided for @downloading.
+  ///
+  /// In ar, this message translates to:
+  /// **'يتم التحميل'**
+  String get downloading;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

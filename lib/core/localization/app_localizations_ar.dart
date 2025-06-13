@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -352,4 +352,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noHomework => 'لا توجد واجبات حالياً';
+
+  @override
+  String get successfullyDownloaded => 'تم التحميل بنجاح';
+
+  @override
+  String get downloading => 'يتم التحميل';
 }

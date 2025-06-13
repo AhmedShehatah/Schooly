@@ -21,6 +21,7 @@ sealed class BaseState<T> with _$BaseState<T> {
   const factory BaseState.empty() = _EmptyState;
 
   const factory BaseState.success({required T data}) = _SuccessState<T>;
+  const factory BaseState.progress({required double progress}) = _ProgressState;
 }
 
 @freezed

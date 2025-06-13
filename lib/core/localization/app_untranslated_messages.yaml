@@ -1,6 +1,8 @@
 {
   "en": [
     "doYouWantToLogIn",
-    "comparingPhoto"
+    "comparingPhoto",
+    "successfullyDownloaded",
+    "downloading"
   ]
 }
