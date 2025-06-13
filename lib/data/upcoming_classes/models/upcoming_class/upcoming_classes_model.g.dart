@@ -11,6 +11,7 @@ _$UpcomingClassesModelImpl _$$UpcomingClassesModelImplFromJson(
     _$UpcomingClassesModelImpl(
       id: json['id'] as String,
       teacherId: json['teacherId'] as String,
+      teacherName: json['teacherName'] as String,
       subject: json['subject'] as String,
       grade: json['grade'] as String,
       title: json['title'] as String,
@@ -25,6 +26,7 @@ Map<String, dynamic> _$$UpcomingClassesModelImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'teacherId': instance.teacherId,
+      'teacherName': instance.teacherName,
       'subject': instance.subject,
       'grade': instance.grade,
       'title': instance.title,

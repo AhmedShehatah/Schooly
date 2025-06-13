@@ -42,12 +42,13 @@ class RoomDetailsSheet extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildTextIcon(
-                        title: lz.teacher,
-                        icon: Icon(
-                          CupertinoIcons.person,
-                          size: 14.r,
-                        ),
-                        content: item.teacherId.substring(1, 5)),
+                      title: lz.teacher,
+                      icon: Icon(
+                        CupertinoIcons.person,
+                        size: 14.r,
+                      ),
+                      content: item.teacherName,
+                    ),
                     _buildTextIcon(
                         title: lz.date,
                         icon: Icon(

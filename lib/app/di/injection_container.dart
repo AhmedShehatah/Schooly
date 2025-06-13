@@ -1,6 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../core/cubits/user_cubit.dart';
 import '../../core/localization/localization_manager.dart';
 import '../../core/network/network_setup.dart';
 import '../../core/shared_preferences/shared_prefs.dart';
@@ -108,6 +109,7 @@ Future<void> init() async {
   sl.registerSingleton(const FlutterSecureStorage());
   sl.registerSingleton(await SharedPreferences.getInstance());
   sl.registerSingleton(SharedPrefs(sl(), sl()));
+  sl.registerSingleton(UserCubit(sl()));
   sl.registerSingleton(LocaleCubit());
   sl.registerSingleton(createDio());
   sl.registerLazySingleton(() => AppRouter());

@@ -1,5 +1,6 @@
 import 'package:fpdart/fpdart.dart';
 import '../../../app/di/injection_container.dart';
+import '../../../core/cubits/user_cubit.dart';
 import '../../../core/network/failure/failure.dart';
 import '../../../core/result/result.dart';
 import '../../../core/shared_preferences/prefs_keys.dart';
@@ -25,6 +26,7 @@ class AuthRepoImpl implements AuthRepo {
           key: PrefsKeys.userDetails,
           value: result.toJson(),
         );
+      sl<UserCubit>().setUser(result.toEntity());
       return Right(result.toEntity());
     } on Failure catch (e) {
       return Left(e);
