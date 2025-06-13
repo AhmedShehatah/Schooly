@@ -23,7 +23,11 @@ class AddContentTabsScreen extends StatefulWidget {
 
 class _AddContentTabsScreenState extends State<AddContentTabsScreen> {
   int selectedIndex = 0;
-  final List<String> tabs = [lz.newPost, lz.newSession, lz.homework];
+  final List<String> tabs = [
+    lz.newPost,
+    if (sl<UserCubit>().state?.role == UserType.teacher) lz.newSession,
+    lz.homework
+  ];
 
   @override
   @override
