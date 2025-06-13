@@ -14,7 +14,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     try {
       final response = await _dio.post('/auth/login', data: params.toJson());
 
-      return UserModel.fromJson(response.data['data']);
+      return UserModel.fromJson(response.data);
     } on DioException catch (e) {
       throw e.error as Failure;
     }

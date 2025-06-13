@@ -9,6 +9,7 @@ class UpcomingClasses with _$UpcomingClasses {
   const factory UpcomingClasses({
     required String id,
     required String teacherId,
+    required String teacherName,
     required String subject,
     required String grade,
     required String title,
