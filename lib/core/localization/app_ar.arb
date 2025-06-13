@@ -139,7 +139,8 @@
     "sessionTitle": "عنوان الجلسة",
     "noHomework": "لا توجد واجبات حالياً",
     "successfullyDownloaded":"تم التحميل بنجاح", 
-    "downloading":"يتم التحميل"
+    "downloading":"يتم التحميل",
+    "waitingForOthersToJoin":"بانتظار الاخرين حتى ينضموا"
 }
 
     

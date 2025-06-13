@@ -6,8 +6,7 @@ import '../../../../app/di/injection_container.dart';
 import '../../../../core/assets/assets.gen.dart';
 import '../../../../core/cubits/user_cubit.dart';
 import '../../../../core/localization/localization_manager.dart';
-import '../../../../core/shared_preferences/prefs_keys.dart';
-import '../../../../core/shared_preferences/shared_prefs.dart';
+
 import '../../../../core/states/base_state.dart';
 import '../../../../core/theme/palette.dart';
 import '../../../../core/utils/extensions.dart';

@@ -19,3 +19,12 @@ enum LessonType {
   @JsonValue(4)
   other;
 }
+
+enum ClassType {
+  @JsonValue('Upcoming')
+  upcoming,
+  @JsonValue('Canceled')
+  canceled,
+  @JsonValue('Completed')
+  completed
+}

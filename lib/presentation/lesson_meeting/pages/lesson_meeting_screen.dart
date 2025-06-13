@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:go_router/go_router.dart';
 import 'package:logger/web.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class CallScreen extends StatefulWidget {
-  const CallScreen({super.key, required this.channelName, required this.token});
+import '../../../core/localization/localization_manager.dart';
+import '../../../core/theme/palette.dart';
+import '../../../core/utils/dimensions.dart';
+import '../../../core/widgets/text/custom_text.dart';
+import '../../home/pages/home_screen.dart';
+
+class LessonMeetingScreen extends StatefulWidget {
+  const LessonMeetingScreen(
+      {super.key, required this.channelName, required this.token});
   final String channelName;
   final String token;
   static const String routeName = '/call-screen';
 
   @override
-  State<CallScreen> createState() => _CallScreenState();
+  State<LessonMeetingScreen> createState() => _LessonMeetingScreenState();
 }
 
-class _CallScreenState extends State<CallScreen> {
+class _LessonMeetingScreenState extends State<LessonMeetingScreen> {
   late RtcEngine _engine;
   final List<int> _remoteUids = []; // Store multiple remote UIDs
   bool _localUserJoined = false;
@@ -44,6 +52,7 @@ class _CallScreenState extends State<CallScreen> {
       RtcEngineEventHandler(
         onError: (error, message) {
           Logger().e(error.toString());
+          Logger().e(message);
         },
         onJoinChannelSuccess: (RtcConnection connection, int elapsed) {
           Logger().d('local user ${connection.localUid} joined');
@@ -99,21 +108,24 @@ class _CallScreenState extends State<CallScreen> {
   }
 
   Widget _remoteVideo(int uid) {
-    return AgoraVideoView(
-      controller: VideoViewController.remote(
-        rtcEngine: _engine,
-        canvas: VideoCanvas(uid: uid),
-        connection: RtcConnection(channelId: widget.channelName),
+    return GridTile(
+      child: AgoraVideoView(
+        controller: VideoViewController.remote(
+          rtcEngine: _engine,
+          canvas: VideoCanvas(uid: uid),
+          connection: RtcConnection(channelId: widget.channelName),
+        ),
       ),
     );
   }
 
   Widget _renderRemoteUsers() {
     if (_remoteUids.isEmpty) {
-      return const Center(
-        child: Text(
-          'Waiting for other users to join...',
-          textAlign: TextAlign.center,
+      return Center(
+        child: CustomText.s16(
+          '${lz.waitingForOthersToJoin}...',
+          center: true,
+          color: Colors.white,
         ),
       );
     }
@@ -191,74 +203,85 @@ class _CallScreenState extends State<CallScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Agora Video Call'),
-      ),
-      body: Stack(
-        children: [
-          _renderRemoteUsers(), // Render all remote users dynamically
-          Positioned(
-            left: _localVideoPosition.dx,
-            top: _localVideoPosition.dy,
-            child: GestureDetector(
-              onPanUpdate: (details) {
-                setState(() {
-                  _localVideoPosition += details.delta;
-                });
-              },
-              child: SizedBox(
-                width: 100,
-                height: 150,
-                child: Center(
-                  child: _localUserJoined
-                      ? AgoraVideoView(
-                          controller: VideoViewController(
-                            rtcEngine: _engine,
-                            canvas: const VideoCanvas(uid: 0),
-                          ),
-                        )
-                      : const CircularProgressIndicator(),
+      backgroundColor: Palette.primary.color7,
+      body: Padding(
+        padding: Dimensions.defaultPagePadding,
+        child: Stack(
+          children: [
+            _renderRemoteUsers(), // Render all remote users dynamically
+            Positioned(
+              left: _localVideoPosition.dx,
+              top: _localVideoPosition.dy,
+              child: GestureDetector(
+                onPanUpdate: (details) {
+                  setState(() {
+                    _localVideoPosition += details.delta;
+                  });
+                },
+                child: SizedBox(
+                  width: 100,
+                  height: 150,
+                  child: Center(
+                    child: _localUserJoined
+                        ? GridTile(
+                            child: AgoraVideoView(
+                              controller: VideoViewController(
+                                rtcEngine: _engine,
+                                canvas: const VideoCanvas(uid: 0),
+                              ),
+                            ),
+                          )
+                        : const CircularProgressIndicator(),
+                  ),
                 ),
               ),
             ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FloatingActionButton(
-                  onPressed: _toggleCamera,
-                  child: Icon(
-                    _isCameraOn ? Icons.videocam : Icons.videocam_off,
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _buildFloatingButton(
+                    onPressed: _toggleCamera,
+                    icon: _isCameraOn ? Icons.videocam : Icons.videocam_off,
                   ),
-                ),
-                const SizedBox(width: 20),
-                FloatingActionButton(
-                  onPressed: _toggleMic,
-                  child: Icon(
-                    _isMicOn ? Icons.mic : Icons.mic_off,
+                  const SizedBox(width: 20),
+                  _buildFloatingButton(
+                    onPressed: _toggleMic,
+                    icon: _isMicOn ? Icons.mic : Icons.mic_off,
                   ),
-                ),
-                const SizedBox(width: 20),
-                FloatingActionButton(
-                  onPressed: _switchCamera,
-                  child: const Icon(Icons.switch_camera),
-                ),
-                const SizedBox(width: 20),
-                FloatingActionButton(
-                  onPressed: () {
-                    _engine.leaveChannel().then((_) {
-                      Navigator.of(context).pop();
-                    });
-                  },
-                  child: const Icon(Icons.call_end),
-                ),
-              ],
+                  const SizedBox(width: 20),
+                  _buildFloatingButton(
+                    onPressed: _switchCamera,
+                    icon: Icons.switch_camera,
+                  ),
+                  const SizedBox(width: 20),
+                  _buildFloatingButton(
+                    onPressed: () async {
+                      _dispose().then((_) {
+                        context.goNamed(HomeScreen.routeName);
+                      });
+                    },
+                    icon: Icons.call_end,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+    );
+  }
+
+  Widget _buildFloatingButton({
+    required void Function() onPressed,
+    required IconData icon,
+  }) {
+    return FloatingActionButton(
+      backgroundColor: Palette.primary.color4,
+      heroTag: icon.toString(),
+      onPressed: onPressed,
+      child: Icon(icon),
     );
   }
 }

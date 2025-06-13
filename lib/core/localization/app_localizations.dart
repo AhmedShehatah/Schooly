@@ -640,6 +640,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'يتم التحميل'**
   String get downloading;
+
+  /// No description provided for @waitingForOthersToJoin.
+  ///
+  /// In ar, this message translates to:
+  /// **'بانتظار الاخرين حتى ينضموا'**
+  String get waitingForOthersToJoin;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

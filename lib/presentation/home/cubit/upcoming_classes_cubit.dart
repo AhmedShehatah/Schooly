@@ -51,4 +51,7 @@ class UpcomingClassesCubit extends Cubit<BaseState<List<UpcomingClasses>>>
   }
 
   void reset() => _params = const UpcomingClassesParams();
+  void applyFilter({String? classroomId}) {
+    _params = _params.copyWith(classRoomId: classroomId);
+  }
 }
