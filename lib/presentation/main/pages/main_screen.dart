@@ -8,6 +8,7 @@ import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../classrooms/pages/classrooms_screen.dart';
 import '../../home/pages/home_screen.dart';
+import '../../setting/pages/more_screen.dart';
 import '../cubits/bottom_navigation_cubit.dart';
 
 class MainScreen extends StatefulWidget {
@@ -38,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
         context.go(ClassesScreen.routeName);
         break;
       case 4:
-        context.go('/settings');
+        context.go(MoreScreen.routeName);
         break;
     }
     sl<BottomNavigationCubit>().changePage(index);

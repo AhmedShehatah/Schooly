@@ -137,7 +137,14 @@
     "revision":"مراجعة",
     "other":"اخرى",  "choose": "اختر {value}",
     "sessionTitle": "عنوان الجلسة",
-    "noHomework": "لا توجد واجبات حالياً"
+    "noHomework": "لا توجد واجبات حالياً",
+    "more":"المزيد",
+    "logout": "تسجيل خروج",
+    "profile": "الملف الشخصي",
+    "settings": "الاعدادات"
+
+
+
 }
 
     

@@ -138,7 +138,12 @@
     "explanation":"Explanation",
     "choose": "Choose {value}",
     "sessionTitle":"Session Title",
-    "noHomework": "There are no assignments at the moment"
+    "noHomework": "There are no assignments at the moment",
+    "more":"More",
+    "logout": "Logout",
+    "profile": "Profile",
+    "settings": "Settings"
+
 
 
 }

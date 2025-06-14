@@ -386,7 +386,7 @@ abstract class AppLocalizations {
   /// No description provided for @settings.
   ///
   /// In ar, this message translates to:
-  /// **'الإعدادات'**
+  /// **'الاعدادات'**
   String get settings;
 
   /// No description provided for @sendChangeLink.
@@ -628,6 +628,24 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'لا توجد واجبات حالياً'**
   String get noHomework;
+
+  /// No description provided for @more.
+  ///
+  /// In ar, this message translates to:
+  /// **'المزيد'**
+  String get more;
+
+  /// No description provided for @logout.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل خروج'**
+  String get logout;
+
+  /// No description provided for @profile.
+  ///
+  /// In ar, this message translates to:
+  /// **'الملف الشخصي'**
+  String get profile;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

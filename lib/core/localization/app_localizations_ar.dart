@@ -227,7 +227,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get classes => 'الفصول';
 
   @override
-  String get settings => 'الإعدادات';
+  String get settings => 'الاعدادات';
 
   @override
   String get sendChangeLink => 'ارسل رابط التغيير';
@@ -352,4 +352,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noHomework => 'لا توجد واجبات حالياً';
+
+  @override
+  String get more => 'المزيد';
+
+  @override
+  String get logout => 'تسجيل خروج';
+
+  @override
+  String get profile => 'الملف الشخصي';
 }

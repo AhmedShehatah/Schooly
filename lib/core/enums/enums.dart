@@ -19,3 +19,10 @@ enum LessonType {
   @JsonValue(4)
   other;
 }
+
+enum Gender {
+  @JsonValue(0)
+  male,
+  @JsonValue(1)
+  female
+}
