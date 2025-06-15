@@ -5,9 +5,11 @@ import 'package:go_router/go_router.dart';
 import 'package:logger/web.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/dimensions.dart';
+import '../../../core/utils/extensions.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../home/pages/home_screen.dart';
 
@@ -69,6 +71,10 @@ class _LessonMeetingScreenState extends State<LessonMeetingScreen> {
             _remoteUids.add(remoteUid); // Add remote user to the list
           });
         },
+        onRemoteVideoStateChanged: (_, __, ___, ____, _____) {
+          Logger().d('onRemoteVideoStateChanged');
+          setState(() {});
+        },
         onUserOffline: (RtcConnection connection, int remoteUid,
             UserOfflineReasonType reason) {
           Logger().d('remote user $remoteUid left channel');
@@ -109,12 +115,24 @@ class _LessonMeetingScreenState extends State<LessonMeetingScreen> {
 
   Widget _remoteVideo(int uid) {
     return GridTile(
-      child: AgoraVideoView(
-        controller: VideoViewController.remote(
-          rtcEngine: _engine,
-          canvas: VideoCanvas(uid: uid),
-          connection: RtcConnection(channelId: widget.channelName),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: 15.borderRadius,
         ),
+        child: _isCameraOn
+            ? AgoraVideoView(
+                controller: VideoViewController.remote(
+                  rtcEngine: _engine,
+                  canvas: VideoCanvas(
+                    uid: uid,
+                  ),
+                  connection: RtcConnection(channelId: widget.channelName),
+                ),
+              )
+            : Center(
+                child: Assets.images.profile.image(),
+              ),
       ),
     );
   }
@@ -129,6 +147,18 @@ class _LessonMeetingScreenState extends State<LessonMeetingScreen> {
         ),
       );
     }
+
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2, // 2 videos per row
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+      ),
+      itemCount: _remoteUids.length,
+      itemBuilder: (context, index) {
+        return _remoteVideo(_remoteUids[index]);
+      },
+    );
 
     // Dynamic layout based on the number of remote users
     switch (_remoteUids.length) {
