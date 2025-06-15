@@ -142,8 +142,7 @@
     "more":"More",
     "logout": "Logout",
     "profile": "Profile",
-    "settings": "Settings"
-
+    "waitingForOthersToJoin":"Waiting for others to join"
 
 
 }

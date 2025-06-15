@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import '../../../core/result/result.dart';
 import '../entities/user.dart';
 import '../use_cases/check_otp_use_case/check_otp_use_case.dart';
@@ -10,4 +12,6 @@ abstract class AuthRepo {
   Future<Result<void>> verifyCode({required CheckOtpParams params});
   Future<Result<void>> forgetPassword({required ForgetPasswordParams params});
   Future<Result<void>> resetPassword({required ResetPasswordParams params});
+
+  Future<Result<User>> loginWithFaceId({required File params});
 }

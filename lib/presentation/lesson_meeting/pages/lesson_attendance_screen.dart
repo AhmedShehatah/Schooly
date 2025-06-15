@@ -33,6 +33,18 @@ class LessonAttendanceScreen extends StatefulWidget {
 class _LessonAttendanceScreenState extends State<LessonAttendanceScreen> {
   final _cubit = sl<CameraCubit>();
 
+  @override
+  void initState() {
+    super.initState();
+    _cubit.initCameras();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _cubit.controller.dispose();
+  }
+
   File? image;
   @override
   Widget build(BuildContext context) {
@@ -49,7 +61,7 @@ class _LessonAttendanceScreenState extends State<LessonAttendanceScreen> {
               bloc: sl<JoinMeetingCubit>(),
               listener: (context, joinState) {
                 joinState.mapOrNull(success: (data) {
-                  context.goNamed(CallScreen.routeName, extra: {
+                  context.goNamed(LessonMeetingScreen.routeName, extra: {
                     'channel': widget.lessonId,
                     'token': data.data.token
                   });

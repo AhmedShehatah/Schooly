@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import '../../../core/network/failure/failure.dart';
 import '../../../domain/auth/use_cases/check_otp_use_case/check_otp_use_case.dart';
@@ -46,6 +48,24 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       throw e.error as Failure;
     }
   }
+
+  @override
+  Future<UserModel> loginWithFaceId({required File params}) async {
+    try {
+      final response = await _dio.post(
+        '/auth/verify-face',
+        data: FormData.fromMap(
+          {
+            'image': await MultipartFile.fromFile(params.path,
+                filename: params.path.split('/').last),
+          },
+        ),
+      );
+      return UserModel.fromJson(response.data);
+    } on DioException catch (e) {
+      throw e.error as Failure;
+    }
+  }
 }
 
 abstract class AuthRemoteDataSource {
@@ -53,4 +73,5 @@ abstract class AuthRemoteDataSource {
   Future<void> verifyCode({required CheckOtpParams params});
   Future<void> resetPassword({required ResetPasswordParams params});
   Future<void> forgetPassword({required ForgetPasswordParams params});
+  Future<UserModel> loginWithFaceId({required File params});
 }

@@ -26,3 +26,11 @@ enum Gender {
   @JsonValue(1)
   female
 }
+enum ClassType {
+  @JsonValue('Upcoming')
+  upcoming,
+  @JsonValue('Canceled')
+  canceled,
+  @JsonValue('Completed')
+  completed
+}

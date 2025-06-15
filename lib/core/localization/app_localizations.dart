@@ -386,7 +386,7 @@ abstract class AppLocalizations {
   /// No description provided for @settings.
   ///
   /// In ar, this message translates to:
-  /// **'الاعدادات'**
+  /// **'الإعدادات'**
   String get settings;
 
   /// No description provided for @sendChangeLink.
@@ -646,6 +646,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'الملف الشخصي'**
   String get profile;
+
+  /// No description provided for @waitingForOthersToJoin.
+  ///
+  /// In ar, this message translates to:
+  /// **'بانتظار الاخرين حتى ينضموا'**
+  String get waitingForOthersToJoin;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

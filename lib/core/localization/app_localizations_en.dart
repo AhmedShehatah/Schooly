@@ -337,4 +337,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profile => 'Profile';
+
+  @override
+  String get waitingForOthersToJoin => 'Waiting for others to join';
 }
