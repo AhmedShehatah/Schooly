@@ -20,6 +20,12 @@ enum LessonType {
   other;
 }
 
+enum Gender {
+  @JsonValue(0)
+  male,
+  @JsonValue(1)
+  female
+}
 enum ClassType {
   @JsonValue('Upcoming')
   upcoming,

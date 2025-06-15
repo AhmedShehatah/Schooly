@@ -330,5 +330,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noHomework => 'There are no assignments at the moment';
 
   @override
+  String get more => 'More';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
   String get waitingForOthersToJoin => 'Waiting for others to join';
 }

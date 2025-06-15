@@ -139,6 +139,9 @@
     "choose": "Choose {value}",
     "sessionTitle":"Session Title",
     "noHomework": "There are no assignments at the moment",
+    "more":"More",
+    "logout": "Logout",
+    "profile": "Profile",
     "waitingForOthersToJoin":"Waiting for others to join"
 
 

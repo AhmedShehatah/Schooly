@@ -138,6 +138,9 @@
     "other":"اخرى",  "choose": "اختر {value}",
     "sessionTitle": "عنوان الجلسة",
     "noHomework": "لا توجد واجبات حالياً",
+    "more":"المزيد",
+    "logout": "تسجيل خروج",
+    "profile": "الملف الشخصي",
     "waitingForOthersToJoin":"بانتظار الاخرين حتى ينضموا"
 }
 

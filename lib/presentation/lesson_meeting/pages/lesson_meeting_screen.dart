@@ -161,44 +161,6 @@ class _LessonMeetingScreenState extends State<LessonMeetingScreen> {
     );
 
     // Dynamic layout based on the number of remote users
-    switch (_remoteUids.length) {
-      case 1:
-        return _remoteVideo(_remoteUids[0]); // Single user fills the screen
-      case 2:
-        return Row(
-          children: [
-            Expanded(child: _remoteVideo(_remoteUids[0])),
-            Expanded(child: _remoteVideo(_remoteUids[1])),
-          ],
-        );
-      case 3:
-        return Column(
-          children: [
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(child: _remoteVideo(_remoteUids[0])),
-                  Expanded(child: _remoteVideo(_remoteUids[1])),
-                ],
-              ),
-            ),
-            Expanded(child: _remoteVideo(_remoteUids[2])),
-          ],
-        );
-      default:
-        // For 4 or more users, use a grid
-        return GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // 2 videos per row
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-          ),
-          itemCount: _remoteUids.length,
-          itemBuilder: (context, index) {
-            return _remoteVideo(_remoteUids[index]);
-          },
-        );
-    }
   }
 
   Future<void> _toggleCamera() async {

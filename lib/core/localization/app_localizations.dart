@@ -629,6 +629,24 @@ abstract class AppLocalizations {
   /// **'لا توجد واجبات حالياً'**
   String get noHomework;
 
+  /// No description provided for @more.
+  ///
+  /// In ar, this message translates to:
+  /// **'المزيد'**
+  String get more;
+
+  /// No description provided for @logout.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل خروج'**
+  String get logout;
+
+  /// No description provided for @profile.
+  ///
+  /// In ar, this message translates to:
+  /// **'الملف الشخصي'**
+  String get profile;
+
   /// No description provided for @waitingForOthersToJoin.
   ///
   /// In ar, this message translates to:

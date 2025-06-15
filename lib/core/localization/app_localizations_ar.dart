@@ -354,5 +354,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noHomework => 'لا توجد واجبات حالياً';
 
   @override
+  String get more => 'المزيد';
+
+  @override
+  String get logout => 'تسجيل خروج';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
   String get waitingForOthersToJoin => 'بانتظار الاخرين حتى ينضموا';
 }

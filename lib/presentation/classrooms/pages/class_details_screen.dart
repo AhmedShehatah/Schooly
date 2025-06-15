@@ -7,7 +7,6 @@ import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../homework/widgets/homework_widget.dart';
 import '../../post/widgets/post_list_widget.dart';
 import '../widgets/sessions_widget.dart';
-import '../widgets/upcoming_classes_widget.dart';
 
 class ClassDetailsScreen extends StatefulWidget {
   const ClassDetailsScreen({
