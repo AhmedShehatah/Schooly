@@ -1,16 +1,20 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/cubits/user_cubit.dart';
+import '../../../core/enums/enums.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/shared_preferences/prefs_keys.dart';
 import '../../../core/shared_preferences/shared_prefs.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../../core/widgets/text/custom_text.dart';
+import '../../../domain/auth/entities/user.dart';
 import '../../profile/pages/profile_screen.dart';
 import '../../splash/pages/splash_screen.dart';
 
@@ -29,23 +33,32 @@ class _MoreScreenState extends State<MoreScreen> {
       appBar: CustomAppBar(
         title: lz.more,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildProfileHeader(),
-              16.verticalSpace,
-              _buildMenuList(),
-            ],
-          ),
-        ),
+      body: BlocBuilder<UserCubit, User?>(
+        bloc: sl<UserCubit>(),
+        builder: (context, user) {
+          return SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildProfileHeader(
+                    user?.role == UserType.student
+                        ? 'مرحبا ${user?.name}'
+                        : 'مرحبا أ. ${user?.name}',
+                  ),
+                  16.verticalSpace,
+                  _buildMenuList(),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
 
-  Widget _buildProfileHeader() {
+  Widget _buildProfileHeader(String name) {
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.r),
@@ -61,7 +74,7 @@ class _MoreScreenState extends State<MoreScreen> {
             ),
             16.horizontalSpace,
             CustomText.s14(
-              'أ. ليلى أحمد',
+              name,
               color: Palette.character.primary85,
             ),
           ],

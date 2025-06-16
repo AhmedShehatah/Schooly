@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -81,10 +82,9 @@ class _MainScreenState extends State<MainScreen> {
                 label: lz.classes,
               ),
               BottomNavigationBarItem(
-                icon: Assets.icons.settings.svg(),
-                activeIcon:
-                    Assets.icons.settings.svg(colorFilter: _activeIconColor()),
-                label: lz.settings,
+                icon: const Icon(CupertinoIcons.ellipsis),
+                activeIcon: const Icon(CupertinoIcons.ellipsis),
+                label: lz.more,
               ),
             ],
           );
