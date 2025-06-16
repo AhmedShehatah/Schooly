@@ -11,7 +11,7 @@ import '../../../core/widgets/buttons/custom_button.dart';
 import '../../../core/widgets/fields/custom_input.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/profile/entities/profile.dart';
-import '../../../domain/profile/entities/update_profile.dart';
+import '../../../domain/profile/use_cases/update_profile_use_case.dart';
 import '../cubits/profile_cubit.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -113,12 +113,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           text: 'تحديث',
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              final updatedProfile = UpdateProfile(
-                                profilePictureUrl: '',
-                                name: _name.text,
-                                email: _email.text,
+                              sl<ProfileCubit>().updateProfile(
+                                params: UpdateProfileParams(
+                                  name: _name.text,
+                                  email: _email.text,
+                                  profilePictureUrl: '',
+                                ),
                               );
-                              sl<ProfileCubit>().updateProfile(updatedProfile);
                             }
                           },
                           enabled: true,

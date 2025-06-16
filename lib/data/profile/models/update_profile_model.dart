@@ -26,12 +26,3 @@ class UpdateProfileModel with _$UpdateProfileModel {
     );
   }
 }
-
-
-/*
-{
-  "profilePictureUrl": "string",
-  "name": "string",
-  "email": "user@example.com"
-}
-*/

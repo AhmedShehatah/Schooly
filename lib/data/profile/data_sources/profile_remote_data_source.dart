@@ -3,6 +3,7 @@ import 'dart:isolate';
 import 'package:dio/dio.dart';
 
 import '../../../core/network/failure/failure.dart';
+import '../../../domain/profile/use_cases/update_profile_use_case.dart';
 import '../models/profile_model.dart';
 import '../models/update_profile_model.dart';
 
@@ -22,11 +23,11 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
   }
 
   @override
-  Future<ProfileModel> updateProfile(UpdateProfileModel updateprofile) async {
+  Future<UpdateProfileModel> updateProfile(UpdateProfileParams params) async {
     try {
-      final response = await _dio.put('/Profile', data: updateprofile.toJson());
-      return Isolate.run<ProfileModel>(
-          () => ProfileModel.fromJson(response.data));
+      final response = await _dio.put('/Profile', data: params.toJson());
+      return Isolate.run<UpdateProfileModel>(
+          () => UpdateProfileModel.fromJson(response.data));
     } on DioException catch (e) {
       throw e.error as Failure;
     }
@@ -35,5 +36,5 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
 
 abstract class ProfileRemoteDataSource {
   Future<ProfileModel> getProfile();
-  Future<ProfileModel> updateProfile(UpdateProfileModel updateProfile);
+  Future<UpdateProfileModel> updateProfile(UpdateProfileParams params);
 }

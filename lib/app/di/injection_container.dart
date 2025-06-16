@@ -75,7 +75,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => AddCommentCubit(sl()));
   sl.registerLazySingleton(() => AddSessionCubit(sl()));
   sl.registerLazySingleton(() => HomeworkCubit(sl()));
-  sl.registerLazySingleton(() => ProfileCubit(sl()));
+  sl.registerLazySingleton(() => ProfileCubit(sl(), sl()));
 
   //! useCases
 
