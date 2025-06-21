@@ -336,15 +336,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get downloading => 'Downloading';
 
   @override
-  String get more => 'More';
-
-  @override
-  String get logout => 'Logout';
-
-  @override
-  String get profile => 'Profile';
-
-  @override
   String get waitingForOthersToJoin => 'Waiting for others to join';
 
   @override
@@ -412,4 +403,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resubmitHomework => 'Re-Submit';
+
+  @override
+  String get more => 'More';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get profile => 'Profile';
 }
