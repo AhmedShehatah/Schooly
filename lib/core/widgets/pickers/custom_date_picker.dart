@@ -11,8 +11,10 @@ class CustomDatePicker extends StatefulWidget {
   const CustomDatePicker({
     super.key,
     required this.value,
+    this.title,
   });
   final ValueNotifier<DateTime?> value;
+  final String? title;
   @override
   State<CustomDatePicker> createState() => _CustomDatePickerState();
 }
@@ -34,7 +36,7 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomText.s14(lz.date),
+        CustomText.s14(widget.title ?? lz.date),
         8.verticalSpace,
         TextFormField(
           controller: _controller,

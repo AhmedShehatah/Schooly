@@ -18,4 +18,9 @@ class ClassroomListCubit extends Cubit<BaseState<List<Classroom>>> {
       emit(BaseState.success(data: data));
     });
   }
+
+  String chosenClassroomId = '';
+  void setChosenClassroomId(String id) {
+    chosenClassroomId = id;
+  }
 }

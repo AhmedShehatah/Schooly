@@ -2,6 +2,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/cubits/media_download_cubit.dart';
+import '../../core/cubits/media_upload_cubit.dart';
 import '../../core/cubits/user_cubit.dart';
 import '../../core/localization/localization_manager.dart';
 import '../../core/network/network_setup.dart';
@@ -33,7 +34,11 @@ import '../../domain/classroom/use_case/get_classrooms_use_case/get_classrooms_u
 import '../../domain/classroom/use_case/get_comments_use_case/get_comment_use_case.dart';
 import '../../domain/classroom/use_case/get_posts_use_case/get_posts_use_case.dart';
 import '../../domain/homework/repos/homework_repo.dart';
+import '../../domain/homework/use_cases/add_homework_use_case/add_homework_use_case.dart';
+import '../../domain/homework/use_cases/get_submitted_homework_use_case.dart';
 import '../../domain/homework/use_cases/homework_use_case.dart';
+import '../../domain/homework/use_cases/submit_homework_use_case.dart';
+import '../../domain/lookups/use_cases/get_lessons_use_case/get_lessons_use_case.dart';
 import '../../domain/media/repo/media_repository.dart';
 import '../../domain/media/use_cases/download_file_use_case.dart';
 import '../../domain/media/use_cases/upload_file_use_case.dart';
@@ -48,10 +53,13 @@ import '../../presentation/auth/reset_password/cubit/reset_password_cubit.dart';
 import '../../presentation/auth/verify_code/cubit/check_otp_cubit.dart';
 import '../../presentation/classrooms/cubits/classroom_list_cubit.dart';
 import '../../presentation/homework/cubit/homework_cubit.dart';
+import '../../presentation/homework/cubit/teacher_homeworks_cubit.dart';
 import '../../presentation/lesson_meeting/cubits/camera_cubit.dart';
 import '../../presentation/lesson_meeting/cubits/join_meeting_cubit.dart';
+import '../../presentation/lookups/cubit/lessons_cubit.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/post/cubits/add_comment_cubit.dart';
+import '../../presentation/post/cubits/add_homework_cubit.dart';
 import '../../presentation/post/cubits/add_post_cubit.dart';
 import '../../presentation/post/cubits/add_session_cubit.dart';
 import '../../presentation/post/cubits/posts_list_cubit.dart';
@@ -80,9 +88,13 @@ Future<void> init() async {
   sl.registerLazySingleton(() => AddPostCubit(sl()));
   sl.registerLazySingleton(() => AddCommentCubit(sl()));
   sl.registerLazySingleton(() => AddSessionCubit(sl()));
-  sl.registerLazySingleton(() => HomeworkCubit(sl()));
+  sl.registerLazySingleton(() => HomeworkCubit(sl(), sl()));
   sl.registerLazySingleton(
       () => DownloadAttachmentCubit(downloadFileUseCase: sl()));
+  sl.registerLazySingleton(() => MediaUploadCubit(sl()));
+  sl.registerLazySingleton(() => TeacherHomeworksCubit(sl()));
+  sl.registerLazySingleton(() => LessonsCubit(sl()));
+  sl.registerLazySingleton(() => AddHomeworkCubit(sl()));
   sl.registerLazySingleton(() => ProfileCubit(sl(), sl()));
 
   //! useCases
@@ -104,6 +116,10 @@ Future<void> init() async {
   sl.registerLazySingleton(() => HomeworkUseCase(sl()));
   sl.registerLazySingleton(() => DownloadFileUseCase(mediaRepository: sl()));
   sl.registerLazySingleton(() => UploadUseCase(mediaRepository: sl()));
+  sl.registerLazySingleton(() => SubmitHomeworkUseCase(sl()));
+  sl.registerLazySingleton(() => GetSubmittedHomeworkUseCase(sl()));
+  sl.registerLazySingleton(() => GetLessonsUseCase(sl()));
+  sl.registerLazySingleton(() => AddHomeworkUseCase(sl()));
   sl.registerLazySingleton(() => ProfileUseCase(sl()));
   sl.registerLazySingleton(() => UpdateProfileUseCase(sl()));
   sl.registerLazySingleton(() => LoginWithFaceIdUseCase(sl()));

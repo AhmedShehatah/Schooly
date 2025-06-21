@@ -10,5 +10,8 @@ class Homework with _$Homework {
     required String fileUrl,
     required String fileName,
     required String lessonTitle,
+    @Default(false) bool isSubmitted,
+    @Default(0) int totalSubmissions,
+    required DateTime deadline,
   }) = _Homework;
 }

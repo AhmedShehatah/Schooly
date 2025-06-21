@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:logger/web.dart';
 
+import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/dimensions.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/classroom/entities/classroom/classroom.dart';
+import '../cubits/classroom_list_cubit.dart';
 import '../pages/class_details_screen.dart';
 
 class ClassroomItemWidget extends StatelessWidget {
@@ -19,6 +22,8 @@ class ClassroomItemWidget extends StatelessWidget {
         padding: Dimensions.cardInternalPadding,
         child: ListTile(
           onTap: () {
+            sl<ClassroomListCubit>().setChosenClassroomId(classroom.id);
+            Logger().e(classroom.id);
             context.goNamed(
               ClassDetailsScreen.routeName,
               extra: classroom.id,

@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:file_picker/file_picker.dart';
@@ -12,9 +13,35 @@ import '../cubits/media_download_cubit.dart';
 import '../localization/localization_manager.dart';
 import '../states/base_state.dart';
 import '../widgets/text/custom_text.dart';
+import 'dimensions.dart';
 import 'extensions.dart';
 
 class PopUps {
+  static Future<File?> pickFile(BuildContext context,
+      {List<String>? extensions}) async {
+    File? file;
+    final picker = await FilePicker.platform.pickFiles(
+      allowMultiple: false,
+      allowedExtensions: extensions,
+      type: FileType.custom,
+    );
+    if (picker == null) {
+      context.pop();
+    }
+    file = File(picker?.paths[0] ?? '');
+    return file;
+  }
+
+  static void showCustomDialog(BuildContext context, {required Widget child}) {
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        insetPadding: Dimensions.defaultPagePadding,
+        child: child,
+      ),
+    );
+  }
+
   static void showDownloadDialog(BuildContext context, String fileName) {
     showDialog(
       context: context,

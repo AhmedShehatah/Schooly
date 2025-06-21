@@ -22,7 +22,7 @@ class MediaRemoteDataSourceImpl implements MediaRemoteDataSource {
         '/upload',
         data: FormData.fromMap(
           {
-            'file': await MultipartFile.fromFile(
+            'formFile': await MultipartFile.fromFile(
               params.path,
               filename: params.path.split('/').last,
             ),

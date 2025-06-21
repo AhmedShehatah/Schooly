@@ -10,7 +10,10 @@ import '../../../domain/classroom/use_case/add_comment_use_case/add_comment_use_
 import '../../../domain/classroom/use_case/add_new_session_use_case/add_new_session_use_case.dart';
 import '../../../domain/classroom/use_case/add_post_use_case/add_post_use_case.dart';
 import '../../../domain/classroom/use_case/get_comments_use_case/get_comment_use_case.dart';
+import '../../../domain/lookups/entities/lesson.dart';
+import '../../../domain/lookups/use_cases/get_lessons_use_case/get_lessons_use_case.dart';
 import '../../../domain/classroom/use_case/get_posts_use_case/get_posts_use_case.dart';
+import '../../../domain/homework/use_cases/add_homework_use_case/add_homework_use_case.dart';
 import '../data_sources/classroom_remote_data_source.dart';
 
 class ClassroomRepoImpl implements ClassroomRepo {
@@ -92,6 +95,27 @@ class ClassroomRepoImpl implements ClassroomRepo {
     try {
       await _rds.addSession(params: params);
       return const Right(null);
+    } on Failure catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Result<void>> addHomework({required AddHomeworkParams params}) async {
+    try {
+      await _rds.addHomework(params: params);
+      return const Right(null);
+    } on Failure catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Result<List<Lesson>>> getLessons(
+      {required GetLessonsParams params}) async {
+    try {
+      final result = await _rds.getLessons(params: params);
+      return Right(result.map((e) => e.toEntity()).toList());
     } on Failure catch (e) {
       return Left(e);
     }

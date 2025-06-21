@@ -10,6 +10,7 @@ import '../../../core/theme/palette.dart';
 
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../../domain/auth/entities/user.dart';
+import 'tabs/add_homework_tab.dart';
 import 'tabs/add_post_tab.dart';
 import 'tabs/new_session_tab.dart';
 
@@ -26,7 +27,7 @@ class _AddContentTabsScreenState extends State<AddContentTabsScreen> {
   final List<String> tabs = [
     lz.newPost,
     if (sl<UserCubit>().state?.role == UserType.teacher) lz.newSession,
-    lz.homework
+    if (sl<UserCubit>().state?.role == UserType.teacher) lz.homework
   ];
 
   @override
@@ -55,7 +56,10 @@ class _AddContentTabsScreenState extends State<AddContentTabsScreen> {
                         NewSessionTab(
                           classroomId: widget.classRoomId,
                         ),
-                      const Placeholder(),
+                      if (user?.role == UserType.teacher)
+                        AddHomeworkTab(
+                          classRoomId: widget.classRoomId,
+                        ),
                     ],
                   ),
                 ),

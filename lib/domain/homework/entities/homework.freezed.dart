@@ -20,6 +20,9 @@ mixin _$Homework {
   String get fileUrl => throw _privateConstructorUsedError;
   String get fileName => throw _privateConstructorUsedError;
   String get lessonTitle => throw _privateConstructorUsedError;
+  bool get isSubmitted => throw _privateConstructorUsedError;
+  int get totalSubmissions => throw _privateConstructorUsedError;
+  DateTime get deadline => throw _privateConstructorUsedError;
 
   /// Create a copy of Homework
   /// with the given fields replaced by the non-null parameter values.
@@ -34,7 +37,13 @@ abstract class $HomeworkCopyWith<$Res> {
       _$HomeworkCopyWithImpl<$Res, Homework>;
   @useResult
   $Res call(
-      {String homeWorkId, String fileUrl, String fileName, String lessonTitle});
+      {String homeWorkId,
+      String fileUrl,
+      String fileName,
+      String lessonTitle,
+      bool isSubmitted,
+      int totalSubmissions,
+      DateTime deadline});
 }
 
 /// @nodoc
@@ -56,6 +65,9 @@ class _$HomeworkCopyWithImpl<$Res, $Val extends Homework>
     Object? fileUrl = null,
     Object? fileName = null,
     Object? lessonTitle = null,
+    Object? isSubmitted = null,
+    Object? totalSubmissions = null,
+    Object? deadline = null,
   }) {
     return _then(_value.copyWith(
       homeWorkId: null == homeWorkId
@@ -74,6 +86,18 @@ class _$HomeworkCopyWithImpl<$Res, $Val extends Homework>
           ? _value.lessonTitle
           : lessonTitle // ignore: cast_nullable_to_non_nullable
               as String,
+      isSubmitted: null == isSubmitted
+          ? _value.isSubmitted
+          : isSubmitted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      totalSubmissions: null == totalSubmissions
+          ? _value.totalSubmissions
+          : totalSubmissions // ignore: cast_nullable_to_non_nullable
+              as int,
+      deadline: null == deadline
+          ? _value.deadline
+          : deadline // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -87,7 +111,13 @@ abstract class _$$HomeworkImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String homeWorkId, String fileUrl, String fileName, String lessonTitle});
+      {String homeWorkId,
+      String fileUrl,
+      String fileName,
+      String lessonTitle,
+      bool isSubmitted,
+      int totalSubmissions,
+      DateTime deadline});
 }
 
 /// @nodoc
@@ -107,6 +137,9 @@ class __$$HomeworkImplCopyWithImpl<$Res>
     Object? fileUrl = null,
     Object? fileName = null,
     Object? lessonTitle = null,
+    Object? isSubmitted = null,
+    Object? totalSubmissions = null,
+    Object? deadline = null,
   }) {
     return _then(_$HomeworkImpl(
       homeWorkId: null == homeWorkId
@@ -125,6 +158,18 @@ class __$$HomeworkImplCopyWithImpl<$Res>
           ? _value.lessonTitle
           : lessonTitle // ignore: cast_nullable_to_non_nullable
               as String,
+      isSubmitted: null == isSubmitted
+          ? _value.isSubmitted
+          : isSubmitted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      totalSubmissions: null == totalSubmissions
+          ? _value.totalSubmissions
+          : totalSubmissions // ignore: cast_nullable_to_non_nullable
+              as int,
+      deadline: null == deadline
+          ? _value.deadline
+          : deadline // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -136,7 +181,10 @@ class _$HomeworkImpl extends _Homework {
       {required this.homeWorkId,
       required this.fileUrl,
       required this.fileName,
-      required this.lessonTitle})
+      required this.lessonTitle,
+      this.isSubmitted = false,
+      this.totalSubmissions = 0,
+      required this.deadline})
       : super._();
 
   @override
@@ -147,10 +195,18 @@ class _$HomeworkImpl extends _Homework {
   final String fileName;
   @override
   final String lessonTitle;
+  @override
+  @JsonKey()
+  final bool isSubmitted;
+  @override
+  @JsonKey()
+  final int totalSubmissions;
+  @override
+  final DateTime deadline;
 
   @override
   String toString() {
-    return 'Homework(homeWorkId: $homeWorkId, fileUrl: $fileUrl, fileName: $fileName, lessonTitle: $lessonTitle)';
+    return 'Homework(homeWorkId: $homeWorkId, fileUrl: $fileUrl, fileName: $fileName, lessonTitle: $lessonTitle, isSubmitted: $isSubmitted, totalSubmissions: $totalSubmissions, deadline: $deadline)';
   }
 
   @override
@@ -164,12 +220,18 @@ class _$HomeworkImpl extends _Homework {
             (identical(other.fileName, fileName) ||
                 other.fileName == fileName) &&
             (identical(other.lessonTitle, lessonTitle) ||
-                other.lessonTitle == lessonTitle));
+                other.lessonTitle == lessonTitle) &&
+            (identical(other.isSubmitted, isSubmitted) ||
+                other.isSubmitted == isSubmitted) &&
+            (identical(other.totalSubmissions, totalSubmissions) ||
+                other.totalSubmissions == totalSubmissions) &&
+            (identical(other.deadline, deadline) ||
+                other.deadline == deadline));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, homeWorkId, fileUrl, fileName, lessonTitle);
+  int get hashCode => Object.hash(runtimeType, homeWorkId, fileUrl, fileName,
+      lessonTitle, isSubmitted, totalSubmissions, deadline);
 
   /// Create a copy of Homework
   /// with the given fields replaced by the non-null parameter values.
@@ -185,7 +247,10 @@ abstract class _Homework extends Homework {
       {required final String homeWorkId,
       required final String fileUrl,
       required final String fileName,
-      required final String lessonTitle}) = _$HomeworkImpl;
+      required final String lessonTitle,
+      final bool isSubmitted,
+      final int totalSubmissions,
+      required final DateTime deadline}) = _$HomeworkImpl;
   const _Homework._() : super._();
 
   @override
@@ -196,6 +261,12 @@ abstract class _Homework extends Homework {
   String get fileName;
   @override
   String get lessonTitle;
+  @override
+  bool get isSubmitted;
+  @override
+  int get totalSubmissions;
+  @override
+  DateTime get deadline;
 
   /// Create a copy of Homework
   /// with the given fields replaced by the non-null parameter values.

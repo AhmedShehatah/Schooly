@@ -12,6 +12,9 @@ class HomeworkModel with _$HomeworkModel {
     required String fileUrl,
     required String fileName,
     required String lessonTitle,
+    @Default(false) bool isSubmitted,
+    @Default(0) int totalSubmissions,
+    required DateTime deadline,
   }) = _HomeworkModel;
   factory HomeworkModel.fromJson(Map<String, dynamic> json) =>
       _$HomeworkModelFromJson(json);
@@ -20,13 +23,8 @@ class HomeworkModel with _$HomeworkModel {
         fileUrl: fileUrl,
         fileName: fileName,
         lessonTitle: lessonTitle,
+        isSubmitted: isSubmitted,
+        totalSubmissions: totalSubmissions,
+        deadline: deadline,
       );
 }
-/**
- *  {
-      "homeWorkId": "b467632f-8e84-437d-c4de-08dd791437ae",
-      "fileUrl": "1nfyphs5.cyh",
-      "fileName": "DEPI_Certificate.pdf",
-      "lessonTitle": "مصر"
-    },
- */
