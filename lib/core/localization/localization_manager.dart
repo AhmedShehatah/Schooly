@@ -33,11 +33,7 @@ class LocaleCubit extends Cubit<Locale> {
       emit(Locale(languageCode));
       appLocalizations = lookupAppLocalizations(Locale(languageCode));
     } else {
-      final deviceLocale = Locale(Platform.localeName.split('_').first);
-      final locale = AppLocalizations.supportedLocales.firstWhere(
-        (element) => element.languageCode == deviceLocale.languageCode,
-        orElse: () => AppLocalizations.supportedLocales.first,
-      );
+      const locale = Locale('ar');
       emit(locale);
       appLocalizations = lookupAppLocalizations(locale);
 
