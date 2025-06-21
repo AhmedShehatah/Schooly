@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/date_utils.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/classroom/entities/post/post.dart';
+import '../../classrooms/cubits/classroom_list_cubit.dart';
 import 'comments_list_widget.dart';
 
 class PostItemWidget extends StatelessWidget {

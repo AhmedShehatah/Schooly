@@ -8,6 +8,7 @@ import '../../../core/widgets/paged_list/custom_paged_list.dart';
 import '../../home/cubit/upcoming_classes_cubit.dart';
 import '../../home/widgets/class_card_widget.dart';
 import '../../post/pages/add_content_tabs_screen.dart';
+import '../cubits/classroom_list_cubit.dart';
 
 class SessionsWidget extends StatefulWidget {
   const SessionsWidget({super.key, required this.classRoomId});

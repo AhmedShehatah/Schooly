@@ -7,6 +7,7 @@ import '../../presentation/classrooms/pages/classrooms_screen.dart';
 import '../../presentation/auth/forget_password/pages/forget_password_screen.dart';
 import '../../presentation/auth/reset_password/pages/reset_password_screen.dart';
 import '../../presentation/auth/verify_code/pages/otp_screen.dart';
+import '../../presentation/homework/pages/teacher_homeworks_screen.dart';
 import '../../presentation/lesson_meeting/pages/lesson_attendance_screen.dart';
 import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
@@ -84,11 +85,26 @@ class AppRouter {
                   path: ClassDetailsScreen.routeName,
                   pageBuilder: (context, state) {
                     return _buildPageWithTransition(
-                        ClassDetailsScreen(
-                          classroomId: state.extra as String,
-                        ),
-                        state);
+                      ClassDetailsScreen(
+                        classroomId: state.extra as String,
+                      ),
+                      state,
+                    );
                   },
+                  routes: [
+                    GoRoute(
+                        path: TeacherHomeworksScreen.routeName,
+                        name: TeacherHomeworksScreen.routeName,
+                        parentNavigatorKey: _shellNavigatorKey,
+                        pageBuilder: (context, state) {
+                          return _buildPageWithTransition(
+                            TeacherHomeworksScreen(
+                              homeworkId: state.extra as String,
+                            ),
+                            state,
+                          );
+                        }),
+                  ],
                 ),
               ]),
           GoRoute(

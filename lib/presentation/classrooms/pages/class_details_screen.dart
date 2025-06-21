@@ -4,7 +4,7 @@ import '../../../core/widgets/tab_bar/custom_tab_bar.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 
-import '../../homework/widgets/homework_widget.dart';
+import '../../homework/pages/homework_widget.dart';
 import '../../post/widgets/post_list_widget.dart';
 import '../widgets/sessions_widget.dart';
 
@@ -41,10 +41,10 @@ class _ClassDetailsScreenState extends State<ClassDetailsScreen> {
             // 5.verticalSpace,
             // SizedBox(height: 120.h, child: const UpcomingClassesWidget()),
 
-            const CustomTabBar(tabs: [
-              Tab(text: 'منشورات'),
-              Tab(text: 'واجبات'),
-              Tab(text: 'جلسات'),
+            CustomTabBar(tabs: [
+              Tab(text: lz.posts),
+              Tab(text: lz.homeworks),
+              Tab(text: lz.sessions),
             ]),
 
             Expanded(

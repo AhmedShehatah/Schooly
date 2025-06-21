@@ -646,6 +646,138 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'بانتظار الاخرين حتى ينضموا'**
   String get waitingForOthersToJoin;
+
+  /// No description provided for @downloadHomework.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحميل الواجب'**
+  String get downloadHomework;
+
+  /// No description provided for @submitHomework.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسليم الواجب'**
+  String get submitHomework;
+
+  /// No description provided for @pleaseChooseFile.
+  ///
+  /// In ar, this message translates to:
+  /// **'من فضلك اختر ملف الواجب'**
+  String get pleaseChooseFile;
+
+  /// No description provided for @homeworkUploaded.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إضافة الواجب بنجاح'**
+  String get homeworkUploaded;
+
+  /// No description provided for @chooseFile.
+  ///
+  /// In ar, this message translates to:
+  /// **'أختر ملف'**
+  String get chooseFile;
+
+  /// No description provided for @fileUploadedSuccesfully.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم رفع الملف بنجاح'**
+  String get fileUploadedSuccesfully;
+
+  /// No description provided for @failedUpload.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر رفع الملف'**
+  String get failedUpload;
+
+  /// No description provided for @deadline.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاريخ التسليم'**
+  String get deadline;
+
+  /// No description provided for @submittedHomeworks.
+  ///
+  /// In ar, this message translates to:
+  /// **'الواجبات المسلمة'**
+  String get submittedHomeworks;
+
+  /// No description provided for @noSubmittedHomeworksYet.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد واجبات مسلمة بعد'**
+  String get noSubmittedHomeworksYet;
+
+  /// No description provided for @submitted.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التسليم'**
+  String get submitted;
+
+  /// No description provided for @notSubmitted.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يتم التسليم'**
+  String get notSubmitted;
+
+  /// No description provided for @active.
+  ///
+  /// In ar, this message translates to:
+  /// **'نشط'**
+  String get active;
+
+  /// No description provided for @completed.
+  ///
+  /// In ar, this message translates to:
+  /// **'مكتمل'**
+  String get completed;
+
+  /// No description provided for @fileName.
+  ///
+  /// In ar, this message translates to:
+  /// **'اسم الملف'**
+  String get fileName;
+
+  /// No description provided for @studentName.
+  ///
+  /// In ar, this message translates to:
+  /// **'اسم الطالب'**
+  String get studentName;
+
+  /// No description provided for @submitDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاريخ التسليم'**
+  String get submitDate;
+
+  /// No description provided for @posts.
+  ///
+  /// In ar, this message translates to:
+  /// **'المنشورات'**
+  String get posts;
+
+  /// No description provided for @homeworks.
+  ///
+  /// In ar, this message translates to:
+  /// **'الواجبات'**
+  String get homeworks;
+
+  /// No description provided for @sessions.
+  ///
+  /// In ar, this message translates to:
+  /// **'الجلسات'**
+  String get sessions;
+
+  /// No description provided for @lesson.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدرس'**
+  String get lesson;
+
+  /// No description provided for @resubmitHomework.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة تسليم الواجب'**
+  String get resubmitHomework;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

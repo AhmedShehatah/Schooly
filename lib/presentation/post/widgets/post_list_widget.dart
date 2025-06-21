@@ -7,6 +7,7 @@ import '../../../core/theme/palette.dart';
 import '../../../core/widgets/fields/custom_input.dart';
 import '../../../core/widgets/paged_list/custom_paged_list.dart';
 import '../../../core/widgets/text/custom_text.dart';
+import '../../classrooms/cubits/classroom_list_cubit.dart';
 import '../cubits/posts_list_cubit.dart';
 import '../pages/add_content_tabs_screen.dart';
 import 'post_item_widget.dart';

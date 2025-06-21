@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -361,4 +361,70 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get waitingForOthersToJoin => 'بانتظار الاخرين حتى ينضموا';
+
+  @override
+  String get downloadHomework => 'تحميل الواجب';
+
+  @override
+  String get submitHomework => 'تسليم الواجب';
+
+  @override
+  String get pleaseChooseFile => 'من فضلك اختر ملف الواجب';
+
+  @override
+  String get homeworkUploaded => 'تم إضافة الواجب بنجاح';
+
+  @override
+  String get chooseFile => 'أختر ملف';
+
+  @override
+  String get fileUploadedSuccesfully => 'تم رفع الملف بنجاح';
+
+  @override
+  String get failedUpload => 'تعذر رفع الملف';
+
+  @override
+  String get deadline => 'تاريخ التسليم';
+
+  @override
+  String get submittedHomeworks => 'الواجبات المسلمة';
+
+  @override
+  String get noSubmittedHomeworksYet => 'لا يوجد واجبات مسلمة بعد';
+
+  @override
+  String get submitted => 'تم التسليم';
+
+  @override
+  String get notSubmitted => 'لم يتم التسليم';
+
+  @override
+  String get active => 'نشط';
+
+  @override
+  String get completed => 'مكتمل';
+
+  @override
+  String get fileName => 'اسم الملف';
+
+  @override
+  String get studentName => 'اسم الطالب';
+
+  @override
+  String get submitDate => 'تاريخ التسليم';
+
+  @override
+  String get posts => 'المنشورات';
+
+  @override
+  String get homeworks => 'الواجبات';
+
+  @override
+  String get sessions => 'الجلسات';
+
+  @override
+  String get lesson => 'الدرس';
+
+  @override
+  String get resubmitHomework => 'إعادة تسليم الواجب';
 }

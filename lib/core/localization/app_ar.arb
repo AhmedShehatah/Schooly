@@ -140,8 +140,33 @@
     "noHomework": "لا توجد واجبات حالياً",
     "successfullyDownloaded":"تم التحميل بنجاح", 
     "downloading":"يتم التحميل",
-    "waitingForOthersToJoin":"بانتظار الاخرين حتى ينضموا"
-}
+    "waitingForOthersToJoin":"بانتظار الاخرين حتى ينضموا",
+    "downloadHomework":"تحميل الواجب",
+    "submitHomework":"تسليم الواجب",
+    "pleaseChooseFile":"من فضلك اختر ملف الواجب",
+    "homeworkUploaded":"تم إضافة الواجب بنجاح",
+    "chooseFile":"أختر ملف", 
+    "fileUploadedSuccesfully":"تم رفع الملف بنجاح",
+    "failedUpload":"تعذر رفع الملف" ,
+    "deadline":"تاريخ التسليم",
+    "submittedHomeworks":"الواجبات المسلمة",
+    "noSubmittedHomeworksYet":"لا يوجد واجبات مسلمة بعد", 
+    "submitted":"تم التسليم",
+    "notSubmitted":"لم يتم التسليم",
+    "active":"نشط",
+    "completed":"مكتمل",
+    "fileName":"اسم الملف",
+    "studentName":"اسم الطالب",
+    "submitDate":"تاريخ التسليم",
+    "posts":"المنشورات",
+    "homeworks":"الواجبات",
+    "sessions":"الجلسات",
+    "lesson":"الدرس",
+    "resubmitHomework":"إعادة تسليم الواجب"
+
+    
+    
+    }
 
     
 

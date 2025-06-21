@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -337,4 +337,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get waitingForOthersToJoin => 'Waiting for others to join';
+
+  @override
+  String get downloadHomework => 'Download';
+
+  @override
+  String get submitHomework => 'Submit';
+
+  @override
+  String get pleaseChooseFile => 'Please choose a File';
+
+  @override
+  String get homeworkUploaded => 'Homework uploaded';
+
+  @override
+  String get chooseFile => 'Choose file';
+
+  @override
+  String get fileUploadedSuccesfully => 'File Uploaded Successfully';
+
+  @override
+  String get failedUpload => 'Failed to Upload';
+
+  @override
+  String get deadline => 'Deadline';
+
+  @override
+  String get submittedHomeworks => 'Submitted Homeworks';
+
+  @override
+  String get noSubmittedHomeworksYet => 'No Homeworks Submitted Yet !';
+
+  @override
+  String get submitted => 'Submitted';
+
+  @override
+  String get notSubmitted => 'Not Submitted';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get completed => 'Completed';
+
+  @override
+  String get fileName => 'file name';
+
+  @override
+  String get studentName => 'Student Name';
+
+  @override
+  String get submitDate => 'Submitted at';
+
+  @override
+  String get posts => 'Posts';
+
+  @override
+  String get homeworks => 'Homeworks';
+
+  @override
+  String get sessions => 'Sessions';
+
+  @override
+  String get lesson => 'Lesson';
+
+  @override
+  String get resubmitHomework => 'Re-Submit';
 }

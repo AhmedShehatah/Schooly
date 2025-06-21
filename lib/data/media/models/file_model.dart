@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../domain/media/entities/uploaded_file.dart';
 part 'file_model.freezed.dart';
 part 'file_model.g.dart';
 
@@ -15,16 +17,7 @@ class FileModel with _$FileModel {
 
   factory FileModel.fromJson(Map<String, dynamic> json) =>
       _$FileModelFromJson(json);
-}
 
-/**
- * 
- * 
- * 
- * {
-    "id": 48,
-    "fileName": "send.svg",
-    "storedFileName": "erdpuqny.ntk",
-    "contentType": "image/svg+xml"
-  }
- */
+  UploadedFile toEntity() =>
+      UploadedFile(id: id, fileName: fileName, storedFileName: storedFileName);
+}

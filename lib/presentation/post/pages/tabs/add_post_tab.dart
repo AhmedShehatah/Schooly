@@ -15,6 +15,7 @@ import '../../../../core/widgets/fields/custom_input.dart';
 import '../../../../core/widgets/text/custom_text.dart';
 import '../../../../domain/auth/entities/user.dart';
 import '../../../../domain/classroom/use_case/add_post_use_case/add_post_use_case.dart';
+import '../../../classrooms/cubits/classroom_list_cubit.dart';
 import '../../cubits/add_post_cubit.dart';
 import '../../cubits/posts_list_cubit.dart';
 
