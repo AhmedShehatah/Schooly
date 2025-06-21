@@ -360,5 +360,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get downloading => 'يتم التحميل';
 
   @override
+  String get more => 'المزيد';
+
+  @override
+  String get logout => 'تسجيل خروج';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
   String get waitingForOthersToJoin => 'بانتظار الاخرين حتى ينضموا';
 }

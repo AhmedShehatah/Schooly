@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:fpdart/fpdart.dart';
 import '../../../app/di/injection_container.dart';
 import '../../../core/cubits/user_cubit.dart';
@@ -60,6 +62,24 @@ class AuthRepoImpl implements AuthRepo {
     try {
       await _authRemoteDataSource.verifyCode(params: params);
       return const Right(null);
+    } on Failure catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Result<User>> loginWithFaceId({required File params}) async {
+    try {
+      final result =
+          await _authRemoteDataSource.loginWithFaceId(params: params);
+      sl<SharedPrefs>()
+        ..saveBool(key: PrefsKeys.isLogged, value: true)
+        ..saveSecuredValue(
+          key: PrefsKeys.userDetails,
+          value: result.toJson(),
+        );
+      sl<UserCubit>().setUser(result.toEntity());
+      return Right(result.toEntity());
     } on Failure catch (e) {
       return Left(e);
     }

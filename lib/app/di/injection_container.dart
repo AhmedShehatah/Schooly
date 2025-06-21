@@ -15,10 +15,13 @@ import '../../data/homework/data_sources/homework_remote_data_source.dart';
 import '../../data/homework/repos/homework_repo_impl.dart';
 import '../../data/media/data_source/media_remote_data_source.dart';
 import '../../data/media/repos/media_repo_imp.dart';
+import '../../data/profile/data_sources/profile_remote_data_source.dart';
+import '../../data/profile/repos/profile_repo_impl.dart';
 import '../../data/upcoming_classes/data_sources/upcoming_classes_remote_data_source.dart';
 import '../../data/upcoming_classes/repos/upcoming_classes_repo_impl.dart';
 import '../../domain/auth/use_cases/check_otp_use_case/check_otp_use_case.dart';
 import '../../domain/auth/use_cases/forget_password_use_case/forget_password_use_case.dart';
+import '../../domain/auth/use_cases/login_with_face_id_use_case/login_with_face_id_use_case.dart';
 import '../../domain/auth/use_cases/reset_password_use_case/reset_password_use_case.dart';
 import '../../domain/classroom/repo/classroom_repo.dart';
 import '../../domain/classroom/use_case/add_comment_use_case/add_comment_use_case.dart';
@@ -34,6 +37,9 @@ import '../../domain/homework/use_cases/homework_use_case.dart';
 import '../../domain/media/repo/media_repository.dart';
 import '../../domain/media/use_cases/download_file_use_case.dart';
 import '../../domain/media/use_cases/upload_file_use_case.dart';
+import '../../domain/profile/repos/profile_repo.dart';
+import '../../domain/profile/use_cases/profile_use_case.dart';
+import '../../domain/profile/use_cases/update_profile_use_case.dart';
 import '../../domain/upcoming_classes/repos/upcoming_classes_repo.dart';
 import '../../domain/upcoming_classes/use_cases/join_session_use_case/join_session_use_case.dart';
 import '../../domain/upcoming_classes/use_cases/upcoming_classes/upcoming_classes_use_case.dart';
@@ -56,13 +62,14 @@ import '../../data/auth/repo/auth_repo_impl.dart';
 import '../../domain/auth/repo/auth_repo.dart';
 import '../../domain/auth/use_cases/login_use_case/login_use_case.dart';
 import '../../presentation/auth/login/cubit/login_cubit.dart';
+import '../../presentation/profile/cubits/profile_cubit.dart';
 import '../route_manager/app_router.dart';
 
 final sl = GetIt.instance;
 
 Future<void> init() async {
 // cubits
-  sl.registerLazySingleton(() => LoginCubit(sl()));
+  sl.registerLazySingleton(() => LoginCubit(sl(), sl()));
   sl.registerLazySingleton(() => UpcomingClassesCubit(sl()));
   sl.registerLazySingleton(() => JoinMeetingCubit(sl()));
   sl.registerLazySingleton(() => ForgetPasswordCubit(sl()));
@@ -76,6 +83,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => HomeworkCubit(sl()));
   sl.registerLazySingleton(
       () => DownloadAttachmentCubit(downloadFileUseCase: sl()));
+  sl.registerLazySingleton(() => ProfileCubit(sl(), sl()));
 
   //! useCases
 
@@ -96,6 +104,9 @@ Future<void> init() async {
   sl.registerLazySingleton(() => HomeworkUseCase(sl()));
   sl.registerLazySingleton(() => DownloadFileUseCase(mediaRepository: sl()));
   sl.registerLazySingleton(() => UploadUseCase(mediaRepository: sl()));
+  sl.registerLazySingleton(() => ProfileUseCase(sl()));
+  sl.registerLazySingleton(() => UpdateProfileUseCase(sl()));
+  sl.registerLazySingleton(() => LoginWithFaceIdUseCase(sl()));
 
   //! repos
   sl.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(sl()));
@@ -105,6 +116,7 @@ Future<void> init() async {
   sl.registerLazySingleton<HomeworkRepo>(() => HomeworkRepoImpl(sl()));
   sl.registerLazySingleton<MediaRepository>(
       () => MediaRepositoryImpl(mediaRemoteDataSource: sl()));
+  sl.registerLazySingleton<ProfileRepo>(() => ProfileRepoImpl(sl()));
 
   //! data sources
   sl.registerLazySingleton<AuthRemoteDataSource>(
@@ -117,6 +129,8 @@ Future<void> init() async {
       () => HomeworkRemoteDataSourceImpl(sl()));
   sl.registerLazySingleton<MediaRemoteDataSource>(
       () => MediaRemoteDataSourceImpl(sl()));
+  sl.registerLazySingleton<ProfileRemoteDataSource>(
+      () => ProfileRemoteDataSourceImpl(sl()));
 
   // core
   sl.registerSingleton(BottomNavigationCubit());

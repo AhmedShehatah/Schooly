@@ -140,6 +140,9 @@
     "noHomework": "لا توجد واجبات حالياً",
     "successfullyDownloaded":"تم التحميل بنجاح", 
     "downloading":"يتم التحميل",
+    "more":"المزيد",
+    "logout": "تسجيل خروج",
+    "profile": "الملف الشخصي",
     "waitingForOthersToJoin":"بانتظار الاخرين حتى ينضموا"
 }
 

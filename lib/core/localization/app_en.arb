@@ -141,7 +141,10 @@
     "noHomework": "There are no assignments at the moment",
     "waitingForOthersToJoin":"Waiting for others to join",
     "successfullyDownloaded":"Successfully downloaded", 
-    "downloading":"Downloading"
+    "downloading":"Downloading",
+    "more":"More",
+    "logout": "Logout",
+    "profile": "Profile"
 
 
 }
