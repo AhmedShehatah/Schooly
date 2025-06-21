@@ -16,8 +16,10 @@ _$ProfileModelImpl _$$ProfileModelImplFromJson(Map<String, dynamic> json) =>
       gender: $enumDecode(_$GenderEnumMap, json['gender']),
       profilePictureUrl: json['profilePictureUrl'] as String,
       role: $enumDecode(_$UserTypeEnumMap, json['role']),
-      studentExtra: StudentExtraModel.fromJson(
-          json['studentExtra'] as Map<String, dynamic>),
+      studentExtra: json['studentExtra'] == null
+          ? null
+          : StudentExtraModel.fromJson(
+              json['studentExtra'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$ProfileModelImplToJson(_$ProfileModelImpl instance) =>
@@ -30,7 +32,7 @@ Map<String, dynamic> _$$ProfileModelImplToJson(_$ProfileModelImpl instance) =>
       'gender': _$GenderEnumMap[instance.gender]!,
       'profilePictureUrl': instance.profilePictureUrl,
       'role': _$UserTypeEnumMap[instance.role]!,
-      'studentExtra': instance.studentExtra.toJson(),
+      'studentExtra': instance.studentExtra?.toJson(),
     };
 
 const _$GenderEnumMap = {

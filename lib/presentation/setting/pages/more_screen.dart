@@ -15,8 +15,8 @@ import '../../../core/theme/palette.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/auth/entities/user.dart';
+import '../../auth/login/pages/login_screen.dart';
 import '../../profile/pages/profile_screen.dart';
-import '../../splash/pages/splash_screen.dart';
 
 class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
@@ -169,7 +169,7 @@ class _MoreScreenState extends State<MoreScreen> {
         break;
       case 2:
         sl<SharedPrefs>().deleteSecuredValue(key: PrefsKeys.token);
-        context.goNamed(SplashScreen.routeName);
+        context.goNamed(LoginScreen.routeName);
         break;
     }
   }

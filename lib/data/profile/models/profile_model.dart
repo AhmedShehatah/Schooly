@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:schooly/data/profile/models/student_extra_model.dart';
+import 'student_extra_model.dart';
 import '../../../core/enums/enums.dart';
 import '../../../domain/profile/entities/profile.dart';
 
@@ -19,7 +19,7 @@ class ProfileModel with _$ProfileModel {
     required Gender gender,
     required String profilePictureUrl,
     required UserType role,
-    required StudentExtraModel studentExtra,
+    required StudentExtraModel? studentExtra,
   }) = _ProfileModel;
 
   factory ProfileModel.fromJson(Map<String, dynamic> json) =>

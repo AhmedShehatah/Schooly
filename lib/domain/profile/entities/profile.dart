@@ -15,6 +15,6 @@ class Profile with _$Profile {
     required Gender gender,
     required String profilePictureUrl,
     required UserType role,
-    required StudentExtraModel studentExtra,
+    required StudentExtraModel? studentExtra,
   }) = _Profile;
 }

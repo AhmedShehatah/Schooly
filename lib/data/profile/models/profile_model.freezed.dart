@@ -28,7 +28,7 @@ mixin _$ProfileModel {
   Gender get gender => throw _privateConstructorUsedError;
   String get profilePictureUrl => throw _privateConstructorUsedError;
   UserType get role => throw _privateConstructorUsedError;
-  StudentExtraModel get studentExtra => throw _privateConstructorUsedError;
+  StudentExtraModel? get studentExtra => throw _privateConstructorUsedError;
 
   /// Serializes this ProfileModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -55,9 +55,9 @@ abstract class $ProfileModelCopyWith<$Res> {
       Gender gender,
       String profilePictureUrl,
       UserType role,
-      StudentExtraModel studentExtra});
+      StudentExtraModel? studentExtra});
 
-  $StudentExtraModelCopyWith<$Res> get studentExtra;
+  $StudentExtraModelCopyWith<$Res>? get studentExtra;
 }
 
 /// @nodoc
@@ -83,7 +83,7 @@ class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
     Object? gender = null,
     Object? profilePictureUrl = null,
     Object? role = null,
-    Object? studentExtra = null,
+    Object? studentExtra = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -118,10 +118,10 @@ class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
-      studentExtra: null == studentExtra
+      studentExtra: freezed == studentExtra
           ? _value.studentExtra
           : studentExtra // ignore: cast_nullable_to_non_nullable
-              as StudentExtraModel,
+              as StudentExtraModel?,
     ) as $Val);
   }
 
@@ -129,8 +129,12 @@ class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StudentExtraModelCopyWith<$Res> get studentExtra {
-    return $StudentExtraModelCopyWith<$Res>(_value.studentExtra, (value) {
+  $StudentExtraModelCopyWith<$Res>? get studentExtra {
+    if (_value.studentExtra == null) {
+      return null;
+    }
+
+    return $StudentExtraModelCopyWith<$Res>(_value.studentExtra!, (value) {
       return _then(_value.copyWith(studentExtra: value) as $Val);
     });
   }
@@ -153,10 +157,10 @@ abstract class _$$ProfileModelImplCopyWith<$Res>
       Gender gender,
       String profilePictureUrl,
       UserType role,
-      StudentExtraModel studentExtra});
+      StudentExtraModel? studentExtra});
 
   @override
-  $StudentExtraModelCopyWith<$Res> get studentExtra;
+  $StudentExtraModelCopyWith<$Res>? get studentExtra;
 }
 
 /// @nodoc
@@ -180,7 +184,7 @@ class __$$ProfileModelImplCopyWithImpl<$Res>
     Object? gender = null,
     Object? profilePictureUrl = null,
     Object? role = null,
-    Object? studentExtra = null,
+    Object? studentExtra = freezed,
   }) {
     return _then(_$ProfileModelImpl(
       id: null == id
@@ -215,10 +219,10 @@ class __$$ProfileModelImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
-      studentExtra: null == studentExtra
+      studentExtra: freezed == studentExtra
           ? _value.studentExtra
           : studentExtra // ignore: cast_nullable_to_non_nullable
-              as StudentExtraModel,
+              as StudentExtraModel?,
     ));
   }
 }
@@ -258,7 +262,7 @@ class _$ProfileModelImpl extends _ProfileModel {
   @override
   final UserType role;
   @override
-  final StudentExtraModel studentExtra;
+  final StudentExtraModel? studentExtra;
 
   @override
   String toString() {
@@ -316,7 +320,7 @@ abstract class _ProfileModel extends ProfileModel {
       required final Gender gender,
       required final String profilePictureUrl,
       required final UserType role,
-      required final StudentExtraModel studentExtra}) = _$ProfileModelImpl;
+      required final StudentExtraModel? studentExtra}) = _$ProfileModelImpl;
   const _ProfileModel._() : super._();
 
   factory _ProfileModel.fromJson(Map<String, dynamic> json) =
@@ -339,7 +343,7 @@ abstract class _ProfileModel extends ProfileModel {
   @override
   UserType get role;
   @override
-  StudentExtraModel get studentExtra;
+  StudentExtraModel? get studentExtra;
 
   /// Create a copy of ProfileModel
   /// with the given fields replaced by the non-null parameter values.

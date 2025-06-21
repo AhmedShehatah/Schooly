@@ -24,7 +24,7 @@ mixin _$Profile {
   Gender get gender => throw _privateConstructorUsedError;
   String get profilePictureUrl => throw _privateConstructorUsedError;
   UserType get role => throw _privateConstructorUsedError;
-  StudentExtraModel get studentExtra => throw _privateConstructorUsedError;
+  StudentExtraModel? get studentExtra => throw _privateConstructorUsedError;
 
   /// Create a copy of Profile
   /// with the given fields replaced by the non-null parameter values.
@@ -46,9 +46,9 @@ abstract class $ProfileCopyWith<$Res> {
       Gender gender,
       String profilePictureUrl,
       UserType role,
-      StudentExtraModel studentExtra});
+      StudentExtraModel? studentExtra});
 
-  $StudentExtraModelCopyWith<$Res> get studentExtra;
+  $StudentExtraModelCopyWith<$Res>? get studentExtra;
 }
 
 /// @nodoc
@@ -74,7 +74,7 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
     Object? gender = null,
     Object? profilePictureUrl = null,
     Object? role = null,
-    Object? studentExtra = null,
+    Object? studentExtra = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -109,10 +109,10 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
-      studentExtra: null == studentExtra
+      studentExtra: freezed == studentExtra
           ? _value.studentExtra
           : studentExtra // ignore: cast_nullable_to_non_nullable
-              as StudentExtraModel,
+              as StudentExtraModel?,
     ) as $Val);
   }
 
@@ -120,8 +120,12 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $StudentExtraModelCopyWith<$Res> get studentExtra {
-    return $StudentExtraModelCopyWith<$Res>(_value.studentExtra, (value) {
+  $StudentExtraModelCopyWith<$Res>? get studentExtra {
+    if (_value.studentExtra == null) {
+      return null;
+    }
+
+    return $StudentExtraModelCopyWith<$Res>(_value.studentExtra!, (value) {
       return _then(_value.copyWith(studentExtra: value) as $Val);
     });
   }
@@ -143,10 +147,10 @@ abstract class _$$ProfileImplCopyWith<$Res> implements $ProfileCopyWith<$Res> {
       Gender gender,
       String profilePictureUrl,
       UserType role,
-      StudentExtraModel studentExtra});
+      StudentExtraModel? studentExtra});
 
   @override
-  $StudentExtraModelCopyWith<$Res> get studentExtra;
+  $StudentExtraModelCopyWith<$Res>? get studentExtra;
 }
 
 /// @nodoc
@@ -170,7 +174,7 @@ class __$$ProfileImplCopyWithImpl<$Res>
     Object? gender = null,
     Object? profilePictureUrl = null,
     Object? role = null,
-    Object? studentExtra = null,
+    Object? studentExtra = freezed,
   }) {
     return _then(_$ProfileImpl(
       id: null == id
@@ -205,10 +209,10 @@ class __$$ProfileImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
-      studentExtra: null == studentExtra
+      studentExtra: freezed == studentExtra
           ? _value.studentExtra
           : studentExtra // ignore: cast_nullable_to_non_nullable
-              as StudentExtraModel,
+              as StudentExtraModel?,
     ));
   }
 }
@@ -244,7 +248,7 @@ class _$ProfileImpl implements _Profile {
   @override
   final UserType role;
   @override
-  final StudentExtraModel studentExtra;
+  final StudentExtraModel? studentExtra;
 
   @override
   String toString() {
@@ -294,7 +298,7 @@ abstract class _Profile implements Profile {
       required final Gender gender,
       required final String profilePictureUrl,
       required final UserType role,
-      required final StudentExtraModel studentExtra}) = _$ProfileImpl;
+      required final StudentExtraModel? studentExtra}) = _$ProfileImpl;
 
   @override
   String get id;
@@ -313,7 +317,7 @@ abstract class _Profile implements Profile {
   @override
   UserType get role;
   @override
-  StudentExtraModel get studentExtra;
+  StudentExtraModel? get studentExtra;
 
   /// Create a copy of Profile
   /// with the given fields replaced by the non-null parameter values.

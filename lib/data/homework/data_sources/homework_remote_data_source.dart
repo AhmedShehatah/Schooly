@@ -16,7 +16,7 @@ class HomeworkRemoteDataSourceImpl implements HomeworkRemoteDataSource {
   }) async {
     try {
       final response =
-          await _dio.get('/homework/active', queryParameters: params.toJson());
+          await _dio.get('/homework/all', queryParameters: params.toJson());
       return Isolate.run<List<HomeworkModel>>(() => (response.data as List)
           .map((e) => HomeworkModel.fromJson(e))
           .toList());
