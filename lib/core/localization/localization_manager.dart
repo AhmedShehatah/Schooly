@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,11 +31,7 @@ class LocaleCubit extends Cubit<Locale> {
       emit(Locale(languageCode));
       appLocalizations = lookupAppLocalizations(Locale(languageCode));
     } else {
-      final deviceLocale = Locale(Platform.localeName.split('_').first);
-      final locale = AppLocalizations.supportedLocales.firstWhere(
-        (element) => element.languageCode == deviceLocale.languageCode,
-        orElse: () => AppLocalizations.supportedLocales.first,
-      );
+      const locale = Locale('ar');
       emit(locale);
       appLocalizations = lookupAppLocalizations(locale);
 

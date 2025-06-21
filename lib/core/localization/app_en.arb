@@ -163,7 +163,10 @@
     "homeworks":"Homeworks",
     "sessions":"Sessions",
     "lesson" :"Lesson",
-    "resubmitHomework": "Re-Submit"
+    "resubmitHomework": "Re-Submit",
+    "more":"More",
+    "logout": "Logout",
+    "profile": "Profile"
 
 
 }

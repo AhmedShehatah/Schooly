@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
@@ -10,6 +11,7 @@ import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/auth/entities/user.dart';
+import '../../auth/login/pages/login_screen.dart';
 
 class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -49,6 +51,9 @@ class _HomeAppBarState extends State<HomeAppBar> {
               color: Palette.character.primary85,
             ),
             trailing: InkWell(
+              onTap: () {
+                context.goNamed(LoginScreen.routeName);
+              },
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
                 decoration: BoxDecoration(

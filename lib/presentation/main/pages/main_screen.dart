@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -8,6 +9,7 @@ import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../classrooms/pages/classrooms_screen.dart';
 import '../../home/pages/home_screen.dart';
+import '../../setting/pages/more_screen.dart';
 import '../cubits/bottom_navigation_cubit.dart';
 
 class MainScreen extends StatefulWidget {
@@ -38,7 +40,7 @@ class _MainScreenState extends State<MainScreen> {
         context.go(ClassesScreen.routeName);
         break;
       case 4:
-        context.go('/settings');
+        context.go(MoreScreen.routeName);
         break;
     }
     sl<BottomNavigationCubit>().changePage(index);
@@ -80,10 +82,9 @@ class _MainScreenState extends State<MainScreen> {
                 label: lz.classes,
               ),
               BottomNavigationBarItem(
-                icon: Assets.icons.settings.svg(),
-                activeIcon:
-                    Assets.icons.settings.svg(colorFilter: _activeIconColor()),
-                label: lz.settings,
+                icon: const Icon(CupertinoIcons.ellipsis),
+                activeIcon: const Icon(CupertinoIcons.ellipsis),
+                label: lz.more,
               ),
             ],
           );

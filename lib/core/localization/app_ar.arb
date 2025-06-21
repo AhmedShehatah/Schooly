@@ -162,11 +162,17 @@
     "homeworks":"الواجبات",
     "sessions":"الجلسات",
     "lesson":"الدرس",
-    "resubmitHomework":"إعادة تسليم الواجب"
+    "resubmitHomework":"إعادة تسليم الواجب",
+    "more":"المزيد",
+    "logout": "تسجيل خروج",
+    "profile": "الملف الشخصي",
+    "waitingForOthersToJoin":"بانتظار الاخرين حتى ينضموا"
 
     
     
     }
+
+
 
     
 

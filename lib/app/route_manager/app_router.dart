@@ -13,6 +13,7 @@ import '../../presentation/lesson_meeting/pages/lesson_meeting_screen.dart';
 import '../../presentation/main/cubits/bottom_navigation_cubit.dart';
 import '../../presentation/main/pages/main_screen.dart';
 
+import '../../presentation/setting/pages/more_screen.dart';
 import '../../presentation/splash/pages/splash_screen.dart';
 import '../../presentation/home/pages/home_screen.dart';
 import '../../presentation/auth/login/pages/login_screen.dart';
@@ -108,13 +109,15 @@ class AppRouter {
                 ),
               ]),
           GoRoute(
-            name: '/settings',
-            path: '/settings',
+            name: MoreScreen.routeName,
+            path: MoreScreen.routeName,
             pageBuilder: (context, state) {
               sl<BottomNavigationCubit>().changePage(4);
 
               return _buildPageWithTransition(
-                  const Center(child: Text('Settings Screen')), state);
+                const MoreScreen(),
+                state,
+              );
             },
           ),
         ],
