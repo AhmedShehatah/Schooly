@@ -4,9 +4,12 @@ import '../../../domain/classroom/use_case/add_comment_use_case/add_comment_use_
 import '../../../domain/classroom/use_case/add_new_session_use_case/add_new_session_use_case.dart';
 import '../../../domain/classroom/use_case/add_post_use_case/add_post_use_case.dart';
 import '../../../domain/classroom/use_case/get_comments_use_case/get_comment_use_case.dart';
+import '../../../domain/lookups/use_cases/get_lessons_use_case/get_lessons_use_case.dart';
 import '../../../domain/classroom/use_case/get_posts_use_case/get_posts_use_case.dart';
+import '../../../domain/homework/use_cases/add_homework_use_case/add_homework_use_case.dart';
 import '../models/classroom_model/classroom_model.dart';
 import '../models/comment_model/comment_model.dart';
+import '../models/lesson_model/lesson_model.dart';
 import '../models/post_model/post_model.dart';
 
 class ClassroomRemoteDataSourceImpl implements ClassroomRemoteDataSource {
@@ -95,6 +98,27 @@ class ClassroomRemoteDataSourceImpl implements ClassroomRemoteDataSource {
       throw e.error as Failure;
     }
   }
+
+  @override
+  Future<void> addHomework({required AddHomeworkParams params}) async {
+    try {
+      await _dio.post('/homework', data: params.toJson());
+    } on DioException catch (e) {
+      throw e.error as Failure;
+    }
+  }
+
+  @override
+  Future<List<LessonModel>> getLessons(
+      {required GetLessonsParams params}) async {
+    try {
+      final result =
+          await _dio.get('/lesson', queryParameters: params.toJson());
+      return (result.data as List).map((e) => LessonModel.fromJson(e)).toList();
+    } on DioException catch (e) {
+      throw e.error as Failure;
+    }
+  }
 }
 
 abstract class ClassroomRemoteDataSource {
@@ -106,4 +130,6 @@ abstract class ClassroomRemoteDataSource {
   Future<void> addComment({required AddCommentParams params});
   Future<void> deleteComment({required String id});
   Future<void> addSession({required AddNewSessionParams params});
+  Future<void> addHomework({required AddHomeworkParams params});
+  Future<List<LessonModel>> getLessons({required GetLessonsParams params});
 }

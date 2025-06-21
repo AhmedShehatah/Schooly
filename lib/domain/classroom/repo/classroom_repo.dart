@@ -1,4 +1,7 @@
 import '../../../core/result/result.dart';
+import '../../homework/use_cases/add_homework_use_case/add_homework_use_case.dart';
+import '../../lookups/entities/lesson.dart';
+import '../../lookups/use_cases/get_lessons_use_case/get_lessons_use_case.dart';
 import '../entities/classroom/classroom.dart';
 import '../entities/comment/comment.dart';
 import '../entities/post/post.dart';
@@ -18,4 +21,7 @@ abstract class ClassroomRepo {
       {required GetCommentParams params});
   Future<Result<List<Classroom>>> getClassrooms();
   Future<Result<void>> addSession({required AddNewSessionParams params});
+  Future<Result<void>> addHomework({required AddHomeworkParams params});
+
+  Future<Result<List<Lesson>>> getLessons({required GetLessonsParams params});
 }

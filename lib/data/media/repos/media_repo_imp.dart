@@ -3,11 +3,11 @@ import 'package:fpdart/fpdart.dart';
 
 import '../../../core/network/failure/failure.dart';
 import '../../../core/result/result.dart';
+import '../../../domain/media/entities/uploaded_file.dart';
 import '../../../domain/media/repo/media_repository.dart';
 import '../../../domain/media/use_cases/download_file_use_case.dart';
 import '../../../domain/media/use_cases/upload_file_use_case.dart';
 import '../data_source/media_remote_data_source.dart';
-import '../models/file_model.dart';
 
 class MediaRepositoryImpl implements MediaRepository {
   final MediaRemoteDataSource _remoteDataSource;
@@ -16,10 +16,11 @@ class MediaRepositoryImpl implements MediaRepository {
       : _remoteDataSource = mediaRemoteDataSource;
 
   @override
-  Future<Result<FileModel>> uploadFile({required UploadParams params}) async {
+  Future<Result<UploadedFile>> uploadFile(
+      {required UploadParams params}) async {
     try {
       final result = await _remoteDataSource.uploadFile(params: params);
-      return Right(result);
+      return Right(result.toEntity());
     } on Failure catch (e) {
       return Left(e);
     }

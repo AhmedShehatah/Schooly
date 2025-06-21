@@ -11,9 +11,3 @@ class Classroom with _$Classroom {
     required String grade,
   }) = _Classroom;
 }
-/**
- *  "id": "e082bf29-033a-4b1f-bdc4-08dd584749a7",
-      "teacherId": "",
-      "subject": "رياضه",
-      "grade": "اولي ثانوي"
- */
