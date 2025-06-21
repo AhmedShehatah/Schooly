@@ -354,6 +354,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noHomework => 'لا توجد واجبات حالياً';
 
   @override
+  String get successfullyDownloaded => 'تم التحميل بنجاح';
+
+  @override
+  String get downloading => 'يتم التحميل';
+
+  @override
   String get more => 'المزيد';
 
   @override

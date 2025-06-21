@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../app/di/injection_container.dart';
+import '../../../core/cubits/media_download_cubit.dart';
+import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/utils/dimensions.dart';
+import '../../../core/utils/pop_ups.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/homework/entities/homework.dart';
 
@@ -20,10 +25,7 @@ class HomeworkCardWidget extends StatelessWidget {
       children: [
         ListTile(
           contentPadding: EdgeInsets.zero,
-          leading: InkWell(
-            child: Assets.icons.homeworkFile.svg(),
-            onTap: () {},
-          ),
+          leading: Assets.icons.homeworkFile.svg(),
           title: CustomText.s12(
             item.fileName,
             color: Palette.character.primary85,
@@ -32,24 +34,13 @@ class HomeworkCardWidget extends StatelessWidget {
             item.lessonTitle,
             color: Palette.character.secondary45,
           ),
-          trailing: InkWell(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(999.r),
-                color: Palette.neutral.color1,
-                border: Border.all(color: Palette.neutral.color5),
-                boxShadow: [
-                  BoxShadow(
-                    color: Palette.neutral.color5,
-                    blurRadius: 1.r,
-                  )
-                ],
-              ),
-              child: Assets.icons.download.svg(height: 17.sp),
-            ),
-            onTap: () {},
+          trailing: IconButton(
+            icon: Assets.icons.dots.svg(width: 30),
+            onPressed: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (ctx) => buildHomeworkActions(ctx, item));
+            },
           ),
         ),
         Divider(
@@ -59,4 +50,43 @@ class HomeworkCardWidget extends StatelessWidget {
       ],
     );
   }
+}
+
+Widget buildHomeworkActions(BuildContext ctx, Homework item) {
+  return Padding(
+    padding: Dimensions.defaultPagePadding,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        CustomText.s16(
+          "Homework Actions",
+          bold: true,
+        ),
+        20.verticalSpace,
+        GestureDetector(
+          onTap: () {
+            sl<DownloadAttachmentCubit>()
+                .downloadAttachment(fileName: item.fileName, url: item.fileUrl);
+            PopUps.showDownloadDialog(ctx, item.fileName);
+          },
+          child: Row(
+            children: [
+              Assets.icons.download.svg(height: 20.h, width: 20.w),
+              10.horizontalSpace,
+              CustomText.s12(lz.addComment)
+            ],
+          ),
+        ),
+        10.verticalSpace,
+        Row(
+          children: [
+            Assets.icons.download.svg(height: 20.h, width: 20.w),
+            10.horizontalSpace,
+            CustomText.s12(lz.addComment)
+          ],
+        )
+      ],
+    ),
+  );
 }

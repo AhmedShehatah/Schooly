@@ -330,6 +330,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noHomework => 'There are no assignments at the moment';
 
   @override
+  String get successfullyDownloaded => 'Successfully downloaded';
+
+  @override
+  String get downloading => 'Downloading';
+
+  @override
   String get more => 'More';
 
   @override

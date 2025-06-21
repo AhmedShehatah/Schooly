@@ -34,9 +34,7 @@ class HomeworkWidgetState extends State<HomeworkWidget> {
           horizontal: 24.w,
           vertical: 8.h,
         ),
-        child: Expanded(
-            child: SizedBox(
-          height: 1.sh * 0.6,
+        child: SizedBox(
           child: CustomPagedList(
             controller: sl<HomeworkCubit>().controller,
             itemBuilder: (item) => HomeworkCardWidget(item: item),
@@ -44,6 +42,6 @@ class HomeworkWidgetState extends State<HomeworkWidget> {
             emptyText: lz.noHomework,
             shimmerPadding: EdgeInsets.symmetric(horizontal: 24.w),
           ),
-        )));
+        ));
   }
 }

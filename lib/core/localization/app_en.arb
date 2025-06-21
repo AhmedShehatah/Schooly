@@ -139,10 +139,12 @@
     "choose": "Choose {value}",
     "sessionTitle":"Session Title",
     "noHomework": "There are no assignments at the moment",
+    "waitingForOthersToJoin":"Waiting for others to join",
+    "successfullyDownloaded":"Successfully downloaded", 
+    "downloading":"Downloading",
     "more":"More",
     "logout": "Logout",
-    "profile": "Profile",
-    "waitingForOthersToJoin":"Waiting for others to join"
+    "profile": "Profile"
 
 
 }

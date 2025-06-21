@@ -629,6 +629,18 @@ abstract class AppLocalizations {
   /// **'لا توجد واجبات حالياً'**
   String get noHomework;
 
+  /// No description provided for @successfullyDownloaded.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التحميل بنجاح'**
+  String get successfullyDownloaded;
+
+  /// No description provided for @downloading.
+  ///
+  /// In ar, this message translates to:
+  /// **'يتم التحميل'**
+  String get downloading;
+
   /// No description provided for @more.
   ///
   /// In ar, this message translates to:

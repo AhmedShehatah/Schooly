@@ -18,6 +18,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/bell.svg
   SvgGenImage get bell => const SvgGenImage('assets/icons/bell.svg');
 
+  /// File path: assets/icons/dots-horizontal-24 px.svg
+  SvgGenImage get dotsHorizontal24Px =>
+      const SvgGenImage('assets/icons/dots-horizontal-24 px.svg');
+
+  /// File path: assets/icons/dots.svg
+  SvgGenImage get dots => const SvgGenImage('assets/icons/dots.svg');
+
   /// File path: assets/icons/download.svg
   SvgGenImage get download => const SvgGenImage('assets/icons/download.svg');
 
@@ -30,6 +37,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/left_arrow.svg
   SvgGenImage get leftArrow => const SvgGenImage('assets/icons/left_arrow.svg');
+
+  /// File path: assets/icons/more.svg
+  SvgGenImage get more => const SvgGenImage('assets/icons/more.svg');
 
   /// File path: assets/icons/notebook.svg
   SvgGenImage get notebook => const SvgGenImage('assets/icons/notebook.svg');
@@ -47,10 +57,13 @@ class $AssetsIconsGen {
   /// List of all assets
   List<SvgGenImage> get values => [
         bell,
+        dotsHorizontal24Px,
+        dots,
         download,
         home,
         homeworkFile,
         leftArrow,
+        more,
         notebook,
         settings,
         slider3Horizontal,

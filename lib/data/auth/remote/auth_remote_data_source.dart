@@ -53,7 +53,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   Future<UserModel> loginWithFaceId({required File params}) async {
     try {
       final response = await _dio.post(
-        '/auth/verify-face',
+        '/face-recognition/verify-face',
         data: FormData.fromMap(
           {
             'image': await MultipartFile.fromFile(params.path,
