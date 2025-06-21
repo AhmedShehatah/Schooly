@@ -33,6 +33,7 @@ import '../../domain/homework/repos/homework_repo.dart';
 import '../../domain/homework/use_cases/homework_use_case.dart';
 import '../../domain/profile/repos/profile_repo.dart';
 import '../../domain/profile/use_cases/profile_use_case.dart';
+import '../../domain/profile/use_cases/update_profile_use_case.dart';
 import '../../domain/upcoming_classes/repos/upcoming_classes_repo.dart';
 import '../../domain/upcoming_classes/use_cases/join_session_use_case/join_session_use_case.dart';
 import '../../domain/upcoming_classes/use_cases/upcoming_classes/upcoming_classes_use_case.dart';
@@ -74,7 +75,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => AddCommentCubit(sl()));
   sl.registerLazySingleton(() => AddSessionCubit(sl()));
   sl.registerLazySingleton(() => HomeworkCubit(sl()));
-  sl.registerLazySingleton(() => ProfileCubit(sl()));
+  sl.registerLazySingleton(() => ProfileCubit(sl(), sl()));
 
   //! useCases
 
@@ -94,6 +95,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => AddNewSessionUseCase(sl()));
   sl.registerLazySingleton(() => HomeworkUseCase(sl()));
   sl.registerLazySingleton(() => ProfileUseCase(sl()));
+  sl.registerLazySingleton(() => UpdateProfileUseCase(sl()));
   sl.registerLazySingleton(() => LoginWithFaceIdUseCase(sl()));
 
   //! repos

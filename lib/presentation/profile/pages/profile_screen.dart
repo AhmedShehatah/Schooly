@@ -11,6 +11,7 @@ import '../../../core/widgets/buttons/custom_button.dart';
 import '../../../core/widgets/fields/custom_input.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/profile/entities/profile.dart';
+import '../../../domain/profile/use_cases/update_profile_use_case.dart';
 import '../cubits/profile_cubit.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -98,11 +99,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ],
                         ),
                         30.verticalSpace,
-                        buildField('الأسم', _name),
-                        buildField('البريد الإلكتروني', _email),
+                        buildField('الأسم', _name, isEditable: true),
+                        buildField('البريد الإلكتروني', _email,
+                            isEditable: true),
                         buildField('رقم الهاتف', _phone),
                         buildField('تاريخ الميلاد', _birthDate, isDate: true),
-                        buildField('رقم الهاتف', _phone),
                         buildField('النوع', _gender),
                         buildField('الدور', _role),
                         buildField('الصف', _grade),
@@ -112,7 +113,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           text: 'تحديث',
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              /// TODO: Call update method
+                              sl<ProfileCubit>().updateProfile(
+                                params: UpdateProfileParams(
+                                  name: _name.text,
+                                  email: _email.text,
+                                  profilePictureUrl: '',
+                                ),
+                              );
                             }
                           },
                           enabled: true,
@@ -133,7 +140,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget buildField(String title, TextEditingController controller,
-      {bool isDate = false}) {
+      {bool isDate = false, bool isEditable = false}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -141,7 +148,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         10.verticalSpace,
         CustomInput(
           controller: controller,
-          onPressed: isDate
+          onPressed: isDate && isEditable
               ? () async {
                   final date = await showDatePicker(
                     context: context,
@@ -155,6 +162,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   }
                 }
               : null,
+          editable: isEditable,
         ),
         20.verticalSpace,
       ],
