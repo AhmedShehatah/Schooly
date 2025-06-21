@@ -66,10 +66,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     DateFormat('dd-MM-yyyy').format(profile.dateOfBirth);
                 if (profile.gender == Gender.female) _gender.text = 'أنثى';
                 if (profile.gender == Gender.male) _gender.text = 'ذكر';
-                _grade.text = profile.studentExtra.grade.toString();
+                _grade.text = profile.studentExtra?.grade.toString() ?? '';
                 if (profile.role == UserType.teacher) _role.text = 'معلم';
                 if (profile.role == UserType.student) _role.text = 'طالب';
-                _address.text = profile.studentExtra.address;
+                _address.text = profile.studentExtra?.address ?? '';
 
                 return Form(
                   key: _formKey,

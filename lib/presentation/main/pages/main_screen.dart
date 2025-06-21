@@ -30,16 +30,16 @@ class _MainScreenState extends State<MainScreen> {
       case 0:
         context.go(HomeScreen.routeName);
         break;
+      // case 1:
+      //   context.go('/notifications');
+      //   break;
+      // case 2:
+      //   context.go('/schedule');
+      //   break;
       case 1:
-        context.go('/notifications');
-        break;
-      case 2:
-        context.go('/schedule');
-        break;
-      case 3:
         context.go(ClassesScreen.routeName);
         break;
-      case 4:
+      case 2:
         context.go(MoreScreen.routeName);
         break;
     }
@@ -63,18 +63,18 @@ class _MainScreenState extends State<MainScreen> {
                     Assets.icons.home.svg(colorFilter: _activeIconColor()),
                 label: lz.home,
               ),
-              BottomNavigationBarItem(
-                icon: Assets.icons.bell.svg(),
-                activeIcon:
-                    Assets.icons.bell.svg(colorFilter: _activeIconColor()),
-                label: lz.notifications,
-              ),
-              BottomNavigationBarItem(
-                icon: Assets.icons.table.svg(),
-                activeIcon:
-                    Assets.icons.table.svg(colorFilter: _activeIconColor()),
-                label: lz.schedule,
-              ),
+              // BottomNavigationBarItem(
+              //   icon: Assets.icons.bell.svg(),
+              //   activeIcon:
+              //       Assets.icons.bell.svg(colorFilter: _activeIconColor()),
+              //   label: lz.notifications,
+              // ),
+              // BottomNavigationBarItem(
+              //   icon: Assets.icons.table.svg(),
+              //   activeIcon:
+              //       Assets.icons.table.svg(colorFilter: _activeIconColor()),
+              //   label: lz.schedule,
+              // ),
               BottomNavigationBarItem(
                 icon: Assets.icons.notebook.svg(),
                 activeIcon:

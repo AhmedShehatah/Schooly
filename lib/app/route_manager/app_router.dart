@@ -75,8 +75,6 @@ class AppRouter {
               name: ClassesScreen.routeName,
               path: ClassesScreen.routeName,
               pageBuilder: (context, state) {
-                sl<BottomNavigationCubit>().changePage(3);
-
                 return _buildPageWithTransition(const ClassesScreen(), state);
               },
               routes: [
@@ -96,8 +94,6 @@ class AppRouter {
             name: MoreScreen.routeName,
             path: MoreScreen.routeName,
             pageBuilder: (context, state) {
-              sl<BottomNavigationCubit>().changePage(4);
-
               return _buildPageWithTransition(
                 const MoreScreen(),
                 state,
