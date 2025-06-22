@@ -1,10 +1,16 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/cubits/media_download_cubit.dart';
 import '../../../core/localization/localization_manager.dart';
+import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/fields/custom_input.dart';
+import '../../../core/widgets/images/custom_image.dart';
 import '../../../core/widgets/paged_list/custom_paged_list.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../cubits/posts_list_cubit.dart';
@@ -46,11 +52,28 @@ class _PostListWidgetState extends State<PostListWidget> {
                   prefix: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-                    child: CircleAvatar(
-                      radius: 12.r,
-                      backgroundColor: Palette.yellow.shade400,
-                      backgroundImage:
-                          AssetImage(Assets.images.profilePost.path),
+                    child: BlocBuilder<DownloadAttachmentCubit,
+                        BaseState<Uint8List>>(
+                      bloc: sl<DownloadAttachmentCubit>(),
+                      builder: (context, downloadState) {
+                        return downloadState.maybeWhen(
+                          success: (data) => CustomImage.circular(
+                            radius: 36.r,
+                            memoryImageBytes: data,
+                          ),
+                          failure: (_) => CustomImage.circular(
+                            radius: 36.r,
+                            image: Assets.images.profilePost.path,
+                          ),
+                          loading: () => const Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                          orElse: () => CustomImage.circular(
+                            radius: 36.r,
+                            image: Assets.images.profilePost.path,
+                          ),
+                        );
+                      },
                     ),
                   ),
                   backgroundColor: Palette.primary.color1,

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class CustomImage extends StatelessWidget {
   final EdgeInsets? padding;
   final bool isOnline;
   final Color? borderColor;
+  final Uint8List? memoryImageBytes;
 
   const CustomImage._({
     required this.cornerRadius,
@@ -45,6 +47,7 @@ class CustomImage extends StatelessWidget {
     this.border,
     this.padding,
     this.borderColor,
+    this.memoryImageBytes,
   });
 
   factory CustomImage.circular({
@@ -64,6 +67,7 @@ class CustomImage extends StatelessWidget {
     bool isOnline = false,
     Color? borderColor,
     Border? border,
+    Uint8List? memoryImageBytes,
   }) =>
       CustomImage._(
         imagePath: image,
@@ -84,6 +88,7 @@ class CustomImage extends StatelessWidget {
         isOnline: isOnline,
         padding: padding,
         borderColor: borderColor,
+        memoryImageBytes: memoryImageBytes,
       );
 
   factory CustomImage.rectangle({
@@ -104,6 +109,7 @@ class CustomImage extends StatelessWidget {
     isNetworkImage = true,
     EdgeInsets? padding,
     Color? borderColor,
+    Uint8List? memoryImageBytes,
   }) =>
       CustomImage._(
         imagePath: image,
@@ -123,6 +129,7 @@ class CustomImage extends StatelessWidget {
         isOnline: isOnline,
         hasBorder: hasBorder,
         borderColor: borderColor,
+        memoryImageBytes: memoryImageBytes,
       );
 
   @override
@@ -149,9 +156,11 @@ class CustomImage extends StatelessWidget {
             padding: padding ?? EdgeInsets.zero,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(cornerRadius),
-              child: isImageFile
-                  ? _buildImageFile()
-                  : _buildNetworkOrAssetsImage(),
+              child: memoryImageBytes != null
+                  ? _buildMemoryImage()
+                  : isImageFile
+                      ? _buildImageFile()
+                      : _buildNetworkOrAssetsImage(),
             ),
           ),
         ),
@@ -167,6 +176,14 @@ class CustomImage extends StatelessWidget {
     if (file == null) return Assets.images.profile.image();
     return Image.file(
       file!,
+      fit: boxFit ?? BoxFit.cover,
+      color: color,
+    );
+  }
+
+  Image _buildMemoryImage() {
+    return Image.memory(
+      memoryImageBytes!,
       fit: boxFit ?? BoxFit.cover,
       color: color,
     );

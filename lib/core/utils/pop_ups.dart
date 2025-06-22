@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logger/web.dart';
 import 'package:toastification/toastification.dart';
-
+import 'package:image_picker/image_picker.dart';
 import '../../app/di/injection_container.dart';
 import '../cubits/media_download_cubit.dart';
 import '../localization/localization_manager.dart';
@@ -30,6 +30,20 @@ class PopUps {
     }
     file = File(picker?.paths[0] ?? '');
     return file;
+  }
+
+  static Future<File?> pickImage(BuildContext context) async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 85,
+    );
+
+    if (pickedFile != null) {
+      return File(pickedFile.path);
+    } else {
+      return null;
+    }
   }
 
   static void showCustomDialog(BuildContext context, {required Widget child}) {

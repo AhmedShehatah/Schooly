@@ -13,7 +13,7 @@ class Profile with _$Profile {
     required String phoneNumber,
     required DateTime dateOfBirth,
     required Gender gender,
-    required String profilePictureUrl,
+    required String? profilePictureUrl,
     required UserType role,
     required StudentExtraModel? studentExtra,
   }) = _Profile;

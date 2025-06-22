@@ -20,6 +20,7 @@ mixin _$Post {
   String get createdAt => throw _privateConstructorUsedError;
   String get authorName => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
+  String? get profilePictureUrl => throw _privateConstructorUsedError;
   List<Comment> get comments => throw _privateConstructorUsedError;
 
   /// Create a copy of Post
@@ -38,6 +39,7 @@ abstract class $PostCopyWith<$Res> {
       String createdAt,
       String authorName,
       int id,
+      String? profilePictureUrl,
       List<Comment> comments});
 }
 
@@ -60,6 +62,7 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     Object? createdAt = null,
     Object? authorName = null,
     Object? id = null,
+    Object? profilePictureUrl = freezed,
     Object? comments = null,
   }) {
     return _then(_value.copyWith(
@@ -79,6 +82,10 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       comments: null == comments
           ? _value.comments
           : comments // ignore: cast_nullable_to_non_nullable
@@ -99,6 +106,7 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
       String createdAt,
       String authorName,
       int id,
+      String? profilePictureUrl,
       List<Comment> comments});
 }
 
@@ -118,6 +126,7 @@ class __$$PostImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? authorName = null,
     Object? id = null,
+    Object? profilePictureUrl = freezed,
     Object? comments = null,
   }) {
     return _then(_$PostImpl(
@@ -137,6 +146,10 @@ class __$$PostImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       comments: null == comments
           ? _value._comments
           : comments // ignore: cast_nullable_to_non_nullable
@@ -153,6 +166,7 @@ class _$PostImpl extends _Post {
       required this.createdAt,
       required this.authorName,
       required this.id,
+      required this.profilePictureUrl,
       required final List<Comment> comments})
       : _comments = comments,
         super._();
@@ -165,6 +179,8 @@ class _$PostImpl extends _Post {
   final String authorName;
   @override
   final int id;
+  @override
+  final String? profilePictureUrl;
   final List<Comment> _comments;
   @override
   List<Comment> get comments {
@@ -175,7 +191,7 @@ class _$PostImpl extends _Post {
 
   @override
   String toString() {
-    return 'Post(content: $content, createdAt: $createdAt, authorName: $authorName, id: $id, comments: $comments)';
+    return 'Post(content: $content, createdAt: $createdAt, authorName: $authorName, id: $id, profilePictureUrl: $profilePictureUrl, comments: $comments)';
   }
 
   @override
@@ -189,12 +205,14 @@ class _$PostImpl extends _Post {
             (identical(other.authorName, authorName) ||
                 other.authorName == authorName) &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.profilePictureUrl, profilePictureUrl) ||
+                other.profilePictureUrl == profilePictureUrl) &&
             const DeepCollectionEquality().equals(other._comments, _comments));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, content, createdAt, authorName,
-      id, const DeepCollectionEquality().hash(_comments));
+      id, profilePictureUrl, const DeepCollectionEquality().hash(_comments));
 
   /// Create a copy of Post
   /// with the given fields replaced by the non-null parameter values.
@@ -211,6 +229,7 @@ abstract class _Post extends Post {
       required final String createdAt,
       required final String authorName,
       required final int id,
+      required final String? profilePictureUrl,
       required final List<Comment> comments}) = _$PostImpl;
   const _Post._() : super._();
 
@@ -222,6 +241,8 @@ abstract class _Post extends Post {
   String get authorName;
   @override
   int get id;
+  @override
+  String? get profilePictureUrl;
   @override
   List<Comment> get comments;
 
