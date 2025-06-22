@@ -212,7 +212,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get changePassword => 'Change Password';
 
   @override
-  String get doYouWantToLogIn => 'هل تريد تسجيل الدخول؟';
+  String get doYouWantToLogIn => 'Do you want to log in?';
 
   @override
   String get resetPasswordTitle => 'Reset Password';
