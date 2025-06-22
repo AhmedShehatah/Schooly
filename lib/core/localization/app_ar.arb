@@ -166,7 +166,30 @@
     "more":"المزيد",
     "logout": "تسجيل خروج",
     "profile": "الملف الشخصي",
-    "waitingForOthersToJoin":"بانتظار الاخرين حتى ينضموا"
+    "waitingForOthersToJoin":"بانتظار الاخرين حتى ينضموا",
+    "changeLanguage": "تغيير اللغة",
+    "noUpcomingClasses": "لا توجد حصص قادمة بعد",
+    "titlePrefix": "أ.",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "birthDate": "تاريخ الميلاد",
+    "gender": "النوع",
+    "role": "الدور",
+    "grade": "الصف",
+    "address": "العنوان",
+    "update": "تحديث",
+    "female": "أنثى",
+    "male": "ذكر",
+    "notAvailable": "غير متاح",
+    "student": "طالب"
+
+
+
+
+
+
+
 
     
     

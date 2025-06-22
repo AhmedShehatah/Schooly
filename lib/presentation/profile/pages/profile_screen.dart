@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import '../../../core/localization/localization_manager.dart';
 import '../../../core/states/base_state.dart';
 import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
@@ -42,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: CustomText.s16('الملف الشخصي',
+        title: CustomText.s16(lz.profile,
             color: Palette.character.primary85, bold: true),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -59,17 +60,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
               success: (profile) {
                 _name.text = profile.name;
                 _email.text = profile.email;
-                profile.phoneNumber == ''
-                    ? _phone.text = 'غير متاح'
-                    : _phone.text = profile.phoneNumber;
+                _phone.text = profile.phoneNumber.isEmpty
+                    ? lz.notAvailable
+                    : profile.phoneNumber;
                 _birthDate.text =
                     DateFormat('dd-MM-yyyy').format(profile.dateOfBirth);
-                if (profile.gender == Gender.female) _gender.text = 'أنثى';
-                if (profile.gender == Gender.male) _gender.text = 'ذكر';
-                _grade.text = profile.studentExtra?.grade.toString() ?? '';
-                if (profile.role == UserType.teacher) _role.text = 'معلم';
-                if (profile.role == UserType.student) _role.text = 'طالب';
-                _address.text = profile.studentExtra?.address ?? '';
+                if (profile.gender == Gender.female) _gender.text = lz.female;
+                if (profile.gender == Gender.male) _gender.text = lz.male;
+                _grade.text =
+                    profile.studentExtra?.grade.toString() ?? lz.notAvailable;
+                if (profile.role == UserType.teacher) _role.text = lz.teacher;
+                if (profile.role == UserType.student) _role.text = lz.student;
+                _address.text =
+                    profile.studentExtra?.address ?? lz.notAvailable;
 
                 return Form(
                   key: _formKey,
@@ -99,18 +102,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ],
                         ),
                         30.verticalSpace,
-                        buildField('الأسم', _name, isEditable: true),
-                        buildField('البريد الإلكتروني', _email,
-                            isEditable: true),
-                        buildField('رقم الهاتف', _phone),
-                        buildField('تاريخ الميلاد', _birthDate, isDate: true),
-                        buildField('النوع', _gender),
-                        buildField('الدور', _role),
-                        buildField('الصف', _grade),
-                        buildField('العنوان', _address),
+                        buildField(lz.name, _name, isEditable: true),
+                        buildField(lz.email, _email, isEditable: true),
+                        buildField(lz.phone, _phone),
+                        buildField(lz.birthDate, _birthDate, isDate: true),
+                        buildField(lz.gender, _gender),
+                        buildField(lz.role, _role),
+                        buildField(lz.grade, _grade),
+                        buildField(lz.address, _address),
                         30.verticalSpace,
                         CustomButton(
-                          text: 'تحديث',
+                          text: lz.update,
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               sl<ProfileCubit>().updateProfile(
