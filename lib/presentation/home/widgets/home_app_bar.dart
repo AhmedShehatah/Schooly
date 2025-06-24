@@ -40,23 +40,9 @@ class _HomeAppBarState extends State<HomeAppBar> {
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
-            leading: BlocBuilder<DownloadAttachmentCubit, BaseState<Uint8List>>(
-              bloc: sl<DownloadAttachmentCubit>(),
-              builder: (context, downloadState) {
-                return downloadState.maybeWhen(
-                  success: (data) => CustomImage.circular(
-                    radius: 44.r,
-                    memoryImageBytes: data,
-                  ),
-                  loading: () => const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                  orElse: () => CustomImage.circular(
-                    radius: 44.r,
-                    image: Assets.images.profile.path,
-                  ),
-                );
-              },
+            leading: CustomImage.circular(
+              radius: 44.r,
+              image: user?.profilePictureUrl ?? '',
             ),
             title: CustomText.s11(
               lz.hello,

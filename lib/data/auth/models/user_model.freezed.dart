@@ -24,8 +24,8 @@ mixin _$UserModel {
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   UserType get role => throw _privateConstructorUsedError;
-  Gender get gender => throw _privateConstructorUsedError;
-  String get profilePictureUrl => throw _privateConstructorUsedError;
+  Gender? get gender => throw _privateConstructorUsedError;
+  String? get profilePictureUrl => throw _privateConstructorUsedError;
 
   /// Serializes this UserModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,8 +47,8 @@ abstract class $UserModelCopyWith<$Res> {
       String name,
       String email,
       UserType role,
-      Gender gender,
-      String profilePictureUrl});
+      Gender? gender,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -70,8 +70,8 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? name = null,
     Object? email = null,
     Object? role = null,
-    Object? gender = null,
-    Object? profilePictureUrl = null,
+    Object? gender = freezed,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -90,14 +90,14 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
-      gender: null == gender
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
-      profilePictureUrl: null == profilePictureUrl
+              as Gender?,
+      profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -115,8 +115,8 @@ abstract class _$$UserModelImplCopyWith<$Res>
       String name,
       String email,
       UserType role,
-      Gender gender,
-      String profilePictureUrl});
+      Gender? gender,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -136,8 +136,8 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? name = null,
     Object? email = null,
     Object? role = null,
-    Object? gender = null,
-    Object? profilePictureUrl = null,
+    Object? gender = freezed,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_$UserModelImpl(
       id: null == id
@@ -156,14 +156,14 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
-      gender: null == gender
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
-      profilePictureUrl: null == profilePictureUrl
+              as Gender?,
+      profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -192,9 +192,9 @@ class _$UserModelImpl extends _UserModel {
   @override
   final UserType role;
   @override
-  final Gender gender;
+  final Gender? gender;
   @override
-  final String profilePictureUrl;
+  final String? profilePictureUrl;
 
   @override
   String toString() {
@@ -242,8 +242,8 @@ abstract class _UserModel extends UserModel {
       required final String name,
       required final String email,
       required final UserType role,
-      required final Gender gender,
-      required final String profilePictureUrl}) = _$UserModelImpl;
+      required final Gender? gender,
+      required final String? profilePictureUrl}) = _$UserModelImpl;
   const _UserModel._() : super._();
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
@@ -258,9 +258,9 @@ abstract class _UserModel extends UserModel {
   @override
   UserType get role;
   @override
-  Gender get gender;
+  Gender? get gender;
   @override
-  String get profilePictureUrl;
+  String? get profilePictureUrl;
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.

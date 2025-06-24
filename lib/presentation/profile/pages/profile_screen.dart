@@ -91,24 +91,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Stack(
                             alignment: Alignment.bottomRight,
                             children: [
-                              BlocBuilder<DownloadAttachmentCubit,
-                                  BaseState<Uint8List>>(
-                                bloc: sl<DownloadAttachmentCubit>(),
-                                builder: (context, downloadState) {
-                                  return downloadState.maybeWhen(
-                                    success: (data) => CustomImage.circular(
-                                      radius: 108.r,
-                                      memoryImageBytes: data,
-                                    ),
-                                    loading: () => const Center(
-                                      child: CircularProgressIndicator(),
-                                    ),
-                                    orElse: () => CustomImage.circular(
-                                      radius: 108.r,
-                                      image: Assets.images.profile.path,
-                                    ),
-                                  );
-                                },
+                              CustomImage.circular(
+                                radius: 108.r,
+                                image: profile.profilePictureUrl ?? '',
                               ),
                               CircleAvatar(
                                 radius: 16.r,

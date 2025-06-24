@@ -12,6 +12,7 @@ import '../../../../core/theme/palette.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../core/widgets/fields/custom_input.dart';
+import '../../../../core/widgets/images/custom_image.dart';
 import '../../../../core/widgets/text/custom_text.dart';
 import '../../../../domain/auth/entities/user.dart';
 import '../../../../domain/classroom/use_case/add_post_use_case/add_post_use_case.dart';
@@ -64,11 +65,9 @@ class _AddPostTabState extends State<AddPostTab> {
                     children: [
                       ListTile(
                         contentPadding: EdgeInsets.zero,
-                        leading: CircleAvatar(
-                          radius: 24.r,
-                          backgroundColor: Palette.yellow.shade400,
-                          backgroundImage:
-                              AssetImage(Assets.images.profilePost.path),
+                        leading: CustomImage.circular(
+                          radius: 48.r,
+                          image: user?.profilePictureUrl ?? '',
                         ),
                         title: CustomText.s12(
                           user?.name,

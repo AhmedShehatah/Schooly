@@ -20,8 +20,8 @@ mixin _$User {
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   UserType get role => throw _privateConstructorUsedError;
-  Gender get gender => throw _privateConstructorUsedError;
-  String get profilePictureUrl => throw _privateConstructorUsedError;
+  Gender? get gender => throw _privateConstructorUsedError;
+  String? get profilePictureUrl => throw _privateConstructorUsedError;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -39,8 +39,8 @@ abstract class $UserCopyWith<$Res> {
       String name,
       String email,
       UserType role,
-      Gender gender,
-      String profilePictureUrl});
+      Gender? gender,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -62,8 +62,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? name = null,
     Object? email = null,
     Object? role = null,
-    Object? gender = null,
-    Object? profilePictureUrl = null,
+    Object? gender = freezed,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -82,14 +82,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
-      gender: null == gender
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
-      profilePictureUrl: null == profilePictureUrl
+              as Gender?,
+      profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -106,8 +106,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String name,
       String email,
       UserType role,
-      Gender gender,
-      String profilePictureUrl});
+      Gender? gender,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -126,8 +126,8 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? name = null,
     Object? email = null,
     Object? role = null,
-    Object? gender = null,
-    Object? profilePictureUrl = null,
+    Object? gender = freezed,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -146,14 +146,14 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
-      gender: null == gender
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
-      profilePictureUrl: null == profilePictureUrl
+              as Gender?,
+      profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -179,9 +179,9 @@ class _$UserImpl extends _User {
   @override
   final UserType role;
   @override
-  final Gender gender;
+  final Gender? gender;
   @override
-  final String profilePictureUrl;
+  final String? profilePictureUrl;
 
   @override
   String toString() {
@@ -221,8 +221,8 @@ abstract class _User extends User {
       required final String name,
       required final String email,
       required final UserType role,
-      required final Gender gender,
-      required final String profilePictureUrl}) = _$UserImpl;
+      required final Gender? gender,
+      required final String? profilePictureUrl}) = _$UserImpl;
   const _User._() : super._();
 
   @override
@@ -234,9 +234,9 @@ abstract class _User extends User {
   @override
   UserType get role;
   @override
-  Gender get gender;
+  Gender? get gender;
   @override
-  String get profilePictureUrl;
+  String? get profilePictureUrl;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.

@@ -48,12 +48,30 @@ class _MoreScreenState extends State<MoreScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildProfileHeader(
-                    user?.role == UserType.student
-                        ? '${user?.name}'
-                        : user?.gender == Gender.male
-                            ? '${lz.titlePrefixMr}${user?.name}'
-                            : '${lz.titlePrefixMrs}${user?.name}',
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16.w),
+                      child: Row(
+                        children: [
+                          CustomImage.circular(
+                            radius: 44.r,
+                            image: user?.profilePictureUrl ?? '',
+                          ),
+                          16.horizontalSpace,
+                          CustomText.s18(
+                            user?.role == UserType.student
+                                ? '${user?.name}'
+                                : user?.gender == Gender.male
+                                    ? '${lz.titlePrefixMr}${user?.name}'
+                                    : '${lz.titlePrefixMrs}${user?.name}',
+                            color: Palette.character.primary85,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   16.verticalSpace,
                   _buildMenuList(),
@@ -62,44 +80,6 @@ class _MoreScreenState extends State<MoreScreen> {
             ),
           );
         },
-      ),
-    );
-  }
-
-  Widget _buildProfileHeader(String name) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.r),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(16.w),
-        child: Row(
-          children: [
-            BlocBuilder<DownloadAttachmentCubit, BaseState<Uint8List>>(
-              bloc: sl<DownloadAttachmentCubit>(),
-              builder: (context, downloadState) {
-                return downloadState.maybeWhen(
-                  success: (data) => CustomImage.circular(
-                    radius: 48.r,
-                    memoryImageBytes: data,
-                  ),
-                  loading: () => const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                  orElse: () => CustomImage.circular(
-                    radius: 48.r,
-                    image: Assets.images.profile.path,
-                  ),
-                );
-              },
-            ),
-            16.horizontalSpace,
-            CustomText.s18(
-              name,
-              color: Palette.character.primary85,
-            ),
-          ],
-        ),
       ),
     );
   }
