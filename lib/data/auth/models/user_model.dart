@@ -13,6 +13,7 @@ class UserModel with _$UserModel {
       required String name,
       required String email,
       required UserType role,
+      required Gender gender,
       required String profilePictureUrl}) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
@@ -23,5 +24,6 @@ class UserModel with _$UserModel {
       name: name,
       email: email,
       role: role,
+      gender: gender,
       profilePictureUrl: profilePictureUrl);
 }

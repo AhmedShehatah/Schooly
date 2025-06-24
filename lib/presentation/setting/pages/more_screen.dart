@@ -51,7 +51,9 @@ class _MoreScreenState extends State<MoreScreen> {
                   _buildProfileHeader(
                     user?.role == UserType.student
                         ? '${user?.name}'
-                        : '${lz.titlePrefix}${user?.name}',
+                        : user?.gender == Gender.male
+                            ? '${lz.titlePrefixMr}${user?.name}'
+                            : '${lz.titlePrefixMrs}${user?.name}',
                   ),
                   16.verticalSpace,
                   _buildMenuList(),

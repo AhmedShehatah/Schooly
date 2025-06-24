@@ -65,7 +65,9 @@ class _HomeAppBarState extends State<HomeAppBar> {
             subtitle: CustomText.s14(
               user?.role == UserType.student
                   ? '${user?.name}'
-                  : '${lz.titlePrefix} ${user?.name}',
+                  : user?.gender == Gender.male
+                      ? '${lz.titlePrefixMr}${user?.name}'
+                      : '${lz.titlePrefixMrs}${user?.name}',
               color: Palette.character.primary85,
             ),
             trailing: InkWell(

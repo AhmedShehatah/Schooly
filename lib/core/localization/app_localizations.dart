@@ -809,11 +809,17 @@ abstract class AppLocalizations {
   /// **'لا توجد حصص قادمة بعد'**
   String get noUpcomingClasses;
 
-  /// No description provided for @titlePrefix.
+  /// No description provided for @titlePrefixMr.
   ///
   /// In ar, this message translates to:
   /// **'أ.'**
-  String get titlePrefix;
+  String get titlePrefixMr;
+
+  /// No description provided for @titlePrefixMrs.
+  ///
+  /// In ar, this message translates to:
+  /// **'أ.'**
+  String get titlePrefixMrs;
 
   /// No description provided for @name.
   ///

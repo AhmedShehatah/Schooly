@@ -444,7 +444,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noUpcomingClasses => 'لا توجد حصص قادمة بعد';
 
   @override
-  String get titlePrefix => 'أ.';
+  String get titlePrefixMr => 'أ.';
+
+  @override
+  String get titlePrefixMrs => 'أ.';
 
   @override
   String get name => 'الاسم';

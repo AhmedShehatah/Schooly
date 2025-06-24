@@ -43,6 +43,7 @@ class ProfileCubit extends Cubit<BaseState<Profile>> with ProfileHelper {
         name: params.name ?? oldUser.name,
         email: params.email ?? oldUser.email,
         role: oldUser.role,
+        gender: oldUser.gender,
         profilePictureUrl:
             params.profilePictureUrl ?? oldUser.profilePictureUrl,
       );

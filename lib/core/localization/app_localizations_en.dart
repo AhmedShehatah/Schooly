@@ -420,7 +420,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noUpcomingClasses => 'There are no upcoming classes yet';
 
   @override
-  String get titlePrefix => 'Mr.';
+  String get titlePrefixMr => 'Mr.';
+
+  @override
+  String get titlePrefixMrs => 'أ.';
 
   @override
   String get name => 'Name';

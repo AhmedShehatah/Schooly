@@ -24,6 +24,7 @@ mixin _$UserModel {
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   UserType get role => throw _privateConstructorUsedError;
+  Gender get gender => throw _privateConstructorUsedError;
   String get profilePictureUrl => throw _privateConstructorUsedError;
 
   /// Serializes this UserModel to a JSON map.
@@ -46,6 +47,7 @@ abstract class $UserModelCopyWith<$Res> {
       String name,
       String email,
       UserType role,
+      Gender gender,
       String profilePictureUrl});
 }
 
@@ -68,6 +70,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? name = null,
     Object? email = null,
     Object? role = null,
+    Object? gender = null,
     Object? profilePictureUrl = null,
   }) {
     return _then(_value.copyWith(
@@ -87,6 +90,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       profilePictureUrl: null == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
@@ -108,6 +115,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
       String name,
       String email,
       UserType role,
+      Gender gender,
       String profilePictureUrl});
 }
 
@@ -128,6 +136,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? name = null,
     Object? email = null,
     Object? role = null,
+    Object? gender = null,
     Object? profilePictureUrl = null,
   }) {
     return _then(_$UserModelImpl(
@@ -147,6 +156,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       profilePictureUrl: null == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
@@ -163,6 +176,7 @@ class _$UserModelImpl extends _UserModel {
       required this.name,
       required this.email,
       required this.role,
+      required this.gender,
       required this.profilePictureUrl})
       : super._();
 
@@ -178,11 +192,13 @@ class _$UserModelImpl extends _UserModel {
   @override
   final UserType role;
   @override
+  final Gender gender;
+  @override
   final String profilePictureUrl;
 
   @override
   String toString() {
-    return 'UserModel(id: $id, name: $name, email: $email, role: $role, profilePictureUrl: $profilePictureUrl)';
+    return 'UserModel(id: $id, name: $name, email: $email, role: $role, gender: $gender, profilePictureUrl: $profilePictureUrl)';
   }
 
   @override
@@ -194,14 +210,15 @@ class _$UserModelImpl extends _UserModel {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.role, role) || other.role == role) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.profilePictureUrl, profilePictureUrl) ||
                 other.profilePictureUrl == profilePictureUrl));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, email, role, profilePictureUrl);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, email, role, gender, profilePictureUrl);
 
   /// Create a copy of UserModel
   /// with the given fields replaced by the non-null parameter values.
@@ -225,6 +242,7 @@ abstract class _UserModel extends UserModel {
       required final String name,
       required final String email,
       required final UserType role,
+      required final Gender gender,
       required final String profilePictureUrl}) = _$UserModelImpl;
   const _UserModel._() : super._();
 
@@ -239,6 +257,8 @@ abstract class _UserModel extends UserModel {
   String get email;
   @override
   UserType get role;
+  @override
+  Gender get gender;
   @override
   String get profilePictureUrl;
 
