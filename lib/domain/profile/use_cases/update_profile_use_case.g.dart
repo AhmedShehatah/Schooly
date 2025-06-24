@@ -9,7 +9,8 @@ part of 'update_profile_use_case.dart';
 Map<String, dynamic> _$$UpdateProfileParamsImplToJson(
         _$UpdateProfileParamsImpl instance) =>
     <String, dynamic>{
-      'name': instance.name,
-      'email': instance.email,
-      'profilePictureUrl': instance.profilePictureUrl,
+      if (instance.name case final value?) 'name': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.profilePictureUrl case final value?)
+        'profilePictureUrl': value,
     };

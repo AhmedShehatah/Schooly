@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -20,7 +19,6 @@ import '../../../core/widgets/images/custom_image.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/media/entities/uploaded_file.dart';
 import '../../../domain/profile/entities/profile.dart';
-import '../../../domain/profile/use_cases/update_profile_use_case.dart';
 import '../cubits/profile_cubit.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -32,15 +30,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _name = TextEditingController();
-  final _email = TextEditingController();
-  final _phone = TextEditingController();
-  final _birthDate = TextEditingController();
-  final _gender = TextEditingController();
-  final _grade = TextEditingController();
-  final _role = TextEditingController();
-  final _address = TextEditingController();
-  String? uploadedImageName;
+  final _cubit = sl<ProfileCubit>();
 
   @override
   void initState() {
@@ -81,40 +71,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
               bloc: sl<MediaUploadCubit>(),
               listener: (context, state) {
                 state.mapOrNull(success: (data) {
-                  uploadedImageName = data.data.storedFileName;
-                  sl<ProfileCubit>().updateProfile(
-                    params: UpdateProfileParams(
-                      name: _name.text,
-                      email: _email.text,
-                      profilePictureUrl: uploadedImageName!,
-                    ),
-                  );
+                  _cubit.updateParams(
+                      profilePictureUrl: data.data.storedFileName);
+                  _cubit.updateProfile();
                 });
               },
             ),
           ],
-          child: BlocConsumer<ProfileCubit, BaseState<Profile>>(
+          child: BlocBuilder<ProfileCubit, BaseState<Profile>>(
             bloc: sl<ProfileCubit>(),
-            listener: (context, state) {},
             builder: (context, state) {
               return state.maybeWhen(
                 success: (profile) {
-                  _name.text = profile.name;
-                  _email.text = profile.email;
-                  _phone.text = profile.phoneNumber.isEmpty
-                      ? lz.notAvailable
-                      : profile.phoneNumber;
-                  _birthDate.text =
-                      DateFormat('dd-MM-yyyy').format(profile.dateOfBirth);
-                  if (profile.gender == Gender.female) _gender.text = lz.female;
-                  if (profile.gender == Gender.male) _gender.text = lz.male;
-                  _grade.text =
-                      profile.studentExtra?.grade.toString() ?? lz.notAvailable;
-                  if (profile.role == UserType.teacher) _role.text = lz.teacher;
-                  if (profile.role == UserType.student) _role.text = lz.student;
-                  _address.text =
-                      profile.studentExtra?.address ?? lz.notAvailable;
-
                   return Form(
                     key: _formKey,
                     child: SingleChildScrollView(
@@ -131,10 +99,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     success: (data) => CustomImage.circular(
                                       radius: 108.r,
                                       memoryImageBytes: data,
-                                    ),
-                                    failure: (_) => CustomImage.circular(
-                                      radius: 108.r,
-                                      image: Assets.images.profile.path,
                                     ),
                                     loading: () => const Center(
                                       child: CircularProgressIndicator(),
@@ -165,27 +129,73 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ],
                           ),
                           30.verticalSpace,
-                          buildField(lz.name, _name, isEditable: true),
-                          buildField(lz.email, _email, isEditable: true),
-                          buildField(lz.phone, _phone),
-                          buildField(lz.birthDate, _birthDate, isDate: true),
-                          buildField(lz.gender, _gender),
-                          buildField(lz.role, _role),
-                          buildField(lz.grade, _grade),
-                          buildField(lz.address, _address),
+                          CustomInput(
+                            title: lz.name,
+                            initialValue: profile.name,
+                            required: false,
+                            onChanged: (value) =>
+                                _cubit.updateParams(name: value),
+                          ),
+                          20.verticalSpace,
+                          CustomInput(
+                            title: lz.email,
+                            initialValue: profile.email,
+                            required: false,
+                            onChanged: (value) =>
+                                _cubit.updateParams(email: value),
+                          ),
+                          20.verticalSpace,
+                          CustomInput(
+                              title: lz.phone,
+                              initialValue: profile.phoneNumber.isEmpty
+                                  ? lz.notAvailable
+                                  : profile.phoneNumber,
+                              required: false,
+                              editable: false),
+                          20.verticalSpace,
+                          CustomInput(
+                              title: lz.birthDate,
+                              initialValue: DateFormat('dd-MM-yyyy')
+                                  .format(profile.dateOfBirth),
+                              required: false,
+                              editable: false),
+                          20.verticalSpace,
+                          CustomInput(
+                              title: lz.gender,
+                              initialValue: (profile.gender == Gender.female)
+                                  ? lz.female
+                                  : lz.male,
+                              required: false,
+                              editable: false),
+                          20.verticalSpace,
+                          CustomInput(
+                              title: lz.role,
+                              initialValue: profile.role == UserType.teacher
+                                  ? lz.teacher
+                                  : lz.student,
+                              required: false,
+                              editable: false),
+                          20.verticalSpace,
+                          CustomInput(
+                              title: lz.grade,
+                              initialValue:
+                                  profile.studentExtra?.grade.toString() ??
+                                      lz.notAvailable,
+                              required: false,
+                              editable: false),
+                          20.verticalSpace,
+                          CustomInput(
+                              title: lz.address,
+                              initialValue: profile.studentExtra?.address ??
+                                  lz.notAvailable,
+                              required: false,
+                              editable: false),
                           30.verticalSpace,
                           CustomButton(
                             text: lz.update,
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
-                                sl<ProfileCubit>().updateProfile(
-                                  params: UpdateProfileParams(
-                                    name: _name.text,
-                                    email: _email.text,
-                                    profilePictureUrl: uploadedImageName ??
-                                        profile.profilePictureUrl,
-                                  ),
-                                );
+                                sl<ProfileCubit>().updateProfile();
                               }
                             },
                             enabled: true,
@@ -197,42 +207,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
                 loading: () => const Center(child: CircularProgressIndicator()),
-                orElse: () => const SizedBox.shrink(),
+                orElse: () {
+                  return const SizedBox.shrink();
+                },
               );
             },
           ),
         ),
       ),
-    );
-  }
-
-  Widget buildField(String title, TextEditingController controller,
-      {bool isDate = false, bool isEditable = false}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomText.s14(title, color: Palette.character.primary85),
-        10.verticalSpace,
-        CustomInput(
-          controller: controller,
-          onPressed: isDate && isEditable
-              ? () async {
-                  final date = await showDatePicker(
-                    context: context,
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime(1990),
-                    lastDate: DateTime.now(),
-                  );
-                  if (date != null) {
-                    _birthDate.text = DateFormat('dd-MM-yyyy').format(date);
-                    setState(() {});
-                  }
-                }
-              : null,
-          editable: isEditable,
-        ),
-        20.verticalSpace,
-      ],
     );
   }
 }

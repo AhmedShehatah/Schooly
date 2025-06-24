@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,10 +7,13 @@ import 'package:go_router/go_router.dart';
 
 import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/cubits/media_download_cubit.dart';
 import '../../../core/cubits/user_cubit.dart';
 import '../../../core/enums/enums.dart';
 import '../../../core/localization/localization_manager.dart';
+import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
+import '../../../core/widgets/images/custom_image.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/auth/entities/user.dart';
 import '../../auth/login/pages/login_screen.dart';
@@ -35,10 +40,23 @@ class _HomeAppBarState extends State<HomeAppBar> {
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
-            leading: CircleAvatar(
-              radius: 24.r,
-              backgroundColor: Palette.green.shade400,
-              backgroundImage: AssetImage(Assets.images.profile.path),
+            leading: BlocBuilder<DownloadAttachmentCubit, BaseState<Uint8List>>(
+              bloc: sl<DownloadAttachmentCubit>(),
+              builder: (context, downloadState) {
+                return downloadState.maybeWhen(
+                  success: (data) => CustomImage.circular(
+                    radius: 44.r,
+                    memoryImageBytes: data,
+                  ),
+                  loading: () => const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                  orElse: () => CustomImage.circular(
+                    radius: 44.r,
+                    image: Assets.images.profile.path,
+                  ),
+                );
+              },
             ),
             title: CustomText.s11(
               lz.hello,
