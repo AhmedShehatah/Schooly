@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:toastification/toastification.dart';
 import '../../../../../app/di/injection_container.dart';
 import '../../../../../core/assets/assets.gen.dart';
 import '../../../../../core/localization/localization_manager.dart';
@@ -10,6 +11,7 @@ import '../../../../../core/widgets/fields/custom_input.dart';
 import '../../../../../core/widgets/text/custom_text.dart';
 import '../../../../core/states/base_state.dart';
 import '../../../../core/utils/extensions.dart';
+import '../../../../core/utils/validators.dart';
 import '../../../../domain/auth/use_cases/reset_password_use_case/reset_password_use_case.dart';
 import '../../login/pages/login_screen.dart';
 import '../../verify_code/pages/otp_screen.dart';
@@ -41,7 +43,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      context.goNamed(OtpScreen.routeName);
+                      context.goNamed(OtpScreen.routeName, extra: widget.email);
                     },
                     icon: Assets.images.back.image(
                       alignment: Alignment.topRight,
@@ -60,6 +62,9 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   CustomInput.obscure(
                     title: lz.confirmPassword,
                     controller: _confirmPasswordController,
+                    validator: (value) => sl<Validators>().passwordConfirmation(
+                        _newPasswordController.text,
+                        _confirmPasswordController.text),
                   ),
                   24.verticalSpace,
                   BlocConsumer<ResetPasswordCubit, BaseState>(
@@ -78,6 +83,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                         text: lz.resetPassword,
                         onPressed: () {
                           if (!_formKey.currentState!.validate()) return;
+
                           sl<ResetPasswordCubit>().resetPassword(
                             params: ResetPasswordParams(
                               email: widget.email,

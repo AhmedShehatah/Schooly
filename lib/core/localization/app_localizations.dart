@@ -892,6 +892,18 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'طالب'**
   String get student;
+
+  /// No description provided for @passwordRequired.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة المرور مطلوبة'**
+  String get passwordRequired;
+
+  /// No description provided for @passwordsDoNotMatch.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمات المرور غير متطابقة'**
+  String get passwordsDoNotMatch;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

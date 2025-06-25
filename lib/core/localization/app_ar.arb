@@ -183,11 +183,9 @@
     "female": "أنثى",
     "male": "ذكر",
     "notAvailable": "غير متاح",
-    "student": "طالب"
-
-
-
-
+    "student": "طالب",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordsDoNotMatch": "كلمات المرور غير متطابقة"
 
 
 

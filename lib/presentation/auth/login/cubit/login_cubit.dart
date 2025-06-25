@@ -1,8 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:toastification/toastification.dart';
 
 import '../../../../core/states/base_state.dart';
+import '../../../../core/utils/extensions.dart';
 import '../../../../domain/auth/entities/user.dart';
 import '../../../../domain/auth/use_cases/login_use_case/login_use_case.dart';
 import '../../../../domain/auth/use_cases/login_with_face_id_use_case/login_with_face_id_use_case.dart';
@@ -26,6 +28,7 @@ class LoginCubit extends Cubit<BaseState<User>> {
     emit(const BaseState.loading());
     final result = await _useCaseWithFaceId(params: file);
     result.fold((failure) {
+      failure.message.showToast(type: ToastificationType.error);
       emit(BaseState.failure(failure: failure));
     }, (data) async {
       emit(BaseState.success(data: data));

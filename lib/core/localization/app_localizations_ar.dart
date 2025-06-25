@@ -484,4 +484,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get student => 'طالب';
+
+  @override
+  String get passwordRequired => 'كلمة المرور مطلوبة';
+
+  @override
+  String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
 }

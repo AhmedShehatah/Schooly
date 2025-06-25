@@ -460,4 +460,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get student => 'Student';
+
+  @override
+  String get passwordRequired => 'Password is required';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
 }
