@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -104,6 +105,7 @@ class CustomImage extends StatelessWidget {
     isNetworkImage = true,
     EdgeInsets? padding,
     Color? borderColor,
+    Uint8List? memoryImageBytes,
   }) =>
       CustomImage._(
         imagePath: image,

@@ -115,7 +115,9 @@ class HomeScreenState extends State<HomeScreen> {
                                   if (classes.isEmpty) {
                                     return Center(
                                       child: CustomText.s17(
-                                          'There is no Upcoming Classes yet'),
+                                        lz.noUpcomingClasses,
+                                        color: Palette.character.title85,
+                                      ),
                                     );
                                   }
                                   return ClassCardWidget(

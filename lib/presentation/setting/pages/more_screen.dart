@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,17 +8,21 @@ import 'package:go_router/go_router.dart';
 
 import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/cubits/media_download_cubit.dart';
 import '../../../core/cubits/user_cubit.dart';
 import '../../../core/enums/enums.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/shared_preferences/prefs_keys.dart';
 import '../../../core/shared_preferences/shared_prefs.dart';
+import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
+import '../../../core/widgets/images/custom_image.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/auth/entities/user.dart';
 import '../../auth/login/pages/login_screen.dart';
 import '../../profile/pages/profile_screen.dart';
+import 'change_language.dart';
 
 class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
@@ -42,10 +48,30 @@ class _MoreScreenState extends State<MoreScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildProfileHeader(
-                    user?.role == UserType.student
-                        ? 'مرحبا ${user?.name}'
-                        : 'مرحبا أ. ${user?.name}',
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16.w),
+                      child: Row(
+                        children: [
+                          CustomImage.circular(
+                            radius: 44.r,
+                            image: user?.profilePictureUrl ?? '',
+                          ),
+                          16.horizontalSpace,
+                          CustomText.s18(
+                            user?.role == UserType.student
+                                ? '${user?.name}'
+                                : user?.gender == Gender.male
+                                    ? '${lz.titlePrefixMr}${user?.name}'
+                                    : '${lz.titlePrefixMrs}${user?.name}',
+                            color: Palette.character.primary85,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   16.verticalSpace,
                   _buildMenuList(),
@@ -58,42 +84,17 @@ class _MoreScreenState extends State<MoreScreen> {
     );
   }
 
-  Widget _buildProfileHeader(String name) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.r),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(16.w),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 24.r,
-              backgroundColor: Palette.green.shade400,
-              backgroundImage: AssetImage(Assets.images.profile.path),
-            ),
-            16.horizontalSpace,
-            CustomText.s14(
-              name,
-              color: Palette.character.primary85,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget _buildMenuList() {
     final menuItems = [
       {
         'icon': Icons.person_outline,
         'title': lz.profile,
-        'color': Palette.primary.color4,
+        'color': Palette.primary.color2,
       },
       {
-        'icon': Icons.settings,
-        'title': lz.settings,
-        'color': Palette.neutral.color5
+        'icon': Icons.language,
+        'title': lz.changeLanguage,
+        'color': Palette.darkBlue.shade200
       },
       {
         'icon': Icons.logout,
@@ -165,7 +166,24 @@ class _MoreScreenState extends State<MoreScreen> {
         );
         break;
       case 1:
-        context.goNamed('settings');
+        showGeneralDialog(
+          context: context,
+          barrierDismissible: true,
+          barrierLabel:
+              MaterialLocalizations.of(context).modalBarrierDismissLabel,
+          barrierColor: Colors.black.withOpacity(0.5),
+          pageBuilder: (context, anim1, anim2) {
+            return const ChangeLanguage();
+          },
+          transitionBuilder: (context, anim1, anim2, child) {
+            return SlideTransition(
+              position:
+                  Tween(begin: const Offset(0, 1), end: const Offset(0, 0))
+                      .animate(anim1),
+              child: child,
+            );
+          },
+        );
         break;
       case 2:
         sl<SharedPrefs>().deleteSecuredValue(key: PrefsKeys.token);

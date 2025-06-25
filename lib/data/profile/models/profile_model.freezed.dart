@@ -26,7 +26,7 @@ mixin _$ProfileModel {
   String? get phoneNumber => throw _privateConstructorUsedError;
   DateTime get dateOfBirth => throw _privateConstructorUsedError;
   Gender get gender => throw _privateConstructorUsedError;
-  String get profilePictureUrl => throw _privateConstructorUsedError;
+  String? get profilePictureUrl => throw _privateConstructorUsedError;
   UserType get role => throw _privateConstructorUsedError;
   StudentExtraModel? get studentExtra => throw _privateConstructorUsedError;
 
@@ -53,7 +53,7 @@ abstract class $ProfileModelCopyWith<$Res> {
       String? phoneNumber,
       DateTime dateOfBirth,
       Gender gender,
-      String profilePictureUrl,
+      String? profilePictureUrl,
       UserType role,
       StudentExtraModel? studentExtra});
 
@@ -81,7 +81,7 @@ class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
     Object? phoneNumber = freezed,
     Object? dateOfBirth = null,
     Object? gender = null,
-    Object? profilePictureUrl = null,
+    Object? profilePictureUrl = freezed,
     Object? role = null,
     Object? studentExtra = freezed,
   }) {
@@ -110,10 +110,10 @@ class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as Gender,
-      profilePictureUrl: null == profilePictureUrl
+      profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
@@ -155,7 +155,7 @@ abstract class _$$ProfileModelImplCopyWith<$Res>
       String? phoneNumber,
       DateTime dateOfBirth,
       Gender gender,
-      String profilePictureUrl,
+      String? profilePictureUrl,
       UserType role,
       StudentExtraModel? studentExtra});
 
@@ -182,7 +182,7 @@ class __$$ProfileModelImplCopyWithImpl<$Res>
     Object? phoneNumber = freezed,
     Object? dateOfBirth = null,
     Object? gender = null,
-    Object? profilePictureUrl = null,
+    Object? profilePictureUrl = freezed,
     Object? role = null,
     Object? studentExtra = freezed,
   }) {
@@ -211,10 +211,10 @@ class __$$ProfileModelImplCopyWithImpl<$Res>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as Gender,
-      profilePictureUrl: null == profilePictureUrl
+      profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
@@ -258,7 +258,7 @@ class _$ProfileModelImpl extends _ProfileModel {
   @override
   final Gender gender;
   @override
-  final String profilePictureUrl;
+  final String? profilePictureUrl;
   @override
   final UserType role;
   @override
@@ -318,7 +318,7 @@ abstract class _ProfileModel extends ProfileModel {
       required final String? phoneNumber,
       required final DateTime dateOfBirth,
       required final Gender gender,
-      required final String profilePictureUrl,
+      required final String? profilePictureUrl,
       required final UserType role,
       required final StudentExtraModel? studentExtra}) = _$ProfileModelImpl;
   const _ProfileModel._() : super._();
@@ -339,7 +339,7 @@ abstract class _ProfileModel extends ProfileModel {
   @override
   Gender get gender;
   @override
-  String get profilePictureUrl;
+  String? get profilePictureUrl;
   @override
   UserType get role;
   @override

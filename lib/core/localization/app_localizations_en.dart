@@ -212,7 +212,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get changePassword => 'Change Password';
 
   @override
-  String get doYouWantToLogIn => 'هل تريد تسجيل الدخول؟';
+  String get doYouWantToLogIn => 'Do you want to log in?';
 
   @override
   String get resetPasswordTitle => 'Reset Password';
@@ -412,4 +412,52 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profile => 'Profile';
+
+  @override
+  String get changeLanguage => 'Change Language';
+
+  @override
+  String get noUpcomingClasses => 'There are no upcoming classes yet';
+
+  @override
+  String get titlePrefixMr => 'Mr.';
+
+  @override
+  String get titlePrefixMrs => 'أ.';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get phone => 'Phone Number';
+
+  @override
+  String get birthDate => 'Date of Birth';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get role => 'Role';
+
+  @override
+  String get grade => 'Grade';
+
+  @override
+  String get address => 'Address';
+
+  @override
+  String get update => 'Update';
+
+  @override
+  String get female => 'Female';
+
+  @override
+  String get male => 'Male';
+
+  @override
+  String get notAvailable => 'Not Available';
+
+  @override
+  String get student => 'Student';
 }

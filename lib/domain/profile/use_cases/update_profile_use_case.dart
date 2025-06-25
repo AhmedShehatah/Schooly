@@ -22,8 +22,8 @@ class UpdateProfileUseCase
 class UpdateProfileParams with _$UpdateProfileParams {
   const UpdateProfileParams._();
   const factory UpdateProfileParams({
-    required String name,
-    required String email,
-    String? profilePictureUrl,
+    @JsonKey(includeIfNull: false) String? name,
+    @JsonKey(includeIfNull: false) String? email,
+    @JsonKey(includeIfNull: false) String? profilePictureUrl,
   }) = _UpdateProfileParams;
 }

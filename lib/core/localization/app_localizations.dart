@@ -796,6 +796,102 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'الملف الشخصي'**
   String get profile;
+
+  /// No description provided for @changeLanguage.
+  ///
+  /// In ar, this message translates to:
+  /// **'تغيير اللغة'**
+  String get changeLanguage;
+
+  /// No description provided for @noUpcomingClasses.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد حصص قادمة بعد'**
+  String get noUpcomingClasses;
+
+  /// No description provided for @titlePrefixMr.
+  ///
+  /// In ar, this message translates to:
+  /// **'أ.'**
+  String get titlePrefixMr;
+
+  /// No description provided for @titlePrefixMrs.
+  ///
+  /// In ar, this message translates to:
+  /// **'أ.'**
+  String get titlePrefixMrs;
+
+  /// No description provided for @name.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاسم'**
+  String get name;
+
+  /// No description provided for @phone.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الهاتف'**
+  String get phone;
+
+  /// No description provided for @birthDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاريخ الميلاد'**
+  String get birthDate;
+
+  /// No description provided for @gender.
+  ///
+  /// In ar, this message translates to:
+  /// **'النوع'**
+  String get gender;
+
+  /// No description provided for @role.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدور'**
+  String get role;
+
+  /// No description provided for @grade.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصف'**
+  String get grade;
+
+  /// No description provided for @address.
+  ///
+  /// In ar, this message translates to:
+  /// **'العنوان'**
+  String get address;
+
+  /// No description provided for @update.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحديث'**
+  String get update;
+
+  /// No description provided for @female.
+  ///
+  /// In ar, this message translates to:
+  /// **'أنثى'**
+  String get female;
+
+  /// No description provided for @male.
+  ///
+  /// In ar, this message translates to:
+  /// **'ذكر'**
+  String get male;
+
+  /// No description provided for @notAvailable.
+  ///
+  /// In ar, this message translates to:
+  /// **'غير متاح'**
+  String get notAvailable;
+
+  /// No description provided for @student.
+  ///
+  /// In ar, this message translates to:
+  /// **'طالب'**
+  String get student;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

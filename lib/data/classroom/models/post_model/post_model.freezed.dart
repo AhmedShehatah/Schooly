@@ -24,6 +24,7 @@ mixin _$PostModel {
   String get createdAt => throw _privateConstructorUsedError;
   String get authorName => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
+  String? get profilePictureUrl => throw _privateConstructorUsedError;
   List<CommentModel> get comments => throw _privateConstructorUsedError;
 
   /// Serializes this PostModel to a JSON map.
@@ -46,6 +47,7 @@ abstract class $PostModelCopyWith<$Res> {
       String createdAt,
       String authorName,
       int id,
+      String? profilePictureUrl,
       List<CommentModel> comments});
 }
 
@@ -68,6 +70,7 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
     Object? createdAt = null,
     Object? authorName = null,
     Object? id = null,
+    Object? profilePictureUrl = freezed,
     Object? comments = null,
   }) {
     return _then(_value.copyWith(
@@ -87,6 +90,10 @@ class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       comments: null == comments
           ? _value.comments
           : comments // ignore: cast_nullable_to_non_nullable
@@ -108,6 +115,7 @@ abstract class _$$PostModelImplCopyWith<$Res>
       String createdAt,
       String authorName,
       int id,
+      String? profilePictureUrl,
       List<CommentModel> comments});
 }
 
@@ -128,6 +136,7 @@ class __$$PostModelImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? authorName = null,
     Object? id = null,
+    Object? profilePictureUrl = freezed,
     Object? comments = null,
   }) {
     return _then(_$PostModelImpl(
@@ -147,6 +156,10 @@ class __$$PostModelImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       comments: null == comments
           ? _value._comments
           : comments // ignore: cast_nullable_to_non_nullable
@@ -163,6 +176,7 @@ class _$PostModelImpl extends _PostModel {
       required this.createdAt,
       required this.authorName,
       required this.id,
+      required this.profilePictureUrl,
       required final List<CommentModel> comments})
       : _comments = comments,
         super._();
@@ -178,6 +192,8 @@ class _$PostModelImpl extends _PostModel {
   final String authorName;
   @override
   final int id;
+  @override
+  final String? profilePictureUrl;
   final List<CommentModel> _comments;
   @override
   List<CommentModel> get comments {
@@ -188,7 +204,7 @@ class _$PostModelImpl extends _PostModel {
 
   @override
   String toString() {
-    return 'PostModel(content: $content, createdAt: $createdAt, authorName: $authorName, id: $id, comments: $comments)';
+    return 'PostModel(content: $content, createdAt: $createdAt, authorName: $authorName, id: $id, profilePictureUrl: $profilePictureUrl, comments: $comments)';
   }
 
   @override
@@ -202,13 +218,15 @@ class _$PostModelImpl extends _PostModel {
             (identical(other.authorName, authorName) ||
                 other.authorName == authorName) &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.profilePictureUrl, profilePictureUrl) ||
+                other.profilePictureUrl == profilePictureUrl) &&
             const DeepCollectionEquality().equals(other._comments, _comments));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, content, createdAt, authorName,
-      id, const DeepCollectionEquality().hash(_comments));
+      id, profilePictureUrl, const DeepCollectionEquality().hash(_comments));
 
   /// Create a copy of PostModel
   /// with the given fields replaced by the non-null parameter values.
@@ -232,6 +250,7 @@ abstract class _PostModel extends PostModel {
       required final String createdAt,
       required final String authorName,
       required final int id,
+      required final String? profilePictureUrl,
       required final List<CommentModel> comments}) = _$PostModelImpl;
   const _PostModel._() : super._();
 
@@ -246,6 +265,8 @@ abstract class _PostModel extends PostModel {
   String get authorName;
   @override
   int get id;
+  @override
+  String? get profilePictureUrl;
   @override
   List<CommentModel> get comments;
 

@@ -18,6 +18,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Inbox.svg
   SvgGenImage get inbox => const SvgGenImage('assets/icons/Inbox.svg');
 
+  /// File path: assets/icons/ar.svg
+  SvgGenImage get ar => const SvgGenImage('assets/icons/ar.svg');
+
   /// File path: assets/icons/bell.svg
   SvgGenImage get bell => const SvgGenImage('assets/icons/bell.svg');
 
@@ -57,9 +60,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/table.svg
   SvgGenImage get table => const SvgGenImage('assets/icons/table.svg');
 
+  /// File path: assets/icons/us.svg
+  SvgGenImage get us => const SvgGenImage('assets/icons/us.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         inbox,
+        ar,
         bell,
         dotsHorizontal24Px,
         dots,
@@ -71,7 +78,8 @@ class $AssetsIconsGen {
         notebook,
         settings,
         slider3Horizontal,
-        table
+        table,
+        us
       ];
 }
 
