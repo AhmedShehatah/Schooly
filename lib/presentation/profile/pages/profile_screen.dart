@@ -117,7 +117,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           CustomInput(
                             title: lz.name,
                             initialValue: profile.name,
-                            required: false,
+                            required: true,
                             onChanged: (value) =>
                                 _cubit.updateParams(name: value),
                           ),
@@ -125,7 +125,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           CustomInput(
                             title: lz.email,
                             initialValue: profile.email,
-                            required: false,
+                            required: true,
                             onChanged: (value) =>
                                 _cubit.updateParams(email: value),
                           ),
