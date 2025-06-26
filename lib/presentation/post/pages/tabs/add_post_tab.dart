@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/di/injection_container.dart';
-import '../../../../core/assets/assets.gen.dart';
 import '../../../../core/cubits/user_cubit.dart';
 import '../../../../core/localization/localization_manager.dart';
 

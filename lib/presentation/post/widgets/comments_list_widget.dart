@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../app/di/injection_container.dart';
-import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/date_utils.dart';
 import '../../../core/widgets/fields/custom_input.dart';
+import '../../../core/widgets/images/custom_image.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/classroom/entities/comment/comment.dart';
 import '../../../domain/classroom/use_case/add_comment_use_case/add_comment_use_case.dart';
@@ -67,10 +67,9 @@ class _CommentsListWidgetState extends State<CommentsListWidget> {
               itemBuilder: (context, index) {
                 final comment = widget.comments[index];
                 return ListTile(
-                  leading: CircleAvatar(
-                    radius: 20.r,
-                    backgroundColor: Palette.yellow.shade400,
-                    backgroundImage: AssetImage(Assets.images.profilePost.path),
+                  leading: CustomImage.circular(
+                    radius: 38.r,
+                    image: comment.profilePictureUrl ?? '',
                   ),
                   title: CustomText.s14(
                     comment.authorName,

@@ -13,6 +13,7 @@ _$CommentModelImpl _$$CommentModelImplFromJson(Map<String, dynamic> json) =>
       authorId: json['authorId'] as String,
       authorName: json['authorName'] as String,
       createdAt: json['createdAt'] as String,
+      profilePictureUrl: json['profilePictureUrl'] as String?,
     );
 
 Map<String, dynamic> _$$CommentModelImplToJson(_$CommentModelImpl instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$CommentModelImplToJson(_$CommentModelImpl instance) =>
       'authorId': instance.authorId,
       'authorName': instance.authorName,
       'createdAt': instance.createdAt,
+      'profilePictureUrl': instance.profilePictureUrl,
     };

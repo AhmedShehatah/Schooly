@@ -21,6 +21,7 @@ mixin _$Comment {
   String get authorId => throw _privateConstructorUsedError;
   String get authorName => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
+  String? get profilePictureUrl => throw _privateConstructorUsedError;
 
   /// Create a copy of Comment
   /// with the given fields replaced by the non-null parameter values.
@@ -38,7 +39,8 @@ abstract class $CommentCopyWith<$Res> {
       String content,
       String authorId,
       String authorName,
-      String createdAt});
+      String createdAt,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -61,6 +63,7 @@ class _$CommentCopyWithImpl<$Res, $Val extends Comment>
     Object? authorId = null,
     Object? authorName = null,
     Object? createdAt = null,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -83,6 +86,10 @@ class _$CommentCopyWithImpl<$Res, $Val extends Comment>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -99,7 +106,8 @@ abstract class _$$CommentImplCopyWith<$Res> implements $CommentCopyWith<$Res> {
       String content,
       String authorId,
       String authorName,
-      String createdAt});
+      String createdAt,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -120,6 +128,7 @@ class __$$CommentImplCopyWithImpl<$Res>
     Object? authorId = null,
     Object? authorName = null,
     Object? createdAt = null,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_$CommentImpl(
       id: null == id
@@ -142,6 +151,10 @@ class __$$CommentImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -154,7 +167,8 @@ class _$CommentImpl extends _Comment {
       required this.content,
       required this.authorId,
       required this.authorName,
-      required this.createdAt})
+      required this.createdAt,
+      required this.profilePictureUrl})
       : super._();
 
   @override
@@ -167,10 +181,12 @@ class _$CommentImpl extends _Comment {
   final String authorName;
   @override
   final String createdAt;
+  @override
+  final String? profilePictureUrl;
 
   @override
   String toString() {
-    return 'Comment(id: $id, content: $content, authorId: $authorId, authorName: $authorName, createdAt: $createdAt)';
+    return 'Comment(id: $id, content: $content, authorId: $authorId, authorName: $authorName, createdAt: $createdAt, profilePictureUrl: $profilePictureUrl)';
   }
 
   @override
@@ -185,12 +201,14 @@ class _$CommentImpl extends _Comment {
             (identical(other.authorName, authorName) ||
                 other.authorName == authorName) &&
             (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
+                other.createdAt == createdAt) &&
+            (identical(other.profilePictureUrl, profilePictureUrl) ||
+                other.profilePictureUrl == profilePictureUrl));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, content, authorId, authorName, createdAt);
+  int get hashCode => Object.hash(runtimeType, id, content, authorId,
+      authorName, createdAt, profilePictureUrl);
 
   /// Create a copy of Comment
   /// with the given fields replaced by the non-null parameter values.
@@ -207,7 +225,8 @@ abstract class _Comment extends Comment {
       required final String content,
       required final String authorId,
       required final String authorName,
-      required final String createdAt}) = _$CommentImpl;
+      required final String createdAt,
+      required final String? profilePictureUrl}) = _$CommentImpl;
   const _Comment._() : super._();
 
   @override
@@ -220,6 +239,8 @@ abstract class _Comment extends Comment {
   String get authorName;
   @override
   String get createdAt;
+  @override
+  String? get profilePictureUrl;
 
   /// Create a copy of Comment
   /// with the given fields replaced by the non-null parameter values.

@@ -1,14 +1,10 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
-import '../../../core/cubits/media_download_cubit.dart';
 import '../../../core/cubits/user_cubit.dart';
 import '../../../core/localization/localization_manager.dart';
-import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/fields/custom_input.dart';
 import '../../../core/widgets/images/custom_image.dart';
@@ -60,7 +56,7 @@ class _PostListWidgetState extends State<PostListWidget> {
                               horizontal: 12.w, vertical: 12.h),
                           child: CustomImage.circular(
                             radius: 44.r,
-                            image: user?.profilePictureUrl,
+                            image: user?.profilePictureUrl ?? '',
                           ),
                         ),
                         backgroundColor: Palette.primary.color1,
