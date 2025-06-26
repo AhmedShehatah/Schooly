@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../app/di/injection_container.dart';
+import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
@@ -40,42 +41,50 @@ class HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /// your classes
-              // Stack(
-              //   children: [
-              //     Column(
-              //       crossAxisAlignment: CrossAxisAlignment.start,
-              //       children: [
-              //         Padding(
-              //           padding: const EdgeInsets.all(8.0),
-              //           child: Row(children: [
-              //             CustomText.s14(lz.yourClasses,
-              //                 color: Palette.character.title85),
-              //             const Spacer(),
-              //             InkWell(
-              //                 onTap: () {},
-              //                 child: CustomText.s11(lz.all,
-              //                     color: Palette.primary.color6))
-              //           ]),
-              //         ),
-              //         15.verticalSpace,
-              //         SizedBox(
-              //           height: 215.h,
-              //           child: ListView.separated(
-              //             itemBuilder: (context, index) {
-              //               return const ClassesWidget();
-              //             },
-              //             separatorBuilder: (context, index) =>
-              //                 15.horizontalSpace,
-              //             scrollDirection: Axis.horizontal,
-              //             itemCount: 5,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ],
-              // ),
-              35.verticalSpace,
+              Stack(
+                children: [
+                  Assets.images.hero
+                      .image(width: 1.sw, height: 165.h, fit: BoxFit.cover),
+                ],
+              ),
+
+              // your classes
+              Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(children: [
+                          CustomText.s14(lz.yourClasses,
+                              color: Palette.character.title85),
+                          const Spacer(),
+                          InkWell(
+                              onTap: () {},
+                              child: CustomText.s11(lz.all,
+                                  color: Palette.primary.color6))
+                        ]),
+                      ),
+                      15.verticalSpace,
+                      SizedBox(
+                        height: 215.h,
+                        child: ListView.separated(
+                          itemBuilder: (context, index) {
+                            return const ClassesWidget();
+                          },
+                          separatorBuilder: (context, index) =>
+                              15.horizontalSpace,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 5,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+              15.verticalSpace,
               // upcoming classes
               Row(
                 children: [
@@ -83,14 +92,14 @@ class HomeScreenState extends State<HomeScreen> {
                     lz.yourUpcomingClasses,
                     color: Palette.character.title85,
                   ),
-                  // const Spacer(),
-                  // InkWell(
-                  //   onTap: () {},
-                  //   child: CustomText.s11(
-                  //     lz.all,
-                  //     color: Palette.primary.color6,
-                  //   ),
-                  // ),
+                  const Spacer(),
+                  InkWell(
+                    onTap: () {},
+                    child: CustomText.s11(
+                      lz.all,
+                      color: Palette.primary.color6,
+                    ),
+                  ),
                 ],
               ),
               1.verticalSpace,

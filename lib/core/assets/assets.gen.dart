@@ -50,6 +50,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/notebook.svg
   SvgGenImage get notebook => const SvgGenImage('assets/icons/notebook.svg');
 
+  /// File path: assets/icons/object.svg
+  SvgGenImage get object => const SvgGenImage('assets/icons/object.svg');
+
   /// File path: assets/icons/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/icons/settings.svg');
 
@@ -76,6 +79,7 @@ class $AssetsIconsGen {
         leftArrow,
         more,
         notebook,
+        object,
         settings,
         slider3Horizontal,
         table,
@@ -91,6 +95,9 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/back.png
   AssetGenImage get back => const AssetGenImage('assets/images/back.png');
+
+  /// File path: assets/images/hero.png
+  AssetGenImage get hero => const AssetGenImage('assets/images/hero.png');
 
   /// File path: assets/images/login.png
   AssetGenImage get login => const AssetGenImage('assets/images/login.png');
@@ -122,6 +129,7 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
         atom,
         back,
+        hero,
         login,
         math,
         post,
