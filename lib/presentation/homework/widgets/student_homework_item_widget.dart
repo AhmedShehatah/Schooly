@@ -12,6 +12,7 @@ import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
 
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/utils/date_utils.dart';
 import '../../../core/utils/dimensions.dart';
 import '../../../core/utils/extensions.dart';
 import '../../../core/utils/pop_ups.dart';
@@ -44,9 +45,18 @@ class StudentHomeworkItemWidget extends StatelessWidget {
               titleColor: isDeadlinePassed
                   ? Palette.darkBlue.shade500
                   : Palette.green.shade600),
-          title: CustomText.s12(
-            item.fileName,
-            color: Palette.character.primary85,
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText.s12(
+                item.fileName,
+                color: Palette.character.primary85,
+              ),
+              CustomText.s11(
+                '${lz.deadline} :${DateUtility.formatDateWithoutTime(item.deadline)}',
+                color: Palette.character.primary85,
+              ),
+            ],
           ),
           subtitle: CustomText.s11(
             item.lessonTitle,
