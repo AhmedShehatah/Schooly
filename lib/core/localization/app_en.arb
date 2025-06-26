@@ -94,7 +94,7 @@
     "settings": "Settings",
     "sendChangeLink":"Send change link",
     "changePassword":"Change Password",
-    "doYouWantToLogIn?":"Do you want to log in?",
+    "doYouWantToLogIn":"Do you want to log in?",
     "resetPasswordTitle":"Reset Password",
     "confirmPassword":"Confirm Password",
     "newPassword":"New Password",
@@ -166,7 +166,30 @@
     "resubmitHomework": "Re-Submit",
     "more":"More",
     "logout": "Logout",
-    "profile": "Profile"
+    "profile": "Profile",
+    "changeLanguage": "Change Language",
+    "noUpcomingClasses": "There are no upcoming classes yet",
+    "titlePrefixMr": "Mr.",
+    "titlePrefix": "Mrs.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "birthDate": "Date of Birth",
+    "gender": "Gender",
+    "role": "Role",
+    "grade": "Grade",
+    "address": "Address",
+    "update": "Update",
+    "female": "Female",
+    "male": "Male",
+    "notAvailable": "Not Available",
+    "student": "Student"
+
+
+
+
+
+
 
 
 }

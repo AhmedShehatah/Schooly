@@ -16,8 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UpdateProfileParams {
-  String get name => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
+  String? get name => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
+  String? get email => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   String? get profilePictureUrl => throw _privateConstructorUsedError;
 
   /// Serializes this UpdateProfileParams to a JSON map.
@@ -36,7 +39,10 @@ abstract class $UpdateProfileParamsCopyWith<$Res> {
           UpdateProfileParams value, $Res Function(UpdateProfileParams) then) =
       _$UpdateProfileParamsCopyWithImpl<$Res, UpdateProfileParams>;
   @useResult
-  $Res call({String name, String email, String? profilePictureUrl});
+  $Res call(
+      {@JsonKey(includeIfNull: false) String? name,
+      @JsonKey(includeIfNull: false) String? email,
+      @JsonKey(includeIfNull: false) String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -54,19 +60,19 @@ class _$UpdateProfileParamsCopyWithImpl<$Res, $Val extends UpdateProfileParams>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? email = null,
+    Object? name = freezed,
+    Object? email = freezed,
     Object? profilePictureUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
+              as String?,
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
@@ -83,7 +89,10 @@ abstract class _$$UpdateProfileParamsImplCopyWith<$Res>
       __$$UpdateProfileParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String email, String? profilePictureUrl});
+  $Res call(
+      {@JsonKey(includeIfNull: false) String? name,
+      @JsonKey(includeIfNull: false) String? email,
+      @JsonKey(includeIfNull: false) String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -99,19 +108,19 @@ class __$$UpdateProfileParamsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? email = null,
+    Object? name = freezed,
+    Object? email = freezed,
     Object? profilePictureUrl = freezed,
   }) {
     return _then(_$UpdateProfileParamsImpl(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
+              as String?,
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
@@ -124,14 +133,19 @@ class __$$UpdateProfileParamsImplCopyWithImpl<$Res>
 @JsonSerializable(createFactory: false)
 class _$UpdateProfileParamsImpl extends _UpdateProfileParams {
   const _$UpdateProfileParamsImpl(
-      {required this.name, required this.email, this.profilePictureUrl})
+      {@JsonKey(includeIfNull: false) this.name,
+      @JsonKey(includeIfNull: false) this.email,
+      @JsonKey(includeIfNull: false) this.profilePictureUrl})
       : super._();
 
   @override
-  final String name;
+  @JsonKey(includeIfNull: false)
+  final String? name;
   @override
-  final String email;
+  @JsonKey(includeIfNull: false)
+  final String? email;
   @override
+  @JsonKey(includeIfNull: false)
   final String? profilePictureUrl;
 
   @override
@@ -173,16 +187,20 @@ class _$UpdateProfileParamsImpl extends _UpdateProfileParams {
 
 abstract class _UpdateProfileParams extends UpdateProfileParams {
   const factory _UpdateProfileParams(
-      {required final String name,
-      required final String email,
-      final String? profilePictureUrl}) = _$UpdateProfileParamsImpl;
+          {@JsonKey(includeIfNull: false) final String? name,
+          @JsonKey(includeIfNull: false) final String? email,
+          @JsonKey(includeIfNull: false) final String? profilePictureUrl}) =
+      _$UpdateProfileParamsImpl;
   const _UpdateProfileParams._() : super._();
 
   @override
-  String get name;
+  @JsonKey(includeIfNull: false)
+  String? get name;
   @override
-  String get email;
+  @JsonKey(includeIfNull: false)
+  String? get email;
   @override
+  @JsonKey(includeIfNull: false)
   String? get profilePictureUrl;
 
   /// Create a copy of UpdateProfileParams

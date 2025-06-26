@@ -13,6 +13,7 @@ class PostModel with _$PostModel {
     required String createdAt,
     required String authorName,
     required int id,
+    required String? profilePictureUrl,
     required List<CommentModel> comments,
   }) = _PostModel;
 
@@ -23,5 +24,6 @@ class PostModel with _$PostModel {
       createdAt: createdAt,
       authorName: authorName,
       id: id,
+      profilePictureUrl: profilePictureUrl,
       comments: comments.map((e) => e.toEntity()).toList());
 }

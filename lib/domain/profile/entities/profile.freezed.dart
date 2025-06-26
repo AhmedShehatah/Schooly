@@ -22,7 +22,7 @@ mixin _$Profile {
   String get phoneNumber => throw _privateConstructorUsedError;
   DateTime get dateOfBirth => throw _privateConstructorUsedError;
   Gender get gender => throw _privateConstructorUsedError;
-  String get profilePictureUrl => throw _privateConstructorUsedError;
+  String? get profilePictureUrl => throw _privateConstructorUsedError;
   UserType get role => throw _privateConstructorUsedError;
   StudentExtraModel? get studentExtra => throw _privateConstructorUsedError;
 
@@ -44,7 +44,7 @@ abstract class $ProfileCopyWith<$Res> {
       String phoneNumber,
       DateTime dateOfBirth,
       Gender gender,
-      String profilePictureUrl,
+      String? profilePictureUrl,
       UserType role,
       StudentExtraModel? studentExtra});
 
@@ -72,7 +72,7 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
     Object? phoneNumber = null,
     Object? dateOfBirth = null,
     Object? gender = null,
-    Object? profilePictureUrl = null,
+    Object? profilePictureUrl = freezed,
     Object? role = null,
     Object? studentExtra = freezed,
   }) {
@@ -101,10 +101,10 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as Gender,
-      profilePictureUrl: null == profilePictureUrl
+      profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
@@ -145,7 +145,7 @@ abstract class _$$ProfileImplCopyWith<$Res> implements $ProfileCopyWith<$Res> {
       String phoneNumber,
       DateTime dateOfBirth,
       Gender gender,
-      String profilePictureUrl,
+      String? profilePictureUrl,
       UserType role,
       StudentExtraModel? studentExtra});
 
@@ -172,7 +172,7 @@ class __$$ProfileImplCopyWithImpl<$Res>
     Object? phoneNumber = null,
     Object? dateOfBirth = null,
     Object? gender = null,
-    Object? profilePictureUrl = null,
+    Object? profilePictureUrl = freezed,
     Object? role = null,
     Object? studentExtra = freezed,
   }) {
@@ -201,10 +201,10 @@ class __$$ProfileImplCopyWithImpl<$Res>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as Gender,
-      profilePictureUrl: null == profilePictureUrl
+      profilePictureUrl: freezed == profilePictureUrl
           ? _value.profilePictureUrl
           : profilePictureUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       role: null == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
@@ -244,7 +244,7 @@ class _$ProfileImpl implements _Profile {
   @override
   final Gender gender;
   @override
-  final String profilePictureUrl;
+  final String? profilePictureUrl;
   @override
   final UserType role;
   @override
@@ -296,7 +296,7 @@ abstract class _Profile implements Profile {
       required final String phoneNumber,
       required final DateTime dateOfBirth,
       required final Gender gender,
-      required final String profilePictureUrl,
+      required final String? profilePictureUrl,
       required final UserType role,
       required final StudentExtraModel? studentExtra}) = _$ProfileImpl;
 
@@ -313,7 +313,7 @@ abstract class _Profile implements Profile {
   @override
   Gender get gender;
   @override
-  String get profilePictureUrl;
+  String? get profilePictureUrl;
   @override
   UserType get role;
   @override

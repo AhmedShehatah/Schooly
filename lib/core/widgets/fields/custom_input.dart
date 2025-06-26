@@ -26,6 +26,7 @@ class CustomInput extends StatefulWidget {
     this.editable = true,
     this.showAsterisk = true,
     this.border = false,
+    this.initialValue,
   }) : _obscureNotifier = null;
 
   CustomInput.obscure({
@@ -38,6 +39,7 @@ class CustomInput extends StatefulWidget {
     this.hintColor,
     required this.title,
     this.border = false,
+    this.initialValue,
   })  : hint = null,
         prefix = null,
         enabled = true,
@@ -69,6 +71,7 @@ class CustomInput extends StatefulWidget {
   final bool showAsterisk;
   final ValueNotifier<bool>? _obscureNotifier;
   final bool border;
+  final String? initialValue;
 
   @override
   State<CustomInput> createState() => _CustomInputState();
@@ -157,6 +160,7 @@ class _CustomInputState extends State<CustomInput> {
                 obscureText: value,
                 validator: widget.validator,
                 controller: widget.controller,
+                initialValue: widget.initialValue,
                 textInputAction: widget.textInputAction,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 onTapOutside: (_) => FocusScope.of(context).unfocus(),
@@ -187,6 +191,7 @@ class _CustomInputState extends State<CustomInput> {
             validator: _validator,
             onChanged: _onChanged,
             controller: widget.controller,
+            initialValue: widget.initialValue,
             readOnly: !widget.editable,
             keyboardType: widget.keyboardType,
             onTap: widget.onPressed,

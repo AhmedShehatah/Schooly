@@ -20,6 +20,8 @@ mixin _$User {
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   UserType get role => throw _privateConstructorUsedError;
+  Gender? get gender => throw _privateConstructorUsedError;
+  String? get profilePictureUrl => throw _privateConstructorUsedError;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -32,7 +34,13 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String id, String name, String email, UserType role});
+  $Res call(
+      {String id,
+      String name,
+      String email,
+      UserType role,
+      Gender? gender,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -54,6 +62,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? name = null,
     Object? email = null,
     Object? role = null,
+    Object? gender = freezed,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -72,6 +82,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
+      gender: freezed == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender?,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -83,7 +101,13 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String email, UserType role});
+  $Res call(
+      {String id,
+      String name,
+      String email,
+      UserType role,
+      Gender? gender,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -102,6 +126,8 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? name = null,
     Object? email = null,
     Object? role = null,
+    Object? gender = freezed,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -120,6 +146,14 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserType,
+      gender: freezed == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender?,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -131,7 +165,9 @@ class _$UserImpl extends _User {
       {required this.id,
       required this.name,
       required this.email,
-      required this.role})
+      required this.role,
+      required this.gender,
+      required this.profilePictureUrl})
       : super._();
 
   @override
@@ -142,10 +178,14 @@ class _$UserImpl extends _User {
   final String email;
   @override
   final UserType role;
+  @override
+  final Gender? gender;
+  @override
+  final String? profilePictureUrl;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, email: $email, role: $role)';
+    return 'User(id: $id, name: $name, email: $email, role: $role, gender: $gender, profilePictureUrl: $profilePictureUrl)';
   }
 
   @override
@@ -156,11 +196,15 @@ class _$UserImpl extends _User {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.role, role) || other.role == role));
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.profilePictureUrl, profilePictureUrl) ||
+                other.profilePictureUrl == profilePictureUrl));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, email, role);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, email, role, gender, profilePictureUrl);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -176,7 +220,9 @@ abstract class _User extends User {
       {required final String id,
       required final String name,
       required final String email,
-      required final UserType role}) = _$UserImpl;
+      required final UserType role,
+      required final Gender? gender,
+      required final String? profilePictureUrl}) = _$UserImpl;
   const _User._() : super._();
 
   @override
@@ -187,6 +233,10 @@ abstract class _User extends User {
   String get email;
   @override
   UserType get role;
+  @override
+  Gender? get gender;
+  @override
+  String? get profilePictureUrl;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.

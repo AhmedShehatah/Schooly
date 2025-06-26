@@ -11,5 +11,7 @@ class User with _$User {
     required String name,
     required String email,
     required UserType role,
+    required Gender? gender,
+    required String? profilePictureUrl,
   }) = _User;
 }

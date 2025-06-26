@@ -436,4 +436,52 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get profile => 'الملف الشخصي';
+
+  @override
+  String get changeLanguage => 'تغيير اللغة';
+
+  @override
+  String get noUpcomingClasses => 'لا توجد حصص قادمة بعد';
+
+  @override
+  String get titlePrefixMr => 'أ.';
+
+  @override
+  String get titlePrefixMrs => 'أ.';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get phone => 'رقم الهاتف';
+
+  @override
+  String get birthDate => 'تاريخ الميلاد';
+
+  @override
+  String get gender => 'النوع';
+
+  @override
+  String get role => 'الدور';
+
+  @override
+  String get grade => 'الصف';
+
+  @override
+  String get address => 'العنوان';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get female => 'أنثى';
+
+  @override
+  String get male => 'ذكر';
+
+  @override
+  String get notAvailable => 'غير متاح';
+
+  @override
+  String get student => 'طالب';
 }

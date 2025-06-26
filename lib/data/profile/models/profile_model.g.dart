@@ -14,7 +14,7 @@ _$ProfileModelImpl _$$ProfileModelImplFromJson(Map<String, dynamic> json) =>
       phoneNumber: json['phoneNumber'] as String?,
       dateOfBirth: DateTime.parse(json['dateOfBirth'] as String),
       gender: $enumDecode(_$GenderEnumMap, json['gender']),
-      profilePictureUrl: json['profilePictureUrl'] as String,
+      profilePictureUrl: json['profilePictureUrl'] as String?,
       role: $enumDecode(_$UserTypeEnumMap, json['role']),
       studentExtra: json['studentExtra'] == null
           ? null

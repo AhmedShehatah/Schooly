@@ -76,15 +76,13 @@ class RoomDetailsSheet extends StatelessWidget {
                         Expanded(
                           child: _buildTextIcon(
                               title: lz.from,
-                              icon: Assets.images.atom
-                                  .image(width: 25.w, height: 25.h),
+                              icon: Icon(Icons.access_time, size: 20.r),
                               content: DateUtility.formateTimeOfDay(item.from)),
                         ),
                         Expanded(
                           child: _buildTextIcon(
                               title: lz.to,
-                              icon: Assets.images.atom
-                                  .image(width: 25.w, height: 25.h),
+                              icon: Icon(Icons.access_time, size: 20.r),
                               content: DateUtility.formateTimeOfDay(item.to)),
                         ),
                       ],

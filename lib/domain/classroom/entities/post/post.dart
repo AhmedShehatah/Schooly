@@ -11,6 +11,7 @@ class Post with _$Post {
     required String createdAt,
     required String authorName,
     required int id,
+    required String? profilePictureUrl,
     required List<Comment> comments,
   }) = _Post;
 }
