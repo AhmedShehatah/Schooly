@@ -490,4 +490,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
+
+  @override
+  String get noYourClasses => 'لا توجد فصول دراسية مخصصة لك بعد';
 }

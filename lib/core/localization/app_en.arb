@@ -185,7 +185,9 @@
     "notAvailable": "Not Available",
     "student": "Student",
     "passwordsDoNotMatch": "Passwords do not match",
-    "passwordRequired": "Password is required"
+    "passwordRequired": "Password is required",
+    "noYourClasses": "There are no classes assigned to you yet"
+
 
 
 

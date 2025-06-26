@@ -185,10 +185,8 @@
     "notAvailable": "غير متاح",
     "student": "طالب",
     "passwordRequired": "كلمة المرور مطلوبة",
-    "passwordsDoNotMatch": "كلمات المرور غير متطابقة"
-
-
-
+    "passwordsDoNotMatch": "كلمات المرور غير متطابقة",
+    "noYourClasses": "لا توجد فصول دراسية مخصصة لك بعد"
 
     
     

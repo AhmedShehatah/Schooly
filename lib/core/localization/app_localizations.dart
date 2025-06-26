@@ -904,6 +904,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'كلمات المرور غير متطابقة'**
   String get passwordsDoNotMatch;
+
+  /// No description provided for @noYourClasses.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد فصول دراسية مخصصة لك بعد'**
+  String get noYourClasses;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
