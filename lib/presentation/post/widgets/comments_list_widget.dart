@@ -106,7 +106,7 @@ class _CommentsListWidgetState extends State<CommentsListWidget> {
                             ..reset()
                             ..setClassroomId(widget.classroomId)
                             ..fetch();
-                          //  Navigator.of(context).pop();
+                          Navigator.of(context).pop();
                         });
                       },
                       builder: (context, state) {

@@ -52,7 +52,7 @@ class _MoreScreenState extends State<MoreScreen> {
                       child: Row(
                         children: [
                           CustomImage.circular(
-                            radius: 44.r,
+                            radius: 38.r,
                             image: user?.profilePictureUrl ?? '',
                           ),
                           16.horizontalSpace,

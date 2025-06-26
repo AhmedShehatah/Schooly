@@ -41,41 +41,41 @@ class HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// your classes
-              Stack(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(children: [
-                          CustomText.s14(lz.yourClasses,
-                              color: Palette.character.title85),
-                          const Spacer(),
-                          InkWell(
-                              onTap: () {},
-                              child: CustomText.s11(lz.all,
-                                  color: Palette.primary.color6))
-                        ]),
-                      ),
-                      15.verticalSpace,
-                      SizedBox(
-                        height: 215.h,
-                        child: ListView.separated(
-                          itemBuilder: (context, index) {
-                            return const ClassesWidget();
-                          },
-                          separatorBuilder: (context, index) =>
-                              15.horizontalSpace,
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 5,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              16.verticalSpace,
+              // Stack(
+              //   children: [
+              //     Column(
+              //       crossAxisAlignment: CrossAxisAlignment.start,
+              //       children: [
+              //         Padding(
+              //           padding: const EdgeInsets.all(8.0),
+              //           child: Row(children: [
+              //             CustomText.s14(lz.yourClasses,
+              //                 color: Palette.character.title85),
+              //             const Spacer(),
+              //             InkWell(
+              //                 onTap: () {},
+              //                 child: CustomText.s11(lz.all,
+              //                     color: Palette.primary.color6))
+              //           ]),
+              //         ),
+              //         15.verticalSpace,
+              //         SizedBox(
+              //           height: 215.h,
+              //           child: ListView.separated(
+              //             itemBuilder: (context, index) {
+              //               return const ClassesWidget();
+              //             },
+              //             separatorBuilder: (context, index) =>
+              //                 15.horizontalSpace,
+              //             scrollDirection: Axis.horizontal,
+              //             itemCount: 5,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ],
+              // ),
+              35.verticalSpace,
               // upcoming classes
               Row(
                 children: [
@@ -83,14 +83,14 @@ class HomeScreenState extends State<HomeScreen> {
                     lz.yourUpcomingClasses,
                     color: Palette.character.title85,
                   ),
-                  const Spacer(),
-                  InkWell(
-                    onTap: () {},
-                    child: CustomText.s11(
-                      lz.all,
-                      color: Palette.primary.color6,
-                    ),
-                  ),
+                  // const Spacer(),
+                  // InkWell(
+                  //   onTap: () {},
+                  //   child: CustomText.s11(
+                  //     lz.all,
+                  //     color: Palette.primary.color6,
+                  //   ),
+                  // ),
                 ],
               ),
               1.verticalSpace,
