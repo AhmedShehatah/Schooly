@@ -36,8 +36,14 @@ class ClassesWidget extends StatelessWidget {
                   topLeft: Radius.circular(24.r),
                   topRight: Radius.circular(24.r)),
               child: SizedBox(
-                  height: 128.h,
-                  child: Assets.images.math.image(fit: BoxFit.cover)),
+                  child: (item.subject == 'دراسات')
+                      ? Assets.images.studies.image(fit: BoxFit.cover)
+                      : (item.subject == 'علوم')
+                          ? Assets.images.science.image(fit: BoxFit.cover)
+                          : (item.subject == 'رياضه')
+                              ? Assets.images.math
+                                  .image(height: 124.h, fit: BoxFit.cover)
+                              : Assets.images.arabic.image(fit: BoxFit.cover)),
             ),
             Positioned(
               top: 104.h,

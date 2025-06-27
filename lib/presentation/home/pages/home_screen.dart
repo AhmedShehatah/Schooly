@@ -106,7 +106,7 @@ class HomeScreenState extends State<HomeScreen> {
                                 }
                                 return ClassesWidget(
                                   item: classes[index],
-                                  isLast: index == classes.length - 1,
+                                  isLast: true,
                                   classroom: classes[index],
                                 );
                               },
