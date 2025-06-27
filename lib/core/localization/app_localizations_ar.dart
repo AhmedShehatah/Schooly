@@ -36,7 +36,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sessionExpired => 'لقد انتهت الجلسة';
 
   @override
-  String get password => 'كلمة المرور';
+  String get password => 'كلمة السر';
 
   @override
   String get identityNumberValidation => 'رقم الهوية يجب أن لا يقل عن ٧ أرقام';
@@ -191,6 +191,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get to => 'الى';
 
   @override
+  String get yourClasses => 'فصولك الدراسية';
+
+  @override
+  String get hello => 'مرحبًا 👋';
+
+  @override
   String get yourSchool => 'مَدرستك';
 
   @override
@@ -207,4 +213,284 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get startNow => 'ابدا دلوقتي!';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get notifications => 'الإشعارات';
+
+  @override
+  String get schedule => 'الجدول';
+
+  @override
+  String get classes => 'الفصول';
+
+  @override
+  String get settings => 'الإعدادات';
+
+  @override
+  String get sendChangeLink => 'ارسل رابط التغيير';
+
+  @override
+  String get changePassword => 'تغيير كلمة السر';
+
+  @override
+  String get doYouWantToLogIn => 'هل تريد تسجيل الدخول؟';
+
+  @override
+  String get resetPasswordTitle => 'إعادة تعيين كلمة السر';
+
+  @override
+  String get confirmPassword => 'أعد كتابة كلمة السر الجديدة';
+
+  @override
+  String get newPassword => 'كلمة السر الجديدة';
+
+  @override
+  String get resetPassword => 'أعد تعيين كلمة السر ';
+
+  @override
+  String get resendCodeNow => 'أعد إرسال الرمز الآن';
+
+  @override
+  String get checkCode => 'تحقق من الرمز';
+
+  @override
+  String get checkPhoneContent => 'تحقق من رسائل الموبايل وأدخل الرمز المرسل عبر الخانات التالية:';
+
+  @override
+  String resendCode(String seconds) {
+    return 'أعد إرسال الرمز مرة أخرى بعد $seconds';
+  }
+
+  @override
+  String get comments => 'التعليقات';
+
+  @override
+  String get addComment => 'اضافة تعليق';
+
+  @override
+  String get noComments => 'لا يوجد تعليقات';
+
+  @override
+  String get newPost => 'منشور جديد';
+
+  @override
+  String get newSession => 'جدول جلسة جديدة';
+
+  @override
+  String get homework => 'واجب';
+
+  @override
+  String get writeSomething => 'اكتب شيئًا...';
+
+  @override
+  String get post => 'نشر';
+
+  @override
+  String get writeToStudents => 'اكتب شيئًا لطلابك هنا...';
+
+  @override
+  String get latestPosts => 'أخر المنشورات';
+
+  @override
+  String get noPosts => 'لا توجد منشورات بعد';
+
+  @override
+  String get joinNow => 'الانضمام الان';
+
+  @override
+  String get activateNotification => 'فعل الاشعارات';
+
+  @override
+  String get verifyIdentity => 'التحقق من الهوية';
+
+  @override
+  String get holdPhoneSecurely => 'ثبت الهاتف جيدا';
+
+  @override
+  String get takePhoto => 'التقاط صورة';
+
+  @override
+  String get comparingPhoto => 'يتم مقارنة الصورة';
+
+  @override
+  String get tryAgain => 'حاول مرة اخرى';
+
+  @override
+  String get within => 'خلال';
+
+  @override
+  String get workingNow => 'تعمل الان';
+
+  @override
+  String get ended => 'انتهت';
+
+  @override
+  String get explanation => 'شرح';
+
+  @override
+  String get homeworkSolution => 'حل واجب';
+
+  @override
+  String get practice => 'حل تمارين';
+
+  @override
+  String get revision => 'مراجعة';
+
+  @override
+  String get other => 'اخرى';
+
+  @override
+  String choose(Object value) {
+    return 'اختر $value';
+  }
+
+  @override
+  String get sessionTitle => 'عنوان الجلسة';
+
+  @override
+  String get noHomework => 'لا توجد واجبات حالياً';
+
+  @override
+  String get successfullyDownloaded => 'تم التحميل بنجاح';
+
+  @override
+  String get downloading => 'يتم التحميل';
+
+  @override
+  String get waitingForOthersToJoin => 'بانتظار الاخرين حتى ينضموا';
+
+  @override
+  String get downloadHomework => 'تحميل الواجب';
+
+  @override
+  String get submitHomework => 'تسليم الواجب';
+
+  @override
+  String get pleaseChooseFile => 'من فضلك اختر ملف الواجب';
+
+  @override
+  String get homeworkUploaded => 'تم إضافة الواجب بنجاح';
+
+  @override
+  String get chooseFile => 'أختر ملف';
+
+  @override
+  String get fileUploadedSuccesfully => 'تم رفع الملف بنجاح';
+
+  @override
+  String get failedUpload => 'تعذر رفع الملف';
+
+  @override
+  String get deadline => 'تاريخ التسليم';
+
+  @override
+  String get submittedHomeworks => 'الواجبات المسلمة';
+
+  @override
+  String get noSubmittedHomeworksYet => 'لا يوجد واجبات مسلمة بعد';
+
+  @override
+  String get submitted => 'تم التسليم';
+
+  @override
+  String get notSubmitted => 'لم يتم التسليم';
+
+  @override
+  String get active => 'نشط';
+
+  @override
+  String get completed => 'مكتمل';
+
+  @override
+  String get fileName => 'اسم الملف';
+
+  @override
+  String get studentName => 'اسم الطالب';
+
+  @override
+  String get submitDate => 'تاريخ التسليم';
+
+  @override
+  String get posts => 'المنشورات';
+
+  @override
+  String get homeworks => 'الواجبات';
+
+  @override
+  String get sessions => 'الجلسات';
+
+  @override
+  String get lesson => 'الدرس';
+
+  @override
+  String get resubmitHomework => 'إعادة تسليم الواجب';
+
+  @override
+  String get more => 'المزيد';
+
+  @override
+  String get logout => 'تسجيل خروج';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get changeLanguage => 'تغيير اللغة';
+
+  @override
+  String get noUpcomingClasses => 'لا توجد حصص قادمة بعد';
+
+  @override
+  String get titlePrefixMr => 'أ.';
+
+  @override
+  String get titlePrefixMrs => 'أ.';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get phone => 'رقم الهاتف';
+
+  @override
+  String get birthDate => 'تاريخ الميلاد';
+
+  @override
+  String get gender => 'النوع';
+
+  @override
+  String get role => 'الدور';
+
+  @override
+  String get grade => 'الصف';
+
+  @override
+  String get address => 'العنوان';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get female => 'أنثى';
+
+  @override
+  String get male => 'ذكر';
+
+  @override
+  String get notAvailable => 'غير متاح';
+
+  @override
+  String get student => 'طالب';
+
+  @override
+  String get passwordRequired => 'كلمة المرور مطلوبة';
+
+  @override
+  String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
+
+  @override
+  String get noYourClasses => 'لا توجد فصول دراسية مخصصة لك بعد';
 }

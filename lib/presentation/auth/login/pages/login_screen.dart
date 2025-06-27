@@ -6,15 +6,18 @@ import 'package:go_router/go_router.dart';
 import '../../../../app/di/injection_container.dart';
 import '../../../../core/assets/assets.gen.dart';
 import '../../../../core/localization/localization_manager.dart';
-
 import '../../../../core/states/base_state.dart';
+import '../../../../core/theme/palette.dart';
 import '../../../../core/utils/extensions.dart';
+import '../../../../core/utils/validators.dart';
 import '../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../core/widgets/fields/custom_input.dart';
 import '../../../../core/widgets/text/custom_text.dart';
 import '../../../../domain/auth/use_cases/login_use_case/login_use_case.dart';
-import '../../../upcoming_classes/pages/upcoming_classes_screen.dart';
+import '../../../home/pages/home_screen.dart';
+import '../../forget_password/pages/forget_password_screen.dart';
 import '../cubit/login_cubit.dart';
+import '../widgets/login_with_face_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,7 +28,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _localization = sl<LocaleCubit>().appLocalizations;
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -35,8 +37,8 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
 
     if (kDebugMode) {
-      _emailController.text = 'test@test.com';
-      _passwordController.text = 'testtest';
+      _emailController.text = 'teacher@example.com';
+      _passwordController.text = 'string';
       setState(() {});
     }
   }
@@ -55,11 +57,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Assets.images.login.image(height: 382.h),
                   CustomInput(
-                    title: _localization.email,
+                    title: lz.email,
                     controller: _emailController,
+                    validator: (value) => sl<Validators>().email(value),
                   ),
                   10.verticalSpace,
-                  CustomInput.obscure(controller: _passwordController),
+                  CustomInput.obscure(
+                    title: lz.password,
+                    controller: _passwordController,
+                    validator: (value) => sl<Validators>().password(value),
+                  ),
                   20.verticalSpace,
                   BlocConsumer<LoginCubit, BaseState>(
                     bloc: sl<LoginCubit>(),
@@ -67,29 +74,74 @@ class _LoginScreenState extends State<LoginScreen> {
                     listener: (context, state) {
                       state.whenOrNull(
                         success: (data) =>
-                            context.goNamed(UpcomingClassesScreen.routeName),
+                            context.goNamed(HomeScreen.routeName),
                       );
                     },
                     builder: (context, state) {
-                      return CustomButton(
-                        isLoading: state.isLoading,
-                        isExpanded: true,
-                        text: _localization.login,
-                        onPressed: () {
-                          if (!_formKey.currentState!.validate()) return;
-                          sl<LoginCubit>().login(
-                            params: LoginParams(
-                              email: _emailController.text,
-                              password: _passwordController.text,
+                      return Row(
+                        children: [
+                          Expanded(
+                            child: CustomButton(
+                              isLoading: state.isLoading,
+                              isExpanded: true,
+                              text: lz.login,
+                              onPressed: () {
+                                if (!_formKey.currentState!.validate()) return;
+                                sl<LoginCubit>().login(
+                                  params: LoginParams(
+                                    email: _emailController.text,
+                                    password: _passwordController.text,
+                                  ),
+                                );
+                              },
                             ),
-                          );
-                        },
+                          ),
+                          8.horizontalSpace,
+                          ElevatedButton(
+                              onPressed: () {
+                                showGeneralDialog(
+                                  context: context,
+                                  barrierDismissible: true,
+                                  barrierLabel:
+                                      MaterialLocalizations.of(context)
+                                          .modalBarrierDismissLabel,
+                                  barrierColor: Colors.black.withOpacity(0.5),
+                                  pageBuilder: (context, anim1, anim2) {
+                                    return const LoginWithFaceWidget();
+                                  },
+                                  transitionBuilder:
+                                      (context, anim1, anim2, child) {
+                                    return SlideTransition(
+                                      position: Tween(
+                                              begin: const Offset(0, 1),
+                                              end: const Offset(0, 0))
+                                          .animate(anim1),
+                                      child: child,
+                                    );
+                                  },
+                                );
+                              },
+                              style: ButtonStyle(
+                                backgroundColor: WidgetStatePropertyAll(
+                                  Palette.primary.color6,
+                                ),
+                              ),
+                              child: const Icon(
+                                Icons.face,
+                                color: Colors.white,
+                              ))
+                        ],
                       );
                     },
                   ),
                   20.verticalSpace,
-                  CustomText.s11(
-                      sl<LocaleCubit>().appLocalizations.forgotPassword),
+                  TextButton(
+                      onPressed: () {
+                        context.goNamed(ForgetPasswordScreen.routeName);
+                      },
+                      child: CustomText.s17(
+                        lz.forgotPassword,
+                      ))
                 ],
               ),
             ),

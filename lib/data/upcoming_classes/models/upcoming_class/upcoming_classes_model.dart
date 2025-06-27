@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../core/enums/enums.dart';
 import '../../../../domain/upcoming_classes/entities/upcoming_classes/upcoming_classes.dart';
 part 'upcoming_classes_model.freezed.dart';
 part 'upcoming_classes_model.g.dart';
@@ -10,11 +11,12 @@ class UpcomingClassesModel with _$UpcomingClassesModel {
   const factory UpcomingClassesModel({
     required String id,
     required String teacherId,
+    required String teacherName,
     required String subject,
     required String grade,
     required String title,
-    required int lessonType,
-    required String date,
+    required LessonType lessonType,
+    required DateTime date,
     required String from,
     required String to,
   }) = _UpcomingClassesModel;
@@ -31,5 +33,6 @@ class UpcomingClassesModel with _$UpcomingClassesModel {
         date: date,
         from: from,
         to: to,
+        teacherName: teacherName,
       );
 }

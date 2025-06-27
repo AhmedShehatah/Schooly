@@ -167,6 +167,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get to => 'To';
 
   @override
+  String get yourClasses => 'Your Classes';
+
+  @override
+  String get hello => 'Hello 👋';
+
+  @override
   String get yourSchool => 'Your School';
 
   @override
@@ -183,4 +189,284 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get startNow => 'Start Now!';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get schedule => 'Schedule';
+
+  @override
+  String get classes => 'Classes';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get sendChangeLink => 'Send change link';
+
+  @override
+  String get changePassword => 'Change Password';
+
+  @override
+  String get doYouWantToLogIn => 'Do you want to log in?';
+
+  @override
+  String get resetPasswordTitle => 'Reset Password';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get resetPassword => 'Reset password';
+
+  @override
+  String get resendCodeNow => 'Resend Code Now';
+
+  @override
+  String get checkCode => 'Check the code';
+
+  @override
+  String get checkPhoneContent => 'Check your mobile messages and enter the code sent through the following boxes:';
+
+  @override
+  String resendCode(String seconds) {
+    return 'Send the code again after $seconds';
+  }
+
+  @override
+  String get comments => 'Comments';
+
+  @override
+  String get addComment => 'Add comment';
+
+  @override
+  String get noComments => 'No Comments';
+
+  @override
+  String get newPost => 'New Post';
+
+  @override
+  String get newSession => 'Schedule New Session';
+
+  @override
+  String get homework => 'Homework';
+
+  @override
+  String get writeSomething => 'Write something...';
+
+  @override
+  String get post => 'Post';
+
+  @override
+  String get writeToStudents => 'Write something to your students here...';
+
+  @override
+  String get latestPosts => 'Latest Posts';
+
+  @override
+  String get noPosts => 'There are no posts yet';
+
+  @override
+  String get joinNow => 'Join Now';
+
+  @override
+  String get activateNotification => 'Activate Notification';
+
+  @override
+  String get verifyIdentity => 'Verify Identity';
+
+  @override
+  String get holdPhoneSecurely => 'Hold your phone securely';
+
+  @override
+  String get takePhoto => 'Take A Photo';
+
+  @override
+  String get comparingPhoto => 'يتم مقارنة الصورة';
+
+  @override
+  String get tryAgain => 'Try again';
+
+  @override
+  String get within => 'Within';
+
+  @override
+  String get workingNow => 'Working Now';
+
+  @override
+  String get ended => 'Ended';
+
+  @override
+  String get explanation => 'Explanation';
+
+  @override
+  String get homeworkSolution => 'Homework Solution';
+
+  @override
+  String get practice => 'Practice';
+
+  @override
+  String get revision => 'Revision';
+
+  @override
+  String get other => 'Other';
+
+  @override
+  String choose(Object value) {
+    return 'Choose $value';
+  }
+
+  @override
+  String get sessionTitle => 'Session Title';
+
+  @override
+  String get noHomework => 'There are no assignments at the moment';
+
+  @override
+  String get successfullyDownloaded => 'Successfully downloaded';
+
+  @override
+  String get downloading => 'Downloading';
+
+  @override
+  String get waitingForOthersToJoin => 'Waiting for others to join';
+
+  @override
+  String get downloadHomework => 'Download';
+
+  @override
+  String get submitHomework => 'Submit';
+
+  @override
+  String get pleaseChooseFile => 'Please choose a File';
+
+  @override
+  String get homeworkUploaded => 'Homework uploaded';
+
+  @override
+  String get chooseFile => 'Choose file';
+
+  @override
+  String get fileUploadedSuccesfully => 'File Uploaded Successfully';
+
+  @override
+  String get failedUpload => 'Failed to Upload';
+
+  @override
+  String get deadline => 'Deadline';
+
+  @override
+  String get submittedHomeworks => 'Submitted Homeworks';
+
+  @override
+  String get noSubmittedHomeworksYet => 'No Homeworks Submitted Yet !';
+
+  @override
+  String get submitted => 'Submitted';
+
+  @override
+  String get notSubmitted => 'Not Submitted';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get completed => 'Completed';
+
+  @override
+  String get fileName => 'file name';
+
+  @override
+  String get studentName => 'Student Name';
+
+  @override
+  String get submitDate => 'Submitted at';
+
+  @override
+  String get posts => 'Posts';
+
+  @override
+  String get homeworks => 'Homeworks';
+
+  @override
+  String get sessions => 'Sessions';
+
+  @override
+  String get lesson => 'Lesson';
+
+  @override
+  String get resubmitHomework => 'Re-Submit';
+
+  @override
+  String get more => 'More';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get changeLanguage => 'Change Language';
+
+  @override
+  String get noUpcomingClasses => 'There are no upcoming classes yet';
+
+  @override
+  String get titlePrefixMr => 'Mr.';
+
+  @override
+  String get titlePrefixMrs => 'أ.';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get phone => 'Phone Number';
+
+  @override
+  String get birthDate => 'Date of Birth';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get role => 'Role';
+
+  @override
+  String get grade => 'Grade';
+
+  @override
+  String get address => 'Address';
+
+  @override
+  String get update => 'Update';
+
+  @override
+  String get female => 'Female';
+
+  @override
+  String get male => 'Male';
+
+  @override
+  String get notAvailable => 'Not Available';
+
+  @override
+  String get student => 'Student';
+
+  @override
+  String get passwordRequired => 'Password is required';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get noYourClasses => 'There are no classes assigned to you yet';
 }

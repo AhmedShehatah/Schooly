@@ -18,6 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UpcomingClassesParams {
   int get page => throw _privateConstructorUsedError;
   int get pageSize => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
+  String? get classRoomId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Status')
+  ClassType get status => throw _privateConstructorUsedError;
 
   /// Serializes this UpcomingClassesParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +39,11 @@ abstract class $UpcomingClassesParamsCopyWith<$Res> {
           $Res Function(UpcomingClassesParams) then) =
       _$UpcomingClassesParamsCopyWithImpl<$Res, UpcomingClassesParams>;
   @useResult
-  $Res call({int page, int pageSize});
+  $Res call(
+      {int page,
+      int pageSize,
+      @JsonKey(includeIfNull: false) String? classRoomId,
+      @JsonKey(name: 'Status') ClassType status});
 }
 
 /// @nodoc
@@ -56,6 +64,8 @@ class _$UpcomingClassesParamsCopyWithImpl<$Res,
   $Res call({
     Object? page = null,
     Object? pageSize = null,
+    Object? classRoomId = freezed,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       page: null == page
@@ -66,6 +76,14 @@ class _$UpcomingClassesParamsCopyWithImpl<$Res,
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int,
+      classRoomId: freezed == classRoomId
+          ? _value.classRoomId
+          : classRoomId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ClassType,
     ) as $Val);
   }
 }
@@ -79,7 +97,11 @@ abstract class _$$UpcomingClassesParamsImplCopyWith<$Res>
       __$$UpcomingClassesParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int page, int pageSize});
+  $Res call(
+      {int page,
+      int pageSize,
+      @JsonKey(includeIfNull: false) String? classRoomId,
+      @JsonKey(name: 'Status') ClassType status});
 }
 
 /// @nodoc
@@ -98,6 +120,8 @@ class __$$UpcomingClassesParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? page = null,
     Object? pageSize = null,
+    Object? classRoomId = freezed,
+    Object? status = null,
   }) {
     return _then(_$UpcomingClassesParamsImpl(
       page: null == page
@@ -108,6 +132,14 @@ class __$$UpcomingClassesParamsImplCopyWithImpl<$Res>
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int,
+      classRoomId: freezed == classRoomId
+          ? _value.classRoomId
+          : classRoomId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ClassType,
     ));
   }
 }
@@ -115,7 +147,11 @@ class __$$UpcomingClassesParamsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable(createFactory: false)
 class _$UpcomingClassesParamsImpl extends _UpcomingClassesParams {
-  const _$UpcomingClassesParamsImpl({this.page = 1, this.pageSize = 20})
+  const _$UpcomingClassesParamsImpl(
+      {this.page = 1,
+      this.pageSize = 20,
+      @JsonKey(includeIfNull: false) this.classRoomId,
+      @JsonKey(name: 'Status') this.status = ClassType.upcoming})
       : super._();
 
   @override
@@ -124,10 +160,16 @@ class _$UpcomingClassesParamsImpl extends _UpcomingClassesParams {
   @override
   @JsonKey()
   final int pageSize;
+  @override
+  @JsonKey(includeIfNull: false)
+  final String? classRoomId;
+  @override
+  @JsonKey(name: 'Status')
+  final ClassType status;
 
   @override
   String toString() {
-    return 'UpcomingClassesParams(page: $page, pageSize: $pageSize)';
+    return 'UpcomingClassesParams(page: $page, pageSize: $pageSize, classRoomId: $classRoomId, status: $status)';
   }
 
   @override
@@ -137,12 +179,16 @@ class _$UpcomingClassesParamsImpl extends _UpcomingClassesParams {
             other is _$UpcomingClassesParamsImpl &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.pageSize, pageSize) ||
-                other.pageSize == pageSize));
+                other.pageSize == pageSize) &&
+            (identical(other.classRoomId, classRoomId) ||
+                other.classRoomId == classRoomId) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, page, pageSize);
+  int get hashCode =>
+      Object.hash(runtimeType, page, pageSize, classRoomId, status);
 
   /// Create a copy of UpcomingClassesParams
   /// with the given fields replaced by the non-null parameter values.
@@ -162,7 +208,11 @@ class _$UpcomingClassesParamsImpl extends _UpcomingClassesParams {
 }
 
 abstract class _UpcomingClassesParams extends UpcomingClassesParams {
-  const factory _UpcomingClassesParams({final int page, final int pageSize}) =
+  const factory _UpcomingClassesParams(
+          {final int page,
+          final int pageSize,
+          @JsonKey(includeIfNull: false) final String? classRoomId,
+          @JsonKey(name: 'Status') final ClassType status}) =
       _$UpcomingClassesParamsImpl;
   const _UpcomingClassesParams._() : super._();
 
@@ -170,6 +220,12 @@ abstract class _UpcomingClassesParams extends UpcomingClassesParams {
   int get page;
   @override
   int get pageSize;
+  @override
+  @JsonKey(includeIfNull: false)
+  String? get classRoomId;
+  @override
+  @JsonKey(name: 'Status')
+  ClassType get status;
 
   /// Create a copy of UpcomingClassesParams
   /// with the given fields replaced by the non-null parameter values.

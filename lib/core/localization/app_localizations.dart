@@ -152,7 +152,7 @@ abstract class AppLocalizations {
   /// No description provided for @password.
   ///
   /// In ar, this message translates to:
-  /// **'كلمة المرور'**
+  /// **'كلمة السر'**
   String get password;
 
   /// No description provided for @identityNumberValidation.
@@ -311,6 +311,18 @@ abstract class AppLocalizations {
   /// **'الى'**
   String get to;
 
+  /// No description provided for @yourClasses.
+  ///
+  /// In ar, this message translates to:
+  /// **'فصولك الدراسية'**
+  String get yourClasses;
+
+  /// No description provided for @hello.
+  ///
+  /// In ar, this message translates to:
+  /// **'مرحبًا 👋'**
+  String get hello;
+
   /// No description provided for @yourSchool.
   ///
   /// In ar, this message translates to:
@@ -346,6 +358,558 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'ابدا دلوقتي!'**
   String get startNow;
+
+  /// No description provided for @home.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرئيسية'**
+  String get home;
+
+  /// No description provided for @notifications.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإشعارات'**
+  String get notifications;
+
+  /// No description provided for @schedule.
+  ///
+  /// In ar, this message translates to:
+  /// **'الجدول'**
+  String get schedule;
+
+  /// No description provided for @classes.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفصول'**
+  String get classes;
+
+  /// No description provided for @settings.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإعدادات'**
+  String get settings;
+
+  /// No description provided for @sendChangeLink.
+  ///
+  /// In ar, this message translates to:
+  /// **'ارسل رابط التغيير'**
+  String get sendChangeLink;
+
+  /// No description provided for @changePassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'تغيير كلمة السر'**
+  String get changePassword;
+
+  /// No description provided for @doYouWantToLogIn.
+  ///
+  /// In ar, this message translates to:
+  /// **'هل تريد تسجيل الدخول؟'**
+  String get doYouWantToLogIn;
+
+  /// No description provided for @resetPasswordTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة تعيين كلمة السر'**
+  String get resetPasswordTitle;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'أعد كتابة كلمة السر الجديدة'**
+  String get confirmPassword;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة السر الجديدة'**
+  String get newPassword;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'أعد تعيين كلمة السر '**
+  String get resetPassword;
+
+  /// No description provided for @resendCodeNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'أعد إرسال الرمز الآن'**
+  String get resendCodeNow;
+
+  /// No description provided for @checkCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحقق من الرمز'**
+  String get checkCode;
+
+  /// No description provided for @checkPhoneContent.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحقق من رسائل الموبايل وأدخل الرمز المرسل عبر الخانات التالية:'**
+  String get checkPhoneContent;
+
+  /// No description provided for @resendCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'أعد إرسال الرمز مرة أخرى بعد {seconds}'**
+  String resendCode(String seconds);
+
+  /// No description provided for @comments.
+  ///
+  /// In ar, this message translates to:
+  /// **'التعليقات'**
+  String get comments;
+
+  /// No description provided for @addComment.
+  ///
+  /// In ar, this message translates to:
+  /// **'اضافة تعليق'**
+  String get addComment;
+
+  /// No description provided for @noComments.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد تعليقات'**
+  String get noComments;
+
+  /// No description provided for @newPost.
+  ///
+  /// In ar, this message translates to:
+  /// **'منشور جديد'**
+  String get newPost;
+
+  /// No description provided for @newSession.
+  ///
+  /// In ar, this message translates to:
+  /// **'جدول جلسة جديدة'**
+  String get newSession;
+
+  /// No description provided for @homework.
+  ///
+  /// In ar, this message translates to:
+  /// **'واجب'**
+  String get homework;
+
+  /// No description provided for @writeSomething.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب شيئًا...'**
+  String get writeSomething;
+
+  /// No description provided for @post.
+  ///
+  /// In ar, this message translates to:
+  /// **'نشر'**
+  String get post;
+
+  /// No description provided for @writeToStudents.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب شيئًا لطلابك هنا...'**
+  String get writeToStudents;
+
+  /// No description provided for @latestPosts.
+  ///
+  /// In ar, this message translates to:
+  /// **'أخر المنشورات'**
+  String get latestPosts;
+
+  /// No description provided for @noPosts.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد منشورات بعد'**
+  String get noPosts;
+
+  /// No description provided for @joinNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'الانضمام الان'**
+  String get joinNow;
+
+  /// No description provided for @activateNotification.
+  ///
+  /// In ar, this message translates to:
+  /// **'فعل الاشعارات'**
+  String get activateNotification;
+
+  /// No description provided for @verifyIdentity.
+  ///
+  /// In ar, this message translates to:
+  /// **'التحقق من الهوية'**
+  String get verifyIdentity;
+
+  /// No description provided for @holdPhoneSecurely.
+  ///
+  /// In ar, this message translates to:
+  /// **'ثبت الهاتف جيدا'**
+  String get holdPhoneSecurely;
+
+  /// No description provided for @takePhoto.
+  ///
+  /// In ar, this message translates to:
+  /// **'التقاط صورة'**
+  String get takePhoto;
+
+  /// No description provided for @comparingPhoto.
+  ///
+  /// In ar, this message translates to:
+  /// **'يتم مقارنة الصورة'**
+  String get comparingPhoto;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In ar, this message translates to:
+  /// **'حاول مرة اخرى'**
+  String get tryAgain;
+
+  /// No description provided for @within.
+  ///
+  /// In ar, this message translates to:
+  /// **'خلال'**
+  String get within;
+
+  /// No description provided for @workingNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعمل الان'**
+  String get workingNow;
+
+  /// No description provided for @ended.
+  ///
+  /// In ar, this message translates to:
+  /// **'انتهت'**
+  String get ended;
+
+  /// No description provided for @explanation.
+  ///
+  /// In ar, this message translates to:
+  /// **'شرح'**
+  String get explanation;
+
+  /// No description provided for @homeworkSolution.
+  ///
+  /// In ar, this message translates to:
+  /// **'حل واجب'**
+  String get homeworkSolution;
+
+  /// No description provided for @practice.
+  ///
+  /// In ar, this message translates to:
+  /// **'حل تمارين'**
+  String get practice;
+
+  /// No description provided for @revision.
+  ///
+  /// In ar, this message translates to:
+  /// **'مراجعة'**
+  String get revision;
+
+  /// No description provided for @other.
+  ///
+  /// In ar, this message translates to:
+  /// **'اخرى'**
+  String get other;
+
+  /// No description provided for @choose.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر {value}'**
+  String choose(Object value);
+
+  /// No description provided for @sessionTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'عنوان الجلسة'**
+  String get sessionTitle;
+
+  /// No description provided for @noHomework.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد واجبات حالياً'**
+  String get noHomework;
+
+  /// No description provided for @successfullyDownloaded.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التحميل بنجاح'**
+  String get successfullyDownloaded;
+
+  /// No description provided for @downloading.
+  ///
+  /// In ar, this message translates to:
+  /// **'يتم التحميل'**
+  String get downloading;
+
+  /// No description provided for @waitingForOthersToJoin.
+  ///
+  /// In ar, this message translates to:
+  /// **'بانتظار الاخرين حتى ينضموا'**
+  String get waitingForOthersToJoin;
+
+  /// No description provided for @downloadHomework.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحميل الواجب'**
+  String get downloadHomework;
+
+  /// No description provided for @submitHomework.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسليم الواجب'**
+  String get submitHomework;
+
+  /// No description provided for @pleaseChooseFile.
+  ///
+  /// In ar, this message translates to:
+  /// **'من فضلك اختر ملف الواجب'**
+  String get pleaseChooseFile;
+
+  /// No description provided for @homeworkUploaded.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إضافة الواجب بنجاح'**
+  String get homeworkUploaded;
+
+  /// No description provided for @chooseFile.
+  ///
+  /// In ar, this message translates to:
+  /// **'أختر ملف'**
+  String get chooseFile;
+
+  /// No description provided for @fileUploadedSuccesfully.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم رفع الملف بنجاح'**
+  String get fileUploadedSuccesfully;
+
+  /// No description provided for @failedUpload.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر رفع الملف'**
+  String get failedUpload;
+
+  /// No description provided for @deadline.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاريخ التسليم'**
+  String get deadline;
+
+  /// No description provided for @submittedHomeworks.
+  ///
+  /// In ar, this message translates to:
+  /// **'الواجبات المسلمة'**
+  String get submittedHomeworks;
+
+  /// No description provided for @noSubmittedHomeworksYet.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد واجبات مسلمة بعد'**
+  String get noSubmittedHomeworksYet;
+
+  /// No description provided for @submitted.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التسليم'**
+  String get submitted;
+
+  /// No description provided for @notSubmitted.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يتم التسليم'**
+  String get notSubmitted;
+
+  /// No description provided for @active.
+  ///
+  /// In ar, this message translates to:
+  /// **'نشط'**
+  String get active;
+
+  /// No description provided for @completed.
+  ///
+  /// In ar, this message translates to:
+  /// **'مكتمل'**
+  String get completed;
+
+  /// No description provided for @fileName.
+  ///
+  /// In ar, this message translates to:
+  /// **'اسم الملف'**
+  String get fileName;
+
+  /// No description provided for @studentName.
+  ///
+  /// In ar, this message translates to:
+  /// **'اسم الطالب'**
+  String get studentName;
+
+  /// No description provided for @submitDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاريخ التسليم'**
+  String get submitDate;
+
+  /// No description provided for @posts.
+  ///
+  /// In ar, this message translates to:
+  /// **'المنشورات'**
+  String get posts;
+
+  /// No description provided for @homeworks.
+  ///
+  /// In ar, this message translates to:
+  /// **'الواجبات'**
+  String get homeworks;
+
+  /// No description provided for @sessions.
+  ///
+  /// In ar, this message translates to:
+  /// **'الجلسات'**
+  String get sessions;
+
+  /// No description provided for @lesson.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدرس'**
+  String get lesson;
+
+  /// No description provided for @resubmitHomework.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة تسليم الواجب'**
+  String get resubmitHomework;
+
+  /// No description provided for @more.
+  ///
+  /// In ar, this message translates to:
+  /// **'المزيد'**
+  String get more;
+
+  /// No description provided for @logout.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل خروج'**
+  String get logout;
+
+  /// No description provided for @profile.
+  ///
+  /// In ar, this message translates to:
+  /// **'الملف الشخصي'**
+  String get profile;
+
+  /// No description provided for @changeLanguage.
+  ///
+  /// In ar, this message translates to:
+  /// **'تغيير اللغة'**
+  String get changeLanguage;
+
+  /// No description provided for @noUpcomingClasses.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد حصص قادمة بعد'**
+  String get noUpcomingClasses;
+
+  /// No description provided for @titlePrefixMr.
+  ///
+  /// In ar, this message translates to:
+  /// **'أ.'**
+  String get titlePrefixMr;
+
+  /// No description provided for @titlePrefixMrs.
+  ///
+  /// In ar, this message translates to:
+  /// **'أ.'**
+  String get titlePrefixMrs;
+
+  /// No description provided for @name.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاسم'**
+  String get name;
+
+  /// No description provided for @phone.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الهاتف'**
+  String get phone;
+
+  /// No description provided for @birthDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'تاريخ الميلاد'**
+  String get birthDate;
+
+  /// No description provided for @gender.
+  ///
+  /// In ar, this message translates to:
+  /// **'النوع'**
+  String get gender;
+
+  /// No description provided for @role.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدور'**
+  String get role;
+
+  /// No description provided for @grade.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصف'**
+  String get grade;
+
+  /// No description provided for @address.
+  ///
+  /// In ar, this message translates to:
+  /// **'العنوان'**
+  String get address;
+
+  /// No description provided for @update.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحديث'**
+  String get update;
+
+  /// No description provided for @female.
+  ///
+  /// In ar, this message translates to:
+  /// **'أنثى'**
+  String get female;
+
+  /// No description provided for @male.
+  ///
+  /// In ar, this message translates to:
+  /// **'ذكر'**
+  String get male;
+
+  /// No description provided for @notAvailable.
+  ///
+  /// In ar, this message translates to:
+  /// **'غير متاح'**
+  String get notAvailable;
+
+  /// No description provided for @student.
+  ///
+  /// In ar, this message translates to:
+  /// **'طالب'**
+  String get student;
+
+  /// No description provided for @passwordRequired.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة المرور مطلوبة'**
+  String get passwordRequired;
+
+  /// No description provided for @passwordsDoNotMatch.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمات المرور غير متطابقة'**
+  String get passwordsDoNotMatch;
+
+  /// No description provided for @noYourClasses.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد فصول دراسية مخصصة لك بعد'**
+  String get noYourClasses;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

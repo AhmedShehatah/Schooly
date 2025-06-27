@@ -24,6 +24,7 @@ mixin _$BaseState<T> {
     required TResult Function(Failure failure) failure,
     required TResult Function() empty,
     required TResult Function(T data) success,
+    required TResult Function(double progress) progress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$BaseState<T> {
     TResult? Function(Failure failure)? failure,
     TResult? Function()? empty,
     TResult? Function(T data)? success,
+    TResult? Function(double progress)? progress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$BaseState<T> {
     TResult Function(Failure failure)? failure,
     TResult Function()? empty,
     TResult Function(T data)? success,
+    TResult Function(double progress)? progress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,7 @@ mixin _$BaseState<T> {
     required TResult Function(_FailureState<T> value) failure,
     required TResult Function(_EmptyState<T> value) empty,
     required TResult Function(_SuccessState<T> value) success,
+    required TResult Function(_ProgressState<T> value) progress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +69,7 @@ mixin _$BaseState<T> {
     TResult? Function(_FailureState<T> value)? failure,
     TResult? Function(_EmptyState<T> value)? empty,
     TResult? Function(_SuccessState<T> value)? success,
+    TResult? Function(_ProgressState<T> value)? progress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +80,7 @@ mixin _$BaseState<T> {
     TResult Function(_FailureState<T> value)? failure,
     TResult Function(_EmptyState<T> value)? empty,
     TResult Function(_SuccessState<T> value)? success,
+    TResult Function(_ProgressState<T> value)? progress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -148,6 +154,7 @@ class _$InitialStateImpl<T> extends _InitialState<T> {
     required TResult Function(Failure failure) failure,
     required TResult Function() empty,
     required TResult Function(T data) success,
+    required TResult Function(double progress) progress,
   }) {
     return initial();
   }
@@ -161,6 +168,7 @@ class _$InitialStateImpl<T> extends _InitialState<T> {
     TResult? Function(Failure failure)? failure,
     TResult? Function()? empty,
     TResult? Function(T data)? success,
+    TResult? Function(double progress)? progress,
   }) {
     return initial?.call();
   }
@@ -174,6 +182,7 @@ class _$InitialStateImpl<T> extends _InitialState<T> {
     TResult Function(Failure failure)? failure,
     TResult Function()? empty,
     TResult Function(T data)? success,
+    TResult Function(double progress)? progress,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -191,6 +200,7 @@ class _$InitialStateImpl<T> extends _InitialState<T> {
     required TResult Function(_FailureState<T> value) failure,
     required TResult Function(_EmptyState<T> value) empty,
     required TResult Function(_SuccessState<T> value) success,
+    required TResult Function(_ProgressState<T> value) progress,
   }) {
     return initial(this);
   }
@@ -204,6 +214,7 @@ class _$InitialStateImpl<T> extends _InitialState<T> {
     TResult? Function(_FailureState<T> value)? failure,
     TResult? Function(_EmptyState<T> value)? empty,
     TResult? Function(_SuccessState<T> value)? success,
+    TResult? Function(_ProgressState<T> value)? progress,
   }) {
     return initial?.call(this);
   }
@@ -217,6 +228,7 @@ class _$InitialStateImpl<T> extends _InitialState<T> {
     TResult Function(_FailureState<T> value)? failure,
     TResult Function(_EmptyState<T> value)? empty,
     TResult Function(_SuccessState<T> value)? success,
+    TResult Function(_ProgressState<T> value)? progress,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -278,6 +290,7 @@ class _$LoadingStateImpl<T> extends _LoadingState<T> {
     required TResult Function(Failure failure) failure,
     required TResult Function() empty,
     required TResult Function(T data) success,
+    required TResult Function(double progress) progress,
   }) {
     return loading();
   }
@@ -291,6 +304,7 @@ class _$LoadingStateImpl<T> extends _LoadingState<T> {
     TResult? Function(Failure failure)? failure,
     TResult? Function()? empty,
     TResult? Function(T data)? success,
+    TResult? Function(double progress)? progress,
   }) {
     return loading?.call();
   }
@@ -304,6 +318,7 @@ class _$LoadingStateImpl<T> extends _LoadingState<T> {
     TResult Function(Failure failure)? failure,
     TResult Function()? empty,
     TResult Function(T data)? success,
+    TResult Function(double progress)? progress,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -321,6 +336,7 @@ class _$LoadingStateImpl<T> extends _LoadingState<T> {
     required TResult Function(_FailureState<T> value) failure,
     required TResult Function(_EmptyState<T> value) empty,
     required TResult Function(_SuccessState<T> value) success,
+    required TResult Function(_ProgressState<T> value) progress,
   }) {
     return loading(this);
   }
@@ -334,6 +350,7 @@ class _$LoadingStateImpl<T> extends _LoadingState<T> {
     TResult? Function(_FailureState<T> value)? failure,
     TResult? Function(_EmptyState<T> value)? empty,
     TResult? Function(_SuccessState<T> value)? success,
+    TResult? Function(_ProgressState<T> value)? progress,
   }) {
     return loading?.call(this);
   }
@@ -347,6 +364,7 @@ class _$LoadingStateImpl<T> extends _LoadingState<T> {
     TResult Function(_FailureState<T> value)? failure,
     TResult Function(_EmptyState<T> value)? empty,
     TResult Function(_SuccessState<T> value)? success,
+    TResult Function(_ProgressState<T> value)? progress,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -448,6 +466,7 @@ class _$UploadingStateImpl<T> extends _UploadingState<T> {
     required TResult Function(Failure failure) failure,
     required TResult Function() empty,
     required TResult Function(T data) success,
+    required TResult Function(double progress) progress,
   }) {
     return uploading(params);
   }
@@ -461,6 +480,7 @@ class _$UploadingStateImpl<T> extends _UploadingState<T> {
     TResult? Function(Failure failure)? failure,
     TResult? Function()? empty,
     TResult? Function(T data)? success,
+    TResult? Function(double progress)? progress,
   }) {
     return uploading?.call(params);
   }
@@ -474,6 +494,7 @@ class _$UploadingStateImpl<T> extends _UploadingState<T> {
     TResult Function(Failure failure)? failure,
     TResult Function()? empty,
     TResult Function(T data)? success,
+    TResult Function(double progress)? progress,
     required TResult orElse(),
   }) {
     if (uploading != null) {
@@ -491,6 +512,7 @@ class _$UploadingStateImpl<T> extends _UploadingState<T> {
     required TResult Function(_FailureState<T> value) failure,
     required TResult Function(_EmptyState<T> value) empty,
     required TResult Function(_SuccessState<T> value) success,
+    required TResult Function(_ProgressState<T> value) progress,
   }) {
     return uploading(this);
   }
@@ -504,6 +526,7 @@ class _$UploadingStateImpl<T> extends _UploadingState<T> {
     TResult? Function(_FailureState<T> value)? failure,
     TResult? Function(_EmptyState<T> value)? empty,
     TResult? Function(_SuccessState<T> value)? success,
+    TResult? Function(_ProgressState<T> value)? progress,
   }) {
     return uploading?.call(this);
   }
@@ -517,6 +540,7 @@ class _$UploadingStateImpl<T> extends _UploadingState<T> {
     TResult Function(_FailureState<T> value)? failure,
     TResult Function(_EmptyState<T> value)? empty,
     TResult Function(_SuccessState<T> value)? success,
+    TResult Function(_ProgressState<T> value)? progress,
     required TResult orElse(),
   }) {
     if (uploading != null) {
@@ -627,6 +651,7 @@ class _$FailureStateImpl<T> extends _FailureState<T> {
     required TResult Function(Failure failure) failure,
     required TResult Function() empty,
     required TResult Function(T data) success,
+    required TResult Function(double progress) progress,
   }) {
     return failure(this.failure);
   }
@@ -640,6 +665,7 @@ class _$FailureStateImpl<T> extends _FailureState<T> {
     TResult? Function(Failure failure)? failure,
     TResult? Function()? empty,
     TResult? Function(T data)? success,
+    TResult? Function(double progress)? progress,
   }) {
     return failure?.call(this.failure);
   }
@@ -653,6 +679,7 @@ class _$FailureStateImpl<T> extends _FailureState<T> {
     TResult Function(Failure failure)? failure,
     TResult Function()? empty,
     TResult Function(T data)? success,
+    TResult Function(double progress)? progress,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -670,6 +697,7 @@ class _$FailureStateImpl<T> extends _FailureState<T> {
     required TResult Function(_FailureState<T> value) failure,
     required TResult Function(_EmptyState<T> value) empty,
     required TResult Function(_SuccessState<T> value) success,
+    required TResult Function(_ProgressState<T> value) progress,
   }) {
     return failure(this);
   }
@@ -683,6 +711,7 @@ class _$FailureStateImpl<T> extends _FailureState<T> {
     TResult? Function(_FailureState<T> value)? failure,
     TResult? Function(_EmptyState<T> value)? empty,
     TResult? Function(_SuccessState<T> value)? success,
+    TResult? Function(_ProgressState<T> value)? progress,
   }) {
     return failure?.call(this);
   }
@@ -696,6 +725,7 @@ class _$FailureStateImpl<T> extends _FailureState<T> {
     TResult Function(_FailureState<T> value)? failure,
     TResult Function(_EmptyState<T> value)? empty,
     TResult Function(_SuccessState<T> value)? success,
+    TResult Function(_ProgressState<T> value)? progress,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -766,6 +796,7 @@ class _$EmptyStateImpl<T> extends _EmptyState<T> {
     required TResult Function(Failure failure) failure,
     required TResult Function() empty,
     required TResult Function(T data) success,
+    required TResult Function(double progress) progress,
   }) {
     return empty();
   }
@@ -779,6 +810,7 @@ class _$EmptyStateImpl<T> extends _EmptyState<T> {
     TResult? Function(Failure failure)? failure,
     TResult? Function()? empty,
     TResult? Function(T data)? success,
+    TResult? Function(double progress)? progress,
   }) {
     return empty?.call();
   }
@@ -792,6 +824,7 @@ class _$EmptyStateImpl<T> extends _EmptyState<T> {
     TResult Function(Failure failure)? failure,
     TResult Function()? empty,
     TResult Function(T data)? success,
+    TResult Function(double progress)? progress,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -809,6 +842,7 @@ class _$EmptyStateImpl<T> extends _EmptyState<T> {
     required TResult Function(_FailureState<T> value) failure,
     required TResult Function(_EmptyState<T> value) empty,
     required TResult Function(_SuccessState<T> value) success,
+    required TResult Function(_ProgressState<T> value) progress,
   }) {
     return empty(this);
   }
@@ -822,6 +856,7 @@ class _$EmptyStateImpl<T> extends _EmptyState<T> {
     TResult? Function(_FailureState<T> value)? failure,
     TResult? Function(_EmptyState<T> value)? empty,
     TResult? Function(_SuccessState<T> value)? success,
+    TResult? Function(_ProgressState<T> value)? progress,
   }) {
     return empty?.call(this);
   }
@@ -835,6 +870,7 @@ class _$EmptyStateImpl<T> extends _EmptyState<T> {
     TResult Function(_FailureState<T> value)? failure,
     TResult Function(_EmptyState<T> value)? empty,
     TResult Function(_SuccessState<T> value)? success,
+    TResult Function(_ProgressState<T> value)? progress,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -925,6 +961,7 @@ class _$SuccessStateImpl<T> extends _SuccessState<T> {
     required TResult Function(Failure failure) failure,
     required TResult Function() empty,
     required TResult Function(T data) success,
+    required TResult Function(double progress) progress,
   }) {
     return success(data);
   }
@@ -938,6 +975,7 @@ class _$SuccessStateImpl<T> extends _SuccessState<T> {
     TResult? Function(Failure failure)? failure,
     TResult? Function()? empty,
     TResult? Function(T data)? success,
+    TResult? Function(double progress)? progress,
   }) {
     return success?.call(data);
   }
@@ -951,6 +989,7 @@ class _$SuccessStateImpl<T> extends _SuccessState<T> {
     TResult Function(Failure failure)? failure,
     TResult Function()? empty,
     TResult Function(T data)? success,
+    TResult Function(double progress)? progress,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -968,6 +1007,7 @@ class _$SuccessStateImpl<T> extends _SuccessState<T> {
     required TResult Function(_FailureState<T> value) failure,
     required TResult Function(_EmptyState<T> value) empty,
     required TResult Function(_SuccessState<T> value) success,
+    required TResult Function(_ProgressState<T> value) progress,
   }) {
     return success(this);
   }
@@ -981,6 +1021,7 @@ class _$SuccessStateImpl<T> extends _SuccessState<T> {
     TResult? Function(_FailureState<T> value)? failure,
     TResult? Function(_EmptyState<T> value)? empty,
     TResult? Function(_SuccessState<T> value)? success,
+    TResult? Function(_ProgressState<T> value)? progress,
   }) {
     return success?.call(this);
   }
@@ -994,6 +1035,7 @@ class _$SuccessStateImpl<T> extends _SuccessState<T> {
     TResult Function(_FailureState<T> value)? failure,
     TResult Function(_EmptyState<T> value)? empty,
     TResult Function(_SuccessState<T> value)? success,
+    TResult Function(_ProgressState<T> value)? progress,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1013,6 +1055,180 @@ abstract class _SuccessState<T> extends BaseState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessStateImplCopyWith<T, _$SuccessStateImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProgressStateImplCopyWith<T, $Res> {
+  factory _$$ProgressStateImplCopyWith(_$ProgressStateImpl<T> value,
+          $Res Function(_$ProgressStateImpl<T>) then) =
+      __$$ProgressStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({double progress});
+}
+
+/// @nodoc
+class __$$ProgressStateImplCopyWithImpl<T, $Res>
+    extends _$BaseStateCopyWithImpl<T, $Res, _$ProgressStateImpl<T>>
+    implements _$$ProgressStateImplCopyWith<T, $Res> {
+  __$$ProgressStateImplCopyWithImpl(_$ProgressStateImpl<T> _value,
+      $Res Function(_$ProgressStateImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BaseState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? progress = null,
+  }) {
+    return _then(_$ProgressStateImpl<T>(
+      progress: null == progress
+          ? _value.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProgressStateImpl<T> extends _ProgressState<T> {
+  const _$ProgressStateImpl({required this.progress}) : super._();
+
+  @override
+  final double progress;
+
+  @override
+  String toString() {
+    return 'BaseState<$T>.progress(progress: $progress)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProgressStateImpl<T> &&
+            (identical(other.progress, progress) ||
+                other.progress == progress));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, progress);
+
+  /// Create a copy of BaseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProgressStateImplCopyWith<T, _$ProgressStateImpl<T>> get copyWith =>
+      __$$ProgressStateImplCopyWithImpl<T, _$ProgressStateImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UploadingStateParams params) uploading,
+    required TResult Function(Failure failure) failure,
+    required TResult Function() empty,
+    required TResult Function(T data) success,
+    required TResult Function(double progress) progress,
+  }) {
+    return progress(this.progress);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UploadingStateParams params)? uploading,
+    TResult? Function(Failure failure)? failure,
+    TResult? Function()? empty,
+    TResult? Function(T data)? success,
+    TResult? Function(double progress)? progress,
+  }) {
+    return progress?.call(this.progress);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UploadingStateParams params)? uploading,
+    TResult Function(Failure failure)? failure,
+    TResult Function()? empty,
+    TResult Function(T data)? success,
+    TResult Function(double progress)? progress,
+    required TResult orElse(),
+  }) {
+    if (progress != null) {
+      return progress(this.progress);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialState<T> value) initial,
+    required TResult Function(_LoadingState<T> value) loading,
+    required TResult Function(_UploadingState<T> value) uploading,
+    required TResult Function(_FailureState<T> value) failure,
+    required TResult Function(_EmptyState<T> value) empty,
+    required TResult Function(_SuccessState<T> value) success,
+    required TResult Function(_ProgressState<T> value) progress,
+  }) {
+    return progress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialState<T> value)? initial,
+    TResult? Function(_LoadingState<T> value)? loading,
+    TResult? Function(_UploadingState<T> value)? uploading,
+    TResult? Function(_FailureState<T> value)? failure,
+    TResult? Function(_EmptyState<T> value)? empty,
+    TResult? Function(_SuccessState<T> value)? success,
+    TResult? Function(_ProgressState<T> value)? progress,
+  }) {
+    return progress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialState<T> value)? initial,
+    TResult Function(_LoadingState<T> value)? loading,
+    TResult Function(_UploadingState<T> value)? uploading,
+    TResult Function(_FailureState<T> value)? failure,
+    TResult Function(_EmptyState<T> value)? empty,
+    TResult Function(_SuccessState<T> value)? success,
+    TResult Function(_ProgressState<T> value)? progress,
+    required TResult orElse(),
+  }) {
+    if (progress != null) {
+      return progress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProgressState<T> extends BaseState<T> {
+  const factory _ProgressState({required final double progress}) =
+      _$ProgressStateImpl<T>;
+  const _ProgressState._() : super._();
+
+  double get progress;
+
+  /// Create a copy of BaseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProgressStateImplCopyWith<T, _$ProgressStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

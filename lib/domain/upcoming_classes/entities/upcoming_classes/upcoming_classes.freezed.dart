@@ -18,11 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UpcomingClasses {
   String get id => throw _privateConstructorUsedError;
   String get teacherId => throw _privateConstructorUsedError;
+  String get teacherName => throw _privateConstructorUsedError;
   String get subject => throw _privateConstructorUsedError;
   String get grade => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  int get lessonType => throw _privateConstructorUsedError;
-  String get date => throw _privateConstructorUsedError;
+  LessonType get lessonType => throw _privateConstructorUsedError;
+  DateTime get date => throw _privateConstructorUsedError;
   String get from => throw _privateConstructorUsedError;
   String get to => throw _privateConstructorUsedError;
 
@@ -42,11 +43,12 @@ abstract class $UpcomingClassesCopyWith<$Res> {
   $Res call(
       {String id,
       String teacherId,
+      String teacherName,
       String subject,
       String grade,
       String title,
-      int lessonType,
-      String date,
+      LessonType lessonType,
+      DateTime date,
       String from,
       String to});
 }
@@ -68,6 +70,7 @@ class _$UpcomingClassesCopyWithImpl<$Res, $Val extends UpcomingClasses>
   $Res call({
     Object? id = null,
     Object? teacherId = null,
+    Object? teacherName = null,
     Object? subject = null,
     Object? grade = null,
     Object? title = null,
@@ -85,6 +88,10 @@ class _$UpcomingClassesCopyWithImpl<$Res, $Val extends UpcomingClasses>
           ? _value.teacherId
           : teacherId // ignore: cast_nullable_to_non_nullable
               as String,
+      teacherName: null == teacherName
+          ? _value.teacherName
+          : teacherName // ignore: cast_nullable_to_non_nullable
+              as String,
       subject: null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -100,11 +107,11 @@ class _$UpcomingClassesCopyWithImpl<$Res, $Val extends UpcomingClasses>
       lessonType: null == lessonType
           ? _value.lessonType
           : lessonType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as LessonType,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       from: null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -128,11 +135,12 @@ abstract class _$$UpcomingClassesImplCopyWith<$Res>
   $Res call(
       {String id,
       String teacherId,
+      String teacherName,
       String subject,
       String grade,
       String title,
-      int lessonType,
-      String date,
+      LessonType lessonType,
+      DateTime date,
       String from,
       String to});
 }
@@ -152,6 +160,7 @@ class __$$UpcomingClassesImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? teacherId = null,
+    Object? teacherName = null,
     Object? subject = null,
     Object? grade = null,
     Object? title = null,
@@ -169,6 +178,10 @@ class __$$UpcomingClassesImplCopyWithImpl<$Res>
           ? _value.teacherId
           : teacherId // ignore: cast_nullable_to_non_nullable
               as String,
+      teacherName: null == teacherName
+          ? _value.teacherName
+          : teacherName // ignore: cast_nullable_to_non_nullable
+              as String,
       subject: null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -184,11 +197,11 @@ class __$$UpcomingClassesImplCopyWithImpl<$Res>
       lessonType: null == lessonType
           ? _value.lessonType
           : lessonType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as LessonType,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       from: null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -207,6 +220,7 @@ class _$UpcomingClassesImpl extends _UpcomingClasses {
   const _$UpcomingClassesImpl(
       {required this.id,
       required this.teacherId,
+      required this.teacherName,
       required this.subject,
       required this.grade,
       required this.title,
@@ -221,15 +235,17 @@ class _$UpcomingClassesImpl extends _UpcomingClasses {
   @override
   final String teacherId;
   @override
+  final String teacherName;
+  @override
   final String subject;
   @override
   final String grade;
   @override
   final String title;
   @override
-  final int lessonType;
+  final LessonType lessonType;
   @override
-  final String date;
+  final DateTime date;
   @override
   final String from;
   @override
@@ -237,7 +253,7 @@ class _$UpcomingClassesImpl extends _UpcomingClasses {
 
   @override
   String toString() {
-    return 'UpcomingClasses(id: $id, teacherId: $teacherId, subject: $subject, grade: $grade, title: $title, lessonType: $lessonType, date: $date, from: $from, to: $to)';
+    return 'UpcomingClasses(id: $id, teacherId: $teacherId, teacherName: $teacherName, subject: $subject, grade: $grade, title: $title, lessonType: $lessonType, date: $date, from: $from, to: $to)';
   }
 
   @override
@@ -248,6 +264,8 @@ class _$UpcomingClassesImpl extends _UpcomingClasses {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.teacherId, teacherId) ||
                 other.teacherId == teacherId) &&
+            (identical(other.teacherName, teacherName) ||
+                other.teacherName == teacherName) &&
             (identical(other.subject, subject) || other.subject == subject) &&
             (identical(other.grade, grade) || other.grade == grade) &&
             (identical(other.title, title) || other.title == title) &&
@@ -259,8 +277,8 @@ class _$UpcomingClassesImpl extends _UpcomingClasses {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, teacherId, subject, grade,
-      title, lessonType, date, from, to);
+  int get hashCode => Object.hash(runtimeType, id, teacherId, teacherName,
+      subject, grade, title, lessonType, date, from, to);
 
   /// Create a copy of UpcomingClasses
   /// with the given fields replaced by the non-null parameter values.
@@ -276,11 +294,12 @@ abstract class _UpcomingClasses extends UpcomingClasses {
   const factory _UpcomingClasses(
       {required final String id,
       required final String teacherId,
+      required final String teacherName,
       required final String subject,
       required final String grade,
       required final String title,
-      required final int lessonType,
-      required final String date,
+      required final LessonType lessonType,
+      required final DateTime date,
       required final String from,
       required final String to}) = _$UpcomingClassesImpl;
   const _UpcomingClasses._() : super._();
@@ -290,15 +309,17 @@ abstract class _UpcomingClasses extends UpcomingClasses {
   @override
   String get teacherId;
   @override
+  String get teacherName;
+  @override
   String get subject;
   @override
   String get grade;
   @override
   String get title;
   @override
-  int get lessonType;
+  LessonType get lessonType;
   @override
-  String get date;
+  DateTime get date;
   @override
   String get from;
   @override

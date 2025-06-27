@@ -24,8 +24,8 @@ class ShimmerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.greenAccent,
-      highlightColor: Colors.transparent,
+      baseColor: Colors.grey.shade300,
+      highlightColor: Colors.white,
       child: horizontal ? _buildHorizontalList() : _buildVerticalList(),
     );
   }

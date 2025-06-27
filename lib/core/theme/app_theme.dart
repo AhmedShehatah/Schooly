@@ -97,5 +97,28 @@ class AppTheme {
         color: Palette.neutral.color5,
       ),
     ),
+    tabBarTheme: TabBarTheme(
+      indicator: BoxDecoration(
+        borderRadius: 6.borderRadius,
+        color: Palette.primary.color7,
+      ),
+      indicatorSize: TabBarIndicatorSize.tab,
+      tabAlignment: TabAlignment.start,
+      labelColor: Colors.white,
+      labelStyle: TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.bold,
+        fontFamily: FontFamily.alexandria,
+      ),
+      unselectedLabelColor: Palette.neutral.color5,
+      unselectedLabelStyle: TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w600,
+        fontFamily: FontFamily.alexandria,
+      ),
+      overlayColor: WidgetStateColor.resolveWith(
+        (states) => Colors.transparent,
+      ),
+    ),
   );
 }
