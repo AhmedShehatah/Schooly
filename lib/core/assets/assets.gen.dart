@@ -50,6 +50,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/notebook.svg
   SvgGenImage get notebook => const SvgGenImage('assets/icons/notebook.svg');
 
+  /// File path: assets/icons/object.svg
+  SvgGenImage get object => const SvgGenImage('assets/icons/object.svg');
+
   /// File path: assets/icons/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/icons/settings.svg');
 
@@ -76,6 +79,7 @@ class $AssetsIconsGen {
         leftArrow,
         more,
         notebook,
+        object,
         settings,
         slider3Horizontal,
         table,
@@ -86,11 +90,17 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/arabic.jpg
+  AssetGenImage get arabic => const AssetGenImage('assets/images/arabic.jpg');
+
   /// File path: assets/images/atom.png
   AssetGenImage get atom => const AssetGenImage('assets/images/atom.png');
 
   /// File path: assets/images/back.png
   AssetGenImage get back => const AssetGenImage('assets/images/back.png');
+
+  /// File path: assets/images/hero.png
+  AssetGenImage get hero => const AssetGenImage('assets/images/hero.png');
 
   /// File path: assets/images/login.png
   AssetGenImage get login => const AssetGenImage('assets/images/login.png');
@@ -108,8 +118,18 @@ class $AssetsImagesGen {
   AssetGenImage get profilePost =>
       const AssetGenImage('assets/images/profile_post.png');
 
+  /// File path: assets/images/religion.jpg
+  AssetGenImage get religion =>
+      const AssetGenImage('assets/images/religion.jpg');
+
+  /// File path: assets/images/science.jpg
+  AssetGenImage get science => const AssetGenImage('assets/images/science.jpg');
+
   /// File path: assets/images/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
+
+  /// File path: assets/images/studies.jpg
+  AssetGenImage get studies => const AssetGenImage('assets/images/studies.jpg');
 
   /// File path: assets/images/teacher.png
   AssetGenImage get teacher => const AssetGenImage('assets/images/teacher.png');
@@ -120,14 +140,19 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        arabic,
         atom,
         back,
+        hero,
         login,
         math,
         post,
         profile,
         profilePost,
+        religion,
+        science,
         splash,
+        studies,
         teacher,
         threePoint
       ];

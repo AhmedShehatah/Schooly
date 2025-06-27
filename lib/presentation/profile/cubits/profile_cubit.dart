@@ -3,7 +3,6 @@ import 'package:toastification/toastification.dart';
 
 import '../../../app/di/injection_container.dart';
 import '../../../core/cubits/user_cubit.dart';
-import '../../../core/enums/enums.dart';
 import '../../../core/states/base_state.dart';
 import '../../../core/utils/extensions.dart';
 import '../../../domain/auth/entities/user.dart';

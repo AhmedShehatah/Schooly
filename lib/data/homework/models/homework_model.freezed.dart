@@ -27,6 +27,7 @@ mixin _$HomeworkModel {
   bool get isSubmitted => throw _privateConstructorUsedError;
   int get totalSubmissions => throw _privateConstructorUsedError;
   DateTime get deadline => throw _privateConstructorUsedError;
+  String get subjectName => throw _privateConstructorUsedError;
 
   /// Serializes this HomeworkModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,7 +52,8 @@ abstract class $HomeworkModelCopyWith<$Res> {
       String lessonTitle,
       bool isSubmitted,
       int totalSubmissions,
-      DateTime deadline});
+      DateTime deadline,
+      String subjectName});
 }
 
 /// @nodoc
@@ -76,6 +78,7 @@ class _$HomeworkModelCopyWithImpl<$Res, $Val extends HomeworkModel>
     Object? isSubmitted = null,
     Object? totalSubmissions = null,
     Object? deadline = null,
+    Object? subjectName = null,
   }) {
     return _then(_value.copyWith(
       homeWorkId: null == homeWorkId
@@ -106,6 +109,10 @@ class _$HomeworkModelCopyWithImpl<$Res, $Val extends HomeworkModel>
           ? _value.deadline
           : deadline // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      subjectName: null == subjectName
+          ? _value.subjectName
+          : subjectName // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -125,7 +132,8 @@ abstract class _$$HomeworkModelImplCopyWith<$Res>
       String lessonTitle,
       bool isSubmitted,
       int totalSubmissions,
-      DateTime deadline});
+      DateTime deadline,
+      String subjectName});
 }
 
 /// @nodoc
@@ -148,6 +156,7 @@ class __$$HomeworkModelImplCopyWithImpl<$Res>
     Object? isSubmitted = null,
     Object? totalSubmissions = null,
     Object? deadline = null,
+    Object? subjectName = null,
   }) {
     return _then(_$HomeworkModelImpl(
       homeWorkId: null == homeWorkId
@@ -178,6 +187,10 @@ class __$$HomeworkModelImplCopyWithImpl<$Res>
           ? _value.deadline
           : deadline // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      subjectName: null == subjectName
+          ? _value.subjectName
+          : subjectName // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -192,7 +205,8 @@ class _$HomeworkModelImpl extends _HomeworkModel {
       required this.lessonTitle,
       this.isSubmitted = false,
       this.totalSubmissions = 0,
-      required this.deadline})
+      required this.deadline,
+      required this.subjectName})
       : super._();
 
   factory _$HomeworkModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -214,10 +228,12 @@ class _$HomeworkModelImpl extends _HomeworkModel {
   final int totalSubmissions;
   @override
   final DateTime deadline;
+  @override
+  final String subjectName;
 
   @override
   String toString() {
-    return 'HomeworkModel(homeWorkId: $homeWorkId, fileUrl: $fileUrl, fileName: $fileName, lessonTitle: $lessonTitle, isSubmitted: $isSubmitted, totalSubmissions: $totalSubmissions, deadline: $deadline)';
+    return 'HomeworkModel(homeWorkId: $homeWorkId, fileUrl: $fileUrl, fileName: $fileName, lessonTitle: $lessonTitle, isSubmitted: $isSubmitted, totalSubmissions: $totalSubmissions, deadline: $deadline, subjectName: $subjectName)';
   }
 
   @override
@@ -237,13 +253,15 @@ class _$HomeworkModelImpl extends _HomeworkModel {
             (identical(other.totalSubmissions, totalSubmissions) ||
                 other.totalSubmissions == totalSubmissions) &&
             (identical(other.deadline, deadline) ||
-                other.deadline == deadline));
+                other.deadline == deadline) &&
+            (identical(other.subjectName, subjectName) ||
+                other.subjectName == subjectName));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, homeWorkId, fileUrl, fileName,
-      lessonTitle, isSubmitted, totalSubmissions, deadline);
+      lessonTitle, isSubmitted, totalSubmissions, deadline, subjectName);
 
   /// Create a copy of HomeworkModel
   /// with the given fields replaced by the non-null parameter values.
@@ -269,7 +287,8 @@ abstract class _HomeworkModel extends HomeworkModel {
       required final String lessonTitle,
       final bool isSubmitted,
       final int totalSubmissions,
-      required final DateTime deadline}) = _$HomeworkModelImpl;
+      required final DateTime deadline,
+      required final String subjectName}) = _$HomeworkModelImpl;
   const _HomeworkModel._() : super._();
 
   factory _HomeworkModel.fromJson(Map<String, dynamic> json) =
@@ -289,6 +308,8 @@ abstract class _HomeworkModel extends HomeworkModel {
   int get totalSubmissions;
   @override
   DateTime get deadline;
+  @override
+  String get subjectName;
 
   /// Create a copy of HomeworkModel
   /// with the given fields replaced by the non-null parameter values.

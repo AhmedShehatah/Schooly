@@ -183,7 +183,12 @@
     "female": "Female",
     "male": "Male",
     "notAvailable": "Not Available",
-    "student": "Student"
+    "student": "Student",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "passwordRequired": "Password is required",
+    "noYourClasses": "There are no classes assigned to you yet"
+
+
 
 
 

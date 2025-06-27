@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/date_utils.dart';
@@ -49,6 +48,7 @@ class RoomDetailsSheet extends StatelessWidget {
                       ),
                       content: item.teacherName,
                     ),
+                    20.verticalSpace,
                     _buildTextIcon(
                         title: lz.date,
                         icon: Icon(
@@ -70,6 +70,7 @@ class RoomDetailsSheet extends StatelessWidget {
                           size: 14.r,
                         ),
                         content: item.lessonType.toName),
+                    20.verticalSpace,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -93,10 +94,19 @@ class RoomDetailsSheet extends StatelessWidget {
             ],
           ),
           15.verticalSpace,
+
           CustomButton(
-            enabled: DateUtility.canJoinSession(item.date, item.from, item.to),
+            enabled:
+                DateUtility.canJoinSession(item.date, item.from, item.to) &&
+                    DateUtility.sessionDate(item.date, item.from, item.to) !=
+                        lz.ended,
             isTextBold: true,
-            text: lz.joinNow,
+            text: DateUtility.sessionDate(item.date, item.from, item.to) ==
+                    lz.ended
+                ? lz.ended
+                : (DateUtility.canJoinSession(item.date, item.from, item.to)
+                    ? lz.joinNow
+                    : DateUtility.sessionDate(item.date, item.from, item.to)),
             onPressed: () {
               context.pushNamed(LessonAttendanceScreen.routeName,
                   extra: item.id);

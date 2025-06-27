@@ -9,6 +9,7 @@ import '../../../../core/localization/localization_manager.dart';
 import '../../../../core/states/base_state.dart';
 import '../../../../core/theme/palette.dart';
 import '../../../../core/utils/extensions.dart';
+import '../../../../core/utils/validators.dart';
 import '../../../../core/widgets/buttons/custom_button.dart';
 import '../../../../core/widgets/fields/custom_input.dart';
 import '../../../../core/widgets/text/custom_text.dart';
@@ -58,10 +59,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomInput(
                     title: lz.email,
                     controller: _emailController,
+                    validator: (value) => sl<Validators>().email(value),
                   ),
                   10.verticalSpace,
                   CustomInput.obscure(
-                      title: lz.password, controller: _passwordController),
+                    title: lz.password,
+                    controller: _passwordController,
+                    validator: (value) => sl<Validators>().password(value),
+                  ),
                   20.verticalSpace,
                   BlocConsumer<LoginCubit, BaseState>(
                     bloc: sl<LoginCubit>(),

@@ -15,6 +15,7 @@ _$HomeworkModelImpl _$$HomeworkModelImplFromJson(Map<String, dynamic> json) =>
       isSubmitted: json['isSubmitted'] as bool? ?? false,
       totalSubmissions: (json['totalSubmissions'] as num?)?.toInt() ?? 0,
       deadline: DateTime.parse(json['deadline'] as String),
+      subjectName: json['subjectName'] as String,
     );
 
 Map<String, dynamic> _$$HomeworkModelImplToJson(_$HomeworkModelImpl instance) =>
@@ -26,4 +27,5 @@ Map<String, dynamic> _$$HomeworkModelImplToJson(_$HomeworkModelImpl instance) =>
       'isSubmitted': instance.isSubmitted,
       'totalSubmissions': instance.totalSubmissions,
       'deadline': instance.deadline.toIso8601String(),
+      'subjectName': instance.subjectName,
     };

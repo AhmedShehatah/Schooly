@@ -13,5 +13,6 @@ class Homework with _$Homework {
     @Default(false) bool isSubmitted,
     @Default(0) int totalSubmissions,
     required DateTime deadline,
+    required String subjectName,
   }) = _Homework;
 }

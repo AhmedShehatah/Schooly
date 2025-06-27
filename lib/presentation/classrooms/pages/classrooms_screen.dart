@@ -11,8 +11,6 @@ import '../../../domain/classroom/entities/classroom/classroom.dart';
 import '../cubits/classroom_list_cubit.dart';
 import '../widgets/classroom_item_widget.dart';
 
-enum ClassTabs { posts, homeworks, sessions }
-
 class ClassesScreen extends StatefulWidget {
   const ClassesScreen({super.key});
   static const String routeName = '/classrooms-screen';
@@ -32,7 +30,7 @@ class _ClassesScreenState extends State<ClassesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: lz.schooly,
+        title: lz.yourClasses,
       ),
       body: BlocBuilder<ClassroomListCubit, BaseState<List<Classroom>>>(
         bloc: sl<ClassroomListCubit>(),

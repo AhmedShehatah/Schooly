@@ -10,5 +10,6 @@ class Comment with _$Comment {
     required String authorId,
     required String authorName,
     required String createdAt,
+    required String? profilePictureUrl,
   }) = _Comment;
 }

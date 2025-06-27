@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,14 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../app/di/injection_container.dart';
-import '../../../core/assets/assets.gen.dart';
-import '../../../core/cubits/media_download_cubit.dart';
 import '../../../core/cubits/user_cubit.dart';
 import '../../../core/enums/enums.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/shared_preferences/prefs_keys.dart';
 import '../../../core/shared_preferences/shared_prefs.dart';
-import '../../../core/states/base_state.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../../core/widgets/images/custom_image.dart';
@@ -57,7 +52,7 @@ class _MoreScreenState extends State<MoreScreen> {
                       child: Row(
                         children: [
                           CustomImage.circular(
-                            radius: 44.r,
+                            radius: 38.r,
                             image: user?.profilePictureUrl ?? '',
                           ),
                           16.horizontalSpace,

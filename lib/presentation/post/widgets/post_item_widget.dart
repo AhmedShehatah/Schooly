@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/assets/assets.gen.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/date_utils.dart';
+import '../../../core/widgets/images/custom_image.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/classroom/entities/post/post.dart';
 import 'comments_list_widget.dart';
@@ -31,10 +31,9 @@ class PostItemWidget extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: CircleAvatar(
-                  radius: 24.r,
-                  backgroundColor: Palette.yellow.shade400,
-                  backgroundImage: AssetImage(Assets.images.profilePost.path),
+                leading: CustomImage.circular(
+                  radius: 44.r,
+                  image: post.profilePictureUrl ?? '',
                 ),
                 title: CustomText.s12(
                   post.authorName,

@@ -25,6 +25,7 @@ mixin _$CommentModel {
   String get authorId => throw _privateConstructorUsedError;
   String get authorName => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
+  String? get profilePictureUrl => throw _privateConstructorUsedError;
 
   /// Serializes this CommentModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,7 +48,8 @@ abstract class $CommentModelCopyWith<$Res> {
       String content,
       String authorId,
       String authorName,
-      String createdAt});
+      String createdAt,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -70,6 +72,7 @@ class _$CommentModelCopyWithImpl<$Res, $Val extends CommentModel>
     Object? authorId = null,
     Object? authorName = null,
     Object? createdAt = null,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -92,6 +95,10 @@ class _$CommentModelCopyWithImpl<$Res, $Val extends CommentModel>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -109,7 +116,8 @@ abstract class _$$CommentModelImplCopyWith<$Res>
       String content,
       String authorId,
       String authorName,
-      String createdAt});
+      String createdAt,
+      String? profilePictureUrl});
 }
 
 /// @nodoc
@@ -130,6 +138,7 @@ class __$$CommentModelImplCopyWithImpl<$Res>
     Object? authorId = null,
     Object? authorName = null,
     Object? createdAt = null,
+    Object? profilePictureUrl = freezed,
   }) {
     return _then(_$CommentModelImpl(
       id: null == id
@@ -152,6 +161,10 @@ class __$$CommentModelImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
+      profilePictureUrl: freezed == profilePictureUrl
+          ? _value.profilePictureUrl
+          : profilePictureUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -164,7 +177,8 @@ class _$CommentModelImpl extends _CommentModel {
       required this.content,
       required this.authorId,
       required this.authorName,
-      required this.createdAt})
+      required this.createdAt,
+      required this.profilePictureUrl})
       : super._();
 
   factory _$CommentModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -180,10 +194,12 @@ class _$CommentModelImpl extends _CommentModel {
   final String authorName;
   @override
   final String createdAt;
+  @override
+  final String? profilePictureUrl;
 
   @override
   String toString() {
-    return 'CommentModel(id: $id, content: $content, authorId: $authorId, authorName: $authorName, createdAt: $createdAt)';
+    return 'CommentModel(id: $id, content: $content, authorId: $authorId, authorName: $authorName, createdAt: $createdAt, profilePictureUrl: $profilePictureUrl)';
   }
 
   @override
@@ -198,13 +214,15 @@ class _$CommentModelImpl extends _CommentModel {
             (identical(other.authorName, authorName) ||
                 other.authorName == authorName) &&
             (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
+                other.createdAt == createdAt) &&
+            (identical(other.profilePictureUrl, profilePictureUrl) ||
+                other.profilePictureUrl == profilePictureUrl));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, content, authorId, authorName, createdAt);
+  int get hashCode => Object.hash(runtimeType, id, content, authorId,
+      authorName, createdAt, profilePictureUrl);
 
   /// Create a copy of CommentModel
   /// with the given fields replaced by the non-null parameter values.
@@ -228,7 +246,8 @@ abstract class _CommentModel extends CommentModel {
       required final String content,
       required final String authorId,
       required final String authorName,
-      required final String createdAt}) = _$CommentModelImpl;
+      required final String createdAt,
+      required final String? profilePictureUrl}) = _$CommentModelImpl;
   const _CommentModel._() : super._();
 
   factory _CommentModel.fromJson(Map<String, dynamic> json) =
@@ -244,6 +263,8 @@ abstract class _CommentModel extends CommentModel {
   String get authorName;
   @override
   String get createdAt;
+  @override
+  String? get profilePictureUrl;
 
   /// Create a copy of CommentModel
   /// with the given fields replaced by the non-null parameter values.

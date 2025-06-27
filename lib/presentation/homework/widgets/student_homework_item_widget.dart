@@ -59,7 +59,7 @@ class StudentHomeworkItemWidget extends StatelessWidget {
             ],
           ),
           subtitle: CustomText.s11(
-            item.lessonTitle,
+            '${item.subjectName} / ${item.lessonTitle}',
             color: Palette.character.secondary45,
           ),
           trailing: IconButton(
@@ -91,9 +91,21 @@ Widget buildHomeworkActions(BuildContext ctx, Homework item) {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CustomText.s16(
-              item.lessonTitle,
-              bold: true,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomText.s16(
+                  item.lessonTitle,
+                  bold: true,
+                ),
+                4.verticalSpace,
+                CustomText.s12(
+                  DateUtility.formatDate(item.deadline),
+                  color: item.deadline.isBefore(DateTime.now())
+                      ? Palette.volcano.color6
+                      : Palette.green.shade600,
+                ),
+              ],
             ),
             StatusCard(
                 title: item.isSubmitted ? lz.submitted : lz.notSubmitted,
