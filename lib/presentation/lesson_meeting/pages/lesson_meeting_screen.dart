@@ -5,7 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:logger/web.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
+import '../../../core/cubits/user_cubit.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/dimensions.dart';
@@ -93,10 +95,10 @@ class _LessonMeetingScreenState extends State<LessonMeetingScreen> {
     await _engine.enableVideo();
     await _engine.startPreview();
 
-    await _engine.joinChannel(
+    await _engine.joinChannelWithUserAccount(
       channelId: widget.channelName,
       token: widget.token,
-      uid: 0,
+      userAccount: sl<UserCubit>().state!.id,
       options: const ChannelMediaOptions(),
     );
     setState(() {});
