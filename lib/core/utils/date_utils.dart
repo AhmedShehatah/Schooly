@@ -107,17 +107,17 @@ class DateUtility {
     TimeOfDay fromTime = parseTimeOfDay(from);
     TimeOfDay toTime = parseTimeOfDay(to);
     final now = DateTime.now();
-    // if lesson today
-    if (day.difference(now).inDays.abs() <= 0) {
-      if (fromTime.hour <= now.hour && toTime.hour >= now.hour) {
-        if (fromTime.minute >= now.minute) return false;
-        return true;
-      }
-      if (fromTime.hour == now.hour && fromTime.minute >= now.minute) {
-        return true;
-      }
-      return false;
+
+    // Check if same day
+    if (day.year == now.year && day.month == now.month && day.day == now.day) {
+      final fromDateTime = DateTime(
+          day.year, day.month, day.day, fromTime.hour, fromTime.minute);
+      final toDateTime =
+          DateTime(day.year, day.month, day.day, toTime.hour, toTime.minute);
+
+      return now.isAfter(fromDateTime) && now.isBefore(toDateTime);
     }
+
     return false;
   }
 }
