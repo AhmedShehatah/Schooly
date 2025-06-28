@@ -30,7 +30,20 @@ class ClassroomItemWidget extends StatelessWidget {
               //   'homeworkClassroomId': classroom.teacherId,
             );
           },
-          leading: Assets.images.atom.image(width: 50.w, height: 50.h),
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(100.r),
+            child: (classroom.subject == 'دراسات')
+                ? Assets.images.studies
+                    .image(width: 50.w, height: 50.h, fit: BoxFit.cover)
+                : (classroom.subject == 'علوم')
+                    ? Assets.images.science
+                        .image(width: 50.w, height: 50.h, fit: BoxFit.cover)
+                    : (classroom.subject == 'رياضه')
+                        ? Assets.images.math
+                            .image(width: 50.w, height: 50.h, fit: BoxFit.cover)
+                        : Assets.images.religion.image(
+                            width: 50.w, height: 50.h, fit: BoxFit.cover),
+          ),
           title: CustomText.s14(
             classroom.grade,
             bold: true,

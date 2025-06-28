@@ -16,6 +16,7 @@ import '../../presentation/setting/pages/more_screen.dart';
 import '../../presentation/splash/pages/splash_screen.dart';
 import '../../presentation/home/pages/home_screen.dart';
 import '../../presentation/auth/login/pages/login_screen.dart';
+import '../../presentation/upcoming/upcoming_screen.dart';
 import '../di/injection_container.dart';
 
 class AppRouter {
@@ -111,6 +112,16 @@ class AppRouter {
             pageBuilder: (context, state) {
               return _buildPageWithTransition(
                 const MoreScreen(),
+                state,
+              );
+            },
+          ),
+          GoRoute(
+            name: UpcomingScreen.routeName,
+            path: UpcomingScreen.routeName,
+            pageBuilder: (context, state) {
+              return _buildPageWithTransition(
+                const UpcomingScreen(),
                 state,
               );
             },

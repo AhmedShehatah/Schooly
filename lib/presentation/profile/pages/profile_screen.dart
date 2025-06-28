@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +7,6 @@ import '../../../core/cubits/media_upload_cubit.dart';
 import '../../../core/localization/localization_manager.dart';
 import '../../../core/states/base_state.dart';
 import '../../../app/di/injection_container.dart';
-import '../../../core/assets/assets.gen.dart';
 import '../../../core/enums/enums.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/utils/pop_ups.dart';
@@ -35,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
-    sl<ProfileCubit>().fetchProfile();
+    _cubit.fetchProfile();
   }
 
   @override

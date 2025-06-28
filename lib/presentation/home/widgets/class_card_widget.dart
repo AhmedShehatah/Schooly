@@ -24,9 +24,19 @@ class ClassCardWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: 8.h),
           child: ListTile(
-            leading: Assets.images.atom.image(
-              width: 52.w,
-              height: 52.h,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(100.r),
+              child: (item.subject == 'دراسات')
+                  ? Assets.images.studies
+                      .image(width: 52.w, height: 52.h, fit: BoxFit.cover)
+                  : (item.subject == 'علوم')
+                      ? Assets.images.science
+                          .image(width: 52.w, height: 52.h, fit: BoxFit.cover)
+                      : (item.subject == 'رياضه')
+                          ? Assets.images.math.image(
+                              width: 52.w, height: 52.h, fit: BoxFit.cover)
+                          : Assets.images.religion.image(
+                              width: 52.w, height: 52.h, fit: BoxFit.cover),
             ),
             title: CustomText.s11(
               '${item.subject} / ${item.grade}',

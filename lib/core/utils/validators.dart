@@ -62,4 +62,15 @@ class Validators {
     if (value == null || value.length < 4) return lz.otpValidation;
     return null;
   }
+
+    String? passwordConfirmation(String? password, String? passwordConfirmation) {
+    if (password == null || password.isEmpty) {
+      return lz.passwordRequired;
+    }
+    if (password != passwordConfirmation) {
+      return lz.passwordsDoNotMatch;
+    }
+    return null;
+  }
+
 }

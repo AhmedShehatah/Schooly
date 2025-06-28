@@ -15,6 +15,7 @@ class HomeworkModel with _$HomeworkModel {
     @Default(false) bool isSubmitted,
     @Default(0) int totalSubmissions,
     required DateTime deadline,
+    required String subjectName,
   }) = _HomeworkModel;
   factory HomeworkModel.fromJson(Map<String, dynamic> json) =>
       _$HomeworkModelFromJson(json);
@@ -26,5 +27,6 @@ class HomeworkModel with _$HomeworkModel {
         isSubmitted: isSubmitted,
         totalSubmissions: totalSubmissions,
         deadline: deadline,
+        subjectName: subjectName,
       );
 }
