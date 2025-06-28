@@ -115,8 +115,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             title: lz.name,
                             initialValue: profile.name,
                             required: false,
-                            onChanged: (value) =>
-                                _cubit.updateParams(name: value),
+                            onChanged: (value) {
+                              if (value.trim().isEmpty) {
+                                return;
+                              }
+                              _cubit.updateParams(name: value.trim());
+                            },
                           ),
                           20.verticalSpace,
                           CustomInput(

@@ -35,14 +35,29 @@ class ClassroomItemWidget extends StatelessWidget {
             child: (classroom.subject == 'دراسات')
                 ? Assets.images.studies
                     .image(width: 50.w, height: 50.h, fit: BoxFit.cover)
-                : (classroom.subject == 'علوم')
+                : (classroom.subject == 'علوم' ||
+                        classroom.subject == 'فيزياء' ||
+                        classroom.subject == 'كيمياء')
                     ? Assets.images.science
                         .image(width: 50.w, height: 50.h, fit: BoxFit.cover)
-                    : (classroom.subject == 'رياضه')
+                    : (classroom.subject == 'رياضيات' ||
+                            classroom.subject == 'رياضه')
                         ? Assets.images.math
                             .image(width: 50.w, height: 50.h, fit: BoxFit.cover)
-                        : Assets.images.religion.image(
-                            width: 50.w, height: 50.h, fit: BoxFit.cover),
+                        : (classroom.subject == 'اللغة العربية' ||
+                                classroom.subject == 'عربي')
+                            ? Assets.images.arabic.image(
+                                width: 50.w, height: 50.h, fit: BoxFit.cover)
+                            : (classroom.subject == 'اللغة الإنجليزية' ||
+                                    classroom.subject == 'انجليزي')
+                                ? Assets.images.english.image(
+                                    width: 50.w,
+                                    height: 50.h,
+                                    fit: BoxFit.cover)
+                                : Assets.images.religion.image(
+                                    width: 50.w,
+                                    height: 50.h,
+                                    fit: BoxFit.cover),
           ),
           title: CustomText.s14(
             classroom.grade,
