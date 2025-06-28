@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../app/di/injection_container.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/theme/palette.dart';
 import '../../../core/widgets/text/custom_text.dart';
 import '../../../domain/classroom/entities/classroom/classroom.dart';
+import '../../classrooms/cubits/classroom_list_cubit.dart';
 import '../../classrooms/pages/class_details_screen.dart';
 
 class ClassesWidget extends StatelessWidget {
@@ -27,6 +29,8 @@ class ClassesWidget extends StatelessWidget {
       height: 215.h,
       child: InkWell(
         onTap: () {
+          sl<ClassroomListCubit>().setChosenClassroomId(classroom.id);
+
           context.goNamed(ClassDetailsScreen.routeName, extra: classroom.id);
         },
         child: Stack(
