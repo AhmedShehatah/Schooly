@@ -162,21 +162,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               required: false,
                               editable: false),
                           20.verticalSpace,
-                          CustomInput(
-                              title: lz.grade,
-                              initialValue:
-                                  profile.studentExtra?.grade.toString() ??
-                                      lz.notAvailable,
-                              required: false,
-                              editable: false),
-                          20.verticalSpace,
-                          CustomInput(
-                              title: lz.address,
-                              initialValue: profile.studentExtra?.address ??
-                                  lz.notAvailable,
-                              required: false,
-                              editable: false),
-                          30.verticalSpace,
+                          if (profile.role == UserType.student) ...[
+                            CustomInput(
+                                title: lz.grade,
+                                initialValue:
+                                    profile.studentExtra?.grade.toString() ??
+                                        lz.notAvailable,
+                                required: false,
+                                editable: false),
+                            20.verticalSpace,
+                            CustomInput(
+                                title: lz.address,
+                                initialValue: profile.studentExtra?.address ??
+                                    lz.notAvailable,
+                                required: false,
+                                editable: false),
+                            30.verticalSpace,
+                          ],
                           CustomButton(
                             text: lz.update,
                             onPressed: () {
