@@ -423,7 +423,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get titlePrefixMr => 'Mr.';
 
   @override
-  String get titlePrefixMrs => 'أ.';
+  String get titlePrefixMrs => 'Mrs.';
 
   @override
   String get name => 'Name';

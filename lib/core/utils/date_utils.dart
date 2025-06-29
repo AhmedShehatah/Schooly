@@ -59,7 +59,7 @@ class DateUtility {
     TimeOfDay toTime = parseTimeOfDay(to);
     final now = DateTime.now();
     // if lesson today
-    if (day.difference(now).inDays.abs() <= 0) {
+    if (day.year == now.year && day.month == now.month && day.day == now.day) {
       // if didn't start
       if (now.hour < fromTime.hour ||
           (now.hour == fromTime.hour && now.minute < fromTime.minute)) {
