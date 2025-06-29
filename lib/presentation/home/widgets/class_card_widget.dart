@@ -29,14 +29,28 @@ class ClassCardWidget extends StatelessWidget {
               child: (item.subject == 'دراسات')
                   ? Assets.images.studies
                       .image(width: 52.w, height: 52.h, fit: BoxFit.cover)
-                  : (item.subject == 'علوم')
+                  : (item.subject == 'علوم' ||
+                          item.subject == 'فيزياء' ||
+                          item.subject == 'كيمياء')
                       ? Assets.images.science
                           .image(width: 52.w, height: 52.h, fit: BoxFit.cover)
-                      : (item.subject == 'رياضه')
+                      : (item.subject == 'رياضيات' || item.subject == 'رياضه')
                           ? Assets.images.math.image(
                               width: 52.w, height: 52.h, fit: BoxFit.cover)
-                          : Assets.images.religion.image(
-                              width: 52.w, height: 52.h, fit: BoxFit.cover),
+                          : (item.subject == 'اللغة العربية' ||
+                                  item.subject == 'عربي')
+                              ? Assets.images.arabic.image(
+                                  width: 52.w, height: 52.h, fit: BoxFit.cover)
+                              : (item.subject == 'اللغة الإنجليزية' ||
+                                      item.subject == 'انجليزي')
+                                  ? Assets.images.english.image(
+                                      width: 52.w,
+                                      height: 52.h,
+                                      fit: BoxFit.cover)
+                                  : Assets.images.religion.image(
+                                      width: 52.w,
+                                      height: 52.h,
+                                      fit: BoxFit.cover),
             ),
             title: CustomText.s11(
               '${item.subject} / ${item.grade}',

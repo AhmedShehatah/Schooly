@@ -99,6 +99,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/back.png
   AssetGenImage get back => const AssetGenImage('assets/images/back.png');
 
+  /// File path: assets/images/english.jpg
+  AssetGenImage get english => const AssetGenImage('assets/images/english.jpg');
+
   /// File path: assets/images/hero.png
   AssetGenImage get hero => const AssetGenImage('assets/images/hero.png');
 
@@ -143,6 +146,7 @@ class $AssetsImagesGen {
         arabic,
         atom,
         back,
+        english,
         hero,
         login,
         math,

@@ -36,19 +36,31 @@ class ClassesWidget extends StatelessWidget {
         child: Stack(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(24.r),
-                  topRight: Radius.circular(24.r)),
-              child: SizedBox(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(24.r),
+                    topRight: Radius.circular(24.r)),
+                child: SizedBox(
                   child: (item.subject == 'دراسات')
                       ? Assets.images.studies.image(fit: BoxFit.cover)
-                      : (item.subject == 'علوم')
+                      : (item.subject == 'علوم' ||
+                              item.subject == 'فيزياء' ||
+                              item.subject == 'كيمياء')
                           ? Assets.images.science.image(fit: BoxFit.cover)
-                          : (item.subject == 'رياضه')
+                          : (item.subject == 'رياضيات' ||
+                                  item.subject == 'رياضه')
                               ? Assets.images.math
                                   .image(height: 124.h, fit: BoxFit.cover)
-                              : Assets.images.arabic.image(fit: BoxFit.cover)),
-            ),
+                              : (item.subject == 'اللغة العربية' ||
+                                      item.subject == 'عربي')
+                                  ? Assets.images.arabic
+                                      .image(height: 120.h, fit: BoxFit.cover)
+                                  : (item.subject == 'اللغة الإنجليزية' ||
+                                          item.subject == 'انجليزي')
+                                      ? Assets.images.english
+                                          .image(fit: BoxFit.cover)
+                                      : Assets.images.religion
+                                          .image(fit: BoxFit.cover),
+                )),
             Positioned(
               top: 104.h,
               right: 0,
